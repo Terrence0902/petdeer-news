@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PetDeer 每日新闻 · 2026-08-19</title>
+<style>
+  :root {
+    --bg: #000000;
+    --card: #1c1c1e;
+    --card-hover: #2c2c2e;
+    --label: #ffffff;
+    --label-2: rgba(255,255,255,0.6);
+    --label-3: rgba(255,255,255,0.4);
+    --sep: rgba(255,255,255,0.08);
+    --accent: #0a84ff;
+    --r: 16px;
+    --r-s: 10px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, "SF Pro Text", "SF Pro Display", "PingFang SC", "Helvetica Neue", sans-serif;
+    background: var(--bg); color: var(--label); line-height: 1.6;
+    -webkit-font-smoothing: antialiased; padding: 0 0 40px;
+  }
+  .hero { padding: 48px 20px 32px; text-align: center; }
+  .hero-date { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; }
+  .hero-weekday { font-size: 17px; color: var(--label-2); margin-top: 4px; }
+  .hero-brand { font-size: 13px; color: var(--label-3); margin-top: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  .countdown-bar { display: flex; gap: 10px; padding: 0 16px; margin-bottom: 24px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .countdown-bar::-webkit-scrollbar { display: none; }
+  .cd-chip { flex-shrink: 0; background: var(--card); border-radius: var(--r-s); padding: 12px 18px; text-align: center; min-width: 110px; }
+  .cd-label { font-size: 12px; color: var(--label-3); margin-bottom: 2px; }
+  .cd-value { font-size: 22px; font-weight: 700; }
+  .cd-unit { font-size: 13px; color: var(--label-2); margin-left: 2px; }
+  .cd-chip.mpa .cd-value { color: #4a9d6e; }
+  .cd-chip.guokao .cd-value { color: #d9b46a; }
+  .cd-chip.news .cd-value { color: var(--accent); }
+  .section { margin: 0 16px 16px; background: var(--card); border-radius: var(--r); overflow: hidden; animation: fadeUp .5s cubic-bezier(.25,.46,.45,.94) both; }
+  .section:nth-child(1) { animation-delay: .05s; }
+  .section:nth-child(2) { animation-delay: .1s; }
+  .section:nth-child(3) { animation-delay: .15s; }
+  .section:nth-child(4) { animation-delay: .2s; }
+  .section:nth-child(5) { animation-delay: .25s; }
+  .section:nth-child(6) { animation-delay: .3s; }
+  .section:nth-child(7) { animation-delay: .35s; }
+  .section:nth-child(8) { animation-delay: .4s; }
+  .section:nth-child(n+9) { animation-delay: .45s; }
+  .section-header { display: flex; align-items: center; gap: 10px; padding: 16px 20px 12px; }
+  .section-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .section-title { font-size: 17px; font-weight: 600; }
+  .news-item { padding: 14px 20px; border-top: .5px solid var(--sep); transition: background .2s ease; }
+  .news-item:hover { background: var(--card-hover); }
+  .news-item:last-child { padding-bottom: 18px; }
+  .news-headline { font-size: 15px; font-weight: 600; line-height: 1.5; margin-bottom: 4px; }
+  .news-desc { font-size: 13px; color: var(--label-2); line-height: 1.55; margin-bottom: 6px; }
+  .news-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .news-source { font-size: 12px; color: var(--accent); text-decoration: none; }
+  .news-source:hover { text-decoration: underline; }
+  .news-badge { font-size: 10px; padding: 2px 8px; border-radius: 6px; font-weight: 600; }
+  .badge-sleep { background: rgba(94,122,184,.2); color: #5e7ab8; }
+  .badge-eat { background: rgba(217,180,106,.2); color: #d9b46a; }
+  .badge-train { background: rgba(224,122,60,.2); color: #e07a3c; }
+  .badge-deep { background: rgba(74,157,110,.2); color: #4a9d6e; }
+  .badge-effic { background: rgba(106,122,156,.2); color: #6a7a9c; }
+  .badge-enjoy { background: rgba(217,106,138,.2); color: #d96a8a; }
+  .badge-repeat { background: rgba(200,200,200,.15); color: #c8c8c8; }
+  .md-table { padding: 12px 20px; overflow-x: auto; }
+  .md-table table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .md-table th { text-align: left; padding: 6px 12px 6px 0; color: var(--label-3); font-weight: 500; font-size: 12px; border-bottom: .5px solid var(--sep); white-space: nowrap; }
+  .md-table td { padding: 6px 12px 6px 0; color: var(--label-2); border-bottom: .5px solid var(--sep); }
+  .md-table tr:last-child td { border-bottom: none; }
+  .md-quote { padding: 12px 20px; font-size: 13px; color: var(--label-2); border-top: .5px solid var(--sep); }
+  .md-alert { padding: 12px 20px; font-size: 13px; color: #d9b46a; border-top: .5px solid var(--sep); }
+  .checklist { padding: 12px 20px; }
+  .checklist-item { font-size: 14px; color: var(--label-2); padding: 4px 0; }
+  .checklist-item .check { display: inline-block; width: 18px; color: var(--accent); }
+  .quote-section { margin: 8px 16px 24px; padding: 28px 24px; background: var(--card); border-radius: var(--r); text-align: center; animation: fadeUp .5s cubic-bezier(.25,.46,.45,.94) both; animation-delay: .4s; }
+  .quote-icon { font-size: 28px; margin-bottom: 12px; }
+  .quote-text { font-size: 18px; font-weight: 600; line-height: 1.6; background: linear-gradient(135deg, var(--accent), #5e5eff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .quote-sub { font-size: 13px; color: var(--label-3); margin-top: 10px; }
+  .footer { text-align: center; padding: 20px; font-size: 12px; color: var(--label-3); }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) {
+    .hero-date { font-size: 28px; }
+    .hero { padding: 36px 20px 24px; }
+    .section { margin: 0 12px 12px; }
+    .news-item { padding: 12px 16px; }
+    .section-header { padding: 14px 16px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-date">2026-08-19</div>
+  <div class="hero-weekday">星期三</div>
+  <div class="hero-brand">PetDeer 每日新闻</div>
+</div>
+
+<div class="countdown-bar">
+    <div class="cd-chip mpa">
+      <div class="cd-label">MPA 联考</div>
+      <div class="cd-value">130<span class="cd-unit">天</span></div>
+    </div>
+    <div class="cd-chip guokao">
+      <div class="cd-label">国考</div>
+      <div class="cd-value">102<span class="cd-unit">天</span></div>
+    </div>
+    <div class="cd-chip news">
+      <div class="cd-label">今日采集</div>
+      <div class="cd-value">15<span class="cd-unit">条</span></div>
+    </div>
+</div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#5e7ab8"></div>
+      <div class="section-title">Sleep · 睡眠/作息/心理健康</div>
+    </div>
+    
+      <div class="news-item">
+        <div class="news-headline">缺觉不只是困倦，会诱发全身慢性炎症</div>
+        <div class="news-desc">睡眠不足使机体长期处于应激状态，免疫力下降，增加代谢性疾病、癌症、精神疾病风险。慢性炎症是多种疾病的幕后推手。</div>
+        <div class="news-meta"><a class="news-source" href="https://m.weibo.cn/detail/5333607984925206" target="_blank">来源</a><span class="news-badge badge-sleep">01-Sleep</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">周末补觉超3小时，全身炎症风险明显上升</div>
+        <div class="news-desc">美国《预防医学》研究显示，周末强行补觉看似补齐时长，却破坏了生物钟节律，补不回被扰乱的血压、血糖、激素分泌规律。</div>
+        <div class="news-meta"><a class="news-source" href="http://m.toutiao.com/group/7675516514082062857/" target="_blank">来源</a><span class="news-badge badge-sleep">01-Sleep</span></div>
+      </div>
+    
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#d9b46a"></div>
+      <div class="section-title">Eat · 饮食/营养/茶饮</div>
+    </div>
+    
+      <div class="news-item">
+        <div class="news-headline">绿茶8周降血糖、减脂增肌，与饮用时间无关</div>
+        <div class="news-desc">随机对照试验显示，老年人8周饮茶后HbA1c下降、脂肪减少、肌肉增加，早饮晚饮效果相当。</div>
+        <div class="news-meta"><a class="news-source" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13054514/" target="_blank">来源</a><span class="news-badge badge-eat">02-Eat</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">63%受访者觉得现制饮品&quot;过于甜腻&quot;，年轻人给饮料做减法</div>
+        <div class="news-desc">《2026中国现制饮品健康趋势报告》显示消费者转向低糖、去奶油顶，45%常喝&quot;甜品化&quot;咖啡的人担忧健康影响。</div>
+        <div class="news-meta"><a class="news-source" href="http://m.toutiao.com/group/7673720422638076422/" target="_blank">来源</a><span class="news-badge badge-eat">02-Eat</span></div>
+      </div>
+    
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#e07a3c"></div>
+      <div class="section-title">Training · 训练/健身/减重</div>
+    </div>
+    
+      <div class="news-item">
+        <div class="news-headline">巩立姣：减重看腰围和代谢指标，不只看体重数字</div>
+        <div class="news-desc">奥运冠军呼吁重视腰围与脂肪肝等代谢指标，女性群体尤需科学减重。</div>
+        <div class="news-meta"><a class="news-source" href="http://www3.xinhuanet.com/health/20260819/daeb847b09f241ea80f29e10319468d0/c.html" target="_blank">来源</a><span class="news-badge badge-train">03-Training</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">抗阻训练是高质量减重关键：最大化减脂同时保留瘦体重</div>
+        <div class="news-desc">Frontiers研究证实，RT训练能最大化脂肪减少、保留或增加去脂体重，改善长期体重维持。</div>
+        <div class="news-meta"><a class="news-source" href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1725500/full" target="_blank">来源</a><span class="news-badge badge-train">03-Training</span></div>
+      </div>
+    
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#4a9d6e"></div>
+      <div class="section-title">DeepLearning · MPA备考/公务员/AI工作流</div>
+    </div>
+    
+      <div class="news-item">
+        <div class="news-headline">2026国考招录3.81万人，年龄放宽至38周岁（硕博43周岁）</div>
+        <div class="news-desc">县级及以下岗位占比超60%，基层导向明显。非全日制MPA可报税务系统等热门岗位。</div>
+        <div class="news-meta"><a class="news-source" href="https://m.ncss.cn/ncss/zt/2026gk.shtml" target="_blank">来源</a><span class="news-badge badge-deep">04-DeepLearning</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">阿里推出Qwen3.8-27B开源模型，家用显卡可跑，开放Max权重</div>
+        <div class="news-desc">270亿参数主打&quot;消费级可部署&quot;，对副业AI应用和本地推理极有价值。</div>
+        <div class="news-meta"><a class="news-source" href="https://c.m.163.com/news/a/L4KGUKEF0556MEZR.html" target="_blank">来源</a></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">国内大模型调用量连续16周全球第一，规模约为美国3.6倍</div>
+        <div class="news-desc">端侧AI和行业智能体拉动需求，但市场出现供给过剩迹象，大模型溢价收缩。</div>
+        <div class="news-meta"><a class="news-source" href="http://m.toutiao.com/group/7675553739838636596/" target="_blank">来源</a><span class="news-badge badge-deep">04-DeepLearning</span></div>
+      </div>
+    
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#6a7a9c"></div>
+      <div class="section-title">EfficientWorking · 副业/自媒体/华为生态</div>
+    </div>
+    
+      <div class="news-item">
+        <div class="news-headline">8200亿市场但65%创作者月收入不足1800元，算法更看重真实数据</div>
+        <div class="news-desc">1000个铁粉比10万僵尸粉值钱100倍，纯AI生成内容被多平台统一限流。</div>
+        <div class="news-meta"><a class="news-source" href="https://post.m.smzdm.com/p/a26ozzvp/" target="_blank">来源</a><span class="news-badge badge-effic">05-EfficientWork</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">大批AI博主停更，AI内容从狂热走向冷静</div>
+        <div class="news-desc">番茄、红果新规落地，多部AI漫剧集中&quot;全剧终&quot;，靠信息差吃饭的第一批被淘汰。</div>
+        <div class="news-meta"><a class="news-source" href="https://m.weibo.cn/detail/5333009127446055" target="_blank">来源</a><span class="news-badge badge-effic">05-EfficientWork</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">HDC 2026上HarmonyOS 7向Agent架构演进，3200万设备</div>
+        <div class="news-desc">分布式任务调度更智能，手表调手机摄像头、平板借PC的GPU，鸿蒙已与苹果近场互通。</div>
+        <div class="news-meta"><a class="news-source" href="https://blog.csdn.net/2501_93573368/article/details/156399607" target="_blank">来源</a><span class="news-badge badge-effic">05-EfficientWork</span></div>
+      </div>
+    
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#d96a8a"></div>
+      <div class="section-title">EnjoyYourself · 兴趣/读书/家居整理</div>
+    </div>
+    
+      <div class="news-item">
+        <div class="news-headline">成人学钢琴：年龄从来不是绊脚石，成年人理解力更强</div>
+        <div class="news-desc">30/40/50岁均能学琴，成年人专注力和理解力优于孩童，关键是决心和耐心。</div>
+        <div class="news-meta"><a class="news-source" href="http://m.toutiao.com/group/7619350896605987368/" target="_blank">来源</a><span class="news-badge badge-enjoy">06-EnjoyYourself</span></div>
+      </div>
+      <div class="news-item">
+        <div class="news-headline">2026断舍离清单：用一年时间变强，从清理开始</div>
+        <div class="news-desc">8条实操：捐掉一年没穿的衣服、不囤护肤品、拆快递不堆盒、卸载不用的APP、定期大扫除。</div>
+        <div class="news-meta"><a class="news-source" href="https://www.peopleapp.com/column/30051198821-500007303689" target="_blank">来源</a><span class="news-badge badge-enjoy">06-EnjoyYourself</span></div>
+      </div>
+    
+  </div>
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#c8c8c8"></div>
+      <div class="section-title">Repeat · 知识管理/个人成长</div>
+    </div>
+    
+      <div class="news-item">
+        <div class="news-headline">培养&quot;输出型爱好&quot;：碎片时间读书+写随笔+听深度播客</div>
+        <div class="news-desc">低成本自我提升清单：每天固定10分钟摘抄、写随笔梳理情绪、培养&quot;坐得住&quot;的爱好（书法/乐器/画画）。</div>
+        <div class="news-meta"><a class="news-source" href="http://m.hinews.cn/page?n=2802461&amp;s=1044" target="_blank">来源</a><span class="news-badge badge-eat">07-Repeat</span></div>
+      </div>
+    
+  </div>
+
+<div class="quote-section">
+  <div class="quote-icon">🐾</div>
+  <div class="quote-text">不重复就没有复利，闭环收口</div>
+  <div class="quote-sub">PetDeer 金句 #7 · 2026-08-19</div>
+</div>
+
+<div class="footer">
+  PetDeer 自动生成 · 2026-08-19 · 共 15 条
+</div>
+
+</body>
+</html>
