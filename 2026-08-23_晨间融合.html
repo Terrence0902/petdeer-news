@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>泰格晨间融合 · 2026年8月23日 星期日</title>
+<style>
+/* ===== Part A: 暖色调晨间生活 ===== */
+:root{
+  --bg:#fff7ed; --card:#ffffff; --ink:#3a2e25; --sub:#8a7a6c;
+  --line:#f0e2d2; --sun1:#ffb347; --sun2:#ff8a5b; --sun3:#ffd98a;
+  --accent:#ef7d4f; --good:#3aa657; --warn:#e8923a; --bad:#e0524d; --blue:#4a8fd6;
+  --night1:#2a3a5c; --night2:#4a5a7c; --moon:#c8d0e8;
+  --c-sleep:#5e7ab8; --c-eat:#d9b46a; --c-train:#e07a3c; --c-deep:#4a9d6e;
+  --c-effic:#6a7a9c; --c-enjoy:#d96a8a; --c-repeat:#9a9a9a;
+  --radius:18px; --shadow:0 6px 20px rgba(180,120,60,.12);
+  /* Part B 深色变量 */
+  --dbg:#1a1a2e; --dcard:#16213e; --dcard2:#0f3460; --dink:#e8e8e8; --dsub:#8899aa;
+  --daccent:#e94560; --dgold:#f5a623; --dpurple:#9b59b6;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:linear-gradient(160deg,#fff3e0 0%,#ffe9d6 45%,#ffeede 100%);color:var(--ink);
+  padding:14px 12px 40px;line-height:1.55;}
+.wrap{max-width:480px;margin:0 auto;}
+@media(min-width:560px){ .wrap{max-width:560px;} }
+@media(min-width:768px){
+  .wrap{max-width:900px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;}
+  .card{margin-top:0;}
+  .hero,.cd-bar,.news-full,.meals,.tea,.quote,.foot,.divider,.dark-section-full{grid-column:1 / -1;}
+}
+@media(min-width:1100px){ .wrap{max-width:1040px;} }
+
+/* Hero */
+.hero{background:linear-gradient(135deg,var(--sun1),var(--sun2));color:#fff;border-radius:24px;
+  padding:20px 20px 22px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+.hero:after{content:"☀️";position:absolute;right:-6px;top:-10px;font-size:90px;opacity:.18;transform:rotate(12deg);}
+.hero h1{margin:0;font-size:22px;font-weight:800;letter-spacing:.5px;}
+.hero .meta{margin-top:8px;font-size:13.5px;opacity:.95;line-height:1.7;}
+.hero .tag{display:inline-block;background:rgba(255,255,255,.22);padding:3px 10px;border-radius:999px;
+  font-size:12px;margin-top:10px;backdrop-filter:blur(2px);}
+
+/* Countdown bar */
+.cd-bar{display:flex;gap:10px;margin-top:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+.cd-bar::-webkit-scrollbar{display:none;}
+.cd-chip{flex-shrink:0;background:var(--card);border-radius:14px;padding:12px 18px;text-align:center;
+  min-width:110px;box-shadow:var(--shadow);border:1px solid var(--line);}
+.cd-chip .cd-label{font-size:11.5px;color:var(--sub);margin-bottom:2px;}
+.cd-chip .cd-value{font-size:22px;font-weight:800;}
+.cd-chip .cd-unit{font-size:13px;color:var(--sub);margin-left:2px;}
+.cd-chip.mpa .cd-value{color:var(--good);}
+.cd-chip.guokao .cd-value{color:var(--warn);}
+.cd-chip.news .cd-value{color:var(--accent);}
+
+/* Card */
+.card{background:var(--card);border-radius:var(--radius);padding:16px 16px 14px;margin-top:14px;
+  box-shadow:var(--shadow);border:1px solid var(--line);}
+.card h2{margin:0 0 12px;font-size:16.5px;font-weight:800;display:flex;align-items:center;gap:8px;}
+.card h2 .em{font-size:19px;}
+
+/* Weather */
+.wx{display:flex;align-items:center;gap:14px;}
+.wx .ico{font-size:46px;line-height:1;}
+.wx .temp{font-size:38px;font-weight:800;color:var(--accent);}
+.wx .temp small{font-size:16px;color:var(--sub);font-weight:600;}
+.wx .cond{font-size:14px;color:var(--sub);}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;margin-top:12px;font-size:13.5px;}
+.grid .k{color:var(--sub);}
+.grid .v{font-weight:600;}
+.alert{margin-top:12px;background:#fff4e6;border-left:4px solid var(--warn);color:#9a5a16;
+  padding:8px 11px;border-radius:10px;font-size:13px;font-weight:600;}
+
+/* Tea */
+.tea-day{background:linear-gradient(135deg,#fff9f0,#fff3e0);border:1px solid #f0e2d2;border-radius:14px;padding:13px 14px;}
+.tea-night{background:linear-gradient(135deg,#1a2a44,#2a3a5c);border:1px solid #3a4a6c;border-radius:14px;padding:13px 14px;margin-top:11px;color:#d8e0f0;}
+.tea-night .tea-title{color:var(--moon);}
+.tea-night .tea-desc{color:#a0a8c0;}
+.tea-night .pill{background:rgba(200,208,232,.15);color:#c8d0e8;}
+.tea-title{font-weight:800;font-size:14.5px;display:flex;align-items:center;gap:6px;}
+.tea-desc{font-size:12.5px;color:var(--sub);margin:4px 0 8px;}
+.tea-brew{font-size:12px;color:var(--sub);margin-top:8px;line-height:1.6;}
+.tea-night .tea-brew{color:#8890a8;}
+.pill{display:inline-block;background:#fff4e6;color:#a85d1f;font-weight:700;font-size:12.5px;
+  padding:5px 10px;border-radius:10px;margin:0 6px 6px 0;}
+
+/* News 7 elements */
+.news-full{margin-top:14px;}
+.news-sec{background:var(--card);border-radius:var(--radius);padding:16px 16px 14px;margin-top:14px;
+  box-shadow:var(--shadow);border:1px solid var(--line);}
+.news-sec-hdr{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+.news-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.news-sec-title{font-size:15.5px;font-weight:800;}
+.news-item2{background:#fdf8f1;border:1px solid var(--line);border-radius:13px;padding:11px 12px;margin-bottom:9px;}
+.news-item2:last-child{margin-bottom:0;}
+.news-h2{font-weight:700;font-size:14px;margin:0 0 4px;line-height:1.45;}
+.news-s2{font-size:12.5px;color:var(--sub);line-height:1.5;margin-bottom:6px;}
+.news-a2{display:inline-block;font-size:12px;color:var(--blue);text-decoration:none;font-weight:600;}
+
+/* Schedule / Study */
+.row{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13.5px;}
+.row:last-child{border-bottom:0;}
+.row .rk{color:var(--sub);white-space:nowrap;}
+.row .rv{font-weight:600;text-align:right;}
+.sched{display:flex;flex-direction:column;gap:8px;}
+.sched .blk{display:flex;align-items:center;gap:10px;background:#fdf8f1;border-radius:12px;padding:9px 11px;}
+.sched .time{font-weight:800;font-size:13px;color:var(--accent);min-width:84px;}
+.sched .what{flex:1;font-size:13px;}
+.sched .dur{font-size:11.5px;color:var(--sub);background:#fff;border:1px solid var(--line);border-radius:999px;padding:2px 8px;}
+.note{margin-top:10px;font-size:12.5px;color:var(--sub);background:#f6f8f3;border-left:3px solid var(--good);
+  padding:7px 10px;border-radius:9px;}
+
+/* Meals */
+.meals h3{font-size:13.5px;margin:12px 0 5px;color:var(--accent);}
+.meals ul{margin:0;padding-left:18px;font-size:13px;color:var(--ink);}
+.meals ul li{margin:3px 0;}
+
+/* Countdown detail */
+.cd{display:flex;flex-direction:column;gap:8px;}
+.cd .item{display:flex;align-items:center;justify-content:space-between;background:#fdf8f1;border-radius:12px;padding:9px 12px;}
+.cd .name{font-size:13.5px;font-weight:600;}
+.cd .date{font-size:11.5px;color:var(--sub);}
+.cd .days{font-size:13px;font-weight:800;padding:3px 11px;border-radius:999px;white-space:nowrap;}
+.d-ok{background:#eaf6ee;color:var(--good);}
+.d-bad{background:#fdeaea;color:var(--bad);}
+.d-warn{background:#fff4e6;color:var(--warn);}
+.d-today{background:#e8f0ff;color:var(--blue);}
+
+/* Todo */
+.todo{display:flex;flex-direction:column;gap:9px;}
+.todo label{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;cursor:pointer;
+  background:#fdf8f1;border-radius:12px;padding:10px 12px;transition:.15s;}
+.todo label:active{transform:scale(.99);}
+.todo input{appearance:none;-webkit-appearance:none;width:19px;height:19px;border:2px solid var(--accent);
+  border-radius:6px;margin-top:1px;flex-shrink:0;position:relative;cursor:pointer;}
+.todo input:checked{background:var(--accent);}
+.todo input:checked:after{content:"✓";color:#fff;font-size:13px;position:absolute;top:-1px;left:3px;font-weight:800;}
+.todo label.done{opacity:.55;text-decoration:line-through;}
+
+/* Quote (warm) */
+.quote{background:linear-gradient(135deg,#fff4e6,#ffe9d6);border-radius:var(--radius);padding:16px 18px;margin-top:14px;
+  font-size:14px;line-height:1.7;color:#7a4a22;font-style:italic;border:1px solid var(--line);}
+.quote b{color:var(--accent);font-style:normal;}
+
+/* ===== Divider ===== */
+.divider{margin:28px 0 20px;text-align:center;position:relative;}
+.divider:before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent);}
+.divider span{position:relative;background:linear-gradient(135deg,#fff3e0,#ffe9d6);padding:6px 20px;border-radius:999px;
+  font-size:13px;font-weight:700;color:var(--accent);border:1px solid var(--line);}
+
+/* ===== Part B: 深色调每日新闻8版块 ===== */
+.dark-section-full{margin-top:0;}
+.dark-wrap{background:linear-gradient(160deg,#0d1b2a 0%,#1a1a2e 50%,#16213e 100%);border-radius:20px;padding:16px;margin-top:14px;}
+.dark-header{background:linear-gradient(135deg,var(--daccent),#c23152);border-radius:16px;padding:18px;position:relative;overflow:hidden;}
+.dark-header:after{content:"📰";position:absolute;right:10px;top:5px;font-size:60px;opacity:.12;}
+.dark-header h2{margin:0;font-size:20px;font-weight:800;color:#fff;}
+.dark-header .d-tags{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px;}
+.dark-header .d-tags span{background:rgba(255,255,255,.15);padding:2px 9px;border-radius:999px;font-size:11.5px;color:#fff;}
+
+.dark-summary{background:var(--dcard);border-radius:12px;padding:12px 14px;margin-top:12px;border:1px solid rgba(255,255,255,.06);}
+.dark-summary h3{margin:0 0 6px;font-size:14px;color:var(--dgold);}
+.dark-summary .kw{display:flex;flex-wrap:wrap;gap:5px;}
+.dark-summary .kw span{background:var(--dcard2);color:var(--blue);font-size:11.5px;padding:3px 9px;border-radius:8px;font-weight:600;}
+
+.d-section{background:var(--dcard);border-radius:14px;padding:14px;margin-top:12px;border:1px solid rgba(255,255,255,.06);}
+.d-section h3{margin:0 0 12px;font-size:16px;font-weight:800;display:flex;align-items:center;gap:8px;color:#e0e0e0;}
+.d-section h3 .ddot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.d-section h3 .badge{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:6px;margin-left:auto;}
+
+.d-news-item{background:rgba(255,255,255,.04);border-radius:10px;padding:10px 12px;margin-bottom:8px;border:1px solid rgba(255,255,255,.04);}
+.d-news-item:last-child{margin-bottom:0;}
+.d-news-title{font-weight:700;font-size:13.5px;margin:0 0 3px;color:#e0e0e0;line-height:1.45;}
+.d-news-snippet{font-size:12px;color:var(--dsub);line-height:1.5;margin-bottom:5px;}
+.d-news-link{display:inline-block;font-size:11.5px;color:var(--blue);text-decoration:none;font-weight:600;}
+
+.d-sub-block{margin-bottom:14px;}
+.d-sub-block:last-child{margin-bottom:0;}
+.d-sub-title{font-size:13.5px;font-weight:700;margin:0 0 8px;color:var(--dgold);display:flex;align-items:center;gap:6px;}
+
+/* Horoscope */
+.horoscope{background:linear-gradient(135deg,rgba(155,89,182,.15),rgba(74,143,214,.1));border-radius:12px;padding:14px;border:1px solid rgba(155,89,182,.2);}
+.horoscope .sign{font-size:28px;}
+.horoscope .h-name{font-size:15px;font-weight:800;color:var(--dpurple);}
+.horoscope .h-rating{font-size:13px;color:var(--dgold);margin:4px 0;}
+.horoscope .h-desc{font-size:12.5px;color:#c0c8d8;line-height:1.6;margin-top:6px;}
+.horoscope .h-detail{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:8px;font-size:12px;}
+.horoscope .h-detail .k{color:var(--dsub);}
+.horoscope .h-detail .v{color:#c0c8d8;font-weight:600;}
+
+/* Dashboard */
+.dash{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.dash-item{background:rgba(255,255,255,.04);border-radius:10px;padding:12px;text-align:center;border:1px solid rgba(255,255,255,.06);}
+.dash-item .d-label{font-size:11px;color:var(--dsub);margin-bottom:3px;}
+.dash-item .d-value{font-size:24px;font-weight:800;}
+.dash-item .d-unit{font-size:12px;color:var(--dsub);margin-left:2px;}
+.dash-item .d-sub{font-size:10.5px;color:var(--dsub);margin-top:3px;}
+.progress-bar{height:5px;background:rgba(255,255,255,.08);border-radius:999px;margin-top:6px;overflow:hidden;}
+.progress-fill{height:100%;border-radius:999px;}
+
+/* Knowledge */
+.knowledge{background:linear-gradient(135deg,rgba(233,69,96,.08),rgba(245,166,35,.08));border-radius:12px;padding:14px;border:1px solid rgba(233,69,96,.15);}
+.knowledge h3{margin:0 0 8px;font-size:15px;color:var(--daccent);}
+.knowledge p{margin:0 0 6px;font-size:13px;color:#c0c8d8;line-height:1.7;}
+.knowledge .tip{background:rgba(245,166,35,.1);border-left:3px solid var(--dgold);padding:7px 10px;border-radius:8px;font-size:12.5px;color:#d0c8b8;margin-top:8px;}
+
+/* Message */
+.message{background:linear-gradient(135deg,rgba(58,166,87,.1),rgba(74,143,214,.1));border-radius:12px;padding:16px;text-align:center;border:1px solid rgba(58,166,87,.15);}
+.message p{margin:0 0 6px;font-size:14px;line-height:1.7;color:#c0d0c0;}
+.message .quote{font-size:13.5px;color:var(--dgold);font-style:italic;margin-top:8px;background:none;border:none;padding:0;}
+
+.foot{text-align:center;color:var(--sub);font-size:11.5px;margin-top:18px;line-height:1.6;}
+.d-foot{text-align:center;color:var(--dsub);font-size:11.5px;margin-top:14px;padding-bottom:10px;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ========== PART A: 晨间生活（暖色调） ========== -->
+
+  <!-- 1. Hero -->
+  <div class="hero">
+    <h1>☀️ 泰格晨间融合</h1>
+    <div class="meta">2026年8月23日 · 星期日<br>农历丙午年七月十一</div>
+    <span class="tag">处暑第1天 · 末伏收官出伏日 · MPA第4天</span>
+  </div>
+
+  <!-- 2. Countdown bar -->
+  <div class="cd-bar">
+    <div class="cd-chip mpa"><div class="cd-label">MPA 联考</div><div class="cd-value">126<span class="cd-unit">天</span></div></div>
+    <div class="cd-chip guokao"><div class="cd-label">国考</div><div class="cd-value">98<span class="cd-unit">天</span></div></div>
+    <div class="cd-chip news"><div class="cd-label">今日采集</div><div class="cd-value">15<span class="cd-unit">条</span></div></div>
+  </div>
+
+  <!-- 3. Weather -->
+  <div class="card">
+    <h2><span class="em">🌤️</span>今日天气 · 六安</h2>
+    <div class="wx">
+      <div class="ico">🌧️</div>
+      <div>
+        <div class="temp">26<small>~32℃</small></div>
+        <div class="cond">阴转小雨 · 午后有雨</div>
+      </div>
+    </div>
+    <div class="grid">
+      <div><span class="k">风力：</span><span class="v">东北风 3-4级</span></div>
+      <div><span class="k">日出/日落：</span><span class="v">05:43 / 18:49</span></div>
+      <div><span class="k">空气质量：</span><span class="v">优 AQI≈12</span></div>
+      <div><span class="k">湿度：</span><span class="v">98% · 体感闷热</span></div>
+    </div>
+    <div class="alert">⚠️ 处暑出伏日湿度极高+午后有雨，防暑祛湿不可松懈；出门带伞，运动选清晨或室内。出伏后注意防秋燥。</div>
+  </div>
+
+  <!-- 4. Tea -->
+  <div class="card tea">
+    <h2><span class="em">🍵</span>今日茶饮 · 处暑出伏双煮方</h2>
+    <div class="tea-day">
+      <div class="tea-title">☀️ 白天炭炉煮方 · 处暑理气润肺茶</div>
+      <div class="tea-desc">处暑出伏，暑湿未尽而秋燥渐起。日间需理气健脾、补气消食、润肺防燥（14:00前）</div>
+      <span class="pill">老白茶 3g</span><span class="pill">党参 2g</span><span class="pill">陈皮 2g</span><span class="pill">山楂片 3g</span><span class="pill">甘草 1片</span>
+      <div class="tea-brew">550ml冷水煮开转小火10分钟，关火焖2分钟，可续水煮第二遍。老白茶性平做底，党参补气不燥（出伏后脾胃调理首选），陈皮理气润燥，山楂消食降脂，甘草调和。</div>
+    </div>
+    <div class="tea-night">
+      <div class="tea-title">🌙 黑夜炭炉煮方 · 处暑银耳莲子安神茶</div>
+      <div class="tea-desc">夜间需润燥安神、清心健脾。无咖啡因/茶多酚纯养生饮，适合睡前1小时（14:00后可用）</div>
+      <span class="pill">干银耳 5g</span><span class="pill">干莲子 5g</span><span class="pill">莲子心 1g</span><span class="pill">南杏仁 3g</span><span class="pill">甘草 1片</span>
+      <div class="tea-brew">550ml冷水煮开转小火10分钟，关火焖3分钟。干银耳提前泡发5分钟撕碎。银耳润燥做主料（处暑润肺首选），干莲子安神健脾，莲子心清心火（少量），南杏仁润肺防秋燥。</div>
+    </div>
+    <div style="margin-top:12px;font-size:13px;line-height:1.7;">
+      <span class="pill">全天代茶饮：干冬瓜皮 5g + 干荷叶 3g</span>
+      <span style="color:var(--sub);font-size:12.5px;">（处暑减量版，辅助减重）</span>
+    </div>
+  </div>
+
+  <!-- 5. News 7 elements -->
+  <div class="news-full">
+    <div class="news-sec">
+      <div class="news-sec-hdr">
+        <div class="news-dot" style="background:var(--c-sleep)"></div>
+        <div class="news-sec-title">01 睡眠 · Sleep</div>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">慢性失眠与认知衰退关联达88%</div>
+        <div class="news-s2">萨尔瓦多社会保险研究所研究发现，88%的慢性失眠患者出现轻度认知衰退，失眠不仅是睡眠问题，更是大脑健康预警信号。</div>
+        <a class="news-a2" href="https://www.infobae.com/el-salvador/2026/08/22/un-estudio-del-seguro-social-vincula-el-insomnio-cronico-con-deterioro-cognitivo-en-el-88-de-pacientes-en-el-salvador/" target="_blank" rel="noopener">🔗 Infobae</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">23点后入睡恰好错过"睡眠福利"，40岁后想补都补不回</div>
+        <div class="news-s2">23点是褪黑素分泌重要节点，错过23点至凌晨3点深度睡眠窗口影响身体修复；40岁后褪黑素分泌下降。</div>
+        <a class="news-a2" href="http://m.toutiao.com/group/7676464878382563883/" target="_blank" rel="noopener">🔗 头条</a>
+      </div>
+    </div>
+
+    <div class="news-sec">
+      <div class="news-sec-hdr">
+        <div class="news-dot" style="background:var(--c-eat)"></div>
+        <div class="news-sec-title">02 饮食 · Eat</div>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">出伏别乱"冻"，调作息防秋燥告别"秋乏"</div>
+        <div class="news-s2">出伏后暑湿未尽而秋燥渐起，饮食宜增酸甘少辛辣，多食银耳、百合、莲藕等润燥之品。</div>
+        <a class="news-a2" href="http://news.enorth.com.cn/system/2026/08/23/059684791.shtml" target="_blank" rel="noopener">🔗 北方网</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">处暑养生：暑退秋渐至，润燥护脾调情志</div>
+        <div class="news-s2">国家医保局发布处暑养生指南：银耳、百合、莲藕、雪梨等清润食材养肺津，推荐百合麦冬茶。</div>
+        <a class="news-a2" href="https://www.nhsa.gov.cn/art/2026/8/22/art_14_21873.html" target="_blank" rel="noopener">🔗 国家医保局</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">处暑逢末伏收官，迎来晚出伏</div>
+        <div class="news-s2">2026年处暑恰逢末伏最后一天，40天三伏天落幕。出伏后各地推崇老鸭汤、杂粮粥及梨、银耳等清心润燥食物。</div>
+        <a class="news-a2" href="https://app.xinhuanet.com/news/article.html?articleId=20260822089afa6725f14abb96bc8dc4f1a19412" target="_blank" rel="noopener">🔗 新华网</a>
+      </div>
+    </div>
+
+    <div class="news-sec">
+      <div class="news-sec-hdr">
+        <div class="news-dot" style="background:var(--c-train)"></div>
+        <div class="news-sec-title">03 训练 · Training</div>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">研究发现运动时释放的一种分子可增强肌肉功能</div>
+        <div class="news-s2">英国利兹大学研究发现运动时释放的L-BAIBA分子有助于增强肌肉力量和耐力，帮助抵御肌肉损伤。</div>
+        <a class="news-a2" href="https://app.xinhuanet.com/news/article.html?articleId=20260822b855ed4d2410408bafee1d94f7e99b25" target="_blank" rel="noopener">🔗 新华网</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">夏日塑身，守住肌肉是关键</div>
+        <div class="news-s2">力量与有氧结合是黄金模式：每周2-3次抗阻训练，搭配游泳快走，选择燕麦红薯等优质碳水。</div>
+        <a class="news-a2" href="https://m.thepaper.cn/newsDetail_forward_33788987" target="_blank" rel="noopener">🔗 澎湃新闻</a>
+      </div>
+    </div>
+
+    <div class="news-sec">
+      <div class="news-sec-hdr">
+        <div class="news-dot" style="background:var(--c-deep)"></div>
+        <div class="news-sec-title">04 深度学习 · DeepLearning</div>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">27、28考研还没择专业？MPA是考公"对口专业"</div>
+        <div class="news-s2">2026年国考约30%岗位明确要求公共管理类专业，重点院校MPA校友资源对体制内发展有显著帮助。</div>
+        <a class="news-a2" href="http://mtoutiao.xdf.cn/kaoyan/202606/15227586.html" target="_blank" rel="noopener">🔗 新东方</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">在职考研：非全日制可报税务系统等热门岗位</div>
+        <div class="news-s2">税务系统招录最多，基层分局基本无全日制限制，MBA/MPA在职考生体制内通道畅通。</div>
+        <a class="news-a2" href="https://kaoyan.eol.cn/zaizhi/article/p7998" target="_blank" rel="noopener">🔗 EOL教育在线</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">2026年度国考报考指南：招录年龄放宽至38岁</div>
+        <div class="news-s2">2026年度国考计划招录3.81万人，报考年龄放宽到38周岁以下，应届硕博研究生放宽到43周岁。</div>
+        <a class="news-a2" href="https://job.ncss.cn/ncss/zt/2026gk.shtml" target="_blank" rel="noopener">🔗 国聘</a>
+      </div>
+    </div>
+
+    <div class="news-sec">
+      <div class="news-sec-hdr">
+        <div class="news-dot" style="background:var(--c-effic)"></div>
+        <div class="news-sec-title">05 高效工作 · EfficientWorking</div>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">AI副业真相：近六成月收入不足800元，稳定过万不到5%</div>
+        <div class="news-s2">闲鱼2026上半年AI服务订单量达981.6万元，同比激增157%，但真正稳定过万的不到5%。</div>
+        <a class="news-a2" href="http://m.toutiao.com/group/7675956238840087103/" target="_blank" rel="noopener">🔗 头条</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">普通人靠AI副业月入过万？7条真实路径别踩坑</div>
+        <div class="news-s2">AI副业从概念验证进入规模化落地期。7条路径包括AI内容创作、无代码开发、智能体、知识付费等。</div>
+        <a class="news-a2" href="https://post.m.smzdm.com/p/al3dl67p/" target="_blank" rel="noopener">🔗 什么值得买</a>
+      </div>
+    </div>
+
+    <div class="news-sec">
+      <div class="news-sec-hdr">
+        <div class="news-dot" style="background:var(--c-enjoy)"></div>
+        <div class="news-sec-title">06 享受生活 · EnjoyYourself</div>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">一线城市45%年轻人"去客厅化"，居住观彻底变了</div>
+        <div class="news-s2">《2026中国家居生活趋势报告》显示，超45%年轻业主选择去客厅化改造，有人改成图书馆。</div>
+        <a class="news-a2" href="https://post.m.smzdm.com/p/am97o8qz/" target="_blank" rel="noopener">🔗 什么值得买</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">六成家庭书房沦为杂物间？看清3个问题再决定装不装</div>
+        <div class="news-s2">书房是否值得投入取决于使用频率：每天居家办公、写作、备考则书房是刚需。</div>
+        <a class="news-a2" href="https://post.m.smzdm.com/p/a3mg55er/" target="_blank" rel="noopener">🔗 什么值得买</a>
+      </div>
+    </div>
+
+    <div class="news-sec">
+      <div class="news-sec-hdr">
+        <div class="news-dot" style="background:var(--c-repeat)"></div>
+        <div class="news-sec-title">07 重复闭环 · Repeat</div>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">蒸馏1000篇公众号文章总结的知识管理方法：让AI替你思考</div>
+        <div class="news-s2">信息过载的本质不是"东西太多"而是"东西找不到"。Obsidian负责存储和链接，AI助手负责处理和生长。</div>
+        <a class="news-a2" href="https://xie.infoq.cn/article/9c5a1bf30dfd5ca3cbad66b38" target="_blank" rel="noopener">🔗 InfoQ</a>
+      </div>
+      <div class="news-item2">
+        <div class="news-h2">如何搭建属于自己的知识库？卡片笔记法+Obsidian强强联合</div>
+        <div class="news-s2">文献笔记记录原文并注明出处，永久笔记是经过思考沉淀的想法。原子化笔记+密集链接=知识网络。</div>
+        <a class="news-a2" href="https://blog.csdn.net/NeverSad_/article/details/151987804" target="_blank" rel="noopener">🔗 CSDN</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Study -->
+  <div class="card">
+    <h2><span class="em">📚</span>今日学习计划 · 周日·数学</h2>
+    <div class="sched">
+      <div class="blk"><div class="time">14:00-17:30</div><div class="what">数学深度学习块（应用题+几何模块）</div><div class="dur">3.5h</div></div>
+      <div class="blk"><div class="time">18:30-22:00</div><div class="what">数学巩固+错题（含20:00书法30min换脑）</div><div class="dur">3.5h</div></div>
+    </div>
+    <div class="note">📌 今日重点：处暑出伏日，精力充沛。数学应用题条件抽取训练，配错题本即时复盘。距MPA初试126天，基础期最后8天。</div>
+  </div>
+
+  <!-- 7. Fitness -->
+  <div class="card">
+    <h2><span class="em">🏋️</span>今日健身 · 周日·肩部训练</h2>
+    <div class="row"><span class="rk">时间</span><span class="rv">5:25-7:00（95min）</span></div>
+    <div class="row"><span class="rk">部位</span><span class="rv">肩部（推举+侧平举+前平举+耸肩）</span></div>
+    <div class="row"><span class="rk">场地</span><span class="rv">冲击Ultra健身房(步行5分钟)</span></div>
+    <div class="row"><span class="rk">补水</span><span class="rv">运动中途补电解质水</span></div>
+    <div class="note">💡 湿度98%闷热+午后有雨，晨练优先。组间休息加长，注意补水防中暑。出伏后逐步增加训练强度。</div>
+  </div>
+
+  <!-- 8. Meals -->
+  <div class="card meals">
+    <h2><span class="em">🍽️</span>三餐建议</h2>
+    <h3>早餐 · 西海食堂</h3>
+    <ul><li>水煮蛋2个 + 豆浆/牛奶 + 适量碳水(馒头/杂粮粥)</li><li>搭配少量蔬菜</li></ul>
+    <h3>午餐 · 西海食堂</h3>
+    <ul><li>清蒸鱼/白切鸡/瘦牛肉(选一) + 2份时蔬 + 小份米饭</li><li>原则：七分饱，少油少盐</li></ul>
+    <h3>晚餐 · 在家做（空气炸锅一锅出）</h3>
+    <ul><li>方案A：鸡胸肉+西兰花+红薯块</li><li>方案B：龙利鱼+金针菇+柠檬片</li><li>方案C：牛肉粒+彩椒+土豆丁</li></ul>
+  </div>
+
+  <!-- 9. Countdown detail -->
+  <div class="card">
+    <h2><span class="em">⏰</span>关键倒计时</h2>
+    <div class="cd">
+      <div class="item"><div><div class="name">三伏出伏</div><div class="date">08-23</div></div><div class="days d-today">今天！</div></div>
+      <div class="item"><div><div class="name">MPA基础期检查点</div><div class="date">08-31</div></div><div class="days d-warn">8天</div></div>
+      <div class="item"><div><div class="name">国考报名</div><div class="date">10-15</div></div><div class="days d-ok">53天</div></div>
+      <div class="item"><div><div class="name">MPA报名(研招网)</div><div class="date">10-20</div></div><div class="days d-ok">58天</div></div>
+      <div class="item"><div><div class="name">MPA确认</div><div class="date">11-02</div></div><div class="days d-ok">71天</div></div>
+      <div class="item"><div><div class="name">国考笔试</div><div class="date">11-29</div></div><div class="days d-ok">98天</div></div>
+      <div class="item"><div><div class="name">MPA初试</div><div class="date">12-27</div></div><div class="days d-ok">126天</div></div>
+    </div>
+  </div>
+
+  <!-- 10. Todo -->
+  <div class="card">
+    <h2><span class="em">✅</span>今日待办</h2>
+    <div class="todo" id="todo">
+      <label><input type="checkbox" data-i="0"><span>5:25 健身房肩部训练（95min）</span></label>
+      <label><input type="checkbox" data-i="1"><span>14:00 数学深度学习（3.5h）</span></label>
+      <label><input type="checkbox" data-i="2"><span>18:30 数学巩固+错题复盘</span></label>
+      <label><input type="checkbox" data-i="3"><span>20:00 硬笔书法30min（换脑休息）</span></label>
+      <label><input type="checkbox" data-i="4"><span>墨墨背单词打卡</span></label>
+      <label><input type="checkbox" data-i="5"><span>🌅 白天煮"处暑理气润肺茶"（14:00前）</span></label>
+      <label><input type="checkbox" data-i="6"><span>🌙 睡前煮"银耳莲子安神茶"（无茶多酚）</span></label>
+      <label><input type="checkbox" data-i="7"><span>冬瓜皮+荷叶全天代茶饮</span></label>
+      <label><input type="checkbox" data-i="8"><span>23:00前入睡</span></label>
+    </div>
+  </div>
+
+  <!-- 11. Nudge -->
+  <div class="card" style="background:linear-gradient(135deg,#eaf6ee,#f0f8f4);border-color:#c8e6cc;">
+    <h2><span class="em">📱</span>今日 Nudge 推送</h2>
+    <div style="font-size:14px;line-height:1.7;">
+      <b style="color:var(--accent);">今日最重要的一件事：</b>管综数学3.5h深度学习——处暑出伏双至日，把每道应用题条件扒干净<br>
+      <b style="color:var(--accent);">MPA倒计时：126天</b> · 国考倒计时：98天<br>
+      <span style="color:var(--sub);font-style:italic;">"每天动一动，减重是持久战"</span>
+    </div>
+  </div>
+
+  <!-- 12. Philosophy Quote (warm) -->
+  <div class="quote">
+    处暑至，暑气止。今日恰逢末伏收官出伏日，40天三伏天正式落幕——六安阴转小雨26至32度，湿度98%仍闷热，但秋意已在风里。出伏后饮食从一味清热转为祛湿不寒凉、润燥不滋腻；白天煮一炉处暑理气润肺茶，老白茶做底、党参补气不燥、陈皮理气润燥、山楂消食、甘草调和；入夜换上银耳莲子安神茶——干银耳润燥做主料、莲子心清心火、南杏仁润肺防秋燥。距MPA初试126天，基础期最后8天冲刺——数学排满7小时，把每道应用题的条件扒干净，才是真会。<b>每天动一动，减重是持久战</b>🐯
+  </div>
+
+  <!-- ========== DIVIDER ========== -->
+  <div class="divider section-full">
+    <span>📰 每日新闻8版块 · 深度资讯</span>
+  </div>
+
+  <!-- ========== PART B: 每日新闻8版块（深色调） ========== -->
+  <div class="dark-section-full section-full">
+    <div class="dark-wrap">
+
+      <!-- Dark Header -->
+      <div class="dark-header">
+        <h2>📰 每日新闻8版块</h2>
+        <div class="d-tags">
+          <span>处暑出伏</span><span>AI降价战</span><span>消费贷贴息</span><span>山洪预警</span>
+          <span>iOS 27 Siri AI</span><span>DeepSeek V4</span><span>巨蟹座运势</span>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="dark-summary">
+        <h3>📋 今日要点摘要</h3>
+        <div class="kw">
+          <span>处暑出伏</span><span>AI降价战</span><span>消费贷贴息</span><span>山洪预警</span>
+          <span>iOS 27 Siri AI</span><span>DeepSeek V4</span><span>收纳整理</span><span>巨蟹座运势</span>
+          <span>运动分子L-BAIBA</span><span>慢性炎症</span><span>蛋白质摄入</span>
+        </div>
+      </div>
+
+      <!-- 版块1 - 重点关注 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#e94560"></span>版块1 · 重点关注<span class="badge" style="background:rgba(233,69,96,.15);color:#e94560;">3个子版块</span></h3>
+
+        <div class="d-sub-block">
+          <div class="d-sub-title">♈ 每日运势 · 巨蟹座</div>
+          <div class="horoscope">
+            <div style="display:flex;align-items:center;gap:10px;">
+              <span class="sign">♋</span>
+              <div>
+                <div class="h-name">巨蟹座</div>
+                <div class="h-rating">综合 ★★★☆</div>
+              </div>
+            </div>
+            <div class="h-desc">表现力在线，但消费欲望高涨，务必管住手。事业上可展现能力，部分人可商议合作、规划未来方向。</div>
+            <div class="h-detail">
+              <div><span class="k">事业：</span><span class="v">可展现能力，规划方向</span></div>
+              <div><span class="k">财运：</span><span class="v">购物欲爆棚，暂缓入手</span></div>
+              <div><span class="k">感情：</span><span class="v">适合深度谈心</span></div>
+              <div><span class="k">健康：</span><span class="v">留意肠胃，少吃生冷</span></div>
+            </div>
+            <div style="margin-top:6px;font-size:11.5px;color:var(--dsub);">🔗 <a class="d-news-link" href="http://m.toutiao.com/group/7677012205853999668/" target="_blank" rel="noopener">来源：十二星座运势</a></div>
+          </div>
+        </div>
+
+        <div class="d-sub-block">
+          <div class="d-sub-title">💪 男性健康（3生理+2心理）</div>
+          <div class="d-news-item">
+            <div class="d-news-title">1. 总觉得累的人，可能是身体在慢性发炎</div>
+            <div class="d-news-snippet">英国《年龄与衰老》杂志研究显示，持续疲惫感可能和体内炎症有关。慢性炎症对机体产生长期刺激，增加心血管和慢性疾病风险。</div>
+            <a class="d-news-link" href="http://m.toutiao.com/group/7676293187959964206/" target="_blank" rel="noopener">🔗 环球时报</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">2. 8个月身体年轻近15岁！中年教授拿自己实验</div>
+            <div class="d-news-snippet">新加坡国立大学何教授通过调整饮食、运动、睡眠等4个方面，8个月让身体年龄年轻近15岁。</div>
+            <a class="d-news-link" href="http://m.toutiao.com/group/7675738464146473487/" target="_blank" rel="noopener">🔗 光明网</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">3. 补充蛋白质，不是吃不够，就是吃不对</div>
+            <div class="d-news-snippet">18-64岁男性每日蛋白质推荐65克，应坚持日常饮食为主，根据年龄、身体状态精准把控。</div>
+            <a class="d-news-link" href="http://m.toutiao.com/group/7676562512283746867/" target="_blank" rel="noopener">🔗 光明网</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">4. 猝死为何发生在年轻男性身上？心理压力是诱因</div>
+            <div class="d-news-snippet">年轻男性患冠心病风险远大于女性，长期大量吸烟、酗酒、心理压力过大是重要诱因。</div>
+            <a class="d-news-link" href="https://wsjkw.sh.gov.cn/xnxgjb/20260410/ef1fa079909d44cba835ba8a477acbf2.html" target="_blank" rel="noopener">🔗 上海市卫健委</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">5. 慢性失眠与认知衰退关联达88%，心理健康不容忽视</div>
+            <div class="d-news-snippet">88%慢性失眠患者出现轻度认知衰退。失眠不仅是睡眠问题，更是心理健康预警信号。</div>
+            <a class="d-news-link" href="https://www.infobae.com/el-salvador/2026/08/22/un-estudio-del-seguro-social-vincula-el-insomnio-cronico-con-deterioro-cognitivo-en-el-88-de-pacientes-en-el-salvador/" target="_blank" rel="noopener">🔗 Infobae</a>
+          </div>
+        </div>
+
+        <div class="d-sub-block">
+          <div class="d-sub-title">🏠 家庭整理</div>
+          <div class="d-news-item">
+            <div class="d-news-title">1. 越收越乱？你可能从第一步就做错了</div>
+            <div class="d-news-snippet">正确顺序是先清空→分类筛选→测量空间→最后选工具。收纳工具为物品服务，不是反过来。</div>
+            <a class="d-news-link" href="https://post.m.smzdm.com/p/awwr4rkg/" target="_blank" rel="noopener">🔗 什么值得买</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">2. 普通家庭整洁的3条零成本铁律</div>
+            <div class="d-news-snippet">进一出一、固定归位、每日复位。核心不是买收纳盒，而是建立三条不花钱也能做到的铁律。</div>
+            <a class="d-news-link" href="https://post.m.smzdm.com/p/ak80874k/" target="_blank" rel="noopener">🔗 什么值得买</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">3. 家务越做越累的真相：80%家庭踩了整理雷区</div>
+            <div class="d-news-snippet">不一次性购买大量收纳盒，收纳不要太满，预留20%空余空间。取放步骤变多的工具是无效的。</div>
+            <a class="d-news-link" href="https://post.m.smzdm.com/p/a6zo2npg/" target="_blank" rel="noopener">🔗 什么值得买</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">4. 每天5分钟，轻松维持家里长期整洁</div>
+            <div class="d-news-snippet">重点不是完美而是"复位"。晚间15分钟"归零"行动：清空台面、归位物品、挂出次日衣物。</div>
+            <a class="d-news-link" href="https://post.m.smzdm.com/p/a95xwx7o/" target="_blank" rel="noopener">🔗 什么值得买</a>
+          </div>
+          <div class="d-news-item">
+            <div class="d-news-title">5. 10个居家微习惯，不用大扫除家里长期整洁</div>
+            <div class="d-news-snippet">2025-2026整理趋势从购买收纳盒转向"先减量、再定位、后习惯"。储物空间只填七成。</div>
+            <a class="d-news-link" href="https://post.m.smzdm.com/p/aggkxp66/" target="_blank" rel="noopener">🔗 什么值得买</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 版块2 - 国际新闻 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#4a8fd6"></span>版块2 · 国际新闻<span class="badge" style="background:rgba(74,143,214,.15);color:#4a8fd6;">5条</span></h3>
+        <div class="d-news-item">
+          <div class="d-news-title">1. 伊朗官员：参与对伊经济限制的国家被视为敌人</div>
+          <div class="d-news-snippet">伊朗最高国家安全委员会秘书表示，任何参与对伊经济限制的国家都被视为敌人。</div>
+          <a class="d-news-link" href="https://3w.huanqiu.com/a/24d596/4SuIlnMmuqS" target="_blank" rel="noopener">🔗 环球网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">2. 加拿大宣布对美等额反制关税9月8日生效</div>
+          <div class="d-news-snippet">加拿大总理卡尼宣布暂停与美国的贸易谈判并召回谈判代表，对美等额反制关税9月8日生效。</div>
+          <a class="d-news-link" href="https://www.xinhuanet.com.cn/world/jsxw/index.html" target="_blank" rel="noopener">🔗 新华网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">3. 普京：俄军加大力度打击乌克兰境内企业</div>
+          <div class="d-news-snippet">普京表示俄军将加大对乌克兰境内工业企业的打击力度。黑海一艘土耳其商船遇袭。</div>
+          <a class="d-news-link" href="https://www.xinhuanet.com.cn/world/jsxw/index.html" target="_blank" rel="noopener">🔗 新华网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">4. 以色列在叙利亚南部开火，叙方强烈谴责</div>
+          <div class="d-news-snippet">以色列国防军称向叙利亚南部一名武装人员开火。叙利亚强烈谴责以色列无人机空袭。</div>
+          <a class="d-news-link" href="http://www.china.org.cn/world/Off_the_Wire/2026-08/23/content_118660179.shtml" target="_blank" rel="noopener">🔗 中国网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">5. 泰南三府发生爆炸纵火事件，实施夜间宵禁</div>
+          <div class="d-news-snippet">泰国南部三府接连发生爆炸纵火事件，当地实施夜间宵禁。英国交通事故造成7人死亡。</div>
+          <a class="d-news-link" href="https://www.xinhuanet.com.cn/world/jsxw/index.html" target="_blank" rel="noopener">🔗 新华网</a>
+        </div>
+      </div>
+
+      <!-- 版块3 - 国内新闻 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#3aa657"></span>版块3 · 国内新闻<span class="badge" style="background:rgba(58,166,87,.15);color:#3aa657;">5条</span></h3>
+        <div class="d-news-item">
+          <div class="d-news-title">1. 两部门发布红色山洪灾害气象预警</div>
+          <div class="d-news-snippet">水利部和中国气象局联合发布红色山洪灾害气象预警，四川、湖南、江西、云南等地多分散性强降水。</div>
+          <a class="d-news-link" href="http://jx.people.com.cn/n2/2026/0823/c186330-41675189.html" target="_blank" rel="noopener">🔗 人民网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">2. 六大银行更新消费贷贴息细则，上限升至5000元</div>
+          <div class="d-news-snippet">六大国有银行正式执行消费贴息新规，个人消费贷、信用卡分期年度贴息上限由3000元上调至5000元。</div>
+          <a class="d-news-link" href="http://m.toutiao.com/group/7677024300922094103/" target="_blank" rel="noopener">🔗 头条</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">3. 上海警方通报编造"高价饮料"不实信息案</div>
+          <div class="d-news-snippet">沈某某(男26岁)为博取关注，编造"陕西南路某饭店低价饮料以398元出售"的不实信息，被行拘。</div>
+          <a class="d-news-link" href="http://m.toutiao.com/group/7677013133516374564/" target="_blank" rel="noopener">🔗 川观新闻</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">4. 2026世界机器人大会开幕，人形机器人亮相</div>
+          <div class="d-news-snippet">2026世界机器人大会展厅内，优必选多台工业人形机器人亮相。前7个月中国外贸进口同比增长22%。</div>
+          <a class="d-news-link" href="https://news.cnr.cn/kuaixun/" target="_blank" rel="noopener">🔗 央广网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">5. 广西启动国家地质灾害四级应急响应</div>
+          <div class="d-news-snippet">应急管理部针对广西启动国家地质灾害四级应急响应。水利部启动针对广东、广西、海南的洪水防御Ⅳ级响应。</div>
+          <a class="d-news-link" href="http://m.toutiao.com/group/7677013133516374564/" target="_blank" rel="noopener">🔗 川观新闻</a>
+        </div>
+      </div>
+
+      <!-- 版块4 - 苹果生态 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#f5a623"></span>版块4 · 苹果生态<span class="badge" style="background:rgba(245,166,35,.15);color:#f5a623;">5条</span></h3>
+        <div class="d-news-item">
+          <div class="d-news-title">1. iOS 27预览：全新Siri AI升级，支持自然对话</div>
+          <div class="d-news-snippet">iOS 27将于今秋发布，Siri AI全面升级：自然对话、AI照片编辑、相机Siri模式、儿童安全改进。</div>
+          <a class="d-news-link" href="https://www.apple.com/os/ios/" target="_blank" rel="noopener">🔗 Apple官网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">2. M6芯片+均热板+触控屏，苹果史上最强MacBook Pro</div>
+          <div class="d-news-snippet">下一代MacBook Pro将搭载M6芯片（台积电2nm工艺），维持1999美元起售价。</div>
+          <a class="d-news-link" href="https://tech.ifeng.com/c/8vo8SDO1DPl" target="_blank" rel="noopener">🔗 凤凰网</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">3. AirPods Max 2降至$429，M4 iPad Air降$100</div>
+          <div class="d-news-snippet">Best Buy 60周年大促，AirPods Max 2降至429美元，M4 iPad Air降价100美元。</div>
+          <a class="d-news-link" href="https://www.macrumors.com/" target="_blank" rel="noopener">🔗 MacRumors</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">4. iOS 26.4和iPadOS 26.4发布，新增表情和功能</div>
+          <div class="d-news-snippet">苹果发布iOS 26.4和iPadOS 26.4更新，新增表情符号，用户可在请求时说出心情、感受、场合。</div>
+          <a class="d-news-link" href="https://www.bonsein.com/yz/kopglqgc.html" target="_blank" rel="noopener">🔗 Apple支持</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">5. Apple安全更新：旧设备仍获支持</div>
+          <div class="d-news-snippet">苹果为iPhone 6s到iPhone X等旧设备持续发布安全更新，体现长期安全承诺。</div>
+          <a class="d-news-link" href="https://support.apple.com/en-mt/100100" target="_blank" rel="noopener">🔗 Apple安全发布</a>
+        </div>
+      </div>
+
+      <!-- 版块5 - AI前沿 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#9b59b6"></span>版块5 · AI前沿<span class="badge" style="background:rgba(155,89,182,.15);color:#9b59b6;">5条</span></h3>
+        <div class="d-news-item">
+          <div class="d-news-title">1. OpenAI下调GPT-5.6价格超20%，AI价格战白热化</div>
+          <div class="d-news-snippet">多家美国AI公司下调大模型使用价格。OpenAI将GPT-5.6 Sol模型基准价格下调逾20%。</div>
+          <a class="d-news-link" href="https://m.bjnews.com.cn/detail/1787441749129630.html" target="_blank" rel="noopener">🔗 新京报</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">2. DeepSeek V4-Pro商用，强化Agent智能体能力</div>
+          <div class="d-news-snippet">DeepSeek V4-Pro正式面向全量用户商用，重点强化Agent执行与长任务处理能力。</div>
+          <a class="d-news-link" href="https://damodev.csdn.net/6a89671d10ee7a33f29db865.html" target="_blank" rel="noopener">🔗 DAMO开发者</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">3. Qwen3.8-Max开源2.4T参数，史上最大开源权重发布</div>
+          <div class="d-news-snippet">通义千问发布Qwen3.8-Max，参数量达2.4万亿，成为有史以来最大的开源权重模型发布。</div>
+          <a class="d-news-link" href="https://local-ai-zone.github.io/blog/ai-updates-august-2026.html" target="_blank" rel="noopener">🔗 Local AI Zone</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">4. 神秘匿名模型OX Alpha超越GPT-5.6编码能力</div>
+          <div class="d-news-snippet">匿名模型OX Alpha在编码基准测试中超越GPT-5.6，24小时内即获生产环境采用。</div>
+          <a class="d-news-link" href="https://local-ai-zone.github.io/blog/ai-updates-august-2026.html" target="_blank" rel="noopener">🔗 Local AI Zone</a>
+        </div>
+        <div class="d-news-item">
+          <div class="d-news-title">5. HuggingFace发布PRISM文本转动作模型</div>
+          <div class="d-news-snippet">HuggingFace发布PRISM(1.4B)文本转动作模型，能遵循精确指令和动作序列执行。</div>
+          <a class="d-news-link" href="https://www.infoq.cn/aibriefs" target="_blank" rel="noopener">🔗 InfoQ</a>
+        </div>
+      </div>
+
+      <!-- 版块6 - 项目动态 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#e07a3c"></span>版块6 · 项目动态<span class="badge" style="background:rgba(224,122,60,.15);color:#e07a3c;">仪表盘</span></h3>
+        <div class="dash">
+          <div class="dash-item">
+            <div class="d-label">🏋️ 健身（2025.06.03起）</div>
+            <div class="d-value" style="color:#e07a3c">447<span class="d-unit">天</span></div>
+            <div class="d-sub">已坚持1年2个月20天</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:85%;background:#e07a3c;"></div></div>
+          </div>
+          <div class="dash-item">
+            <div class="d-label">🎹 钢琴（2026.08.23起）</div>
+            <div class="d-value" style="color:#f5a623">1<span class="d-unit">次</span></div>
+            <div class="d-sub">今日首次启动！</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:1%;background:#f5a623;"></div></div>
+          </div>
+          <div class="dash-item">
+            <div class="d-label">📝 公考（2026.09.01起）</div>
+            <div class="d-value" style="color:#e94560">9<span class="d-unit">天倒计时</span></div>
+            <div class="d-sub">尚未开始，9月1日启动</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:0%;background:#e94560;"></div></div>
+          </div>
+          <div class="dash-item">
+            <div class="d-label">📚 MPA备考100天（2026.08.20起）</div>
+            <div class="d-value" style="color:#3aa657">4<span class="d-unit">/100天</span></div>
+            <div class="d-sub">进度4%，距MPA初试126天</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:4%;background:#3aa657;"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 版块7 - 知识卡片 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#d96a8a"></span>版块7 · 知识卡片<span class="badge" style="background:rgba(217,106,138,.15);color:#d96a8a;">每日一卡</span></h3>
+        <div class="knowledge">
+          <h3>🫁 处暑出伏后，湿热体质如何科学"润燥不滋腻"</h3>
+          <p>处暑（8月23日）标志着暑气止、秋意生。今日恰逢三伏出伏，40天三伏天正式落幕。但"出伏"不等于"出湿"——六安湿度98%，暑湿未尽而秋燥渐起，处于"湿燥并存"的过渡期。</p>
+          <p>泰格作为<b style="color:#f5a623;">湿热内蕴体质</b>，出伏后调理的核心矛盾是：<b>润燥容易滋腻助湿，祛湿容易伤津助燥</b>。正确思路是"祛湿不寒凉，润燥不滋腻"——</p>
+          <p><b>食材选择原则：</b></p>
+          <p>① 润燥选"清润"不选"滋腻"：银耳、百合、莲藕、雪梨 > 阿胶、熟地、红枣</p>
+          <p>② 祛湿选"淡渗"不选"苦寒"：茯苓、薏米、赤小豆 > 黄连、龙胆草</p>
+          <p>③ 健脾选"平和"不选"温燥"：山药、莲子、芡实 > 人参、干姜</p>
+          <div class="tip">
+            💡 今日炭炉配方完美践行此原则：白天用党参（补气不燥）+陈皮（理气润燥），夜间用银耳（清润不滋腻）+莲子（健脾安神），全天冬瓜皮荷叶水基础线继续祛湿——三轨并行，湿燥同调。
+          </div>
+        </div>
+      </div>
+
+      <!-- 版块8 - 今日寄语 -->
+      <div class="d-section">
+        <h3><span class="ddot" style="background:#5e7ab8"></span>版块8 · 今日寄语<span class="badge" style="background:rgba(94,122,184,.15);color:#5e7ab8;">加油</span></h3>
+        <div class="message">
+          <p>泰格，今天是处暑出伏双至日——40天三伏天正式落幕，你也正式迎来了MPA备考第4天。</p>
+          <p>三伏都熬过来了，126天算什么。每天5:25早起练肩、白天煮一炉处暑理气润肺茶、晚上7小时数学深度学习——这就是你的节奏。</p>
+          <p>健身447天的坚持证明了"可重复的节奏"比"完美的一天"更有力量。今天钢琴第1次开练，公考9天后启动，三条战线即将全部铺开。</p>
+          <p>处暑暑气止，但你的斗志不止。出伏出的是伏天的湿热，不出的是骨子里的韧劲。</p>
+          <div class="quote">"每天动一动，减重是持久战" 🐯</div>
+        </div>
+      </div>
+
+      <div class="d-foot">
+        每日新闻8版块 · 2026-08-23 · WorkBuddy 自动生成<br>
+        处暑出伏双至日 · MPA备考第4天/100 · 健身第447天 · 钢琴第1次
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <div class="foot section-full">
+    泰格晨间融合 · 2026-08-23 · WorkBuddy 自动生成<br>
+    Part A 晨间生活（暖色调）+ Part B 每日新闻8版块（深色调）<br>
+    PetDeer 7元素闭环：睡→吃→练→学→干→爽→重复 · 三HTML融合版
+  </div>
+</div>
+
+<script>
+  (function(){
+    var key='tg_morning_todo_2026-08-23';
+    try{
+      var saved=JSON.parse(localStorage.getItem(key)||'{}');
+      document.querySelectorAll('#todo input').forEach(function(cb){
+        var i=cb.getAttribute('data-i');
+        if(saved[i]){cb.checked=true;cb.closest('label').classList.add('done');}
+        cb.addEventListener('change',function(){
+          cb.closest('label').classList.toggle('done',cb.checked);
+          saved[i]=cb.checked;localStorage.setItem(key,JSON.stringify(saved));
+        });
+      });
+    }catch(e){}
+  })();
+</script>
+</body>
+</html>
