@@ -6,21 +6,14 @@
 <title>PetDeer 每日新闻</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
-.loading{font-size:18px;color:rgba(255,255,255,0.6)}
+body{background:#fff8f0;color:#2d2620;font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.loading{font-size:16px;color:rgba(45,38,32,0.6)}
 </style>
 </head>
 <body>
 <div class="loading">正在跳转到今日新闻...</div>
 <script>
-function redirect(){
-  var d=new Date();
-  var y=d.getFullYear();
-  var m=String(d.getMonth()+1).padStart(2,'0');
-  var dd=String(d.getDate()).padStart(2,'0');
-  window.location.href=y+'-'+m+'-'+dd+'_晨间融合.html';
-}
-redirect();
+window.location.href = '2026-08-24_每日新闻.html';
 </script>
 </body>
 </html>
