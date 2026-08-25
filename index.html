@@ -95,6 +95,11 @@
   .element-count{margin-left:auto;font-size:11px;color:var(--ink-3);padding:3px 8px;background:var(--bg-soft);border-radius:10px}
   .news-item{background:var(--card);border-radius:var(--r-sm);padding:14px;margin-bottom:8px;border:1px solid var(--line-soft);box-shadow:var(--shadow-sm)}
   .news-title{font-size:14px;font-weight:600;line-height:1.5;margin-bottom:6px;color:var(--ink)}
+  .news-link{color:var(--ink);text-decoration:none;transition:color 0.2s ease;display:block}
+  .news-link:hover{color:var(--accent)}
+  .news-link:active{color:var(--sun2)}
+  .news-link::after{content:' →';font-size:12px;color:var(--ink-3);font-weight:400;opacity:0;transition:opacity 0.2s ease}
+  .news-link:hover::after{opacity:1}
   .news-summary{font-size:12.5px;color:var(--ink-2);line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .news-tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
   .news-tag{font-size:10px;padding:2px 7px;border-radius:5px;font-weight:500}
@@ -115,6 +120,9 @@
   .sec8-item{padding:8px 0;border-bottom:1px solid var(--line-soft)}
   .sec8-item:last-child{border-bottom:none;padding-bottom:0}
   .sec8-item-title{font-size:13.5px;font-weight:500;line-height:1.5;margin-bottom:3px}
+  .sec8-link{color:var(--ink);text-decoration:none;transition:color 0.2s ease}
+  .sec8-link:hover{color:var(--accent)}
+  .sec8-link:active{color:var(--sun2)}
   .sec8-item-desc{font-size:12px;color:var(--ink-2);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .sec8-item-src{font-size:10.5px;color:var(--ink-3);margin-top:4px}
   .knowledge-card{background:linear-gradient(135deg,#fff5eb 0%,#ffe8d6 100%);border:none;position:relative;overflow:hidden}
@@ -294,13 +302,13 @@
   <div class="element-section el-sleep">
     <div class="element-header"><div class="element-icon">😴</div><div><div class="element-name">Sleep 睡眠</div><div class="element-en">作息 · 肠道菌群</div></div><span class="element-count">2 条</span></div>
       <div class="news-item">
-        <div class="news-title">Cell子刊：失眠者肠道缺少一种"安眠菌"，补充后可改善失眠</div>
+        <div class="news-title"><a href="http://m.toutiao.com/group/7677064218985644590/" target="_blank" rel="noopener" class="news-link">Cell子刊：失眠者肠道缺少一种"安眠菌"，补充后可改善失眠</a></div>
         <div class="news-summary">研究发现失眠者肠道中普氏栖粪杆菌丰度显著降低，该菌能合成L-精氨酸调节皮质醇轴。补充该菌或L-精氨酸一周后，失眠小鼠症状改善。</div>
         <div class="news-tags"><span class="news-tag">#睡眠科学</span><span class="news-tag">#肠道菌群</span></div>
         <div class="news-source">📍 Cell子刊/费健医生</div>
       </div>
       <div class="news-item">
-        <div class="news-title">北大六院陆林院士团队：肠菌移植有效改善慢性失眠患者睡眠效率</div>
+        <div class="news-title"><a href="https://news.bioon.com/article/78c394e7789f.html" target="_blank" rel="noopener" class="news-link">北大六院陆林院士团队：肠菌移植有效改善慢性失眠患者睡眠效率</a></div>
         <div class="news-summary">FMT治疗方案结合短期抗生素预处理，1个月时客观测量的入睡困难改善程度显著高于安慰剂组，醒来后无法入睡时间也有所减少。</div>
         <div class="news-tags"><span class="news-tag">#失眠治疗</span><span class="news-tag">#肠菌移植</span></div>
         <div class="news-source">📍 生物谷</div>
@@ -309,13 +317,13 @@
   <div class="element-section el-eat">
     <div class="element-header"><div class="element-icon">🍵</div><div><div class="element-name">Eat 饮食</div><div class="element-en">营养 · 茶饮</div></div><span class="element-count">2 条</span></div>
       <div class="news-item">
-        <div class="news-title">广中医三院推荐处暑6款养生茶饮：收敛神气、润燥养阴、健脾祛湿</div>
+        <div class="news-title"><a href="http://m.toutiao.com/group/7677512814656406056/" target="_blank" rel="noopener" class="news-link">广中医三院推荐处暑6款养生茶饮：收敛神气、润燥养阴、健脾祛湿</a></div>
         <div class="news-summary">处暑养生遵循"收敛神气、润燥养阴、健脾祛湿"原则。饮食淡补为主，少辛多酸，不宜盲目贴秋膘。推荐银耳百合莲子羹、沙参玉竹老鸭汤等。</div>
         <div class="news-tags"><span class="news-tag">#处暑养生</span><span class="news-tag">#茶饮</span></div>
         <div class="news-source">📍 广州中医药大学三附院</div>
       </div>
       <div class="news-item">
-        <div class="news-title">国家医保局处暑指南：银耳百合清润，鸭肉配山药莲子调脾胃</div>
+        <div class="news-title"><a href="https://www.nhsa.gov.cn/art/2026/8/22/art_14_21873.html" target="_blank" rel="noopener" class="news-link">国家医保局处暑指南：银耳百合清润，鸭肉配山药莲子调脾胃</a></div>
         <div class="news-summary">日常多选银耳、百合、莲藕、雪梨等清润食材滋养肺津。鸭肉滋阴清虚热，配山药、莲子、茯苓煲汤可调理脾胃虚湿。百合麦冬茶缓解秋燥。</div>
         <div class="news-tags"><span class="news-tag">#处暑饮食</span><span class="news-tag">#湿热体质</span></div>
         <div class="news-source">📍 国家医保局</div>
@@ -324,13 +332,13 @@
   <div class="element-section el-training">
     <div class="element-header"><div class="element-icon">💪</div><div><div class="element-name">Training 训练</div><div class="element-en">健身 · 减重</div></div><span class="element-count">2 条</span></div>
       <div class="news-item">
-        <div class="news-title">8周抗阻训练+高蛋白饮食研究：有效改善超重女性身体成分和肌肉功能</div>
+        <div class="news-title"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12943779/" target="_blank" rel="noopener" class="news-link">8周抗阻训练+高蛋白饮食研究：有效改善超重女性身体成分和肌肉功能</a></div>
         <div class="news-summary">抗阻训练联合高蛋白饮食8周后，超重女性身体成分、肌肉功能、合成代谢信号均显著改善。短期Omega-3补充选择性调节生化指标但未额外改善肌肉量。</div>
         <div class="news-tags"><span class="news-tag">#抗阻训练</span><span class="news-tag">#高蛋白</span></div>
         <div class="news-source">📍 Frontiers in Nutrition</div>
       </div>
       <div class="news-item">
-        <div class="news-title">12周监督下联合有氧+抗阻训练：显著改善心血管代谢危险因素</div>
+        <div class="news-title"><a href="https://m.ebiotrade.com/newsf/2026-8/20260820000309958.htm" target="_blank" rel="noopener" class="news-link">12周监督下联合有氧+抗阻训练：显著改善心血管代谢危险因素</a></div>
         <div class="news-summary">12周监督下联合训练显著改善超重或肥胖成人的身体成分和身体功能，降低腰臀比和内脏脂肪，尤其男性腹部脂肪减少明显。</div>
         <div class="news-tags"><span class="news-tag">#联合训练</span><span class="news-tag">#心血管健康</span></div>
         <div class="news-source">📍 Frontiers in Public Health</div>
@@ -339,13 +347,13 @@
   <div class="element-section el-deep">
     <div class="element-header"><div class="element-icon">🧠</div><div><div class="element-name">DeepLearning 深度学习</div><div class="element-en">AI · 公考 · 技术路线</div></div><span class="element-count">2 条</span></div>
       <div class="news-item">
-        <div class="news-title">AI辅助考公考研新方法：把AI当全科导师+自适应学习分析师</div>
+        <div class="news-title"><a href="https://m.weibo.cn/detail/5335524585244098" target="_blank" rel="noopener" class="news-link">AI辅助考公考研新方法：把AI当全科导师+自适应学习分析师</a></div>
         <div class="news-summary">核心定位是人机协同：AI负责结构化梳理、动态计划生成、精准出题纠错、语音考核与全真模拟；你负责深度思考、记忆构建、表达输出与最终判断。</div>
         <div class="news-tags"><span class="news-tag">#AI备考</span><span class="news-tag">#人机协同</span></div>
         <div class="news-source">📍 微博/逍遥子王冠</div>
       </div>
       <div class="news-item">
-        <div class="news-title">2026 AI大模型全栈学习路线：从Prompt到Agent/微调/多模态</div>
+        <div class="news-title"><a href="https://blog.csdn.net/2601_96009032/article/details/162101053" target="_blank" rel="noopener" class="news-link">2026 AI大模型全栈学习路线：从Prompt到Agent/微调/多模态</a></div>
         <div class="news-summary">企业对AI人才要求从"会用API"变为"能独立搭建可落地应用"。路线涵盖Python、Prompt Engineering、RAG、Agent、模型微调、多模态等技术栈。</div>
         <div class="news-tags"><span class="news-tag">#AI学习路线</span><span class="news-tag">#大模型</span></div>
         <div class="news-source">📍 CSDN博客</div>
@@ -354,13 +362,13 @@
   <div class="element-section el-work">
     <div class="element-header"><div class="element-icon">⚡</div><div><div class="element-name">EfficientWorking 高效工作</div><div class="element-en">副业 · 自媒体</div></div><span class="element-count">2 条</span></div>
       <div class="news-item">
-        <div class="news-title">2026年8月自媒体趋势：本地生活内容蓝海+AI个人IP矩阵</div>
+        <div class="news-title"><a href="https://m.sohu.com/a/1063610549_122979131/" target="_blank" rel="noopener" class="news-link">2026年8月自媒体趋势：本地生活内容蓝海+AI个人IP矩阵</a></div>
         <div class="news-summary">三四五线城市本地美食、探店、文旅攻略内容供给严重不足。一个人一部手机一套AI脚本就能做城市"内容门户"。AI分身可同时运营3-5个不同定位账号。</div>
         <div class="news-tags"><span class="news-tag">#自媒体趋势</span><span class="news-tag">#AI矩阵</span></div>
         <div class="news-source">📍 搜狐网</div>
       </div>
       <div class="news-item">
-        <div class="news-title">8200亿市场，65%创作者月入不足1800：2026自媒体生存指南</div>
+        <div class="news-title"><a href="https://post.m.smzdm.com/p/a26ozzvp/" target="_blank" rel="noopener" class="news-link">8200亿市场，65%创作者月入不足1800：2026自媒体生存指南</a></div>
         <div class="news-summary">先吃透一个平台再扩张，账号权重和标签精准度大于内容质量。零粉可启动：头条流量分成千次阅读收益1-10元，关键是在一个赛道做透做深。</div>
         <div class="news-tags"><span class="news-tag">#自媒体变现</span><span class="news-tag">#副业</span></div>
         <div class="news-source">📍 什么值得买</div>
@@ -369,13 +377,13 @@
   <div class="element-section el-enjoy">
     <div class="element-header"><div class="element-icon">🎨</div><div><div class="element-name">EnjoyYourself 兴趣</div><div class="element-en">阅读 · 极简生活</div></div><span class="element-count">2 条</span></div>
       <div class="news-item">
-        <div class="news-title">越来越多人在家辟出阅读角：治好精神内耗，不玩手机只和自己待着</div>
+        <div class="news-title"><a href="https://post.m.smzdm.com/p/a8230q0l/" target="_blank" rel="noopener" class="news-link">越来越多人在家辟出阅读角：治好精神内耗，不玩手机只和自己待着</a></div>
         <div class="news-summary">放把椅子搭个书架摆一盏台灯，飘窗边墙角床头柜旁都可以。进去就是读书就是和自己待着，不玩手机不看消息。阅读角成为情绪泄洪口。</div>
         <div class="news-tags"><span class="news-tag">#阅读</span><span class="news-tag">#生活方式</span></div>
         <div class="news-source">📍 什么值得买</div>
       </div>
       <div class="news-item">
-        <div class="news-title">极简不是穷是清醒：2026年越来越多人开始明白这个道理</div>
+        <div class="news-title"><a href="https://post.m.smzdm.com/p/aom05o3n/" target="_blank" rel="noopener" class="news-link">极简不是穷是清醒：2026年越来越多人开始明白这个道理</a></div>
         <div class="news-summary">戒冲动买衣服精简衣橱，不乱添置厨房小家电，好好记账理清支出降低物欲。极简两年后生活踏实又安心，普通人过日子理性消费才是清醒。</div>
         <div class="news-tags"><span class="news-tag">#极简生活</span><span class="news-tag">#消费观</span></div>
         <div class="news-source">📍 什么值得买</div>
@@ -384,13 +392,13 @@
   <div class="element-section el-repeat">
     <div class="element-header"><div class="element-icon">🔄</div><div><div class="element-name">Repeat 重复</div><div class="element-en">学习方法 · 知识管理</div></div><span class="element-count">2 条</span></div>
       <div class="news-item">
-        <div class="news-title">间隔重复系统化：在即将遗忘时复习效果最强，SRS算法优化节奏</div>
+        <div class="news-title"><a href="https://www.coze.cn/gallery/detail/69a5306f1bbf6b01d179e2c2.html" target="_blank" rel="noopener" class="news-link">间隔重复系统化：在即将遗忘时复习效果最强，SRS算法优化节奏</a></div>
         <div class="news-summary">艾宾浩斯遗忘曲线显示学完20分钟还记得58%，1天后仅33%。但在第1天复习一次，保留率从33%拉到80%。专业级学习者用SRS算法在即将遗忘时触发复习。</div>
         <div class="news-tags"><span class="news-tag">#间隔重复</span><span class="news-tag">#学习科学</span></div>
         <div class="news-source">📍 Coze精选</div>
       </div>
       <div class="news-item">
-        <div class="news-title">四种公认最权威学习方法之首：费曼学习法用"教"来"学"</div>
+        <div class="news-title"><a href="http://m.toutiao.com/group/7671658444298011186/" target="_blank" rel="noopener" class="news-link">四种公认最权威学习方法之首：费曼学习法用"教"来"学"</a></div>
         <div class="news-summary">选概念→模拟教学→发现盲区→查阅资料→重新讲解。假设你要教一个完全不懂的人，用简单语言解释，卡住的地方就是知识盲区。教的过程就是深度加工。</div>
         <div class="news-tags"><span class="news-tag">#费曼学习法</span><span class="news-tag">#以教促学</span></div>
         <div class="news-source">📍 今日头条/汤志鹏</div>
@@ -410,12 +418,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">AI辅助考公考研：全科导师+自适应学习分析师</div>
+          <div class="sec8-item-title"><a href="https://m.weibo.cn/detail/5335524585244098" target="_blank" rel="noopener" class="sec8-link">AI辅助考公考研：全科导师+自适应学习分析师</a></div>
           <div class="sec8-item-desc">AI负责结构化梳理、精准出题、语音考核；人负责深度思考和最终判断。</div>
           <div class="sec8-item-src">微博</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">AI大模型全栈学习路线更新</div>
+          <div class="sec8-item-title"><a href="https://blog.csdn.net/2601_96009032/article/details/162101053" target="_blank" rel="noopener" class="sec8-link">AI大模型全栈学习路线更新</a></div>
           <div class="sec8-item-desc">从Prompt到Agent/微调/多模态，企业要求从会用API变能独立搭建。</div>
           <div class="sec8-item-src">CSDN</div>
         </div>
@@ -427,12 +435,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">本地生活内容蓝海：三四五线城市内容不足</div>
+          <div class="sec8-item-title"><a href="https://m.sohu.com/a/1063610549_122979131/" target="_blank" rel="noopener" class="sec8-link">本地生活内容蓝海：三四五线城市内容不足</a></div>
           <div class="sec8-item-desc">一个人一部手机一套AI脚本，就能做成一个城市的内容门户。</div>
           <div class="sec8-item-src">搜狐</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">零粉也能启动：头条流量分成千次1-10元</div>
+          <div class="sec8-item-title"><a href="https://post.m.smzdm.com/p/a26ozzvp/" target="_blank" rel="noopener" class="sec8-link">零粉也能启动：头条流量分成千次1-10元</a></div>
           <div class="sec8-item-desc">先吃透一个平台做深做透，账号标签精准度大于内容质量。</div>
           <div class="sec8-item-src">什么值得买</div>
         </div>
@@ -444,12 +452,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">AI个人IP矩阵：一人运营3-5个账号</div>
+          <div class="sec8-item-title"><a href="https://m.sohu.com/a/1063610549_122979131/" target="_blank" rel="noopener" class="sec8-link">AI个人IP矩阵：一人运营3-5个账号</a></div>
           <div class="sec8-item-desc">AI分身同时运营不同定位账号，用数据反馈快速迭代内容方向。</div>
           <div class="sec8-item-src">搜狐</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">KOL从流量经济转向知识资产经济</div>
+          <div class="sec8-item-title"><a href="https://blog.csdn.net/2601_96291720/article/details/162883575" target="_blank" rel="noopener" class="sec8-link">KOL从流量经济转向知识资产经济</a></div>
           <div class="sec8-item-desc">合作计费从固定坑位费转向基础服务费+销售分成，专业判断决定收入。</div>
           <div class="sec8-item-src">CSDN</div>
         </div>
@@ -461,12 +469,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">处暑6款养生茶饮：收敛神气润燥养阴</div>
+          <div class="sec8-item-title"><a href="http://m.toutiao.com/group/7677512814656406056/" target="_blank" rel="noopener" class="sec8-link">处暑6款养生茶饮：收敛神气润燥养阴</a></div>
           <div class="sec8-item-desc">淡补为主少辛多酸，银耳百合莲子羹、沙参玉竹老鸭汤推荐。</div>
           <div class="sec8-item-src">广中医三院</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">失眠者肠道缺少"安眠菌"</div>
+          <div class="sec8-item-title"><a href="http://m.toutiao.com/group/7677064218985644590/" target="_blank" rel="noopener" class="sec8-link">失眠者肠道缺少"安眠菌"</a></div>
           <div class="sec8-item-desc">普氏栖粪杆菌丰度降低影响L-精氨酸合成，补充后可改善失眠。</div>
           <div class="sec8-item-src">Cell子刊</div>
         </div>
@@ -478,12 +486,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">在家辟阅读角治好精神内耗</div>
+          <div class="sec8-item-title"><a href="https://post.m.smzdm.com/p/a8230q0l/" target="_blank" rel="noopener" class="sec8-link">在家辟阅读角治好精神内耗</a></div>
           <div class="sec8-item-desc">放椅子搭书架摆台灯，进去就读书不玩手机，飘窗墙角都行。</div>
           <div class="sec8-item-src">什么值得买</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">高效阅读技巧：让阅读习惯社交化</div>
+          <div class="sec8-item-title"><a href="https://www.sxggwhy.com/news/detail?id=673956e0510e1f5e3d66e538" target="_blank" rel="noopener" class="sec8-link">高效阅读技巧：让阅读习惯社交化</a></div>
           <div class="sec8-item-desc">创建读书角、同时阅读多本书、社交互动提升阅读体验和目标达成。</div>
           <div class="sec8-item-src">陕西公共文化云</div>
         </div>
@@ -495,12 +503,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">极简不是穷是清醒：越来越多人明白这个道理</div>
+          <div class="sec8-item-title"><a href="https://post.m.smzdm.com/p/aom05o3n/" target="_blank" rel="noopener" class="sec8-link">极简不是穷是清醒：越来越多人明白这个道理</a></div>
           <div class="sec8-item-desc">戒冲动消费精简衣橱，不添置闲置物品，记账理清支出降低物欲。</div>
           <div class="sec8-item-src">什么值得买</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">下班后让生活更美好的11个方法</div>
+          <div class="sec8-item-title"><a href="https://www.sxggwhy.com/news/detail?id=65559349bc754c2aa9ba01ac" target="_blank" rel="noopener" class="sec8-link">下班后让生活更美好的11个方法</a></div>
           <div class="sec8-item-desc">地铁通勤看书40分钟，培养无用但快乐的爱好，写简短日记。</div>
           <div class="sec8-item-src">陕西公共文化云</div>
         </div>
@@ -512,12 +520,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">AI大模型全栈技术地图</div>
+          <div class="sec8-item-title"><a href="https://blog.csdn.net/2601_96009032/article/details/162101053" target="_blank" rel="noopener" class="sec8-link">AI大模型全栈技术地图</a></div>
           <div class="sec8-item-desc">Python→Prompt→RAG→Agent→微调→多模态，系统化学习路径。</div>
           <div class="sec8-item-src">CSDN</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">肠菌移植改善失眠：科技新发现</div>
+          <div class="sec8-item-title"><a href="https://news.bioon.com/article/78c394e7789f.html" target="_blank" rel="noopener" class="sec8-link">肠菌移植改善失眠：科技新发现</a></div>
           <div class="sec8-item-desc">FMT治疗1个月后入睡困难显著改善，WASO减少，微生物组研究。</div>
           <div class="sec8-item-src">生物谷</div>
         </div>
@@ -529,12 +537,12 @@
         <span class="sec8-badge">2 条</span>
       </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">8200亿市场65%创作者月入不足1800</div>
+          <div class="sec8-item-title"><a href="https://post.m.smzdm.com/p/a26ozzvp/" target="_blank" rel="noopener" class="sec8-link">8200亿市场65%创作者月入不足1800</a></div>
           <div class="sec8-item-desc">自媒体不是轻松变现，先吃透一个平台再扩张，标签精准度大于一切。</div>
           <div class="sec8-item-src">什么值得买</div>
         </div>
         <div class="sec8-item">
-          <div class="sec8-item-title">居住观变革：从展示到悦己</div>
+          <div class="sec8-item-title"><a href="https://post.m.smzdm.com/p/a8230q0l/" target="_blank" rel="noopener" class="sec8-link">居住观变革：从展示到悦己</a></div>
           <div class="sec8-item-desc">越来越多人辟阅读角替代刷手机，从对外展示转向对内悦己。</div>
           <div class="sec8-item-src">什么值得买</div>
         </div>
