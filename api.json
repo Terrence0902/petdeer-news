@@ -109,7 +109,8 @@
         "tags": [
           "睡眠科学",
           "肠道菌群"
-        ]
+        ],
+        "url": "http://m.toutiao.com/group/7677064218985644590/"
       },
       {
         "title": "北大六院陆林院士团队：肠菌移植有效改善慢性失眠患者睡眠效率",
@@ -118,7 +119,8 @@
         "tags": [
           "失眠治疗",
           "肠菌移植"
-        ]
+        ],
+        "url": "https://news.bioon.com/article/78c394e7789f.html"
       }
     ],
     "eat": [
@@ -129,7 +131,8 @@
         "tags": [
           "处暑养生",
           "茶饮"
-        ]
+        ],
+        "url": "http://m.toutiao.com/group/7677512814656406056/"
       },
       {
         "title": "国家医保局处暑指南：银耳百合清润，鸭肉配山药莲子调脾胃",
@@ -138,7 +141,8 @@
         "tags": [
           "处暑饮食",
           "湿热体质"
-        ]
+        ],
+        "url": "https://www.nhsa.gov.cn/art/2026/8/22/art_14_21873.html"
       }
     ],
     "training": [
@@ -149,7 +153,8 @@
         "tags": [
           "抗阻训练",
           "高蛋白"
-        ]
+        ],
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12943779/"
       },
       {
         "title": "12周监督下联合有氧+抗阻训练：显著改善心血管代谢危险因素",
@@ -158,7 +163,8 @@
         "tags": [
           "联合训练",
           "心血管健康"
-        ]
+        ],
+        "url": "https://m.ebiotrade.com/newsf/2026-8/20260820000309958.htm"
       }
     ],
     "deeplearning": [
@@ -169,7 +175,8 @@
         "tags": [
           "AI备考",
           "人机协同"
-        ]
+        ],
+        "url": "https://m.weibo.cn/detail/5335524585244098"
       },
       {
         "title": "2026 AI大模型全栈学习路线：从Prompt到Agent/微调/多模态",
@@ -178,7 +185,8 @@
         "tags": [
           "AI学习路线",
           "大模型"
-        ]
+        ],
+        "url": "https://blog.csdn.net/2601_96009032/article/details/162101053"
       }
     ],
     "efficientworking": [
@@ -189,7 +197,8 @@
         "tags": [
           "自媒体趋势",
           "AI矩阵"
-        ]
+        ],
+        "url": "https://m.sohu.com/a/1063610549_122979131/"
       },
       {
         "title": "8200亿市场，65%创作者月入不足1800：2026自媒体生存指南",
@@ -198,7 +207,8 @@
         "tags": [
           "自媒体变现",
           "副业"
-        ]
+        ],
+        "url": "https://post.m.smzdm.com/p/a26ozzvp/"
       }
     ],
     "enjoyyourself": [
@@ -209,7 +219,8 @@
         "tags": [
           "阅读",
           "生活方式"
-        ]
+        ],
+        "url": "https://post.m.smzdm.com/p/a8230q0l/"
       },
       {
         "title": "极简不是穷是清醒：2026年越来越多人开始明白这个道理",
@@ -218,7 +229,8 @@
         "tags": [
           "极简生活",
           "消费观"
-        ]
+        ],
+        "url": "https://post.m.smzdm.com/p/aom05o3n/"
       }
     ],
     "repeat": [
@@ -229,7 +241,8 @@
         "tags": [
           "间隔重复",
           "学习科学"
-        ]
+        ],
+        "url": "https://www.coze.cn/gallery/detail/69a5306f1bbf6b01d179e2c2.html"
       },
       {
         "title": "四种公认最权威学习方法之首：费曼学习法用\"教\"来\"学\"",
@@ -238,7 +251,8 @@
         "tags": [
           "费曼学习法",
           "以教促学"
-        ]
+        ],
+        "url": "http://m.toutiao.com/group/7671658444298011186/"
       }
     ]
   },
@@ -261,12 +275,14 @@
         {
           "title": "AI辅助考公考研：全科导师+自适应学习分析师",
           "desc": "AI负责结构化梳理、精准出题、语音考核；人负责深度思考和最终判断。",
-          "source": "微博"
+          "source": "微博",
+          "url": "https://m.weibo.cn/detail/5335524585244098"
         },
         {
           "title": "AI大模型全栈学习路线更新",
           "desc": "从Prompt到Agent/微调/多模态，企业要求从会用API变能独立搭建。",
-          "source": "CSDN"
+          "source": "CSDN",
+          "url": "https://blog.csdn.net/2601_96009032/article/details/162101053"
         }
       ]
     },
@@ -277,12 +293,14 @@
         {
           "title": "本地生活内容蓝海：三四五线城市内容不足",
           "desc": "一个人一部手机一套AI脚本，就能做成一个城市的内容门户。",
-          "source": "搜狐"
+          "source": "搜狐",
+          "url": "https://m.sohu.com/a/1063610549_122979131/"
         },
         {
           "title": "零粉也能启动：头条流量分成千次1-10元",
           "desc": "先吃透一个平台做深做透，账号标签精准度大于内容质量。",
-          "source": "什么值得买"
+          "source": "什么值得买",
+          "url": "https://post.m.smzdm.com/p/a26ozzvp/"
         }
       ]
     },
@@ -293,12 +311,14 @@
         {
           "title": "AI个人IP矩阵：一人运营3-5个账号",
           "desc": "AI分身同时运营不同定位账号，用数据反馈快速迭代内容方向。",
-          "source": "搜狐"
+          "source": "搜狐",
+          "url": "https://m.sohu.com/a/1063610549_122979131/"
         },
         {
           "title": "KOL从流量经济转向知识资产经济",
           "desc": "合作计费从固定坑位费转向基础服务费+销售分成，专业判断决定收入。",
-          "source": "CSDN"
+          "source": "CSDN",
+          "url": "https://blog.csdn.net/2601_96291720/article/details/162883575"
         }
       ]
     },
@@ -309,12 +329,14 @@
         {
           "title": "处暑6款养生茶饮：收敛神气润燥养阴",
           "desc": "淡补为主少辛多酸，银耳百合莲子羹、沙参玉竹老鸭汤推荐。",
-          "source": "广中医三院"
+          "source": "广中医三院",
+          "url": "http://m.toutiao.com/group/7677512814656406056/"
         },
         {
           "title": "失眠者肠道缺少\"安眠菌\"",
           "desc": "普氏栖粪杆菌丰度降低影响L-精氨酸合成，补充后可改善失眠。",
-          "source": "Cell子刊"
+          "source": "Cell子刊",
+          "url": "http://m.toutiao.com/group/7677064218985644590/"
         }
       ]
     },
@@ -325,12 +347,14 @@
         {
           "title": "在家辟阅读角治好精神内耗",
           "desc": "放椅子搭书架摆台灯，进去就读书不玩手机，飘窗墙角都行。",
-          "source": "什么值得买"
+          "source": "什么值得买",
+          "url": "https://post.m.smzdm.com/p/a8230q0l/"
         },
         {
           "title": "高效阅读技巧：让阅读习惯社交化",
           "desc": "创建读书角、同时阅读多本书、社交互动提升阅读体验和目标达成。",
-          "source": "陕西公共文化云"
+          "source": "陕西公共文化云",
+          "url": "https://www.sxggwhy.com/news/detail?id=673956e0510e1f5e3d66e538"
         }
       ]
     },
@@ -341,12 +365,14 @@
         {
           "title": "极简不是穷是清醒：越来越多人明白这个道理",
           "desc": "戒冲动消费精简衣橱，不添置闲置物品，记账理清支出降低物欲。",
-          "source": "什么值得买"
+          "source": "什么值得买",
+          "url": "https://post.m.smzdm.com/p/aom05o3n/"
         },
         {
           "title": "下班后让生活更美好的11个方法",
           "desc": "地铁通勤看书40分钟，培养无用但快乐的爱好，写简短日记。",
-          "source": "陕西公共文化云"
+          "source": "陕西公共文化云",
+          "url": "https://www.sxggwhy.com/news/detail?id=65559349bc754c2aa9ba01ac"
         }
       ]
     },
@@ -357,12 +383,14 @@
         {
           "title": "AI大模型全栈技术地图",
           "desc": "Python→Prompt→RAG→Agent→微调→多模态，系统化学习路径。",
-          "source": "CSDN"
+          "source": "CSDN",
+          "url": "https://blog.csdn.net/2601_96009032/article/details/162101053"
         },
         {
           "title": "肠菌移植改善失眠：科技新发现",
           "desc": "FMT治疗1个月后入睡困难显著改善，WASO减少，微生物组研究。",
-          "source": "生物谷"
+          "source": "生物谷",
+          "url": "https://news.bioon.com/article/78c394e7789f.html"
         }
       ]
     },
@@ -373,12 +401,14 @@
         {
           "title": "8200亿市场65%创作者月入不足1800",
           "desc": "自媒体不是轻松变现，先吃透一个平台再扩张，标签精准度大于一切。",
-          "source": "什么值得买"
+          "source": "什么值得买",
+          "url": "https://post.m.smzdm.com/p/a26ozzvp/"
         },
         {
           "title": "居住观变革：从展示到悦己",
           "desc": "越来越多人辟阅读角替代刷手机，从对外展示转向对内悦己。",
-          "source": "什么值得买"
+          "source": "什么值得买",
+          "url": "https://post.m.smzdm.com/p/a8230q0l/"
         }
       ]
     }
