@@ -6,19 +6,22 @@
 <title>PetDeer 每日新闻</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
-.loading{font-size:18px;color:rgba(255,255,255,0.6)}
+body{background:#fff5e6;color:#2d2520;font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:16px}
+.loading{font-size:18px;color:rgba(45,37,32,0.6)}
+.deer{font-size:48px;animation:bounce 1.5s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 </style>
 </head>
 <body>
-<div class="loading">正在跳转到今日新闻...</div>
+<div class="deer">🦌</div>
+<div class="loading">正在跳转至今日新闻...</div>
 <script>
 function redirect(){
   var d=new Date();
   var y=d.getFullYear();
   var m=String(d.getMonth()+1).padStart(2,'0');
   var dd=String(d.getDate()).padStart(2,'0');
-  window.location.href=y+'-'+m+'-'+dd+'_晨间融合.html';
+  window.location.href=y+'-'+m+'-'+dd+'_每日新闻.html';
 }
 redirect();
 </script>
