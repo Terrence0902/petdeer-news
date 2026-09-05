@@ -6,16 +6,21 @@
 <title>PetDeer 每日新闻</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:linear-gradient(135deg,#ffb347,#ff8a5b);color:#fff;font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:16px}
-.loading{font-size:18px;opacity:.9}
-.deer{font-size:48px}
+body{background:linear-gradient(135deg,#fff5e6,#ffefe0);color:#2d2520;font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.loading{text-align:center;font-size:18px;color:#8a7a6c}
+.loading .emoji{font-size:48px;margin-bottom:16px;animation:bounce 1s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 </style>
 </head>
 <body>
-<div class="deer">🦌</div>
-<div class="loading">正在跳转到今日新闻...</div>
+<div class="loading">
+  <div class="emoji">🦌</div>
+  <div>正在加载今日新闻...</div>
+</div>
 <script>
-window.location.href='2026-09-05_每日新闻.html';
+(function(){
+  window.location.href = "2026-09-06_每日新闻.html";
+})();
 </script>
 </body>
 </html>
