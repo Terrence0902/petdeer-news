@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>PetDeer 每日新闻 · 2026-09-07 白露</title>
+<style>
+/* ===== CSS Variables ===== */
+:root {
+  --bg-primary: #FFFBF5;
+  --bg-secondary: #FFF7ED;
+  --bg-card: #FFFFFF;
+  --text-primary: #1C1917;
+  --text-secondary: #57534E;
+  --text-tertiary: #A8A29E;
+  --accent-warm: #F97316;
+  --accent-light: #FDBA74;
+  --accent-soft: #FFEDD5;
+  --gradient-warm: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
+  --gradient-soft: linear-gradient(180deg, #FFF7ED 0%, #FFFBF5 100%);
+  --border-color: #F5EFE6;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(249,115,22,0.08);
+  --shadow-lg: 0 8px 30px rgba(249,115,22,0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --nav-height: 56px;
+}
+
+/* ===== Reset & Base ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-height) + 10px); }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ===== Sticky Navigation ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(255, 251, 245, 0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+.nav-inner {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 6px;
+}
+.nav-inner::-webkit-scrollbar { display: none; }
+.nav-logo {
+  font-weight: 700;
+  font-size: 17px;
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-right: 8px;
+}
+.nav-links {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.nav-link {
+  padding: 6px 12px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.nav-link:hover { color: var(--accent-warm); background: var(--accent-soft); }
+.nav-link.active {
+  color: #fff;
+  background: var(--gradient-warm);
+  font-weight: 500;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 16px) 16px 40px;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  background: var(--gradient-warm);
+  color: #fff;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+.hero-date { font-size: 13px; opacity: 0.9; margin-bottom: 4px; }
+.hero-title { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; }
+.hero-subtitle { font-size: 14px; opacity: 0.9; margin-top: 2px; }
+.hero-badge {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.hero-weather {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+}
+.weather-icon { font-size: 32px; }
+.weather-info { font-size: 13px; opacity: 0.95; }
+.weather-temp { font-size: 20px; font-weight: 600; }
+
+/* ===== Countdown Bar ===== */
+.countdown-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+.countdown-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.countdown-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+.countdown-track::-webkit-scrollbar { display: none; }
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+.countdown-num {
+  font-size: 22px;
+  font-weight: 700;
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.countdown-label { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+.countdown-desc { font-size: 10px; color: var(--text-tertiary); margin-top: 1px; }
+
+/* ===== Section Styles ===== */
+.section { margin-bottom: 28px; }
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  padding: 0 2px;
+}
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title .icon { font-size: 20px; }
+.section-more { font-size: 13px; color: var(--accent-warm); font-weight: 500; }
+
+/* ===== Card Grid ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+}
+
+/* ===== Tea Cards ===== */
+.tea-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+.tea-card.day { border-left: 3px solid #F97316; }
+.tea-card.night { border-left: 3px solid #8B5CF6; }
+.tea-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.tea-icon { font-size: 24px; }
+.tea-name { font-size: 16px; font-weight: 600; }
+.tea-tag {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-warm);
+  font-weight: 500;
+}
+.tea-formula {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+.tea-formula strong { color: var(--text-primary); font-weight: 600; }
+.tea-effect {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ===== Todo List ===== */
+.todo-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+.todo-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+  transition: opacity 0.2s;
+}
+.todo-item:last-child { border-bottom: none; }
+.todo-item.done .todo-text { text-decoration: line-through; color: var(--text-tertiary); }
+.todo-item.done { opacity: 0.6; }
+.todo-checkbox {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--text-tertiary);
+  border-radius: 6px;
+  flex-shrink: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  margin-top: 1px;
+}
+.todo-item.done .todo-checkbox {
+  background: var(--gradient-warm);
+  border-color: var(--accent-warm);
+}
+.todo-checkbox::after {
+  content: '';
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.2s;
+  margin-bottom: 2px;
+}
+.todo-item.done .todo-checkbox::after { transform: rotate(-45deg) scale(1); }
+.todo-content { flex: 1; min-width: 0; }
+.todo-text {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.todo-meta {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.todo-priority {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.priority-must { background: #FEE2E2; color: #DC2626; }
+.priority-important { background: #FEF3C7; color: #D97706; }
+.priority-optional { background: #E5E7EB; color: #6B7280; }
+
+/* ===== Nudge Card ===== */
+.nudge-card {
+  background: linear-gradient(135deg, #FFEDD5 0%, #FCE7F3 100%);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.nudge-card::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  font-size: 80px;
+  color: rgba(249, 115, 22, 0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+.nudge-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-warm);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.nudge-text {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.8;
+  font-weight: 500;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== News Cards ===== */
+.news-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.news-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.news-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.tag-sleep { background: #DBEAFE; color: #2563EB; }
+.tag-eat { background: #D1FAE5; color: #059669; }
+.tag-train { background: #FCE7F3; color: #DB2777; }
+.tag-deep { background: #EDE9FE; color: #7C3AED; }
+.tag-work { background: #FEF3C7; color: #D97706; }
+.tag-enjoy { background: #FFEDD5; color: #EA580C; }
+.tag-repeat { background: #E5E7EB; color: #4B5563; }
+.news-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-bottom: 6px;
+  color: var(--text-primary);
+}
+.news-summary {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.news-source {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 8px;
+}
+
+/* ===== Element Tabs ===== */
+.element-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin-bottom: 14px;
+  padding-bottom: 4px;
+}
+.element-tabs::-webkit-scrollbar { display: none; }
+.element-tab {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.element-tab:hover { border-color: var(--accent-light); }
+.element-tab.active {
+  background: var(--gradient-warm);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* ===== 8 Sections Grid ===== */
+.eight-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .eight-grid { grid-template-columns: 1fr 1fr; }
+}
+.eight-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+.eight-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.eight-icon { font-size: 20px; }
+.eight-title { font-size: 15px; font-weight: 600; }
+.eight-item {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.5;
+}
+.eight-item:last-child { border-bottom: none; }
+.eight-item strong { color: var(--text-primary); font-weight: 600; }
+
+/* ===== Knowledge Card ===== */
+.knowledge-card {
+  background: var(--gradient-warm);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.knowledge-card::before {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.knowledge-label {
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.knowledge-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  position: relative;
+  z-index: 1;
+}
+.knowledge-desc {
+  font-size: 14px;
+  opacity: 0.95;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+.knowledge-source {
+  font-size: 11px;
+  opacity: 0.8;
+  margin-top: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Project Progress ===== */
+.progress-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 12px;
+}
+.progress-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.progress-item:last-child { border-bottom: none; }
+.progress-name { font-size: 13px; font-weight: 500; }
+.progress-bar-wrap {
+  flex: 1;
+  max-width: 120px;
+  margin: 0 12px;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-bar {
+  height: 100%;
+  background: var(--gradient-warm);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.progress-pct { font-size: 12px; color: var(--text-secondary); font-weight: 600; min-width: 36px; text-align: right; }
+
+/* ===== Back to Top ===== */
+.back-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  border: 1px solid var(--border-color);
+}
+.back-top.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.back-top:hover { transform: translateY(-2px); box-shadow: 0 12px 24px rgba(249,115,22,0.18); }
+.back-top svg { width: 20px; height: 20px; stroke: var(--accent-warm); }
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 30px 20px 10px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+.footer-brand {
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+
+/* ===== Desktop Enhancements ===== */
+@media (min-width: 768px) {
+  .hero { padding: 36px 32px; }
+  .hero-title { font-size: 32px; }
+  .section-title { font-size: 20px; }
+  .container { padding: calc(var(--nav-height) + 24px) 20px 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">🦌 PetDeer</div>
+    <div class="nav-links">
+      <div class="nav-link active" data-target="hero">晨报</div>
+      <div class="nav-link" data-target="news">7元素新闻</div>
+      <div class="nav-link" data-target="eight">8版块精选</div>
+      <div class="nav-link" data-target="knowledge">知识卡片</div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- ===== Hero Section ===== -->
+  <section id="hero" class="section">
+    <div class="hero animate-in">
+      <div class="hero-top">
+        <div>
+          <div class="hero-date">2026年9月7日 · 星期一</div>
+          <h1 class="hero-title">白露 · 第1天</h1>
+          <div class="hero-subtitle">草木凝清露，秋夜揽星河</div>
+        </div>
+        <div class="hero-badge">湿热体质</div>
+      </div>
+      <div class="hero-weather">
+        <div class="weather-icon">🍂</div>
+        <div class="weather-info">
+          <div class="weather-temp">22°C / 16°C</div>
+          <div>多云转晴 · 西北风2级 · 湿度65%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Countdown Bar -->
+    <div class="countdown-section animate-in delay-1">
+      <div class="countdown-title">⏳ 重要倒计时</div>
+      <div class="countdown-track">
+        <div class="countdown-item">
+          <div class="countdown-num">83</div>
+          <div class="countdown-label">天</div>
+          <div class="countdown-desc">国考笔试</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num">111</div>
+          <div class="countdown-label">天</div>
+          <div class="countdown-desc">MPA联考</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num">16</div>
+          <div class="countdown-label">天</div>
+          <div class="countdown-desc">秋分节气</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num">14</div>
+          <div class="countdown-label">天</div>
+          <div class="countdown-desc">中秋节</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-num">115</div>
+          <div class="countdown-label">天</div>
+          <div class="countdown-desc">2027元旦</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tea Recipes -->
+    <div class="section-header animate-in delay-2">
+      <div class="section-title"><span class="icon">🍵</span>昼夜双轨煮方</div>
+    </div>
+    <div class="card-grid cols-2">
+      <div class="tea-card day animate-in delay-2">
+        <div class="tea-header">
+          <div class="tea-icon">☀️</div>
+          <div class="tea-name">白露健脾润肺茶</div>
+          <span class="tea-tag">日茶</span>
+        </div>
+        <div class="tea-formula">
+          <strong>配方：</strong>老白茶3g · 小柑胎1个 · 南杏仁3g · 干莲子5颗 · 百合3g · 甘草1片
+        </div>
+        <div class="tea-effect">
+          <strong>功效：</strong>健脾润燥、养肺敛阴。白露第一天，燥邪当令暑湿未清，健脾与润肺并行。老白茶性平温和，小柑胎理气健脾，南杏仁+百合双润肺燥，全方不温不燥，为白露开个好头。
+        </div>
+      </div>
+      <div class="tea-card night animate-in delay-3">
+        <div class="tea-header">
+          <div class="tea-icon">🌙</div>
+          <div class="tea-name">莲子百合安神饮</div>
+          <span class="tea-tag" style="background:#EDE9FE;color:#7C3AED;">夜茶</span>
+        </div>
+        <div class="tea-formula">
+          <strong>配方：</strong>干莲子8颗 · 百合5g · 茯苓4g · 南杏仁3g · 蜂蜜1小勺（60℃以下加）
+        </div>
+        <div class="tea-effect">
+          <strong>功效：</strong>健脾安神、润肺养阴。清润不滋腻为原则，莲子健脾安神，百合清心润肺，茯苓健脾渗湿兼顾余湿，全方无咖啡因，温养不助火，兼顾初起秋燥。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Morning Todo ===== -->
+  <section id="todo" class="section">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">✅</span>晨间激活清单</div>
+    </div>
+    <div class="todo-card">
+      <div class="todo-item" data-id="1">
+        <div class="todo-checkbox" onclick="toggleTodo(this)"></div>
+        <div class="todo-content">
+          <div class="todo-text">晨起温水300ml + 五分钟拉伸唤醒 + 测体重</div>
+          <div class="todo-meta">
+            <span class="todo-priority priority-must">必做</span>
+            <span>07:00 · 8min</span>
+            <span>Sleep + Train</span>
+          </div>
+        </div>
+      </div>
+      <div class="todo-item" data-id="2">
+        <div class="todo-checkbox" onclick="toggleTodo(this)"></div>
+        <div class="todo-content">
+          <div class="todo-text">煮日茶（白露健脾润肺茶）+ 晨间新闻速览</div>
+          <div class="todo-meta">
+            <span class="todo-priority priority-must">必做</span>
+            <span>07:30 · 15min</span>
+            <span>Eat + DeepLearning</span>
+          </div>
+        </div>
+      </div>
+      <div class="todo-item" data-id="3">
+        <div class="todo-checkbox" onclick="toggleTodo(this)"></div>
+        <div class="todo-content">
+          <div class="todo-text">DeepLearning：行测资料分析 2篇 + 错题复盘</div>
+          <div class="todo-meta">
+            <span class="todo-priority priority-must">必做</span>
+            <span>08:30 · 60min</span>
+            <span>DeepLearning</span>
+          </div>
+        </div>
+      </div>
+      <div class="todo-item" data-id="4">
+        <div class="todo-checkbox" onclick="toggleTodo(this)"></div>
+        <div class="todo-content">
+          <div class="todo-text">EfficientWorking：AI Agent工作流搭建 + SOP优化</div>
+          <div class="todo-meta">
+            <span class="todo-priority priority-important">重要</span>
+            <span>10:30 · 60min</span>
+            <span>EfficientWorking</span>
+          </div>
+        </div>
+      </div>
+      <div class="todo-item" data-id="5">
+        <div class="todo-checkbox" onclick="toggleTodo(this)"></div>
+        <div class="todo-content">
+          <div class="todo-text">Training：全身抗阻训练 45min（推日+核心）</div>
+          <div class="todo-meta">
+            <span class="todo-priority priority-important">重要</span>
+            <span>16:30 · 45min</span>
+            <span>Training</span>
+          </div>
+        </div>
+      </div>
+      <div class="todo-item" data-id="6">
+        <div class="todo-checkbox" onclick="toggleTodo(this)"></div>
+        <div class="todo-content">
+          <div class="todo-text">EnjoyYourself：白露秋日散步 + 桂花香氛体验</div>
+          <div class="todo-meta">
+            <span class="todo-priority priority-important">重要</span>
+            <span>18:00 · 30min</span>
+            <span>EnjoyYourself</span>
+          </div>
+        </div>
+      </div>
+      <div class="todo-item" data-id="7">
+        <div class="todo-checkbox" onclick="toggleTodo(this)"></div>
+        <div class="todo-content">
+          <div class="todo-text">Repeat：今日习惯复盘 + 明日计划微调</div>
+          <div class="todo-meta">
+            <span class="todo-priority priority-optional">可选</span>
+            <span>22:00 · 15min</span>
+            <span>Repeat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Project Progress ===== -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">📊</span>项目进度</div>
+    </div>
+    <div class="progress-card">
+      <div class="progress-item">
+        <span class="progress-name">MPA联考备考</span>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width: 42%"></div></div>
+        <span class="progress-pct">42%</span>
+      </div>
+      <div class="progress-item">
+        <span class="progress-name">国考备考</span>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width: 35%"></div></div>
+        <span class="progress-pct">35%</span>
+      </div>
+      <div class="progress-item">
+        <span class="progress-name">减重95to65</span>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width: 28%"></div></div>
+        <span class="progress-pct">28%</span>
+      </div>
+      <div class="progress-item">
+        <span class="progress-name">PetDeer体系构建</span>
+        <div class="progress-bar-wrap"><div class="progress-bar" style="width: 65%"></div></div>
+        <span class="progress-pct">65%</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Nudge Card ===== -->
+  <section class="section">
+    <div class="nudge-card">
+      <div class="nudge-label">✨ 今日 Nudge</div>
+      <div class="nudge-text">
+        白露第一天，草木凝清露。夏天的热终于退了，秋天的凉带着桂花味来了。不用急着改变所有事，就从今天选一个小仪式：把薄外套找出来、泡一杯温润的茶、开窗让凉风吹进来五分钟。节气不只是日历上的字，是你身体感知到的第一缕清爽——接住它，新的季节就开始了。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7 Elements News ===== -->
+  <section id="news" class="section">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">📰</span>7元素新闻</div>
+      <div class="section-more">共14条</div>
+    </div>
+    
+    <div class="element-tabs">
+      <div class="element-tab active" data-el="all">全部</div>
+      <div class="element-tab" data-el="sleep">💤 Sleep</div>
+      <div class="element-tab" data-el="eat">🍎 Eat</div>
+      <div class="element-tab" data-el="train">🏋️ Training</div>
+      <div class="element-tab" data-el="deep">🧠 DeepLearning</div>
+      <div class="element-tab" data-el="work">💼 EfficientWorking</div>
+      <div class="element-tab" data-el="enjoy">🎨 EnjoyYourself</div>
+      <div class="element-tab" data-el="repeat">🔁 Repeat</div>
+    </div>
+
+    <div class="card-grid" id="newsGrid">
+      <!-- Sleep -->
+      <div class="news-card" data-category="sleep">
+        <span class="news-tag tag-sleep">Sleep</span>
+        <div class="news-title">《自然-健康》重磅：饮食与睡眠存在明确因果关系</div>
+        <div class="news-summary">2026年8月研究证实：睡眠不好、半夜总醒、入睡慢，可能与一日三餐没吃对食物有明确因果关系。饮食结构通过肠道菌群、炎症水平等通路直接影响睡眠质量。</div>
+        <div class="news-source">来源：澎湃新闻 · Nature Health</div>
+      </div>
+      <div class="news-card" data-category="sleep">
+        <span class="news-tag tag-sleep">Sleep</span>
+        <div class="news-title">远程CBT-I疗法显著改善化疗期失眠</div>
+        <div class="news-summary">最新临床试验发现，为期6周的远程失眠认知行为疗法（CBT-I）能显著改善接受化疗的乳腺癌患者睡眠质量。远程交付模式让更多患者能便捷获得专业治疗。</div>
+        <div class="news-source">来源：Medscape · 失眠临床研究</div>
+      </div>
+      <!-- Eat -->
+      <div class="news-card" data-category="eat">
+        <span class="news-tag tag-eat">Eat</span>
+        <div class="news-title">全球首项人体研究：肠道菌群直接指挥大脑情绪物质</div>
+        <div class="news-summary">9月1日《Molecular Psychiatry》人体研究首次硬核证实：肠道菌群可能在直接指挥大脑里掌管情绪和睡眠的化学物质。是全球首次在人体上直接验证肠-脑轴化学物质联系的里程碑式研究。</div>
+        <div class="news-source">来源：Molecular Psychiatry</div>
+      </div>
+      <div class="news-card" data-category="eat">
+        <span class="news-tag tag-eat">Eat</span>
+        <div class="news-title">华大Cell子刊：揭开肠道细菌"分工"的生存江湖</div>
+        <div class="news-summary">华大研究院在《Cell Reports》发表研究，基于CycloneSEQ技术首次搞清楚每株细菌具备哪些代谢能力，揭开了肠道菌群内部复杂的代谢分工和生态协作。</div>
+        <div class="news-source">来源：Cell Reports</div>
+      </div>
+      <!-- Training -->
+      <div class="news-card" data-category="train">
+        <span class="news-tag tag-train">Training</span>
+        <div class="news-title">ASU研究：瑜伽和普拉提显著降低死亡风险</div>
+        <div class="news-summary">亚利桑那州立大学10年追踪研究发现：瑜伽降低27%死亡风险，普拉提降低36%。针灸、按摩等其他21种健康实践均未显示出显著关联。</div>
+        <div class="news-source">来源：ASU News</div>
+      </div>
+      <div class="news-card" data-category="train">
+        <span class="news-tag tag-train">Training</span>
+        <div class="news-title">75岁后练肌肉还能翻倍增长：抗阻训练逆龄效果被证实</div>
+        <div class="news-summary">《自然·衰老》等顶级期刊统一证实：75岁后坚持规范抗阻训练，流失的肌肉可以翻倍增长，体能、代谢、骨骼状态能逆转5-10年衰老差距。</div>
+        <div class="news-source">来源：Nature Aging</div>
+      </div>
+      <!-- DeepLearning -->
+      <div class="news-card" data-category="deep">
+        <span class="news-tag tag-deep">DeepLearning</span>
+        <div class="news-title">GPT-6 Astra正式发布：速度提升47%，AGI时代宣告开幕</div>
+        <div class="news-summary">OpenAI 9月4日发布GPT-6 Astra，105万token上下文、12.8万最大输出。OSWorld基准成绩提升10.5%，任务完成时间从75分钟缩短至40分钟。</div>
+        <div class="news-source">来源：OpenAI官方</div>
+      </div>
+      <div class="news-card" data-category="deep">
+        <span class="news-tag tag-deep">DeepLearning</span>
+        <div class="news-title">Google、Meta同时出手：Gemini 3.8、Muse Spark 1.3重磅发布</div>
+        <div class="news-summary">仅三周后Google推出Gemini 3.8 Flash，重点提升软件工程和Agent能力。Meta同步发布Muse Spark 1.3。一周五个大模型扎堆发布。</div>
+        <div class="news-source">来源：36氪</div>
+      </div>
+      <!-- EfficientWorking -->
+      <div class="news-card" data-category="work">
+        <span class="news-tag tag-work">EfficientWorking</span>
+        <div class="news-title">福布斯2026 AI十大预测：AI Agent全面普及企业</div>
+        <div class="news-summary">AI智能体将全面普及，企业大量部署自主AI智能体，可独立完成排程、办公协作、客户对接、数据处理，成为职场"数字员工"。</div>
+        <div class="news-source">来源：福布斯2026预测</div>
+      </div>
+      <div class="news-card" data-category="work">
+        <span class="news-tag tag-work">EfficientWorking</span>
+        <div class="news-title">德勤研究：管理范式从"管理人"转向"编排人机团队"</div>
+        <div class="news-summary">64%受访者认为AI对成功非常重要，但仅5%处于领先地位。三大转变：编排人机团队、管理AI产出、建立真正治理框架。</div>
+        <div class="news-source">来源：Deloitte Insights</div>
+      </div>
+      <!-- EnjoyYourself -->
+      <div class="news-card" data-category="enjoy">
+        <span class="news-tag tag-enjoy">EnjoyYourself</span>
+        <div class="news-title">苹果9月10日发布会：首款折叠屏iPhone Ultra压轴登场</div>
+        <div class="news-summary">新任CEO特努斯首场发布会，首款折叠屏iPhone Ultra。7.8英寸横向内折设计，钛金属机身，折叠后约护照大小，起售价约1999美元。</div>
+        <div class="news-source">来源：新浪财经</div>
+      </div>
+      <div class="news-card" data-category="enjoy">
+        <span class="news-tag tag-enjoy">EnjoyYourself</span>
+        <div class="news-title">华为9月7日发布第二代三折叠Mate XT 2非凡大师</div>
+        <div class="news-summary">华为今日14:30举办发布会，核心机型Mate XT 2非凡大师三折叠屏手机。全新G型双铰链设计，展开后屏幕尺寸更大。9月科技"诸神之战"拉开帷幕。</div>
+        <div class="news-source">来源：新浪新闻</div>
+      </div>
+      <!-- Repeat -->
+      <div class="news-card" data-category="repeat">
+        <span class="news-tag tag-repeat">Repeat</span>
+        <div class="news-title">约翰·霍普金斯大学：坏习惯养成只需一瞬间</div>
+        <div class="news-summary">《自然-通讯》研究颠覆认知：习惯形成不是渐进的，而是一瞬间完成切换。纹状体中的神经信号会突然"翻转"，行为从"目标导向"变成"习惯性自动"。</div>
+        <div class="news-source">来源：Nature Communications</div>
+      </div>
+      <div class="news-card" data-category="repeat">
+        <span class="news-tag tag-repeat">Repeat</span>
+        <div class="news-title">京都大学发现：大脑里有两条线在管"习惯"</div>
+        <div class="news-summary">习惯不是原样复刻老动作，而是在自动化里悄悄变形。背侧纹状体掌管"自动驾驶"模式，但前额叶皮层仍然在暗中监督和微调。好习惯成自然，根本不用"硬撑"。</div>
+        <div class="news-source">来源：央视网 · 京都大学</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8 Sections ===== -->
+  <section id="eight" class="section">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">📌</span>8版块精选</div>
+    </div>
+    <div class="eight-grid">
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">🤖</span>
+          <div class="eight-title">AI前沿</div>
+        </div>
+        <div class="eight-item"><strong>GPT-6 Astra发布</strong>：105万token上下文，速度提升47%</div>
+        <div class="eight-item"><strong>英伟达收购HuggingFace</strong>：129.3亿美元，开源生态最大并购</div>
+      </div>
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">💰</span>
+          <div class="eight-title">搞钱频道</div>
+        </div>
+        <div class="eight-item"><strong>AI硬件爆发元年</strong>：AI眼镜、机器人进入"卖货"阶段</div>
+        <div class="eight-item"><strong>AI+本地代运营</strong>：帮商家做短视频/数字人，月入2000-5000</div>
+      </div>
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">💼</span>
+          <div class="eight-title">职场进化</div>
+        </div>
+        <div class="eight-item"><strong>AI Agent成数字员工</strong>：独立完成排程/对接/数据处理</div>
+        <div class="eight-item"><strong>管理范式转变</strong>：从"管理人"到"编排人机团队"</div>
+      </div>
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">🌿</span>
+          <div class="eight-title">健康养生</div>
+        </div>
+        <div class="eight-item"><strong>白露养生核心</strong>："润""敛"二字，多吃白色食物</div>
+        <div class="eight-item"><strong>抗阻训练可逆龄</strong>：75岁后肌肉仍能翻倍增长</div>
+      </div>
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">📚</span>
+          <div class="eight-title">读书笔记</div>
+        </div>
+        <div class="eight-item"><strong>《2026新饭碗》</strong>：18个普通人AI时代职业转型故事</div>
+        <div class="eight-item"><strong>《德道经》帛书版</strong>：这个时代最稀缺的能力是静</div>
+      </div>
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">🏠</span>
+          <div class="eight-title">家居生活</div>
+        </div>
+        <div class="eight-item"><strong>白露家居小贴士</strong>：早晚通风午间闭窗防燥，脚部保暖</div>
+        <div class="eight-item"><strong>秋季香氛推荐</strong>：桂花、雪松、檀香等木质调</div>
+      </div>
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">📱</span>
+          <div class="eight-title">科技数码</div>
+        </div>
+        <div class="eight-item"><strong>华为Mate XT 2</strong>：第二代三折叠，今日发布</div>
+        <div class="eight-item"><strong>iPhone Ultra折叠屏</strong>：9月10日登场，钛金属机身</div>
+      </div>
+      <div class="eight-card">
+        <div class="eight-header">
+          <span class="eight-icon">👁️</span>
+          <div class="eight-title">社会观察</div>
+        </div>
+        <div class="eight-item"><strong>北京征集2027民生实事</strong>：问需于民，办到心坎上</div>
+        <div class="eight-item"><strong>9月民生新政落地</strong>：消费品安全新规、惠民消费活动</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Knowledge Card ===== -->
+  <section id="knowledge" class="section">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">💡</span>每日知识卡片</div>
+    </div>
+    <div class="knowledge-card">
+      <div class="knowledge-label">今日认知 · 行为科学</div>
+      <div class="knowledge-title">习惯不是慢慢养成的<br>而是一瞬间"翻转"的</div>
+      <div class="knowledge-desc">
+        约翰·霍普金斯大学发表在《自然-通讯》的研究发现：纹状体中的神经信号会在某个时刻突然"翻转"，行为就从"目标导向"变成了"习惯性自动"。这个临界点比预想的早得多。<br><br>
+        这意味着——不要因为"坚持了几天还没成习惯"而气馁，你的大脑正在默默积蓄。某个清晨你醒来，会突然发现：这件事已经不用"咬牙坚持"了，它就是你的一部分。
+      </div>
+      <div class="knowledge-source">研究来源：Nature Communications · 约翰·霍普金斯大学</div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <div class="footer">
+    <span class="footer-brand">🦌 PetDeer</span> · 每日晨间融合 · 2026-09-07<br>
+    愿你今天也能好好吃饭、好好睡觉、好好生活
+  </div>
+
+</div>
+
+<!-- ===== Back to Top ===== -->
+<div class="back-top" id="backTop" onclick="scrollToTop()">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 19V5M5 12l7-7 7 7"/>
+  </svg>
+</div>
+
+<script>
+// ===== Navigation scroll highlight =====
+const sections = ['hero', 'news', 'eight', 'knowledge'];
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveNav() {
+  const scrollPos = window.scrollY + 100;
+  let current = 'hero';
+  
+  for (const id of sections) {
+    const el = document.getElementById(id);
+    if (el && el.offsetTop <= scrollPos) {
+      current = id;
+    }
+  }
+  
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.dataset.target === current);
+  });
+}
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const target = document.getElementById(link.dataset.target);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// ===== Back to top =====
+const backTop = document.getElementById('backTop');
+function toggleBackTop() {
+  if (window.scrollY > 400) {
+    backTop.classList.add('show');
+  } else {
+    backTop.classList.remove('show');
+  }
+}
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== Todo localStorage =====
+const TODO_KEY = 'petdeer_todo_20260907';
+
+function loadTodos() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(TODO_KEY) || '{}');
+    document.querySelectorAll('.todo-item').forEach(item => {
+      const id = item.dataset.id;
+      if (saved[id]) {
+        item.classList.add('done');
+      }
+    });
+  } catch(e) {}
+}
+
+function saveTodos() {
+  const saved = {};
+  document.querySelectorAll('.todo-item').forEach(item => {
+    if (item.classList.contains('done')) {
+      saved[item.dataset.id] = true;
+    }
+  });
+  localStorage.setItem(TODO_KEY, JSON.stringify(saved));
+}
+
+function toggleTodo(el) {
+  const item = el.closest('.todo-item');
+  item.classList.toggle('done');
+  saveTodos();
+}
+
+// ===== Element tabs filter =====
+const elementTabs = document.querySelectorAll('.element-tab');
+const newsCards = document.querySelectorAll('.news-card');
+
+elementTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    elementTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    
+    const cat = tab.dataset.el;
+    newsCards.forEach(card => {
+      if (cat === 'all' || card.dataset.category === cat) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// ===== Scroll events =====
+window.addEventListener('scroll', () => {
+  updateActiveNav();
+  toggleBackTop();
+});
+
+// ===== Init =====
+loadTodos();
+updateActiveNav();
+</script>
+
+</body>
+</html>
