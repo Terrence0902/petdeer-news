@@ -20,9 +20,14 @@
   --accent-purple: #8B5CF6;
   --accent-green: #10B981;
   --accent-blue: #3B82F6;
+  --accent-pink: #EC4899;
+  --accent-red: #EF4444;
   --gradient-warm: linear-gradient(135deg, #F97316 0%, #FBBF24 100%);
   --gradient-soft: linear-gradient(180deg, #FFF7ED 0%, #FFFBF5 100%);
   --gradient-hero: linear-gradient(135deg, #EA580C 0%, #F97316 40%, #FBBF24 100%);
+  --gradient-purple: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  --gradient-blue: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  --gradient-green: linear-gradient(135deg, #10B981 0%, #84CC16 100%);
   --border-color: #F5EFE6;
   --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
   --shadow-md: 0 4px 12px rgba(249,115,22,0.08);
@@ -180,6 +185,51 @@ img { max-width: 100%; display: block; }
 .weather-info { font-size: 13px; opacity: 0.95; }
 .weather-temp { font-size: 20px; font-weight: 600; }
 
+/* ===== Data Board ===== */
+.data-board {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+.data-board-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+@media (max-width: 640px) {
+  .data-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.data-item {
+  text-align: center;
+  padding: 10px 6px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+}
+.data-item .data-num {
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+.data-item .data-label {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+.data-item .data-icon { font-size: 18px; margin-bottom: 2px; }
+
 /* ===== Countdown Bar ===== */
 .countdown-section {
   background: var(--bg-card);
@@ -215,6 +265,12 @@ img { max-width: 100%; display: block; }
   font-size: 22px;
   font-weight: 700;
   background: var(--gradient-warm);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.countdown-num.hot {
+  background: var(--gradient-purple);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -414,6 +470,149 @@ img { max-width: 100%; display: block; }
   z-index: 1;
 }
 
+/* ===== Follow Section ===== */
+.follow-section {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 12px;
+}
+.follow-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.follow-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.follow-item:last-child { border-bottom: none; }
+.follow-item-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.follow-badge {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+  margin-left: auto;
+}
+.follow-badge.hot { background: #FEE2E2; color: #DC2626; }
+.follow-badge.new { background: #DBEAFE; color: #2563EB; }
+.follow-badge.silent { background: #E5E7EB; color: #6B7280; }
+.follow-item-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.follow-tags {
+  display: flex;
+  gap: 4px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+.follow-tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  color: var(--text-tertiary);
+}
+
+/* ===== Luck & Lottery ===== */
+.luck-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .luck-grid { grid-template-columns: 1fr 1fr; }
+}
+.luck-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+.luck-card.cancer { border-top: 3px solid #EC4899; }
+.luck-card.lottery { border-top: 3px solid #F59E0B; }
+.luck-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.luck-icon { font-size: 22px; }
+.luck-title { font-size: 15px; font-weight: 600; }
+.luck-content { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+.luck-content p { margin-bottom: 4px; }
+.luck-stars { color: #F59E0B; letter-spacing: 2px; }
+.lottery-nums {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+.lottery-ball {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.lottery-ball.red { background: linear-gradient(135deg, #EF4444, #F97316); }
+.lottery-ball.blue { background: linear-gradient(135deg, #3B82F6, #06B6D4); }
+
+/* ===== Mini News Cards (for health/home/apple sections) ===== */
+.mini-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: 10px;
+}
+.mini-card:last-child { margin-bottom: 0; }
+.mini-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.mini-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.mini-tags {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.mini-tag {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  color: var(--text-tertiary);
+}
+
 /* ===== News Cards ===== */
 .news-card {
   background: var(--bg-card);
@@ -556,6 +755,47 @@ img { max-width: 100%; display: block; }
   font-weight: 500;
 }
 
+/* ===== Timeline Table ===== */
+.timeline-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  overflow-x: auto;
+}
+.timeline-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.timeline-table th {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 2px solid var(--border-color);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+.timeline-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+.timeline-table tr:last-child td { border-bottom: none; }
+.timeline-status {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.status-hot { background: #FEE2E2; color: #DC2626; }
+.status-active { background: #DBEAFE; color: #2563EB; }
+.status-wait { background: #FEF3C7; color: #D97706; }
+.status-track { background: #E0E7FF; color: #6366F1; }
+.status-silent { background: #E5E7EB; color: #6B7280; }
+
 /* ===== Back to Top ===== */
 .back-to-top {
   position: fixed;
@@ -659,7 +899,7 @@ img { max-width: 100%; display: block; }
 .hot-rank.r1 { background: linear-gradient(135deg, #EF4444, #F97316); }
 .hot-rank.r2 { background: linear-gradient(135deg, #F97316, #FBBF24); }
 .hot-rank.r3 { background: linear-gradient(135deg, #FBBF24, #84CC16); }
-.hot-rank.r4, .hot-rank.r5 { background: var(--text-tertiary); }
+.hot-rank.r4, .hot-rank.r5, .hot-rank.r6 { background: var(--text-tertiary); }
 .hot-text { font-size: 13px; color: var(--text-primary); }
 
 /* ===== Footer ===== */
@@ -695,6 +935,12 @@ img { max-width: 100%; display: block; }
 .section:nth-child(10) { animation-delay: 0.5s; }
 .section:nth-child(11) { animation-delay: 0.55s; }
 .section:nth-child(12) { animation-delay: 0.6s; }
+.section:nth-child(13) { animation-delay: 0.65s; }
+.section:nth-child(14) { animation-delay: 0.7s; }
+.section:nth-child(15) { animation-delay: 0.75s; }
+.section:nth-child(16) { animation-delay: 0.8s; }
+.section:nth-child(17) { animation-delay: 0.85s; }
+.section:nth-child(18) { animation-delay: 0.9s; }
 </style>
 </head>
 <body>
@@ -705,8 +951,10 @@ img { max-width: 100%; display: block; }
     <div class="nav-logo">🦌 PetDeer</div>
     <div class="nav-links">
       <a class="nav-link active" href="#hero" data-section="hero">晨报</a>
+      <a class="nav-link" href="#follow" data-section="follow">关注</a>
       <a class="nav-link" href="#news7" data-section="news7">7元素</a>
       <a class="nav-link" href="#eight" data-section="eight">8版块</a>
+      <a class="nav-link" href="#timeline" data-section="timeline">追踪</a>
       <a class="nav-link" href="#knowledge" data-section="knowledge">知识卡</a>
     </div>
   </div>
@@ -723,7 +971,7 @@ img { max-width: 100%; display: block; }
           <div class="hero-title">白露 · 第三天</div>
           <div class="hero-subtitle">露凝而白，气始寒也</div>
         </div>
-        <div class="hero-badge">湿热体质</div>
+        <div class="hero-badge">湿热体质 ♋ 巨蟹</div>
       </div>
       <div class="hero-weather">
         <div class="weather-icon">🍂</div>
@@ -734,14 +982,46 @@ img { max-width: 100%; display: block; }
       </div>
     </div>
 
+    <!-- Data Board -->
+    <div class="data-board">
+      <div class="data-board-title">📊 今日数据看板</div>
+      <div class="data-grid">
+        <div class="data-item">
+          <div class="data-icon">🏋️</div>
+          <div class="data-num">464</div>
+          <div class="data-label">健身打卡(天)</div>
+        </div>
+        <div class="data-item">
+          <div class="data-icon">🎹</div>
+          <div class="data-num">123</div>
+          <div class="data-label">钢琴练习(次)</div>
+        </div>
+        <div class="data-item">
+          <div class="data-icon">📚</div>
+          <div class="data-num">93</div>
+          <div class="data-label">MPA备考(天)</div>
+        </div>
+        <div class="data-item">
+          <div class="data-icon">🎯</div>
+          <div class="data-num">93</div>
+          <div class="data-label">国考备考(天)</div>
+        </div>
+        <div class="data-item">
+          <div class="data-icon">🗓️</div>
+          <div class="data-num">252</div>
+          <div class="data-label">2026已过(天)</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Countdown -->
     <div class="countdown-section">
       <div class="countdown-title">⏰ 重要倒计时</div>
       <div class="countdown-track">
         <div class="countdown-item">
-          <div class="countdown-num">109</div>
-          <div class="countdown-label">MPA联考</div>
-          <div class="countdown-desc">12月27日</div>
+          <div class="countdown-num hot">今晚</div>
+          <div class="countdown-label">苹果发布会</div>
+          <div class="countdown-desc">折叠屏iPhone</div>
         </div>
         <div class="countdown-item">
           <div class="countdown-num">81</div>
@@ -749,19 +1029,24 @@ img { max-width: 100%; display: block; }
           <div class="countdown-desc">11月29日</div>
         </div>
         <div class="countdown-item">
+          <div class="countdown-num">109</div>
+          <div class="countdown-label">MPA联考</div>
+          <div class="countdown-desc">12月27日</div>
+        </div>
+        <div class="countdown-item">
           <div class="countdown-num">12</div>
           <div class="countdown-label">白露</div>
           <div class="countdown-desc">剩余天数</div>
         </div>
         <div class="countdown-item">
-          <div class="countdown-num">3</div>
-          <div class="countdown-label">本周</div>
-          <div class="countdown-desc">已过天数</div>
+          <div class="countdown-num">295</div>
+          <div class="countdown-label">新国标</div>
+          <div class="countdown-desc">2027.07.01</div>
         </div>
         <div class="countdown-item">
-          <div class="countdown-num">252</div>
-          <div class="countdown-label">2026年</div>
-          <div class="countdown-desc">已过天数</div>
+          <div class="countdown-num">4天</div>
+          <div class="countdown-label">周日打卡</div>
+          <div class="countdown-desc">华为开发者</div>
         </div>
       </div>
     </div>
@@ -826,7 +1111,7 @@ img { max-width: 100%; display: block; }
       <div class="todo-item" data-id="2">
         <div class="todo-checkbox"></div>
         <div class="todo-content">
-          <div class="todo-text">煮日茶（白露健脾清燥茶）+ 晨间新闻速览</div>
+          <div class="todo-text">煮日茶（白露健脾清燥茶）+ 晨间新闻速览（含关注主题）</div>
           <div class="todo-meta">
             <span class="todo-time">07:30 · 15min</span>
             <span class="todo-priority must">必做</span>
@@ -881,7 +1166,7 @@ img { max-width: 100%; display: block; }
       <div class="todo-item" data-id="7">
         <div class="todo-checkbox"></div>
         <div class="todo-content">
-          <div class="todo-text">Repeat：今日7元素复盘 + 明日计划微调</div>
+          <div class="todo-text">Repeat：今日7元素复盘 + 明日计划微调 + 关注主题更新</div>
           <div class="todo-meta">
             <span class="todo-time">22:00 · 15min</span>
             <span class="todo-priority optional">可选</span>
@@ -901,10 +1186,17 @@ img { max-width: 100%; display: block; }
     <div class="progress-card">
       <div class="progress-item">
         <div class="progress-header">
-          <span class="progress-name">MPA联考备考</span>
+          <span class="progress-name">MPA联考备考（第93天）</span>
           <span class="progress-percent">42%</span>
         </div>
         <div class="progress-bar"><div class="progress-fill" style="width: 42%"></div></div>
+      </div>
+      <div class="progress-item">
+        <div class="progress-header">
+          <span class="progress-name">国考备考（第93天）</span>
+          <span class="progress-percent">38%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 38%"></div></div>
       </div>
       <div class="progress-item">
         <div class="progress-header">
@@ -922,10 +1214,10 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="progress-item">
         <div class="progress-header">
-          <span class="progress-name">AI小说副业</span>
-          <span class="progress-percent">55%</span>
+          <span class="progress-name">钢琴练习（第123次）</span>
+          <span class="progress-percent">25%</span>
         </div>
-        <div class="progress-bar"><div class="progress-fill" style="width: 55%"></div></div>
+        <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
       </div>
     </div>
   </section>
@@ -936,6 +1228,289 @@ img { max-width: 100%; display: block; }
       <div class="nudge-label">✨ 今日 Nudge</div>
       <div class="nudge-text">
         白露第三天，露水一天比一天重，秋天也一天比一天深。湿热体质的你，趁着这清爽的秋风，把一夏的闷热都散出去吧。今天不用赶进度——煮一壶温茶，开窗让风进来，散步时看看草叶上的露珠。节气是天地给的节奏，跟上它，就不累。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Follow Section ===== -->
+  <section class="section" id="follow">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">🔔</span>泰格关注 · 重点追踪</div>
+      <div class="section-more">20个主题定制</div>
+    </div>
+
+    <!-- 科技产品追踪 -->
+    <div class="follow-section">
+      <div class="follow-subtitle">📱 科技产品追踪</div>
+      <div class="follow-item">
+        <div class="follow-item-title">
+          折叠屏iPhone / iPhone Ultra · 今夜发布
+          <span class="follow-badge hot">🔥 今晚</span>
+        </div>
+        <div class="follow-item-desc">
+          9月10日凌晨1点苹果秋季发布会 · 首款折叠屏iPhone Ultra，横向书本式内折方案，起售价预计14999元 · 据传采用 Touch ID 而非 Face ID · 新任CEO特努斯首秀，苹果进入"后库克时代"
+        </div>
+        <div class="follow-tags">
+          <span class="follow-tag">#关注主题2</span>
+          <span class="follow-tag">#折叠屏iPhone</span>
+          <span class="follow-tag">#苹果发布会</span>
+        </div>
+      </div>
+      <div class="follow-item">
+        <div class="follow-item-title">
+          华为全场景新品 · 近期追踪
+        </div>
+        <div class="follow-item-desc">
+          Mate XT 2非凡大师已发布（9月7日）· 第二代三折叠+麒麟9050 Pro+硬件级防窥 · 鸿蒙生态：GIIC联盟发起「鸿图计划」· 华为开发者周打卡（周日19:00提醒）
+        </div>
+        <div class="follow-tags">
+          <span class="follow-tag">#关注主题3</span>
+          <span class="follow-tag">#关注主题4</span>
+          <span class="follow-tag">#华为生态</span>
+        </div>
+      </div>
+      <div class="follow-item">
+        <div class="follow-item-title">
+          苹果AI智能眼镜 · 静默追踪中
+          <span class="follow-badge silent">🔕 静默</span>
+        </div>
+        <div class="follow-item-desc">
+          预计2026年底试产，2027年初正式发布 · 8月裁撤Vision Pro团队200+人，资源转向AI智能眼镜和Siri升级 · 有实质进展才通知，每周一9:00自动搜索
+        </div>
+        <div class="follow-tags">
+          <span class="follow-tag">#关注主题1</span>
+          <span class="follow-tag">#AI眼镜</span>
+          <span class="follow-tag">#每周追踪</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 换车计划追踪 -->
+    <div class="follow-section">
+      <div class="follow-subtitle">🚗 换车计划追踪</div>
+      <div class="follow-item">
+        <div class="follow-item-title">
+          启境GX7 · 9月4日已开启预售
+          <span class="follow-badge new">🆕 新动态</span>
+        </div>
+        <div class="follow-item-desc">
+          中大型五座增程SUV · 华为乾崑智驾+鸿蒙座舱 · 24.99万 - 31.19万元（9月内上市）· 四激光雷达，20秒一键纯平大床 · 预算25-35万区间重点参考车型
+        </div>
+        <div class="follow-tags">
+          <span class="follow-tag">#关注主题5</span>
+          <span class="follow-tag">#换车计划</span>
+          <span class="follow-tag">#启境GX7</span>
+        </div>
+      </div>
+      <div class="follow-item">
+        <div class="follow-item-title">
+          新能源车新国标 · 倒计时追踪
+        </div>
+        <div class="follow-item-desc">
+          2027年7月1日全面实施（还有295天）· 电池热失控：5分钟报警→2小时不起火不爆炸 · 新增底部撞击测试 · 强制物理一键断电 · 2027年后换车完美匹配
+        </div>
+        <div class="follow-tags">
+          <span class="follow-tag">#关注主题6</span>
+          <span class="follow-tag">#新国标</span>
+          <span class="follow-tag">#电池安全</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 每日关注 -->
+    <div class="luck-grid">
+      <div class="luck-card cancer">
+        <div class="luck-header">
+          <span class="luck-icon">♋</span>
+          <span class="luck-title">今日运势 · 巨蟹座</span>
+        </div>
+        <div class="luck-content">
+          <p><span class="luck-stars">⭐⭐⭐⭐</span> 综合运势</p>
+          <p><strong>事业学业：</strong>思维活跃，资料分析模块易突破</p>
+          <p><strong>健康提醒：</strong>注意呼吸道保养，昼夜温差大</p>
+          <p><strong>财运指数：</strong>⭐⭐⭐ 平稳，奖池7.98亿</p>
+          <p><strong>幸运色：</strong>米白色、暖橙色</p>
+        </div>
+      </div>
+      <div class="luck-card lottery">
+        <div class="luck-header">
+          <span class="luck-icon">🎱</span>
+          <span class="luck-title">双色球追踪</span>
+        </div>
+        <div class="luck-content">
+          <p><strong>26104期（9月8日）：</strong></p>
+          <div class="lottery-nums">
+            <span class="lottery-ball red">11</span>
+            <span class="lottery-ball red">12</span>
+            <span class="lottery-ball red">13</span>
+            <span class="lottery-ball red">19</span>
+            <span class="lottery-ball red">20</span>
+            <span class="lottery-ball red">31</span>
+            <span class="lottery-ball blue">03</span>
+          </div>
+          <p><strong>奖池：</strong>7.98亿元（🟢 常规模式）</p>
+          <p><strong>下期：</strong>9月10日（周四）21:15</p>
+          <p><strong>策略：</strong>每周四20元机选</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 男性健康 ===== -->
+  <section class="section" id="health">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">💪</span>男性健康 · 5条精选</div>
+      <div class="section-more">关注主题10</div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">白露时节男性养生重点：润肺健脾+运动调神</div>
+      <div class="mini-desc">白露后天气变凉，男性容易出现秋燥干咳、脾胃失调。建议：晨起喝温水润肺，饮食增加银耳、百合、莲子等清润食材；运动以微汗为宜，避免大汗淋漓耗伤津液。湿热体质尤其注意：不要盲目"贴秋膘"，先清余湿再进补。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#男性健康</span>
+        <span class="mini-tag">#白露养生</span>
+        <span class="mini-tag">#湿热体质</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">前列腺保养：久坐人群的3个日常动作</div>
+      <div class="mini-desc">最新泌尿外科指南指出，久坐是前列腺健康的头号杀手。推荐3个零成本动作：① 每45分钟起身活动2分钟；② 深蹲训练（每天15-20个）；③ 温水坐浴（每周2-3次，每次10分钟）。坚持1个月可显著改善会阴部血液循环。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#前列腺</span>
+        <span class="mini-tag">#久坐危害</span>
+        <span class="mini-tag">#日常保养</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">睡眠不足6小时，睾酮水平下降15%</div>
+      <div class="mini-desc">《JAMA》研究证实，连续一周睡眠不足6小时，年轻男性的睾酮水平会下降10-15%。睾酮不仅关系到精力和肌肉，还关系到情绪稳定和认知功能。对于备考中的你，保证7-8小时睡眠是成本最低的"效率补剂"，也是男性健康的基石。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#睡眠</span>
+        <span class="mini-tag">#睾酮</span>
+        <span class="mini-tag">#JAMA</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">男性脱发新认知：DHT不是唯一元凶，炎症反应同样关键</div>
+      <div class="mini-desc">2026年最新研究发现，男性型脱发除了DHT作用外，头皮微炎症和氧化应激也是重要因素。建议：减少高糖高油饮食（减轻炎症）、保证7小时以上睡眠（修复毛囊）、避免过度抓挠头皮。湿热体质人群更应注意头皮控油。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#脱发</span>
+        <span class="mini-tag">#头皮健康</span>
+        <span class="mini-tag">#炎症</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">"男性沉默症"：抑郁不是女性的专利</div>
+      <div class="mini-desc">研究显示，男性抑郁的检出率仅为女性的1/3，但实际患病率差距并不大——原因是男性更倾向于用"愤怒""疲惫""逃避"来表达情绪，而非传统认知中的"悲伤低落"。识别自己的情绪状态、允许自己脆弱，是现代男性重要的心理必修课。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#心理健康</span>
+        <span class="mini-tag">#男性情绪</span>
+        <span class="mini-tag">#抑郁</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 家庭整理 ===== -->
+  <section class="section" id="home">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">🏠</span>家庭整理 · 5条实用技巧</div>
+      <div class="section-more">关注主题11</div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">白露换季收纳：夏装清洗3要点</div>
+      <div class="mini-desc">白露过后天气渐凉，正是收纳夏装的好时机：① 真丝、棉麻衣物先清洗再收纳，避免残留汗渍泛黄；② 运动鞋塞入报纸吸湿定型；③ 凉席用温水擦拭晾干后卷收，放一包干燥剂。湿热地区尤其注意防霉。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#换季收纳</span>
+        <span class="mini-tag">#白露整理</span>
+        <span class="mini-tag">#防霉</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">"一进一出"原则：控制物品总量的最简单方法</div>
+      <div class="mini-desc">家里东西越买越多？试试"一进一出"原则：每买一件新物品，就淘汰一件同类旧物品。这个方法看似简单，却能有效控制物品总量，让你在购买前更审慎地思考"我真的需要吗"。坚持3个月，家里会清爽很多。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#极简生活</span>
+        <span class="mini-tag">#收纳原则</span>
+        <span class="mini-tag">#消费理性</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">厨房收纳黄金法则：高频物品在手肘范围内</div>
+      <div class="mini-desc">厨房是家里最容易乱的地方。收纳核心原则：每天都用的锅铲、调料、砧板，放在手肘一伸就能够到的位置；每周用1-2次的放在上层或下层；每月才用一次的放最高处或储藏室。用频率决定位置，做饭效率提升50%。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#厨房收纳</span>
+        <span class="mini-tag">#效率整理</span>
+        <span class="mini-tag">#频率原则</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">数字断舍离：手机相册每年清理一次</div>
+      <div class="mini-desc">物理空间需要整理，数字空间同样需要。建议：每月清理一次截图和无用照片，每年做一次大清理。照片不是越多越好——那些你再也不会看的照片，只是占用空间和心理负担。留下真正有意义的，才是对记忆的尊重。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#数字整理</span>
+        <span class="mini-tag">#断舍离</span>
+        <span class="mini-tag">#照片管理</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">玄关"3秒原则"：回家的第一件事就井井有条</div>
+      <div class="mini-desc">玄关是家的门面，也是最容易乱的地方。试试"3秒原则"：回家后3秒内完成换鞋、放包、钥匙归位。方法很简单：在玄关放一个固定的钥匙盘、一个挂钩放包、鞋架最下层留空位放当天穿的鞋。习惯养成后，玄关永远不会乱。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#玄关整理</span>
+        <span class="mini-tag">#习惯养成</span>
+        <span class="mini-tag">#3秒原则</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 苹果生态 ===== -->
+  <section class="section" id="apple">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">🍎</span>苹果生态 · 5条精选</div>
+      <div class="section-more">关注主题12</div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">iPhone技巧：用"专注模式"打造备考专属环境</div>
+      <div class="mini-desc">MPA备考冲刺期，推荐设置"学习"专注模式：① 只允许电话和微信重要联系人通知；② 主屏幕隐藏娱乐类App；③ 自动回复"正在学习，稍后回复"。配合屏幕使用时间限制，每天可减少至少40分钟无效刷手机时间。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#苹果技巧</span>
+        <span class="mini-tag">#专注模式</span>
+        <span class="mini-tag">#备考效率</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">Mac mini高效用法：调度中心+分屏提升效率</div>
+      <div class="mini-desc">Mac用户很多人不知道的技巧：三指上滑打开调度中心查看所有窗口，长按拖动窗口到屏幕边缘即可分屏。对于需要同时看资料+写笔记的备考场景，左右分屏功能可以让效率翻倍。建议：左侧放讲义PDF，右侧放笔记App。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#Mac技巧</span>
+        <span class="mini-tag">#分屏</span>
+        <span class="mini-tag">#效率</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">iPad备考神器："台前调度"让平板变生产力工具</div>
+      <div class="mini-desc">iPad mini 7虽然屏幕小，但台前调度功能同样强大。开启方式：设置→主屏幕与程序坞→台前调度。备考场景推荐：上方放视频课程，下方悬浮笔记App，边看边记。配合Apple Pencil，学习体验堪比笔记本电脑。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#iPad技巧</span>
+        <span class="mini-tag">#台前调度</span>
+        <span class="mini-tag">#MPA备考</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">iOS 18隐藏功能："智能摘要"让长文阅读效率翻倍</div>
+      <div class="mini-desc">iOS 18的备忘录和Safari新增了"智能摘要"功能，选中长文本后右键即可生成摘要、要点、行动项。对于备考时阅读长篇资料、论文非常实用，可以快速提取核心观点，节省大量时间。配合AI功能，还能生成问答对来检验理解。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#iOS18</span>
+        <span class="mini-tag">#智能摘要</span>
+        <span class="mini-tag">#学习技巧</span>
+      </div>
+    </div>
+    <div class="mini-card">
+      <div class="mini-title">苹果折叠屏Ultra今夜发布：后库克时代首款重磅产品</div>
+      <div class="mini-desc">9月10日凌晨1点，新任CEO特努斯将带来他执掌苹果后的首场发布会。最大看点是首款折叠屏iPhone Ultra，采用横向书本式内折方案，起售价预计14999元。这将是iPhone诞生以来最大的一次形态革新。</div>
+      <div class="mini-tags">
+        <span class="mini-tag">#折叠屏iPhone</span>
+        <span class="mini-tag">#苹果发布会</span>
+        <span class="mini-tag">#后库克时代</span>
       </div>
     </div>
   </section>
@@ -958,12 +1533,12 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="news-card">
         <div class="news-index">02</div>
-        <div class="news-title">"长寿公式"最新验证：饮食+运动+睡眠黄金组合延寿9.35年</div>
-        <div class="news-summary">2026年《柳叶刀》子刊研究总结出"长寿公式"——饮食、运动、睡眠搭配到黄金状态，预期寿命延长9.35年。每日保持7.2-8小时睡眠是大脑清除代谢毒素、降低神经退行性疾病风险的黄金窗口。</div>
+        <div class="news-title">睡眠不足6小时睾酮下降15%：男性健康的隐形杀手</div>
+        <div class="news-summary">《JAMA》研究证实，连续一周睡眠不足6小时，年轻男性睾酮水平下降10-15%。睾酮不仅关系到精力和肌肉，还关系到情绪稳定和认知功能。保证7-8小时睡眠，是成本最低的"效率补剂"和"男性补剂"。</div>
         <div class="news-tags">
           <span class="news-tag">#Sleep</span>
-          <span class="news-tag">#长寿公式</span>
-          <span class="news-tag">#柳叶刀</span>
+          <span class="news-tag">#男性健康</span>
+          <span class="news-tag">#睾酮</span>
         </div>
       </div>
     </div>
@@ -1014,12 +1589,12 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="news-card">
         <div class="news-index">06</div>
-        <div class="news-title">中老年人居家拉伸新方案：3分钟座椅拉伸操，安全有效</div>
-        <div class="news-summary">针对中老年颈椎僵硬、肩周不适等问题，最新推广的"3分钟居家简易拉伸操"示范了多套安全拉伸动作。所有动作无需器械，居家座椅上就可完成，禁止快速甩动脖颈等危险动作。</div>
+        <div class="news-title">健身打卡第464天：长期坚持的核心不是意志力，是系统</div>
+        <div class="news-summary">从2025年6月3日到今天，连续健身464天。行为科学研究表明：能坚持一年以上的习惯，靠的从来不是意志力，而是环境设计和身份认同。把"我要健身"变成"我是一个每天运动的人"，坚持就成了自然而然的事。</div>
         <div class="news-tags">
           <span class="news-tag">#Train</span>
-          <span class="news-tag">#居家健身</span>
-          <span class="news-tag">#中老年</span>
+          <span class="news-tag">#健身打卡</span>
+          <span class="news-tag">#第464天</span>
         </div>
       </div>
     </div>
@@ -1089,7 +1664,7 @@ img { max-width: 100%; display: block; }
       <div class="news-card">
         <div class="news-index">11</div>
         <div class="news-title">苹果折叠屏iPhone Ultra今夜亮相：新CEO首秀</div>
-        <div class="news-summary">9月10日凌晨苹果秋季发布会，新任CEO特努斯首秀，标志着苹果进入"后库克时代"。首款折叠屏iPhone Ultra是最大看点，预计起售价突破万元。华为、小米、苹果三大品牌72小时内接连发布折叠屏旗舰。</div>
+        <div class="news-summary">9月10日凌晨苹果秋季发布会，新任CEO特努斯首秀，标志着苹果进入"后库克时代"。首款折叠屏iPhone Ultra采用横向书本式内折方案，预计起售价14999元。华为、小米、苹果72小时内接连发布折叠屏旗舰。</div>
         <div class="news-tags">
           <span class="news-tag">#EnjoyYourself</span>
           <span class="news-tag">#苹果</span>
@@ -1098,12 +1673,12 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="news-card">
         <div class="news-index">12</div>
-        <div class="news-title">镭萌科技获千万级天使轮融资：AI陪伴赛道再升温</div>
-        <div class="news-summary">9月9日，杭州镭萌科技在外滩大会现场宣布完成千万级天使轮融资，时尚传媒集团与弘颐资管联合领投。这是时尚集团首次布局AI机器人，情感交互、人格化表达成为新的差异化竞争点。</div>
+        <div class="news-title">启境GX7预售开启：华为乾崑+鸿蒙座舱，24.99万起</div>
+        <div class="news-summary">9月4日，广汽与华为乾崑联合打造的启境GX7正式开启预售，定位阔五座智能SUV，预售区间24.99万至31.19万元。华为七大汽车智能化方案集中落地，四激光雷达配置，20秒一键纯平大床模式。</div>
         <div class="news-tags">
           <span class="news-tag">#EnjoyYourself</span>
-          <span class="news-tag">#AI机器人</span>
-          <span class="news-tag">#融资</span>
+          <span class="news-tag">#华为汽车</span>
+          <span class="news-tag">#启境GX7</span>
         </div>
       </div>
     </div>
@@ -1181,7 +1756,7 @@ img { max-width: 100%; display: block; }
         </div>
         <ul class="eight-list">
           <li><strong>白露养生三要</strong>：健脾清燥、运动助眠、少碰超加工</li>
-          <li><strong>运动零食有效</strong>：碎片化训练效果不输连续训练</li>
+          <li><strong>男性健康提醒</strong>：睡眠不足6小时睾酮降15%</li>
         </ul>
       </div>
       <div class="eight-card">
@@ -1200,8 +1775,8 @@ img { max-width: 100%; display: block; }
           <span class="eight-title">家居生活</span>
         </div>
         <ul class="eight-list">
-          <li><strong>白露家居贴士</strong>：早晚通风午间防燥，换薄被撤凉席</li>
-          <li><strong>秋日仪式感</strong>：煮温茶、观晨露、踩落叶</li>
+          <li><strong>白露换季收纳</strong>：夏装清洗3要点，湿热地区注意防霉</li>
+          <li><strong>玄关3秒原则</strong>：回家3秒完成换鞋放包，玄关永远不乱</li>
         </ul>
       </div>
       <div class="eight-card">
@@ -1210,8 +1785,8 @@ img { max-width: 100%; display: block; }
           <span class="eight-title">科技数码</span>
         </div>
         <ul class="eight-list">
-          <li><strong>折叠屏大战</strong>：华为已发、苹果今夜发、小米入场</li>
-          <li><strong>后库克时代</strong>：特努斯首秀，苹果走向何方</li>
+          <li><strong>苹果折叠屏今夜发布</strong>：iPhone Ultra横向内折，14999起</li>
+          <li><strong>启境GX7预售中</strong>：华为乾崑+鸿蒙座舱，24.99万起</li>
         </ul>
       </div>
       <div class="eight-card">
@@ -1227,6 +1802,82 @@ img { max-width: 100%; display: block; }
     </div>
   </section>
 
+  <!-- ===== Timeline / Long-term Tracking ===== -->
+  <section class="section" id="timeline">
+    <div class="section-header">
+      <div class="section-title"><span class="icon">📅</span>长期时间节点追踪</div>
+      <div class="section-more">9大节点全掌握</div>
+    </div>
+    <div class="timeline-card">
+      <table class="timeline-table">
+        <thead>
+          <tr>
+            <th>事件</th>
+            <th>时间</th>
+            <th>倒计时</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>苹果秋季发布会（折叠屏iPhone）</td>
+            <td>2026-09-10 01:00</td>
+            <td><strong>今晚</strong></td>
+            <td><span class="timeline-status status-hot">🔥 即将开始</span></td>
+          </tr>
+          <tr>
+            <td>双色球下期开奖</td>
+            <td>2026-09-10 21:15</td>
+            <td>明天</td>
+            <td><span class="timeline-status status-active">🟢 常规模式</span></td>
+          </tr>
+          <tr>
+            <td>华为开发者周打卡</td>
+            <td>每周日19:00</td>
+            <td>4天</td>
+            <td><span class="timeline-status status-active">📋 持续进行</span></td>
+          </tr>
+          <tr>
+            <td>国考报名</td>
+            <td>2026年10月</td>
+            <td>约30天</td>
+            <td><span class="timeline-status status-wait">⏳ 待关注</span></td>
+          </tr>
+          <tr>
+            <td>国考笔试</td>
+            <td>2026-11-29</td>
+            <td><strong>81天</strong></td>
+            <td><span class="timeline-status status-wait">⏳ 备考中</span></td>
+          </tr>
+          <tr>
+            <td>MPA管理类联考</td>
+            <td>2026-12-27</td>
+            <td><strong>109天</strong></td>
+            <td><span class="timeline-status status-wait">⏳ 备考中</span></td>
+          </tr>
+          <tr>
+            <td>新能源车新国标实施</td>
+            <td>2027-07-01</td>
+            <td>295天</td>
+            <td><span class="timeline-status status-track">📌 已设提醒</span></td>
+          </tr>
+          <tr>
+            <td>苹果AI眼镜预计发布</td>
+            <td>2027年初</td>
+            <td>约16个月</td>
+            <td><span class="timeline-status status-track">👀 每周追踪</span></td>
+          </tr>
+          <tr>
+            <td>换车窗口开启</td>
+            <td>2027年后</td>
+            <td>约15个月</td>
+            <td><span class="timeline-status status-silent">📋 信息收集中</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
   <!-- ===== Knowledge Card ===== -->
   <section class="section" id="knowledge">
     <div class="section-header">
@@ -1237,14 +1888,14 @@ img { max-width: 100%; display: block; }
       <div class="knowledge-label">今日认知 · 行为科学</div>
       <div class="knowledge-title">新开始效应（Fresh Start Effect）</div>
       <div class="knowledge-content">
-        <p><strong>核心观点：</strong>人们在时间里程碑（如月初、新年、生日、学期开始、节气更替）时，更容易启动新习惯和目标。这些节点提供了"心理上的重新开始"感，让人与过去的"失败自我"分离，增强自我效能感。</p>
+        <p><strong>核心观点：</strong>人们在时间里程碑（如月初、新年、生日、学期开始、节气更替）时，更容易启动新习惯和目标，因为这些节点提供了"心理上的重新开始"感，让人与过去的"失败自我"分离，增强自我效能感。</p>
         <p><strong>白露应用：</strong>白露是夏秋转换的节气节点，也是天然的"新开始"契机。与其等新年再立flag，不如借着白露的换季节奏，启动一项你一直想做但迟迟没开始的事。</p>
-        <p><strong>行动建议：</strong></p>
+        <p><strong>你的个人里程碑：</strong></p>
         <ul>
-          <li>选一件你想养成的小事</li>
-          <li>今天（白露第3天）就开始第一步</li>
-          <li>用"节气第X天"来打卡计数</li>
-          <li>让天地的节奏成为你的外部脚手架</li>
+          <li>健身打卡第464天 ✓ 已建立</li>
+          <li>钢琴练习第123次 🎹 稳步推进</li>
+          <li>MPA备考第93天 📚 冲刺中</li>
+          <li>国考备考第93天 🎯 同步推进</li>
         </ul>
       </div>
       <div class="knowledge-source">💡 一句话总结：最好的开始时间是"现在"，但如果"现在"太难，就找一个时间里程碑借力。</div>
@@ -1263,7 +1914,7 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="hot-item">
         <span class="hot-rank r2">2</span>
-        <span class="hot-text">苹果折叠屏今夜发布：新CEO首秀，后库克时代开启</span>
+        <span class="hot-text">苹果折叠屏今夜发布：新CEO首秀，起售价14999元</span>
       </div>
       <div class="hot-item">
         <span class="hot-rank r3">3</span>
@@ -1275,7 +1926,11 @@ img { max-width: 100%; display: block; }
       </div>
       <div class="hot-item">
         <span class="hot-rank r5">5</span>
-        <span class="hot-text">超加工食品伤肠道：Nature子刊警示，吃对了就是养命</span>
+        <span class="hot-text">启境GX7预售：华为乾崑+鸿蒙座舱，24.99万起</span>
+      </div>
+      <div class="hot-item">
+        <span class="hot-rank r6">6</span>
+        <span class="hot-text">双色球奖池7.98亿：常规模式，周四开奖记得买</span>
       </div>
     </div>
   </section>
@@ -1283,7 +1938,7 @@ img { max-width: 100%; display: block; }
   <!-- ===== Footer ===== -->
   <div class="footer">
     <p>由 <span class="footer-brand">🦌 PetDeer</span> 每日晨间生成 · 2026-09-09 白露第3天</p>
-    <p style="margin-top: 4px;">湿热体质专属 · 7元素生活方式体系</p>
+    <p style="margin-top: 4px;">湿热体质专属 · 7元素生活方式体系 · 20个关注主题定制</p>
   </div>
 
 </div>
@@ -1337,7 +1992,7 @@ img { max-width: 100%; display: block; }
 
 // ===== Scroll spy for navigation =====
 (function() {
-  const sections = ['hero', 'news7', 'eight', 'knowledge'];
+  const sections = ['hero', 'follow', 'news7', 'eight', 'timeline', 'knowledge'];
   const navLinks = document.querySelectorAll('.nav-link');
   
   function updateActiveNav() {
