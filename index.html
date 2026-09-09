@@ -6,22 +6,21 @@
 <title>PetDeer 每日新闻</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#FFFBF5;color:#1C1917;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
-.loading{text-align:center}
-.loading-icon{font-size:48px;margin-bottom:16px;animation:bounce 1s infinite}
-.loading-text{font-size:16px;color:#57534E}
-.loading-brand{font-size:20px;font-weight:700;background:linear-gradient(135deg,#F97316,#FBBF24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+body{background:#000;color:#fff;font-family:-apple-system,"SF Pro Text","PingFang SC",sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.loading{font-size:18px;color:rgba(255,255,255,0.6)}
 </style>
 </head>
 <body>
-<div class="loading">
-<div class="loading-icon">🦌</div>
-<div class="loading-brand">PetDeer 每日新闻</div>
-<div class="loading-text">正在跳转到 2026-09-09 白露第3天新闻...</div>
-</div>
+<div class="loading">正在跳转到今日新闻...</div>
 <script>
-window.location.href = "2026-09-09_每日新闻.html";
+function redirect(){
+  var d=new Date();
+  var y=d.getFullYear();
+  var m=String(d.getMonth()+1).padStart(2,'0');
+  var dd=String(d.getDate()).padStart(2,'0');
+  window.location.href=y+'-'+m+'-'+dd+'_晨间融合.html';
+}
+redirect();
 </script>
 </body>
 </html>
