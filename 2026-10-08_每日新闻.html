@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PetDeer 晨间融合晨报 · 2026-10-08</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#FBF7F0; --card:#FFFFFF; --ink:#2C2620; --ink2:#6B6157; --ink3:#9A9086;
+  --line:#EFE6D9; --o1:#F2994A; --o2:#F7C26B; --grad:linear-gradient(135deg,#F2994A 0%,#F7C26B 100%);
+  --r:18px; --sh:0 2px 10px rgba(120,100,70,.07),0 10px 30px rgba(120,100,70,.06);
+  --sh2:0 4px 16px rgba(120,100,70,.10),0 16px 44px rgba(120,100,70,.08);
+}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro SC","PingFang SC","Helvetica Neue",Arial,sans-serif;
+  font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:60px}
+svg{width:1em;height:1em;display:inline-block;vertical-align:-.12em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:rgba(251,247,240,.86);backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;padding:11px 18px;display:flex;gap:6px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-in a{flex:0 0 auto;text-decoration:none;color:var(--ink2);font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px;
+  white-space:nowrap;transition:.2s}
+.nav-in a.on{background:var(--grad);color:#fff;box-shadow:0 3px 12px rgba(242,153,74,.35)}
+.nav-brand{flex:0 0 auto;font-weight:800;font-size:15px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-right:8px}
+
+/* hero */
+.hero{background:var(--grad);border-radius:0 0 28px 28px;padding:34px 0 30px;margin-bottom:22px;color:#fff;
+  box-shadow:0 8px 30px rgba(242,153,74,.28)}
+.hero .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;justify-content:space-between}
+.hero h1{font-size:27px;font-weight:800;letter-spacing:.3px;line-height:1.3}
+.hero .sub{margin-top:6px;font-size:14px;opacity:.95}
+.hero .poem{margin-top:14px;font-size:16px;font-weight:600;opacity:.98;letter-spacing:.5px}
+.hero .poem small{display:block;font-size:12px;font-weight:500;opacity:.85;margin-top:3px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.34);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+
+/* countdown */
+.cd{display:flex;gap:12px;overflow-x:auto;padding:4px 18px 8px;margin:0 auto;max-width:1080px;scrollbar-width:none}
+.cd::-webkit-scrollbar{display:none}
+.cd-card{flex:0 0 auto;min-width:118px;background:var(--card);border-radius:14px;padding:13px 16px;box-shadow:var(--sh);border:1px solid var(--line)}
+.cd-num{font-size:26px;font-weight:800;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.cd-label{font-size:12.5px;font-weight:700;color:var(--ink);margin-top:2px}
+.cd-sub{font-size:11px;color:var(--ink3);margin-top:1px}
+
+h2.sec{font-size:19px;font-weight:800;margin:30px 0 14px;display:flex;align-items:center;gap:9px}
+h2.sec::before{content:'';width:5px;height:19px;border-radius:3px;background:var(--grad)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--sh)}
+
+/* weather */
+.wx{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.wx-temp{font-size:38px;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wx-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px;font-size:13px;color:var(--ink2)}
+.wx-row b{color:var(--ink);font-weight:700}
+
+/* tea */
+.tea{border-radius:var(--r);padding:18px;border:1px solid var(--line);box-shadow:var(--sh)}
+.tea-day{background:linear-gradient(160deg,#FFF6E9,#FFFDF8)}
+.tea-night{background:linear-gradient(160deg,#F1F0FB,#FDFCFF)}
+.tea-head{display:flex;gap:11px;align-items:center;margin-bottom:9px}
+.tea-head>svg{font-size:22px;color:var(--o1);flex:0 0 auto}
+.tea-night .tea-head>svg{color:#7C8CF8}
+.tea-label{font-size:11.5px;font-weight:700;color:var(--ink3);letter-spacing:.4px}
+.tea h3{font-size:16.5px;font-weight:800}
+.tea-desc{font-size:13px;color:var(--ink2);line-height:1.6}
+.tea-list{list-style:none;margin:11px 0 0;border-top:1px dashed var(--line)}
+.tea-list li{display:flex;gap:8px;align-items:baseline;padding:6px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.ing{font-weight:700;min-width:74px}
+.g{flex:0 0 auto;background:var(--grad);color:#fff;border-radius:6px;padding:1px 7px;font-size:11.5px;font-weight:700}
+.eff{color:var(--ink2);font-size:12.5px}
+.tea-brew{margin-top:11px;font-size:12.5px;color:var(--ink2);line-height:1.6}
+.tea-bag{margin-top:10px;border:1px solid var(--line);border-radius:10px;background:#FFF9EF;overflow:hidden}
+.tea-bag>summary{margin:0;padding:8px 12px;font-size:12.5px;color:#8A5A16;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.tea-bag>summary::-webkit-details-marker{display:none}
+.tea-bag[open]>summary{border-bottom:1px solid var(--line);background:#FDF2E2}
+.tea-bag>summary b{font-weight:700}
+.tea-bag>p{margin:0;padding:10px 12px;font-size:12.5px;color:var(--ink2);line-height:1.68}
+.tea-warn{margin-top:6px;font-size:12px;color:#C0392B;background:#FDECEC;border-radius:8px;padding:7px 10px}
+
+/* todo */
+.todo-wrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden}
+.todo-bar{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;border-bottom:1px solid var(--line);font-size:13px;color:var(--ink2)}
+.todo-bar b{color:var(--o1);font-size:15px}
+.todo-bar button{background:none;border:none;color:var(--ink3);font-size:12px;cursor:pointer;text-decoration:underline}
+ul.todos{list-style:none}
+li.todo{display:flex;gap:12px;padding:13px 18px;border-bottom:1px solid var(--line);transition:.15s;align-items:flex-start}
+li.todo:last-child{border-bottom:none}
+li.todo:hover{background:#FDFAF4}
+.chk{flex:0 0 auto;width:22px;height:22px;border-radius:50%;border:2px solid #DDD2C2;background:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;transition:.18s;padding:0}
+.chk .tick{color:#fff;font-size:13px;opacity:0;transform:scale(.5);transition:.18s;display:flex}
+li.todo.done .chk{background:var(--grad);border-color:transparent}
+li.todo.done .chk .tick{opacity:1;transform:scale(1)}
+li.todo.done .todo-text{text-decoration:line-through;color:var(--ink3)}
+.todo-body{flex:1;min-width:0}
+.todo-text{font-size:14px;line-height:1.55}
+.todo-meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px;font-size:11.5px;color:var(--ink3)}
+.todo-meta svg{font-size:12px}
+.el-tag{border-radius:6px;padding:1px 7px;font-weight:700;font-size:11px}
+.el-睡{background:#EEF1FE;color:#4B5BD7}.el-吃{background:#E9F7EF;color:#2E8B5B}
+.el-练{background:#FEF0E4;color:#C9741F}.el-学{background:#F3EAFC;color:#7B3FBF}
+.el-干{background:#E7F4FC;color:#1B7FB8}.el-爽{background:#FDECEC;color:#C0392B}
+.el-重复{background:#FEF8E2;color:#A8801A}
+.pri{border-radius:6px;padding:1px 7px;font-weight:700;font-size:11px}
+.p-must{background:#FDECEC;color:#C0392B}.p-imp{background:#FEF0E4;color:#C9741F}.p-opt{background:#F1EFEA;color:#8A8177}
+.dur{margin-left:auto;flex:0 0 auto}
+
+/* projects */
+.proj+.proj{margin-top:14px}
+.proj-top{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px}
+.proj-name{font-weight:700}
+.proj-date{color:var(--ink3);font-size:12px}
+.bar{height:7px;background:#F1EADF;border-radius:99px;margin:6px 0 4px;overflow:hidden}
+.bar i{display:block;height:100%;border-radius:99px;background:var(--grad)}
+.proj-sub{font-size:11.5px;color:var(--ink3)}
+
+/* nudge */
+.nudge{background:linear-gradient(135deg,#FFF4E4,#FFFDF8);border:1px solid #F6DFC0;border-radius:var(--r);
+  padding:18px 20px;box-shadow:var(--sh);display:flex;gap:12px;align-items:flex-start}
+.nudge svg{font-size:20px;color:var(--o1);flex:0 0 auto;margin-top:2px}
+.nudge p{font-size:15px;font-weight:600;line-height:1.6}
+
+/* news groups */
+.grp{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-bottom:14px;
+  box-shadow:var(--sh);border-left:5px solid var(--c)}
+.grp-head{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.grp-head svg{font-size:19px;color:var(--c)}
+.grp-head h2{font-size:16.5px;font-weight:800}
+.cnt{margin-left:auto;font-size:11.5px;color:var(--ink3);background:var(--bg);border-radius:99px;padding:2px 10px}
+.grp-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.nc{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column}
+.nc h3{font-size:14.5px;font-weight:800;line-height:1.45;margin-bottom:7px}
+.sum{font-size:13px;color:var(--ink2);line-height:1.68;flex:1}
+.nc-foot{margin-top:11px;padding-top:9px;border-top:1px dashed var(--line)}
+.src{font-size:11.5px;color:var(--ink3)}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:7px 0}
+.tag{font-size:11px;font-weight:600;color:var(--c);background:var(--bg);border:1px solid var(--c);border-radius:99px;padding:1px 9px;opacity:.9}
+.lnk{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;font-weight:700;color:var(--c);text-decoration:none}
+.lnk:hover{text-decoration:underline}
+
+/* sections */
+.sc-strip{display:flex;gap:13px;overflow-x:auto;padding:4px 0 10px;scrollbar-width:none}
+.sc-strip::-webkit-scrollbar{display:none}
+.sc{flex:0 0 268px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:var(--sh);
+  border-top:4px solid var(--c);display:flex;flex-direction:column}
+.sc-badge{display:inline-block;align-self:flex-start;font-size:11px;font-weight:800;color:#fff;background:var(--c);
+  border-radius:99px;padding:2px 11px;margin-bottom:8px}
+.sc h3{font-size:14.5px;font-weight:800;line-height:1.45;margin-bottom:7px}
+.sc p{font-size:12.5px;color:var(--ink2);line-height:1.65;flex:1}
+.sc a{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:12px;font-weight:700;color:var(--c);text-decoration:none}
+
+/* knowledge cards */
+.kc{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;box-shadow:var(--sh);overflow:hidden}
+.kc summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;
+  border-left:4px solid var(--c)}
+.kc summary::-webkit-details-marker{display:none}
+.kc-title{font-size:14.5px;font-weight:800;flex:1}
+.kc-plus{color:var(--c);font-size:17px;transition:.2s;display:flex}
+.kc[open] .kc-plus{transform:rotate(45deg)}
+.kc-body{padding:0 16px 15px}
+.kc-quote{font-size:13px;color:var(--ink2);background:var(--bg);border-radius:10px;padding:10px 12px;line-height:1.65;margin-bottom:9px}
+.kc-body ul{list-style:none}
+.kc-body li{font-size:13px;color:var(--ink2);line-height:1.65;padding:5px 0 5px 16px;position:relative}
+.kc-body li::before{content:'';position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--c)}
+
+#top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;
+  border:none;box-shadow:0 6px 20px rgba(242,153,74,.42);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:19px;opacity:0;pointer-events:none;transition:.25s;z-index:60}
+#top.show{opacity:1;pointer-events:auto}
+footer{text-align:center;color:var(--ink3);font-size:12px;padding:26px 18px 10px}
+
+@media(max-width:768px){
+  .wrap{padding:0 14px}
+  .hero{padding:26px 0 24px;border-radius:0 0 22px 22px}
+  .hero h1{font-size:22px}
+  .hero .poem{font-size:14.5px}
+  .grid2{grid-template-columns:1fr}
+  .grp-cards{grid-template-columns:1fr}
+  .wx-temp{font-size:32px}
+  .sc{flex:0 0 232px}
+  .todo-meta{gap:6px}
+  .dur{margin-left:0}
+}
+
+/* ===== MPA 考研每日提醒 ===== */
+.mpa{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--sh);margin-bottom:14px}
+.mpa-hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap;background:linear-gradient(135deg,#FFF6EA 0%,#FFFDF8 100%);
+  border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.mpa-big{display:flex;align-items:baseline;gap:5px}
+.mpa-dnum{font-size:48px;font-weight:800;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mpa-dunit{font-size:15px;font-weight:700;color:var(--ink2)}
+.mpa-hbox{flex:1;min-width:220px}
+.mpa-h1{font-size:15px;font-weight:700;color:var(--ink2)}
+.mpa-h1 b{color:var(--ink)}
+.mpa-h2{margin-top:3px;font-size:14px;font-weight:700;color:var(--ink)}
+.mpa-goal{margin-top:6px;font-size:13px;color:var(--ink2)}
+.mpa-goal b{color:var(--o1);font-size:15px;font-weight:800}
+.mpa-alert{margin-top:12px;background:#FFF1DC;border:1px solid #F0A85C;border-radius:12px;padding:10px 14px;
+  font-size:13.5px;font-weight:700;color:#8A4B12;display:flex;gap:8px;align-items:flex-start}
+.mpa-alert b{color:#B3380F}
+.mpa-tip{margin-top:12px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#FFFDF9}
+.mpa-tiphead{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+.mpa-badge{background:var(--grad);color:#fff;font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 11px}
+.mpa-tipsrc{font-size:11.5px;color:var(--ink3);flex:1;min-width:120px}
+#mpa-next{border:1px solid var(--line);background:#fff;color:var(--ink2);font-size:12px;font-weight:700;
+  border-radius:999px;padding:4px 12px;cursor:pointer;font-family:inherit}
+#mpa-next:hover{border-color:var(--o1);color:var(--o1)}
+.mpa-tip h3{font-size:15.5px;font-weight:800;margin-bottom:6px}
+.mpa-tip p{font-size:13.5px;color:var(--ink2);line-height:1.75}
+.mpa-nodes{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+.mpa-node{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:11px;padding:10px 13px;background:#fff}
+.mpa-node.past{opacity:.5}
+.mpa-node.soon{border-color:#F0A85C;background:#FFF7EC;box-shadow:0 2px 10px rgba(242,153,74,.16)}
+.mpa-nd{flex:0 0 62px;text-align:center;padding-top:2px}
+.mpa-nd b{display:block;font-size:20px;font-weight:800;color:var(--ink);line-height:1.1}
+.mpa-nd small{font-size:11px;color:var(--ink3)}
+.mpa-node.soon .mpa-nd b{color:#D9531E}
+.mpa-nb{flex:1;min-width:0}
+.mpa-nt{font-size:14px;font-weight:700;color:var(--ink);display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.mpa-conf{font-size:10.5px;font-weight:700;border-radius:5px;padding:1px 7px;white-space:nowrap}
+.cf-ok{background:#E6F6EC;color:#237A44}
+.cf-est{background:#FDF0DC;color:#9A6413}
+.mpa-ns{font-size:12.5px;color:var(--ink2);margin-top:3px;line-height:1.6}
+.mpa-nsrc{font-size:11px;color:var(--ink3);margin-top:4px}
+.mpa-nsrc a{color:var(--o1);text-decoration:none;margin-left:2px}
+.mpa-foot{margin-top:12px;border-top:1px dashed var(--line);padding-top:10px}
+.mpa-warn{font-size:12px;color:#B3380F;font-weight:600;line-height:1.6}
+.mpa-note{font-size:11.5px;color:var(--ink3);margin-top:5px;line-height:1.6}
+@media(max-width:768px){
+  .mpa{padding:14px}
+  .mpa-dnum{font-size:40px}
+  .mpa-nd{flex:0 0 52px}
+  .mpa-nd b{font-size:18px}
+}
+
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="nav-brand">PetDeer</span>
+  <a href="#sec-morning" class="on">晨报</a>
+  <a href="#sec-mpa">MPA 提醒</a>
+  <a href="#sec-news">七元素新闻</a>
+  <a href="#sec-8">八版块精选</a>
+  <a href="#sec-kc">知识卡片</a>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <h1>2026-10-08 · 星期四</h1>
+    <div class="sub">第41周/全年共53周 ｜ 寒露第1天 ｜ 湿热体质 + 火盛 · 常咳嗽</div>
+    <div class="poem">袅袅凉风动，凄凄寒露零<small>—— 白居易《池上》（农历八月廿八；**寒露第 1 天，今日 14:29 交节**；六安今日 12—25℃ 多云转晴、风 &lt;3 级，昼夜温差 13℃）</small></div>
+  </div>
+  <div class="chips">
+    <span class="chip">多云转晴，风 &lt;3 级，昼夜温差 13℃；中国天气网安徽站 10/08 05:30 权威口径为六安 25℃/12℃；未来一周 9 日晴 23/13、10 日多云 24/15、11 日多云 24/15、12 日阴转多云 25/16、13 日多云 26/16 12° / 25°</span>
+    <span class="chip">寒露第1天</span>
+    <span class="chip">距初试 <b id="mpa-chip">--</b> 天</span>
+    <span class="chip">93.46 kg</span>
+  </div>
+</div></header>
+
+<div class="cd">
+<div class="cd-card"><div class="cd-num" data-target="2026-10-17">--</div><div class="cd-label">事业单位笔试</div><div class="cd-sub">职测 + 综应</div></div>
+<div class="cd-card"><div class="cd-num" data-target="2026-11-29">--</div><div class="cd-label">国考笔试</div><div class="cd-sub">安徽省直 / 合肥市直</div></div>
+<div class="cd-card"><div class="cd-num" data-target="2026-12-19">--</div><div class="cd-label">MPA 联考</div><div class="cd-sub">管综 135 + 英语 65</div></div>
+<div class="cd-card"><div class="cd-num" data-target="2026-10-11">--</div><div class="cd-label">本周剩余</div><div class="cd-sub">第 41 周 · 距周日</div></div>
+  <div class="cd-card"><div class="cd-num" id="cd-week">--</div><div class="cd-label">本周剩余</div><div class="cd-sub">距周日结束</div></div>
+</div>
+
+<main class="wrap">
+
+<h2 class="sec" id="sec-morning">晨报区</h2>
+
+<h2 class="sec" id="sec-mpa">MPA 考研每日提醒</h2>
+<div class="mpa">
+  <div class="mpa-hero">
+    <div class="mpa-big"><span class="mpa-dnum" id="mpa-d">72</span><span class="mpa-dunit">天</span></div>
+    <div class="mpa-hbox">
+      <div class="mpa-h1">距 <b>2027 级管理类联考初试（2026 年 12 月）</b> 还有</div>
+      <div class="mpa-h2">中国劳动关系学院 · 公共管理（MPA）· 专业代码 125200</div>
+      <div class="mpa-goal">目标总分 <b>200</b> ＝ 管综 <b>135</b>/200 ＋ 英语二 <b>65</b>/100</div>
+    </div>
+  </div>
+  <div class="mpa-alert" id="mpa-alert" hidden></div>
+  <div class="mpa-tip">
+    <div class="mpa-tiphead"><span class="mpa-badge" id="mpa-tipcat">今日提醒</span><span class="mpa-tipsrc" id="mpa-tipsrc"></span><button type="button" id="mpa-next">换一条</button></div>
+    <h3 id="mpa-tiptitle"></h3>
+    <p id="mpa-tipbody"></p>
+  </div>
+  <div class="mpa-nodes"><div class="mpa-node" data-date="2026-10-09"><div class="mpa-nd"><b>1</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">网上预报名<span class="mpa-conf cf-est">已官宣（省级网报公告口径统一）</span></div><div class="mpa-ns">主要面向应届生，部分省份在职也可参加；窗口 10/09—10/12（每日 9:00—22:00）。预报名信息与正式报名同等有效，参加后无需重复报名，建议第一天就把信息填熟；照片须白底、学信网 APP 在线拍、不得遮瑕与翻拍。</div><div class="mpa-nsrc">2026-10-09 · 中国研究生招生信息网 · 各省市 2027 年硕考报名须知 <a href="https://yz.chsi.com.cn/sswbgg/pages/msgdetail.do?dwdm=4236&amp;msg_id=627498" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2026-10-15"><div class="mpa-nd"><b>7</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">正式报名（含缴费）<span class="mpa-conf cf-est">已官宣（省级网报公告口径统一）</span></div><div class="mpa-ns">窗口 10 天（10/15—10/24，每日 9:00—22:00），逾期不再补报；网上缴费与报名时间相同、逾期不可补缴，且缴费后还须上传核验材料，否则报名无效。</div><div class="mpa-nsrc">2026-10-15 · 中国研究生招生信息网 · 各省市 2027 年硕考报名须知 <a href="https://yz.chsi.com.cn/sswbgg/pages/msgdetail.do?dwdm=4236&amp;msg_id=627498" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2026-11-05"><div class="mpa-nd"><b>28</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">网上确认<span class="mpa-conf cf-est">预计，往年参考</span></div><div class="mpa-ns">各省自定（预计 11/05—11/12）。上传证件照、手持身份证照、学历/户籍或工作证明；未完成确认 = 报名无效。</div><div class="mpa-nsrc">2026-11-05 · 2027 联考时间轴（希赛网 2026-04） <a href="https://www.educity.cn/mba/5503566.html" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2026-12-09"><div class="mpa-nd"><b>62</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">准考证打印<span class="mpa-conf cf-est">预计，往年参考</span></div><div class="mpa-ns">考前约 10 天开放（预计 12/09 起），研招网自行下载；建议多打 2 份 + 存电子版，涂改损坏无法进考场。</div><div class="mpa-nsrc">2026-12-09 · 2027 在职研究生报名步骤十步操作对照表（新东方在线考研） <a href="https://kaoyan.koolearn.com/20260701/1957107.html" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2026-12-19"><div class="mpa-nd"><b>72</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">初试 · 管理类综合能力<span class="mpa-conf cf-ok">官方已定案</span></div><div class="mpa-ns">08:30—11:30，代码 199，满分 200；数学 75 + 逻辑 60 + 写作 65。一天考完两科，中午休息极短。</div><div class="mpa-nsrc">2026-12-19 · 教育部《2027 年全国硕士研究生招生工作管理规定》｜中国教育在线 <a href="https://www.eol.cn/kaoshi/ky/zx/202609/t20260914_2773986.shtml" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2026-12-19"><div class="mpa-nd"><b>72</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">初试 · 英语二<span class="mpa-conf cf-ok">官方已定案</span></div><div class="mpa-ns">14:00—17:00，代码 204，满分 100；完形 10 + 阅读A 40 + 新题型 10 + 英译汉 15 + 写作 25。</div><div class="mpa-nsrc">2026-12-19 · 教育部《2027 年全国硕士研究生招生工作管理规定》｜中国教育在线 <a href="https://www.eol.cn/kaoshi/ky/zx/202609/t20260914_2773986.shtml" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-02-20"><div class="mpa-nd"><b>135</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">初试成绩公布<span class="mpa-conf cf-est">预计，往年参考</span></div><div class="mpa-ns">预计 2 月中下旬，研招网查询；对分数有异议可在规定时间内申请成绩复核。</div><div class="mpa-nsrc">2027-02-20 · 2027 联考时间轴（希赛网 2026-04） <a href="https://www.educity.cn/mba/5503566.html" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-03-10"><div class="mpa-nd"><b>153</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">国家线公布<span class="mpa-conf cf-est">预计，往年参考</span></div><div class="mpa-ns">预计 3 月上旬，教育部公布 A/B 类国家线；2026 年管理类 A 类线为总分 195 / 英语 41 / 管综 82。</div><div class="mpa-nsrc">2027-03-10 · 2027 联考时间轴（希赛网 2026-04） <a href="https://www.educity.cn/mba/5503566.html" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-03-20"><div class="mpa-nd"><b>163</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">院校复试线与复试名单<span class="mpa-conf cf-est">预计，参考 2026 实际</span></div><div class="mpa-ns">中国劳动关系学院 2026 年为 3 月下旬发布复试通知与名单，2027 年预计同期；MPA 2026 年执行 A 类国家线。</div><div class="mpa-nsrc">2027-03-20 · 中国劳动关系学院 2026 年复试录取办法 <a href="https://news.culr.edu.cn/grs/zs/zsjy_tzgg/eb1ce0b1ae2543d4872e8c0ae50f98d7.htm" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-03-28"><div class="mpa-nd"><b>171</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">复试 · 笔试及加试<span class="mpa-conf cf-est">预计，参考 2026 实际</span></div><div class="mpa-ns">该校 2026 年要求笔试及同等学力加试考生提前一天（3/28）到校；管理类专硕须考核思想政治理论。</div><div class="mpa-nsrc">2027-03-28 · 中国劳动关系学院 2026 年复试录取办法 <a href="https://news.culr.edu.cn/grs/zs/zsjy_tzgg/eb1ce0b1ae2543d4872e8c0ae50f98d7.htm" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-03-29"><div class="mpa-nd"><b>172</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">复试 · 面试<span class="mpa-conf cf-est">预计，参考 2026 实际</span></div><div class="mpa-ns">该校 2026 年一志愿面试为 3/29 9:00—17:30，网络远程 + 现场结合，面试平台腾讯会议，线下在闻道楼 3、4 层。</div><div class="mpa-nsrc">2027-03-29 · 中国劳动关系学院 2026 年复试录取办法 <a href="https://news.culr.edu.cn/grs/zs/zsjy_tzgg/eb1ce0b1ae2543d4872e8c0ae50f98d7.htm" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-04-08"><div class="mpa-nd"><b>182</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">调剂系统开放<span class="mpa-conf cf-est">预计，参考 2026 实际</span></div><div class="mpa-ns">该校 2026 年为 4 月 8 日调剂系统开放后择期进行调剂复试；管理类 7 个专硕可互调，不得调入其他专业。</div><div class="mpa-nsrc">2027-04-08 · 中国劳动关系学院 2026 年复试录取办法 <a href="https://news.culr.edu.cn/grs/zs/zsjy_tzgg/eb1ce0b1ae2543d4872e8c0ae50f98d7.htm" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-04-25"><div class="mpa-nd"><b>199</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">拟录取公示<span class="mpa-conf cf-est">预计，往年参考</span></div><div class="mpa-ns">预计 4 月底前招生单位完成录取工作；须通过体检、思想品德考核并签订《定向培养协议》后方为正式录取。</div><div class="mpa-nsrc">2027-04-25 · 2027 联考时间轴（希赛网 2026-04） <a href="https://www.educity.cn/mba/5503566.html" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-06-20"><div class="mpa-nd"><b>255</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">发放录取通知书<span class="mpa-conf cf-est">预计，往年参考</span></div><div class="mpa-ns">预计 6 月中—7 月初寄发，含新生报到须知；政审、调档、培养协议完成并缴费后发出。</div><div class="mpa-nsrc">2027-06-20 · 2027 在职研究生报名步骤十步操作对照表（新东方在线考研） <a href="https://kaoyan.koolearn.com/20260701/1957107.html" target="_blank" rel="noopener">来源</a></div></div></div>
+<div class="mpa-node" data-date="2027-09-01"><div class="mpa-nd"><b>328</b><small>天</small></div><div class="mpa-nb"><div class="mpa-nt">入学报到<span class="mpa-conf cf-est">预计，往年参考</span></div><div class="mpa-ns">预计 8 月底—9 月初报到，即「2027 级」。你为工会系统推荐报考，定向培养。</div><div class="mpa-nsrc">2027-09-01 · 2027 在职研究生报名步骤十步操作对照表（新东方在线考研） <a href="https://kaoyan.koolearn.com/20260701/1957107.html" target="_blank" rel="noopener">来源</a></div></div></div></div>
+  <div class="mpa-foot"><p class="mpa-warn">✅ 初试日期已定案：教育部《2027 年全国硕士研究生招生工作管理规定》（2026-09-24 印发）明确初试为**2026-12-19 至 20 日**，12/19 上午 8:30—11:30 管综、下午 14:00—17:00 英语二。原「2026-12-27」为旧口径、已作废；报名口径同步更正为预报名 10/09—10/12、正式报名 10/15—10/24（每日 9:00—22:00）。各省网报公告已在研招网同步，口径完全一致。</p><p class="mpa-note">时间节点中标注「预计，往年参考」的均为官方公告尚未发布时的推算值，以研招网 / 中国劳动关系学院研究生处后续公告为准；院校信息标注了具体年份与文件来源。</p></div>
+</div>
+
+
+<div class="grid2" style="margin-bottom:14px">
+  <div class="card">
+    <div class="wx">
+      <div>
+        <div class="wx-temp">12° / 25°</div>
+        <div style="font-size:13px;color:var(--ink3);margin-top:4px">多云转晴，风 &lt;3 级，昼夜温差 13℃；中国天气网安徽站 10/08 05:30 权威口径为六安 25℃/12℃；未来一周 9 日晴 23/13、10 日多云 24/15、11 日多云 24/15、12 日阴转多云 25/16、13 日多云 26/16</div>
+      </div>
+      <div style="font-size:13px;color:var(--ink2)">
+        <div style="font-weight:700;color:var(--ink)">多云转晴，风 &lt;3 级，昼夜温差 13℃；中国天气网安徽站 10/08 05:30 权威口径为六安 25℃/12℃；未来一周 9 日晴 23/13、10 日多云 24/15、11 日多云 24/15、12 日阴转多云 25/16、13 日多云 26/16 ｜ 六安（工作地）</div>
+        <div style="margin-top:3px">昼夜温差约 6℃，早晚加薄外套</div>
+      </div>
+    </div>
+    <div class="wx-row">
+      <span>湿度 <b>白天继续回落（连晴第八天，趋势性转干；寒露后燥气接棒湿气成为主矛盾）</b></span>
+      <span>紫外线 <b>中等</b></span>
+    </div>
+    <div style="margin-top:8px;font-size:11.5px;color:var(--ink3)">中国天气网安徽站 10/08 05:30 发布（官方口径）：全省城市预报列表六安 25℃/12℃，全省普遍 24—26℃/12—14℃；未来一周 9 日晴 23/13、10—11 日多云 24/15、12 日阴转多云 25/16、13 日多云 26/16；今日 14:29 交寒露。</div>
+  </div>
+  <div class="card">
+    <h3 style="font-size:15px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:7px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg> 三大战役进度</h3>
+<div class="proj"><div class="proj-top"><span class="proj-name">事业单位笔试</span><span class="proj-date">2026-10-17</span></div><div class="bar"><i style="width:9%"></i></div><div class="proj-sub">《职测》+《综应》各 150 分，10 省联考 · 倒计时 9 天</div></div>
+<div class="proj"><div class="proj-top"><span class="proj-name">国考笔试</span><span class="proj-date">2026-11-29</span></div><div class="bar"><i style="width:52%"></i></div><div class="proj-sub">安徽省直 / 合肥市直 · 计算机类 · 倒计时 52 天</div></div>
+<div class="proj"><div class="proj-top"><span class="proj-name">MPA 联考</span><span class="proj-date">2026-12-19</span></div><div class="bar"><i style="width:72%"></i></div><div class="proj-sub">管综 135 + 英语 65 = 200 分 · 倒计时 72 天</div></div>
+<div class="proj"><div class="proj-top"><span class="proj-name">减重战役</span><span class="proj-date">持续</span></div><div class="bar"><i style="width:67%"></i></div><div class="proj-sub">95kg → 65kg｜当前 93.46kg（已 67 天未称）</div></div>
+<div class="proj"><div class="proj-top"><span class="proj-name">本周剩余</span><span class="proj-date">2026-10-11</span></div><div class="bar"><i style="width:3%"></i></div><div class="proj-sub">第 41 周 · 距周日还有 3 天</div></div>
+  </div>
+</div>
+
+<div class="tea tea-day"><div class="tea-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg><div><div class="tea-label">日茶 · 1.5–2L 保温桶 · 早上煮好滤渣装桶 · 14:00 前喝完 · 备考久坐版 · 寒露开局润燥加码</div><h3>明目醒脑久坐饮（周四 · 南杏仁轮换位 · 枸杞回位）</h3></div></div><p class="tea-desc">**今天的核心变化只有一句：燥气取代湿气成为主矛盾，南杏仁从轮换位升为当日常驻位。**《备考期昼夜茶方 v1》定的是「固定 4 味 + 轮换第 5 味，7 天不重样」，固定 4 味为枸杞 8 g、老白茶 4 g、陈皮 5 g、干荷叶 3 g。**变动一：第 5 味切到南杏仁位**——周四走「二/四/六」的**南杏仁 5 g**，与固定四味同煮即可（不像绿茶要后下兑入）。**为什么今天更要紧**：今天 14:29 交寒露，**中国经济网引中国中医科学院西苑医院与广东省中医院两方口径完全一致**——**寒露养生重在敛阳防寒、滋阴润燥**，且**「燥」是贯穿秋季的主要气候特点，从白露到寒露不变**；而你的基线是**湿热 + 火盛 + 常咳嗽**，燥邪一来最先受伤的就是肺——**干咳、咽干、声音哑**。银耳 09-28 已吃完暂不采购，**南杏仁 5 g 是库内唯一的润燥主力**（日上限 10 g）。**变动二：枸杞回位**——食材库标注枸杞「性平偏温、滋腻，湿热 + 火盛体质勿天天煮」，所以锁死为**每周 5 天 + 周三/周日停用**，昨天停用一天，今天照常 8 g。**四味里干荷叶 3 g 依旧不动**：判据是预报不是读数——**连晴第八天、未来一周全省晴到多云、最低温逐日抬升**，湿气在退不在进；**干荷叶现在是「守位」不是「主攻」**，真正的祛湿主力已经交给**陈皮 5 g（气行则湿化）**。**老白茶 4 g 是大桶唯一合适的底茶**——绿茶久煮苦、红茶全发酵偏温对火盛是负担，只有它性平、耐泡耐浸、久泡不苦。</p><ul class="tea-list"><li><span class="ing">老白茶</span><span class="g">4 g</span><span class="eff">底茶：性平不寒、耐泡耐浸、久泡不苦涩，黄酮抗氧化（大桶唯一合适的底茶）</span></li><li><span class="ing">枸杞</span><span class="g">8 g</span><span class="eff">滋补肝肾、益精明目 —— 护眼主力（周三停用一天，今日回位；每桶约 35—40 粒，分 5—6 杯倒出，每杯 6—8 粒）</span></li><li><span class="ing">陈皮（年生）</span><span class="g">5 g</span><span class="eff">理气燥湿健脾 —— 久坐气滞 + 今日祛湿主线（与夜茶 3 g 合并 8 g）</span></li><li><span class="ing">干荷叶</span><span class="g">3 g</span><span class="eff">升清化浊、降脂 —— 久坐头目昏沉（清阳不升）+ 脂代谢变慢（今日不动）</span></li><li><span class="ing">南杏仁</span><span class="g">5 g</span><span class="eff">润肺止咳 + 寒露润燥主力 —— **今日周四轮换位**，银耳断供后库内唯一润燥药味（全天合计 5 g，夜茶须摘除）</span></li></ul><p class="tea-brew"><b>煮法</b>：枸杞 + 陈皮 + 干荷叶 + 南杏仁冷水下锅 1.8 L，大火煮开转小火 15 分钟，关火前 5 分钟投老白茶，**滤渣**装 1.5–2 L 保温桶。</p><details class="tea-bag"><summary><b>茶包化 · 650 ml 塑料杯 · 出门直冲</b><span class="kc-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>**【出门 650 ml 塑料杯 · 茶包版】**（今日按 650 ml 单次水量标定，与大桶版**二选一、不叠加**）：**① 装袋顺序**——无纺布袋（10×12 cm）先装**陈皮碎 2 g + 干荷叶碎 1 g**打底（耐泡、出味慢，放下层），再铺**南杏仁 5 g（稍掰碎，整粒出味慢）+ 枸杞 2 g**，最上层放**老白茶 1.5 g**，袋口折两道封口；**枸杞建议单独装一小袋**，泡到第 5 分钟投、喝前取出，避免久浸发酸。**② 洗茶/温杯**——陈皮荷叶免洗；**先用少量开水荡杯 10 秒倒掉再投袋**（塑料导热差，不温杯首泡温度掉 5—8℃，荷叶根本出不来味）。**③ 注水与闷泡**——注入 **95—100℃ 开水约 600 ml**（杯口留 2 cm 防溢），**盖盖闷 8 分钟**是荷叶 + 陈皮的出味门槛；南杏仁碎需 10 分钟以上才出味，**可以延到 10 分钟再喝第一口**。**④ 续水与总量**——**可续水 2 次（第 2 泡 10 分钟、第 3 泡 15 分钟）**，三泡合计约 1800 ml；**当日茶水控制在 1500—1800 ml，其余用白水补足到全天 2000—3000 ml**（尿酸靠尿量带走，白水是主线）。**⑤ 塑料杯注意**——**只认 PP（5 号）或 Tritan**，看杯底三角标；**PET（1 号）遇沸水会变形并析出，禁用**；**杯盖久闷勿超 15 分钟**（蒸汽顶开 + 塑料异味）；**握杯身中段，别捏杯口螺纹处**；**茶包不要压实，留出发胀空间**。**⑥ 需打碎清单**：**南杏仁必稍掰碎**；**赤小豆、黑豆不耐杯泡，杯泡日不入袋**（今天的赤小豆 25 g 只走主食锅）。</p></details><p class="tea-warn">⚠️ **必须滤渣装桶**——带渣在保温桶里浸 6–8 小时会涩、发苦，单宁过高还影响铁吸收；⚠️ **14:00 后不再续杯**（咖啡因半衰期约 5 小时，下午续会直接压掉 22:30 熄屏线）；⚠️ **不加糖、不加蜂蜜**（果糖在肝脏代谢直接生成尿酸，你 506 已超阈值 420）；⚠️ **枸杞周三、周日停用**（勿天天煮，与主食 v3.1 无豆日同步），今日周四回位；⚠️ **南杏仁全天合计 5 g，夜茶必须摘除同味**；干荷叶腹泻便溏日停用；**赤小豆 25 g 上限属周一/四/五，今天周四有豆日，豆走主食锅，日茶不加豆**；干冬瓜皮 09-21 已喝完暂不采购、薏米黑米无库存、马齿苋 09-18 吃完、干银耳 09-28 吃完、桂圆体质忌 —— **全部不入方**。</p></div><div class="tea tea-night"><div class="tea-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></svg><div><div class="tea-label">夜茶 · 晚饭后 45 分钟（睡前 2 小时饮完）· 不含咖啡因 · 消导 + 安神 · 今日四味短版</div><h3>莲楂陈甘饮（周四 · 南杏仁避险摘除）</h3></div></div><p class="tea-desc">**今晚这杯的关键只有一条：南杏仁必须摘掉。**《备考期昼夜茶方 v1》把南杏仁定在**每日 10 g 上限**，而**同味要跨方合并计算**——今天日茶走的是「二/四/六」南杏仁位，**白天已经占满 5 g**，夜茶如果照抄昨天的「莲楂杏陈甘饮」就会再叠 5 g，直接顶到 10 g 上限。**所以今天夜茶降为四味短版「莲楂陈甘饮」：莲子 10 g（去心）+ 山楂 6 g + 陈皮 3 g + 甘草 1 g。**这是本周内**同一条规则的第二次演示，方向正好相反**：昨天是日茶走绿茶位、白天零占用，**夜茶回收 5 g 回位**；今天是日茶占满，**夜茶让路摘除**。**记住这条判断句：不是每一方各自不超上限就安全，要看全天合计。**润燥位今晚由谁接？——**银耳已吃完、南杏仁让给了白天**，所以**今晚的润燥改走非茶路径**：**泡脚 + 卧室湿度 + 睡前 100 ml 温水**（中国中医科学院西苑医院王清主任口径：**每天喝够 2000 毫升温水**；睡前 1 小时可少量喝水约 100 ml，别过量以妨起夜）。**其余三味的意图不变**：**白天久坐一天后，晚上最需要的是「消导 + 安神」，不是「补」**——干莲子 10 g（去心）健脾安神，是库内**最佳助眠担当**，提前泡 1 小时才会软糯；山楂 6 g 消食化积，对着久坐胃肠蠕动慢 + 食堂偏油；陈皮 3 g 与日茶 5 g 合并 8 g，仍在常用量 3–10 g 内。**甘草片 1 g 是 10/05 恢复计数后的第 4 天**，按「连服超 7 天须停 2 天」，**吃到 10/11 就要再停 2 天**——这条要记账写下来。</p><ul class="tea-list"><li><span class="ing">干莲子（去心）</span><span class="g">10 g</span><span class="eff">健脾安神 —— 库内最佳助眠担当（提前泡 1 小时）</span></li><li><span class="ing">山楂片</span><span class="g">6 g</span><span class="eff">消食化积 —— 久坐胃肠蠕动慢 + 食堂油腻</span></li><li><span class="ing">陈皮（年生）</span><span class="g">3 g</span><span class="eff">理气燥湿（与日茶 5 g 合并 8 g，仍在常用量 3–10 g 内）</span></li><li><span class="ing">甘草片</span><span class="g">1 g</span><span class="eff">调和诸味、补脾润喉（10/05 恢复后重新计数，今日第 4 天，连服 7 天须停 2 天）</span></li></ul><p class="tea-brew"><b>煮法</b>：莲子提前泡 1 小时；莲子冷水下锅 800 ml 小火煮 30 分钟至软糯，关火前 8 分钟下山楂、陈皮与甘草，滤渣温饮 200 ml，当餐喝完、不可冰镇、禁隔夜。</p><details class="tea-bag"><summary><b>茶包化 · 650 ml 塑料杯 · 出门直冲</b><span class="kc-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>**【在家 650 ml 杯泡 · 茶包版】**（与大锅版**二选一、不叠加**）：**① 装袋顺序**——**莲子（去心）10 g 必须用刀背拍成 4 瓣**（整粒杯泡 30 分钟也不出味，这是本方唯一的「需打碎」项）置袋底，往上依次铺**山楂片 6 g → 陈皮 3 g → 甘草片 1 g**。**今日无南杏仁**（日茶已占满每日 10 g 上限的一半，同味跨方合并计算后本味摘除）。**② 温杯**——同日茶，开水荡杯 10 秒倒掉。**③ 注水与焖泡**——注入 **100℃ 开水约 600 ml**，**盖盖焖 30 分钟**（莲子碎的底线时长）；**赶时间改保温杯焖 45 分钟**，或提前把莲子碎用沸水 + 保温杯预焖 1 小时再投袋。**④ 续水与总量**——**可续水 1 次（第 2 泡 20 分钟）**，**当日夜茶总量 400—600 ml**，一杯就够，不必多。**⑤ 饮用截止时间**——**晚饭后 45 分钟开始、睡前 2 小时饮完（即 21:30 前截止）**；**本方不含咖啡因，不影响睡眠**，但**喝太晚仍会增加起夜次数，反而压掉深睡**——21:30 是硬线。**⑥ 塑料杯注意**——同日茶：**只认 PP（5 号）或 Tritan，PET（1 号）禁用**；**杯盖久闷勿超 15 分钟**；**握杯身中段**。**⑦ 若某天实在来不及处理莲子**：直接换**可冲泡替补**——**去心莲子碎/莲子粉 8 g**，或改用**山楂 6 g + 陈皮 3 g + 甘草 1 g** 的三味短版（省掉莲子，安神位改由泡脚与静坐承担）。**⑧ 今晚润燥的替补路径（因为南杏仁摘除）**：**泡脚 38—42℃ 15—20 分钟** + **卧室放一盆水或加湿器维持 45%—60%** + **睡前 1 小时温水约 100 ml**，三条加起来抵得上那 5 g 南杏仁。</p></details><p class="tea-warn">莲子必须去心（莲子心苦寒，本方不用）；**南杏仁今日全天合计 5 g，全部在日茶，夜茶摘除**；**甘草片连服满 7 天须再停 2 天**，本次计数自 10/05 起、**10/11 到期**；**血压偏高者甘草慎用**；陈皮与日茶合并 8 g，胃热口干者减半；反酸烧心者去山楂；本方不含薏米/黑米、不含桂圆（体质忌）、不含马齿苋（已吃完）、不含冬瓜皮（已喝完）、不含银耳（已吃完）、不含赤小豆（今日豆走主食锅，不入茶）。</p></div>
+
+<h2 class="sec" style="margin-top:26px">今日七要素激活清单</h2>
+<div class="todo-wrap">
+  <div class="todo-bar"><span>已完成 <b id="done-n">0</b> / 14</span><button id="reset">重置</button></div>
+  <ul class="todos">
+<li class="todo" data-id="1"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**第 0 步：今天早上必须上秤——你已经 67 天没称了。**《徒手健身训练计划 v1》把这条写在最前面：**体重 93.46 kg（2026-06-29），已 70+ 天未称，第 0 步：明早先称重**；核心卡第 5 条也明确要求 AI「距离上次称重 &gt;7 天主动提醒」。**为什么今天非称不可**：① 今天是 **Day4**，30 天三阶段里第 1—10 天属「基础适应期」，**每 30 天验收要称重 + 正面侧面照 + 测一次标准俯卧撑最大次数**，Day4 正是这条曲线的第二个取样点；② 奖励节点 92/90/85/80/75/70/65 全靠这一串数字触发；③ 更重要的一条硬数据——**体重减轻 10% 可使血尿酸降低约 10%**，你 93.46 kg，减到 84 kg 理论上就能换到这一档收益，而你尿酸 506（阈值 420）。**做法**：**起床后、排空、空腹、同一台秤、同一时间（06:30—07:00）**，记到「中枢_健身记录」表。**今晚同步补两件事**：**正面 + 侧面照各一张**，存进 `02_Areas/01个人领域/02健康医疗/训练/`。**寒露开局的三件护阳小事今天一并落地**：**不再露脚踝、不再露腰腹、不再露脖子**——中国经济网引中国中医科学院西苑医院风湿病科副主任医师董菲：**长假后宜逐步调整作息，放平心态、减少劳累；尽量早睡早起，补足身体消耗；还应护住脚踝、腰腹和脖子等关键部位，避免夜里受凉**</p><div class="todo-meta"><span class="el-tag el-sleep">睡</span><span class="pri p-must">必做</span><span class="meta-i">06:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">10 min</span></div></div></li>
+<li class="todo" data-id="2"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**21:30 泡脚 + 22:30 熄屏，今天把这两件事绑成一条流水线。**两条权威口径今天首次对齐：**中国中医科学院西苑医院老年病科主任医师王清**给出量化版——**睡前用 38—42℃ 温热水泡脚 15—20 分钟，泡到身体微微发热、背上薄汗一层即可**；**湖南省康复医院副院长张件云**给出简化版——**睡前温水泡脚，促进周身血液循环、改善睡眠**，并建议**多走出家门晒晒太阳、漫步赏秋，以此舒展肺气、疏解胸中郁结之气**，老年人还可练**八段锦、太极拳**等舒缓导引功法调适心态。**为什么脚这一处最要紧**：**脚是足三阳和足三阴六条经络的交汇之处，一旦受寒，寒邪循经上行，最先影响肺、胃、肠和关节**——你本就常咳嗽，这条不是玄学。**熄屏线为什么还是 22:30**：2013—2021 年《欧洲心脏杂志数字健康》研究给出**「U 型」关系——22:00—22:59 入睡心血管风险最低**，23:00—23:59 高 12%、午夜后高 25%，**22:00 前反而高 24%——不是越早越好，是越稳越好**；2026 年《BMC 心血管疾病》对 3231 名中年人的十年追踪更狠：**入睡时间不规律者心血管事件风险高出约 2 倍，而仅靠保持规律入睡时间，睡眠时段收缩压与舒张压分别降 5 与 4 毫米汞柱**。**今天的可执行动作只有一条**：**定死 22:30，前后误差 ≤15 分钟**。配套三条：**洗漱提前到 21:00 左右**（浴后核心体温 1 小时内缓慢下降，给入睡铺路）；**睡前静坐 10—15 分钟 + 腹式呼吸**，把上浮的心火收下来；**卧室温度压到 18—22℃**，稍凉更易入睡也利于夜间血压下降</p><div class="todo-meta"><span class="el-tag el-sleep">睡</span><span class="pri p-must">必做</span><span class="meta-i">21:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">35 min</span></div></div></li>
+<li class="todo" data-id="3"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**白天这一段只做三件事：把白水补够、把甜的全清掉、每坐半小时起来动三分钟。**先说水——**中国中医科学院西苑医院王清主任给寒露的处方就是「每天喝够 2000 毫升温水」**，与降尿酸的口径完全一致：**每日饮水量维持 2000 毫升以上，白开水、淡茶水为佳，均匀分配在一天中，避免一次性大量饮用**。今日头条转《健康报》哈尔滨市第二医院内分泌代谢病科主任医师冷蕾的**「红黄绿」清单**可以直接贴冰箱：**绿灯（放心吃）**——**新鲜蔬菜每天不少于 500 克，深色蔬菜占一半以上**；**鸡蛋每天 1—2 个**（水煮蛋、蒸蛋羹、炒蛋都不明显升高血尿酸）；**奶制品每天 300 毫升以上，优先低脂无糖**（**所含酪蛋白、乳清蛋白有助于促进尿酸排泄**）。**黄灯（控量）**——**水果只选樱桃、草莓、蓝莓、柚子、西瓜、苹果等低糖款**，榴莲荔枝芒果龙眼甘蔗一次别超一小把；**豆制品每周 3—5 次**（豆腐、豆干、豆浆属中低嘌呤；**干黄豆、干黑豆嘌呤高，煮熟也不能大量吃**）；**肉类每天控制在一个手掌心大小（50—75 克），优先瘦肉，烹饪前焯水能去掉一部分嘌呤**。**红灯（坚决不碰）**——**酒**（只要含酒精就阻碍尿酸排出）；**甜饮料**（可乐、奶茶、蜂蜜水、果汁、功能饮料，果葡糖浆在体内直接产尿酸）；**高嘌呤**（动物内脏、牡蛎鱼子鱼干贝类沙丁鱼凤尾鱼、火锅汤骨头汤老火靓汤、酵母粉鸡精蚝油）。**日茶纪律**：**14:00 后不再续杯**（咖啡因半衰期约 5 小时），桶里剩渣倒掉改白水</p><div class="todo-meta"><span class="el-tag el-eat">吃</span><span class="pri p-must">必做</span><span class="meta-i">15:00</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">10 min</span></div></div></li>
+<li class="todo" data-id="4"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">主食按《杂粮饭配方 v3.1》周四「高纤饱腹」下锅：**燕麦片 30 + 七色杂粮米 35 + 赤小豆 25 + 三色藜麦 10**（352 kcal，蛋白 13.9 g、**纤维 7.0 g——全周七天里最高**）。**今天是周一/四/五的有豆日，赤小豆 25 g 是安全上限，前一晚必须泡够 8—12 h、泡豆水早上倒掉**（嘌呤与胀气寡糖都溶在那水里）。**燕麦片必须后放**：压力锅 30 分钟 → 泄压开盖 → 拌入 → 盖盖焖 8—10 分钟（同煮会烂成糊）。**为什么周四排最高纤维**：今天是寒露第 1 天，**燥邪最先伤的就是肠道**——王清主任把**习惯性便秘列为深秋四大常见病之一**，处方正是**每天喝够 2000 毫升温水 + 多吃富含膳食纤维的食物**。**寒露饮食三原则今天全部生效**：**减辛**（减少辣椒、花椒、生姜等辛辣刺激及煎炸熏烤类食物，避免助燥伤肺）、**增酸**（适当食用橘子、石榴、葡萄等，有助于收敛肺气）、**滋阴养肾**（可适当食用莲子、栗子、红枣）。⚠️ **广东省中医院治未病中心副主任陈润特别提醒**：**寒露饮食不能一味追求寒凉滋润，脾胃虚寒者最好把梨、苹果等水果蒸熟后食用**；**刚从冰箱拿出的冷饮瓜果最容易损伤脾胃阳气**。**夜茶**「莲楂陈甘饮」饭后 45 分钟温饮 200 ml（**莲子 10 g 去心 + 山楂 6 g + 陈皮 3 g + 甘草 1 g，今日南杏仁摘除**）。**红线**：文中出现的**银耳请直接跳过**（09-28 吃完暂不采购），**桂圆体质忌**，**蜂蜜虽润但不入桶**（果糖）</p><div class="todo-meta"><span class="el-tag el-eat">吃</span><span class="pri p-must">必做</span><span class="meta-i">18:00</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">30 min</span></div></div></li>
+<li class="todo" data-id="5"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**Day4 推·变式**（训练计划 v1）：**标准俯卧撑（可屈膝）4×12** → **下斜俯卧撑 3×8** → **篮球俯卧撑 3×8-12** → 收尾**侧平板 左右各 2×30s**。**零器械替代方案**（今日必执行，篮球属道具不算基础配备）：**无球时把「篮球俯卧撑」整组替换为标准俯卧撑（可屈膝）3×10**，下斜位用**沙发扶手或稳固椅面**代替——**全程零器械、零跳跃**，符合 93kg ≥85kg 的低冲击红线（禁深蹲跳、波比跳、标准引体、单手俯卧撑与一切跳跃类）。**时段按张伯礼院士的口径**：**上午 10 点前后、下午 3 点前后，一次 20—30 分钟**；今天六安午后 25℃、多云转晴，正合适。**寒露运动三条硬纪律**：**强度以周身微热、尚未出汗为宜，切忌大汗淋漓**——**中医认为「汗为心之液」，深秋大量出汗会导致阳气随津液外泄，降低抵抗力，反而容易感冒受凉**；**运动前充分热身，避免低温下肌肉关节损伤**；**运动后及时擦干汗水、更换干爽衣物，不要站在风口吹风**。**三条验收标准**：**离心 2—3 秒慢放、顶峰停 1—2 秒、无痛原则**——出现关节**刺痛**立即停（酸胀正常）；强度取 **12—15 RM、每组结束预留 2—3 次余力（RIR 2—3）**；**组间休息 60 秒**</p><div class="todo-meta"><span class="el-tag el-training">练</span><span class="pri p-must">必做</span><span class="meta-i">16:00</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">30 min</span></div></div></li>
+<li class="todo" data-id="6"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">傍晚散步 25—30 分钟：今日**多云转晴、12—25℃、风 &lt;3 级**，但**强度锁死在「周身微热、尚未出汗」**——寒露之后大汗即为耗津伤阳。**今天这条有了新证据**：央视新闻 2026-10-08 报道，**2026 年哈佛大学研究团队发表在《英国医学杂志·医学》(BMJ Medicine) 的大型队列研究，对 11 万人追踪 30 年**，在追踪的十几项运动里**散步排到延寿第 1 位，规律散步能降低 17% 的全因死亡率**；**更关键的一条是「运动多样化」——在坚持散步的基础上每天再进行 1—2 项其他运动，与仅做单一运动的人相比，全因死亡风险可再降低 19%**，且**这一优势独立于总运动量之外**。**这正好给你的「Day4 推 + 傍晚散步」组合背书**。**步数口径**：**60 岁及以上每天 7000—8000 步即可显著降低死亡风险，无需强行追求更高步数**；**每天走路 30 分钟可使冠心病风险降低 19%、中风风险降低 27%**。**降尿酸的角度**：**规律有氧每周 150 分钟以上**有助于控制体重、改善胰岛素抵抗、促进尿酸排泄；**避免剧烈无氧运动**——乳酸竞争性抑制尿酸排泄。**减重速度红线**：**每月减轻 2—4 斤为宜**，快速减重产生酮体、同样抑制排泄。**备用方案**（起风或转阴）：原地踏步、靠墙静蹲、平板支撑 + 猫牛式拉伸；**八段锦**可选「调理脾胃须单举」「五劳七伤往后瞧」「两手攀足固肾腰」，每组 8 遍、循环两组</p><div class="todo-meta"><span class="el-tag el-training">练</span><span class="pri p-imp">重要</span><span class="meta-i">17:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">25 min</span></div></div></li>
+<li class="todo" data-id="7"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**距事业单位笔试只剩 9 天，今晚一套《综应》全真模考：19:30—21:30，中间不休息、不喝水打断。**先记住联考的物理结构：上午 **8:30—10:00 职测**（90 分钟、150 分）、**10:00—12:00 综应**（120 分钟、150 分），**两科连考 210 分钟不中断**——练的不是单点正确率，是「连续三个半小时不垮」的耐力。**综应怎么提分**：必考题型为**归纳概括、提出对策、公文写作（占分最高）**，核心能力是**材料摘抄、语言规范、逻辑清晰、踩点作答**，高分关键是**拒绝口语化、用官方规范话术、卷面整洁、分点作答**。**职测取舍**：**资料分析、言语理解、判断推理三块重点拿分**，**数量关系难题偏题直接放弃**。**今晚加一条真题打法**（命题研究员的拆解）：**标准时间 120 分钟的卷子，给自己压到 100—105 分钟**，做完后**记录每 30 分钟的进度**——在时间略微压缩的状态下，人会自然放弃极耗时的偏难题，把精力集中在更高回报的题上，**整体分数不降反升**。**每套卷子留 10 分钟复盘**：① **标出「犹豫再三」的题**（不只是错题）；② **用不同颜色圈出因读题不细心而错的题**；③ **写一句话「如果再出类似的题，我会改变哪一步思路」**——做完 8—10 套后，你会发现自己在某几类题上有稳定的「坏毛病」（资料分析总跳步、逻辑判断不愿画草图、综合题开头总爱铺陈背景），**这些毛病不改，会一次次在正式考试中抢走时间和分数**。**今晚顺手做掉的两件小事**：① **雨具、薄外套、备用袜子**放进考试包（10/12 起转阴，10/17 当天按有雨准备）；② 文具摆成型拍照存档，黑色碳素笔、2B 铅笔、橡皮，**C 类还须自备无计算/无存储/无通信功能的普通直尺**</p><div class="todo-meta"><span class="el-tag el-deeplearning">学</span><span class="pri p-must">必做</span><span class="meta-i">19:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">120 min</span></div></div></li>
+<li class="todo" data-id="8"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**明天 10/09 9:00 考研预报名开闸，今晚是最后一个完整的备料夜。**陕西省教育考试院 10 月 6 日公布的口径与各省完全一致：**网上预报名 2026 年 10 月 9 日至 12 日、网上报名 10 月 15 日至 24 日，每日 9:00—22:00；预报名期间的报名信息是有效的，网上报名时无需重复填报**。**四条最容易踩的坑**：① **须使用学信网 APP 在线拍摄并上传报名照片**（白底、不戴口罩帽子围巾眼镜含美瞳与任何饰品、露出完整五官、头发不遮眉眼耳、日常便装、**严禁修图**）；② **招生单位、考试方式、报考点等重要信息生成报名号后不可以修改**，要改须取消原报名并重新报名缴费，**若原报考点因达到报名人数上限而关闭，须重新选择其他符合条件的报考点**；③ **每位考生只能保留一条有效报名信息**，**逾期不再补报，也不得修改报名信息**；④ **往届生须在户籍或工作所在地报名**，非本地户籍要备**近三个月社保缴纳证明或居住证**。**报名流程五步**（湖南省公告给的骨架最清楚）：**填写基本信息 → 采集报名照片 → 填写报考信息 → 生成报名号并完成缴费 → 上传核验材料**。**两条时间线要记牢**：**报考点审核确认 10 月 26—31 日**（重庆口径：首次审核结论 10/30 12:00 前出具，**补充材料上传截止 10/31 12:00，超时无法上传、直接导致审核不通过**）；**准考证考前 10 天左右凭网报用户名密码下载**。**今晚四件事**：升级**学信网 APP**；拍齐**身份证正反面、户口簿首页与本人页、毕业证书**；社保/居住证材料存档；**账号密码与报名号记到安全处**</p><div class="todo-meta"><span class="el-tag el-deeplearning">学</span><span class="pri p-must">必做</span><span class="meta-i">20:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">40 min</span></div></div></li>
+<li class="todo" data-id="9"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">挑 1 个重复工序让智能体跑一遍，验收铁律不变：**AI 产出当「提案」不当「事实」，政策溯源这一项永远必须人工核到原文**，付款、合同、对外发布、敏感回复一律留人工审批点。**今天换一个境外同行的落地框架**——香港数字政策办公室（数字办）10 月 6 日举办第二场「人工智能+政务：AI 工具赋能政务重塑」技术论坛，主题「深研数据与资讯 重塑智能便民服务」，**线上线下超过 600 名来自近 100 个政府部门及公私营机构的代表参与**。**三条最值得抄的**：① **组织方式**——由**政务司副司长领导的「AI 效能提升组」**牵头，**首批已促成并落实涉及 13 个部门、合共 30 个效能提升项目**；② **供给方式**——**数字办为各部门提供「共用 AI 资源和支援」，而不是各部门各自采购**，同时正推展**「智方便」AI 助手并在政府内部试行 AI 智能体**；③ **安全口径**（这条必须原样抄进你的验收清单）——署理数字政策专员张宜伟强调：**在推动 AI 应用的同时，须做好权限管理、资讯保安及人手监督，让技术在安全可控的前提下发挥效益**。**今天的目标**：**拿这一条「安全前置 + 统一供给」对照工会场景，写下三个候选工序里哪一个最需要先补人工审批点**。对照组仍是那三个：**补贴/慰问名单筛选汇总出表、月报季报填报、政策条款合规性比对**</p><div class="todo-meta"><span class="el-tag el-working">干</span><span class="pri p-imp">重要</span><span class="meta-i">09:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">40 min</span></div></div></li>
+<li class="todo" data-id="10"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**把「智能向导」这条线拆成可复制的三步，今天只画流程图不写方案。**今天的新样本是山东：宁津县今年 6 月推出的 AI 数字人**「数字政务向导」整合了山东政务服务网发布的 1500 余项服务指南**，**群众口语化提问即可获得实时响应**；**线下大厅智能屏支持语音交互、地图导航，线上嵌入微信公众号，老年群体也能轻松使用**；效果是**「以前高峰时要排四五十分钟，现在十分钟左右就能排到窗口」**。**日照的 7×24 小时 AI 智能客服「阳光小政」**给出更硬的量化口径：**10 秒内响应群众咨询，智能答复准确率超 90%，线上咨询整体解答率达 97.8%，累计服务企业群众超 2.1 万次**。**对照青岛的矩阵口径**（可作为上限参照）：**全市累计落地政务 AI 创新应用 102 个，围绕政务服务、社会治理、机关办公、辅助决策四大领域搭建应用矩阵**，**政务服务领域上线 41 个智能应用、窗口落地 19 个「边聊边办」场景、表单平均预填率 69%、材料免提交比例 71%**。**今天的目标**：拿一张纸画三格——**「知识从哪来（1500 项服务指南的结构化）→ 用户怎么问（口语化入口 + 老年友好）→ 答错了怎么办（人工兜底 + 溯源）」**，把工会政策问答分别填进去（困难职工帮扶资格→智能核验；劳模慰问金发放→辅助决策；政策条款查询→政务服务），**每格只留一个最头疼的工序**</p><div class="todo-meta"><span class="el-tag el-working">干</span><span class="pri p-imp">重要</span><span class="meta-i">16:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">30 min</span></div></div></li>
+<li class="todo" data-id="11"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">**连晴第八天、12—25℃、多云转晴，今天是寒露第一天，也是本轮最适合出门赏秋的窗口之一。**六安本地刚办完的这场可以直接追（六安市文化和旅游局官网）：10 月 5 日**第四届大别山风景道上的非遗之旅主场活动**落地**六安文庙·锦城里**，主题「金秋游六安 风景道上品非遗」，**累计吸引线下参与市民游客 4 万余人次，抖音、视频号等多平台线上直播观看量突破 25 万人次**。**四大板块可挑一个去**：**非遗展演**（国家级非遗庐剧《花园扎枪》选段「春三月」、大别山民歌《姐儿门前一棵槐》、音乐快板《非遗闪耀大别山》）；**非遗好物市集**（舒席、临淮泥塑、丝带绣等手作，手工挂面、蒿子粑粑、金寨芙蓉糕等美食，徐集花生糖、侯氏吹糖人、手工麦芽糖）；**非遗主题踩街巡游**（舞龙舞狮腾跃街巷，有「空中芭蕾」之称的**三流集肘阁**技艺奇绝，国风汉服秀配油纸伞，传统鱼灯流光溢彩）；**皖西博物馆奇妙夜**（「1 台主题晚会 + 3 大主题雅集 + N 项夜游体验」，**「桂韵茶香」茶韵雅集**由非遗茶艺师现场演绎茶礼）。**现场还发布了六安市「十五五」非遗好物暨非遗融合发展新场景，并发出「秋染大别山，康养来六安」2026 六安金秋文旅惠民体验季邀约**。**季节红线照旧**：秋主「收」，登高以**周身微热、尚未出汗**为度；**运动时段按张伯礼院士口径取上午 10 点前后或下午 3 点前后**；**出汗后立刻擦干、及时添衣**</p><div class="todo-meta"><span class="el-tag el-enjoy">爽</span><span class="pri p-opt">可选</span><span class="meta-i">15:30</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">60 min</span></div></div></li>
+<li class="todo" data-id="12"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">若不出门，走「收心」这条线：先查一遍**票根经济**的联动清单——文庙主场推出的模式是**非遗好物市集专属消费券，游客凭六安市部分景区景点、酒店民宿消费凭证即可领取**，**打通「景区引流—住宿配套—市集消费」的链路**；天堂寨「化鱼成龙·凤舞呈祥」非遗夜游演艺构建起**「夜演、夜游、夜宴、夜宿」完整夜间消费链**，万佛湖「一梦回三国，奇遇会周郎」奇妙游让游客化身三国角色闯关解谜。**若只想在家里**：**10 分钟古琴 + 10 分钟临帖**，按「情志内守」办。**寒露前后情绪起伏不是矫情**——**中医言肺在志为忧，秋季肺气当令，外界萧瑟之象容易引动内在的悲忧情绪**；湖南省康复医院副院长张件云给的处方是**多走出家门晒晒太阳、漫步赏秋，以此舒展肺气、疏解胸中郁结之气**。**护眼这条今天也顺手做**：遵循**「20-20-20」原则**——每近距离用眼 20 分钟，眺望约 6 米外至少 20 秒；**温热毛巾敷眼 5—10 分钟**，温度以舒适不烫为宜。**补水纪律顺手对表**（腾讯新闻引中国工程院院士张伯礼与中医科的口径）：**优先喝温白开水，避免冰水刺激**；**白天每 1—2 小时喝 1 次水，每次 150—200 毫升**；**晨起空腹喝 1 杯温白开水**；**睡前 1 小时可少量喝水约 100 毫升**（别过量，以防起夜影响睡眠）。⚠️ **文中「银耳水煮开加杏仁沙参冰糖」那条请直接跳过**——银耳 09-28 已吃完暂不采购，你的润燥主力仍是**南杏仁 5 g（今日在日茶）**</p><div class="todo-meta"><span class="el-tag el-enjoy">爽</span><span class="pri p-opt">可选</span><span class="meta-i">20:50</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">20 min</span></div></div></li>
+<li class="todo" data-id="13"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">费曼复盘：合书口述今日 3 道错题的完整解题路径，卡壳处当场回炉重做。**今天把机制名词换成一手的学者原话**（2026 年 10 月 6 日《洛杉矶时报》相关报道引三位一线认知心理学家）：**UCLA 认知心理学荣休教授 Robert Bjork**（Bjork 学习与遗忘实验室创始人）说，**学生应该主动制造「必要困难（desirable difficulties）」——小小的心智挑战会强化神经元连接，让日后提取更容易**；他同时点名：**「集中练习（mass practice）可能非常浪费时间」**。**认知心理学家 Pooja K. Agarwal**（《Smart Teaching Stronger Learning》作者）给的具体做法是：**不要一边读一边记笔记，而是读几页 → 停下来 → 写下你记得什么 → 再继续读**；她的判断句是：**「我们总以为感觉最轻松的会记得最牢，事实恰恰相反」**。**《Make It Stick》作者、华盛顿大学 Henry L. Roediger** 补充：**检索练习无论用写下来、讲给同伴听还是在脑中默述都有效，但「你不能只是扫一眼就想『哦这个我知道』，你必须在脑子里把它完整拼出来」**。**她还有一个零成本动作**：**每次复习前，先花一分钟回想「我到目前为止学了什么」，有时间就写下来（brain dump），再给自己打分「0—100，我觉得我掌握了多少」**——这是元认知，也是所有复盘动作里最便宜的一个。**关键体感要记牢**：**间隔复习时那种「有点想不起来、得费劲捞」的感觉，恰恰是记忆被加固的信号**</p><div class="todo-meta"><span class="el-tag el-repeat">重复</span><span class="pri p-must">必做</span><span class="meta-i">21:50</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">15 min</span></div></div></li>
+<li class="todo" data-id="14"><button class="chk" type="button" aria-label="完成"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9 17.5 20 6.5"/></svg></span></button><div class="todo-body"><p class="todo-text">错题本按节奏重做，不许「只整理不回顾」。**今天把错因改成四级分类，替换掉那句没用的「粗心」**：**审题类**（看错单位、漏看隐藏条件、把「求周长」看成「求面积」）、**知识类**（公式记混、定理不会用、知识点衔接断层）、**思路类**（没考虑分类讨论、关键步骤跳步、找不到突破口）、**时间类**（会做但太慢，做到后面来不及）。**前三类回课本，第四类单独练速度**。**一条今天要新增的「强学生不做的事」**：**不要平均用力——做完 100 道题，80 道对、20 道卡，**就从那 20 道开始**，然后问清为什么错：是概念没懂、两个相似概念搞混、知道答案但提取失败、读错题，还是计算失误**。**三色笔记法**解决「看懂答案 ≠ 会做题」：黑笔抄题干、蓝笔写错误过程、**红笔写核心知识点 + 关键突破口 + 易错提醒**——回看时先遮住答案独立重做。**复盘节奏（今天起按这个表执行）**：**初次学习 Day1 → 首次检索当天或 Day2 → 第 2—3 天练题 → 约 1 周后聚焦弱项 → 2—3 周后综合检索**，难度高的提前、能轻松提取的推后。**归档标准**：**两次都顺畅即可归档**；**两次都错就打双重标记**，回课本重新梳理后再找 2—3 道同类题巩固。**一句话立场**：**刷题决定你见过多少，复盘决定你留下多少；见过的不算数，留下的才是分数**</p><div class="todo-meta"><span class="el-tag el-repeat">重复</span><span class="pri p-imp">重要</span><span class="meta-i">22:05</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.5l3.5 2"/></svg><span class="dur">15 min</span></div></div></li>
+  </ul>
+</div>
+
+<div class="nudge" style="margin-top:16px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-8 5-14 16-16 0 11-6 16-13 16H4z"/><path d="M4 20c3-5 6-8 11-10"/></svg><p>寒露交节：今晚泡脚38到42度15分钟，护住脚踝腰腹脖子，睡前100毫升温水。</p></div>
+
+<h2 class="sec" id="sec-news">七元素新闻 · 14 条</h2>
+<section class="grp" style="--c:#5B6CC4;--bg:#7C8CF8"><div class="grp-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><h2>睡 Sleep</h2><span class="cnt">2 条</span></div><div class="grp-cards"><article class="nc"><h3>节后逢寒露，养生主打「秋收敛藏」：护住脚踝、腰腹、脖子，泡脚助眠，避开清晨低温晨练</h3><p class="sum">中国经济网（2026 年 10 月 8 日，新华社、央视报道）。**今天 14:29 交寒露，这是交节当天最该读的一篇**。**判断**：宁夏医科大学中医学院教授郭斌说，**今年国庆收假后恰好迎来寒露节气，从中医角度看，节后的身体可能面临「内积外燥」的双重考验**，节后调理**重在消积与润燥并行**。**中国中医科学院西苑医院风湿病科副主任医师董菲**给的口径最可执行：**寒露养生重在敛阳防寒、滋阴润燥**；**长假后宜逐步调整作息，放平心态、减少劳累；尽量早睡早起，补足身体消耗；还应护住脚踝、腰腹和脖子等关键部位，避免夜里受凉**。**病机解释**：**今秋湿气、寒气、燥气交织，长假里过多食用螃蟹、甜品、红肉等偏凉或油腻厚重食物，容易刺激肠胃、积聚湿气**，引发**身体困重、腹胀、皮肤干燥、上火积食**等燥湿夹杂的症状。**专家建议**：**平时可用陈皮、炒麦芽泡水饮用，起到消食养胃的作用**；**膳食中可适当搭配茯苓帮助祛湿**。**节后综合征**这一段由湖南省康复医院副院长张件云给出：**保持起居规律，多走出家门晒晒太阳、漫步赏秋，以此舒展肺气、疏解胸中郁结之气**；**睡前温水泡脚，促进周身血液循环、改善睡眠**；老年人还可练**八段锦、太极拳**。**心血管这条必须单独记**——上海中医药大学附属曙光医院心血管内科主任医师姚成增：**随着气温下降，冷空气刺激极易造成血压波动**；**心脑血管疾病患者应避开清晨低温时段晨练**；**严控盐、油、糖的摄入，少量多次饮用温水；保持大便通畅，切忌用力排便**。**对本人**：文中**「百合银耳雪梨汤」请直接跳过**（银耳 09-28 吃完暂不采购），你的润燥主力仍是**南杏仁 5 g（今日在日茶）**；**陈皮 + 炒麦芽泡水这条与夜茶山楂位同源，不必重复叠加**</p><div class="nc-foot"><div class="src">中国经济网 · 新华社</div><div class="tags"><span class="tag">护住脚踝腰腹脖子</span><span class="tag">避开清晨低温晨练</span></div><a class="lnk" href="http://fashion.ce.cn/tjyd/202610/t20261008_3248846.shtml" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article>
+<article class="nc"><h3>寒露今至天渐凉：每天喝够 2000 毫升温水，泡脚 15—20 分钟，运动以周身微热尚未出汗为宜</h3><p class="sum">中国经济网（2026 年 10 月 8 日，据新华社、央视）。**这一篇给的是「量化到数字」的寒露处方，比泛泛而谈有用得多**。**中国中医科学院西苑医院老年病科主任医师王清**点名**过敏性鼻炎、感冒、十二指肠溃疡、习惯性便秘是深秋四大常见病**，并给到可执行动作：**平时可以按揉迎香穴、鼻通穴预防鼻部不适**；**艾灸关元、命门穴温养脾胃阳气**；**每天喝够 2000 毫升温水、多吃富含膳食纤维的食物缓解便秘**。**他特别提醒的一句是今天最该记住的**：**寒露运动的目的是疏通气血、增强体质，不是比拼运动量，适度温和的长期坚持，才是顺时养生的关键**。**运动细则**（广东省中医院治未病中心副主任陈润等）：**适合选择太极拳、八段锦、慢跑、散步、瑜伽等温和舒缓的项目，以周身微热、尚未出汗为宜，切忌大汗淋漓**；**中医认为「汗为心之液」，深秋大量出汗会导致阳气随津液外泄，降低身体抵抗力，反而容易感冒受凉**；**运动时间最好选在日出后或午后气温较高的时段**；**运动后及时擦干汗水、更换干爽衣物，不要站在风口吹风**。**饮食两条边界**（这条对你最关键）：**可适量食用鸡肉、牛肉、生姜、红枣等温热食物帮助涵养阳气，但要避免大量食用羊肉、辣椒、花椒等过于温燥的食材，防止助燥伤阴**；**脾胃虚寒者最好把梨、苹果等水果蒸熟后食用**，**刚从冰箱拿出的冷饮瓜果最容易损伤脾胃阳气**。**三款食疗方**：沙参玉竹脊骨汤、山药核桃粥、桂花蜂蜜饮。**对本人**：**羊肉、辣椒、花椒全线避开（湿热 + 火盛 + 尿酸 506）**；**桂花蜂蜜饮里的蜂蜜不入桶**（果糖）；**2000 毫升温水这条今天必须补满**，它同时是你的降尿酸主线</p><div class="nc-foot"><div class="src">中国经济网 · 新华社</div><div class="tags"><span class="tag">每天2000毫升温水</span><span class="tag">大汗耗津伤阳</span></div><a class="lnk" href="http://fashion.ce.cn/yw/202610/t20261008_3248933.shtml" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article></div></section>
+<section class="grp" style="--c:#E08A3C;--bg:#F2A65A"><div class="grp-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v7a3 3 0 0 0 6 0V3"/><path d="M7 3v18"/><path d="M17 3c-1.5 2-2 4-2 6s.5 3 2 3 2-1 2-3-.5-4-2-6z"/><path d="M17 12v9"/></svg><h2>吃 Eat</h2><span class="cnt">2 条</span></div><div class="grp-cards"><article class="nc"><h3>假期后痛风易「报复性」发作：收好这份尿酸「红黄绿」饮食清单，分得清清楚楚</h3><p class="sum">今日头条转《健康报》（2026 年 10 月，黑龙江省哈尔滨市第二医院内分泌代谢病科主任医师冷蕾）。**你尿酸 506 已超阈值 420，这份「三色清单」是目前最好用的一张表，建议直接贴冰箱**。**绿灯（放心大胆吃，有助稳尿酸）**：① **新鲜蔬菜**——**几乎所有新鲜蔬菜都属于低嘌呤食物，建议每天食用不少于 500 克，其中紫甘蓝、胡萝卜、菠菜等深色蔬菜占一半以上**；**烹饪方式尽量清炒、白灼、凉拌，少放油盐，别煮太久**；② **鸡蛋**——**水煮蛋、蒸蛋羹、炒蛋都不会明显升高血尿酸，还能补充必需氨基酸**，**肾功能正常者可每天吃 1—2 个**；③ **奶制品**——**牛奶、酸奶、无糖奶酪不仅嘌呤低，所含酪蛋白、乳清蛋白有助于促进尿酸排泄，降低痛风发作风险**，**建议每天摄入 300 毫升以上，优先低脂无糖款**。**黄灯（嘴馋可以吃，严格控制量）**：① **水果**——樱桃、草莓、蓝莓、柚子、西瓜、苹果等低糖款可少量吃；**榴莲、荔枝、芒果、龙眼、甘蔗等高糖水果，吃一次别超过一小把**；② **豆制品**——**豆腐、豆干、豆浆、毛豆属中低嘌呤，建议每周 3—5 次**；**干黄豆、干黑豆嘌呤含量很高，煮熟后也不能大量食用**；③ **肉类**——**红肉与白肉都属中嘌呤，每天控制在一个手掌心大小（50—75 克），优先瘦肉；烹饪前焯水能去掉一部分嘌呤，少红烧少卤制，多清蒸清炖白切**。**红灯（能不吃就别吃）**：**酒**（只要含酒精就阻碍尿酸排出）、**甜饮料**（果葡糖浆与白砂糖重灾区，在体内疯狂产尿酸）、**高嘌呤**（动物内脏、牡蛎鱼子鱼干贝类沙丁鱼凤尾鱼、火锅汤骨头汤老火靓汤、酵母粉鸡精蚝油）。**对本人**：今天是**周四有豆日**，**赤小豆 25 g 走主食锅、泡豆水倒掉**——注意清单明确写了**干黄豆、干黑豆嘌呤高，煮熟也别大量吃**，所以赤小豆 25 g 是上限不是起点</p><div class="nc-foot"><div class="src">今日头条 · 健康报</div><div class="tags"><span class="tag">红黄绿三色清单</span><span class="tag">每天蔬菜500克奶300毫升</span></div><a class="lnk" href="https://www.toutiao.com/article/7693823902048338468/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article>
+<article class="nc"><h3>寒露这样吃：减辛增酸、滋阴养肾是核心，脾胃虚寒者把水果蒸熟再吃</h3><p class="sum">腾讯新闻 · 中国新闻网（2026 年 10 月 8 日，引中国工程院院士张伯礼及中医科）。**今天是寒露交节当天，这一篇把「吃 / 喝 / 动」三条线一次性给全**。**吃**：**从白露到寒露，「燥」是贯穿秋季的主要气候特点，因此「减辛增酸、润燥养肺」是不变的调理核心**。**两大原则**——**一是「减辛」：减少辣椒、花椒、生姜等辛辣刺激及煎炸熏烤类食物摄入，避免助燥伤肺**；**二是「增酸」：适当食用橘子、石榴、葡萄等，有助于收敛肺气、顺应秋令**。**寒露也是人体阳气收敛、为过冬储能的关键时期，还需注重「滋阴养肾」，可适当食用莲子、栗子、红枣等食材**。**若需「贴秋膘」，需以清淡、易消化的食物为主**（百合山药排骨汤、红枣小米粥），**避免油腻加重肠胃负担**。**喝**（这条最实用）：**优先喝温白开水，避免冰水刺激**；**白天每 1—2 小时喝 1 次水，每次 150—200 毫升**；**晨起空腹喝 1 杯温白开水，唤醒身体机能**；**睡前 1 小时可少量喝水，约 100 毫升，避免夜间口干，但别过量喝水，以防起夜影响睡眠**；**以温白开水为基础，可适量喝陈皮水、淡竹叶水等；避免喝冰镇饮料、凉茶，以防加重脾胃虚寒**。**动**（张伯礼院士口径）：**最好在上午 10 点前后、下午 3 点前后锻炼，锻炼时间可以 20 分钟到半个小时**。**对本人**：**生姜这条要注意——你体质火盛，生姜只在受寒当日少量用，不作为日常调味**；文中**「银耳水煮开加杏仁、沙参、冰糖」请直接跳过**（银耳 09-28 吃完暂不采购），你的**南杏仁 5 g 今日走日茶位**；**陈皮水这条与日茶陈皮 5 g 同源，别叠加</p><div class="nc-foot"><div class="src">腾讯新闻 · 中国新闻网</div><div class="tags"><span class="tag">减辛增酸滋阴养肾</span><span class="tag">张伯礼上午10点下午3点</span></div><a class="lnk" href="https://news.qq.com/rain/a/20261008A029WO00" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article></div></section>
+<section class="grp" style="--c:#2E9E6B;--bg:#4CC38A"><div class="grp-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11"/><path d="M17.5 6.5v11"/><path d="M3.5 9v6"/><path d="M20.5 9v6"/><path d="M6.5 12h11"/></svg><h2>练 Training</h2><span class="cnt">2 条</span></div><div class="grp-cards"><article class="nc"><h3>散步被科学证实的「长寿第一运动」：规律散步降 17% 全因死亡率，再加 1—2 项运动可再降 19%</h3><p class="sum">央视新闻（2026 年 10 月 8 日 06:58 发布）。**硬数据**：**2026 年哈佛大学研究团队发表在《英国医学杂志·医学》(BMJ Medicine) 的大型队列研究，对 11 万人进行了长达 30 年的跟踪**，结果在他们追踪的十几项运动里，**散步排到延寿第 1 位，规律散步能降低 17% 的全因死亡率**。**更关键的一条**：**运动多样化能带来额外的健康益处——在坚持散步的基础上，每天再进行 1—2 项其他运动，与仅进行单一运动的人相比，全因死亡风险可再降低 19%**，且**这一优势独立于总运动量之外**，在心血管疾病、癌症和呼吸系统疾病的预防上均有体现。**散步的五项收益**：① **心血管**——**每天走路 30 分钟可使冠心病风险降低 19%、中风风险降低 27%**；② **大脑与认知保护**；③ **骨骼与关节友好**；④ **天然减压剂**——**降低皮质醇、释放内啡肽；白天规律散步可显著改善夜间睡眠质量、缩短入睡时间**；⑤ **增强免疫力**——**坚持 24 周，唾液免疫球蛋白含量可增加 34.7%**。**科学散步五点**：**每天至少 30 分钟**（时间有限可拆成多个短时段，**碎片化散步同样能显著降低餐后甘油三酯负荷**）；**步数 7000—8000 步为黄金区间**（60 岁及以上即可显著降低死亡风险，无需强行追求更高步数）；**步频**比日常走路速度稍快即可。**对本人**：这正好给你的**「Day4 推 + 傍晚散步」组合背书**——**不要只练力量不走路，也不要只走路不练力量，两者叠加的收益是独立的**；但**寒露之后强度锁死在「周身微热、尚未出汗」，大汗即为耗津伤阳**</p><div class="nc-foot"><div class="src">央视新闻 · BMJ Medicine</div><div class="tags"><span class="tag">散步降17%全因死亡率</span><span class="tag">运动多样化再降19%</span></div><a class="lnk" href="https://www.toutiao.com/article/7694063866254279204/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article>
+<article class="nc"><h3>每坐半小时起来动三分钟：总久坐时长最多的四分之一，死亡风险是最少那组的 2.63 倍</h3><p class="sum">今日头条（2026 年 10 月）。**这一篇把「久坐」拆成了两笔账，结论比「每小时起来一次」更精细**。**硬数据**：美国一项研究给 **7,985 位 45 岁以上的人戴上加速度计**，记录真实久坐时长，中位随访 4 年，结果两条——**久坐总时长最多的四分之一人群，死亡风险是最少那组的 2.63 倍**；**每一段久坐持续得越长风险也越高，单段时长最长的四分之一是 1.96 倍**；且**模型里已经扣掉了中高强度运动的影响**（也就是说，晚上练得再狠也抵不掉白天久坐的那部分风险）。**第二笔账**：**把 100 万人数据合到一起的分析**显示，**每天坐超过 8 小时的人，如果每周活动量够大（相当于每天 60—75 分钟中等强度活动），死亡风险并没有升高，风险比 1.04**；反过来，**每天坐不到 4 小时但基本不活动的人，风险比 1.27**。**所以结论是：坐得少并不自动等于安全，活动量够大能把久坐风险抵掉很多**。**轻的活动也算**——一项针对 **36,383 人、平均年龄 62.6 岁**的加速度计研究显示，按轻体力活动多少分四组，与最少组相比，往上三组死亡风险依次是 **0.60、0.44、0.38**。**站着做家务、慢慢走、擦桌子、浇花，都算**。**步数口径**：汇总 15 项队列、**47,471 人**的分析发现，**60 岁以上死亡风险随步数增加下降，到每天 6000—8000 步就趋于平缓**；论文原话是**「每天一万步被广泛宣传，但支持这个建议的证据很少」**。**一条安全提醒**：社区老年人里站起 3 分钟内血压明显下降的合并患病率达 **22.2%**（20 项研究、24,967 人），**每次起身动作要慢：先坐直、脚踩实、扶稳站起来、站稳两三秒再走第一步**。**对本人**：你白天久坐备考 MPA，这条就是**「每 50 分钟起身 3—5 分钟」的升级版依据——不光要起身，还要让「单段久坐时长」变短</p><div class="nc-foot"><div class="src">今日头条 · 加速度计队列研究</div><div class="tags"><span class="tag">久坐2.63倍与单段1.96倍</span><span class="tag">6000至8000步趋于平缓</span></div><a class="lnk" href="https://www.toutiao.com/article/7693905323320525339" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article></div></section>
+<section class="grp" style="--c:#8B5CF6;--bg:#A78BFA"><div class="grp-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-6.5"/></svg><h2>学 DeepLearning</h2><span class="cnt">2 条</span></div><div class="grp-cards"><article class="nc"><h3>硕士研究生招生考试 9 日起预报名：10/9—12 每日 9:00—22:00，须用学信网 APP 在线拍照上传</h3><p class="sum">陕西省人民政府门户网站 · 三秦网（2026 年 10 月 7—8 日，陕西省教育考试院发布）。**明天开闸，今天必须把料备齐**。**时间口径（各省完全一致）**：**网上预报名 2026 年 10 月 9 日至 12 日，网上报名 2026 年 10 月 15 日至 24 日，每日 9:00—22:00**；**预报名期间的报名信息是有效的，网上报名时无需重复填报**。**报名流程五步**（湖南省公告给的骨架最清楚）：**填写考生基本信息（个人基本信息、学籍学历信息、户档信息、家庭成员、学习与工作经历）→ 采集报名照片（使用学信网 APP 在线拍摄、上传）→ 填写报考信息（报考单位、报考专业、报考点）→ 生成报名号并完成缴费 → 上传核验材料**。**四条最容易踩的坑**：① **招生单位、考试方式、报考点等重要信息生成报名号后不可以修改**，要改须**取消已有报名信息并在截止日期前重新报名、缴费**；**若取消后原报考点因达到人数上限而关闭，须重新选择其他符合条件的报考点**；② **每位考生只能保留一条有效报名信息**，**逾期不再补报，也不得修改报名信息**；③ **往届生须在户籍或工作所在地报名**（陕西省口径接受「户籍在陕」或「工作所在地在陕」的往届生）；④ **报考管理类和法律硕士专业学位的考生，仅限选择市州教育考试院报考点报名**（湖南省口径）——**你报的正是 MPA（管理类），这条直接适用**。**后续时间线**：**报考点审核确认 10 月 26—31 日**（补充材料上传统一截止 10/31 12:00）；**准考证考前 10 天左右下载**。**对本人**：MPA 联考 2026-12-19，**倒计时 72 天**；今晚四件事——升级学信网 APP、拍齐身份证正反面与户口簿本人页及毕业证书、备社保或居住证、账号密码与报名号记到安全处</p><div class="nc-foot"><div class="src">陕西省人民政府门户网站</div><div class="tags"><span class="tag">预报名10月9日至12日</span><span class="tag">管理类限市州报考点</span></div><a class="lnk" href="https://www.shaanxi.gov.cn/xw/sxyw/202610/t20261007_3700970.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article>
+<article class="nc"><h3>事业单位联考冲刺：120 分钟的卷子给自己压到 100—105 分钟，每套卷留 10 分钟复盘</h3><p class="sum">梁平网事（2026 年，资深命题研究员拆解）+ 海南华图（2026 年 10 月 6 日）。**距笔试 9 天，这两篇合起来正好是一套「最后 9 天怎么用真题」的打法**。**先确认类别再定权重**（海南华图口径）：**ABCDE 五类的《职测》模块构成不同**——以 A 类为例是**常识判断、言语理解与表达、数量关系、判断推理、资料分析五大模块**；**E 类《综应》医学基础知识占 60% 为必答、岗位专业知识占 40% 按岗位选做**。**三阶真题打法**（命题研究员拆解）：**第一轮不急着对答案，先看「版图和气质」**——用不同颜色的笔标出你认为的送分题与难题，对照答题卡统计，看真正得分高的地方是否与预判一致，**建立「见题识来源」的感觉**；**第二轮限定时间，感受「略微紧张」的节奏**——**标准时间 120 分钟就给自己 100—105 分钟，做完后记录每 30 分钟的进度**（做了多少题、卡在哪类题型），**在时间略微压缩的状态下，人会自然放弃极耗时的偏难题，整体分数不降反升**；**第三轮把真题拆碎，做成错题与考点索引**。**每套卷子留 10 分钟复盘**：① **标出「犹豫再三」的题**（不只是错题）；② **用不同颜色圈出因读题不细心而错的题**；③ **写一句话「如果再出类似的题，我会改变哪一步思路」**——做完 8—10 套后，你会发现自己在某几类题上有稳定的坏毛病（资料分析总跳步、逻辑判断不愿画草图、综合题开头总爱铺陈背景）。**一条反直觉的提醒**：**把「热点」当背景而不是当答案**——卷面上铺天盖地的数据与口号式表述却缺少逻辑与执行路径，阅卷老师看到的是「他很用功，但看不出他能不能干活」；**保持对主流政策方向与年度关键词的清醒认知即可，不至于在考场上说反了**。**对本人**：**《综应》是逆袭关键——职测分差小，综应一题能拉十几分**，最后 9 天把规范话术背到能默写，边际收益高于再刷两套职测</p><div class="nc-foot"><div class="src">梁平网事 · 海南华图</div><div class="tags"><span class="tag">120分钟压到100至105分钟</span><span class="tag">热点当背景不当答案</span></div><a class="lnk" href="https://m.hi.huatu.com/2026/1006/1346372.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article></div></section>
+<section class="grp" style="--c:#0EA5E9;--bg:#38BDF8"><div class="grp-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="7" width="19" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M2.5 12h19"/></svg><h2>干 EfficientWorking</h2><span class="cnt">2 条</span></div><div class="grp-cards"><article class="nc"><h3>香港数字办第二场「AI+政务」论坛：13 个部门 30 个效能提升项目落地，共用 AI 资源 + 安全前置</h3><p class="sum">紫荆网（2026 年 10 月 6 日）。**今天换一个境外同行的落地框架，重点看它的组织方式与安全口径**。**规模**：数字政策办公室（数字办）10 月 6 日举办「人工智能+政务：AI 工具赋能政务重塑」系列第二场技术论坛，主题「深研数据与资讯 重塑智能便民服务」，**吸引线上线下超过 600 名来自近 100 个政府部门及公私营机构的代表参与**；论坛由**智慧政府创新实验室**联同香港生产力促进局、数码港、科技园合办，**上海市数据局的 AI 专家线上分享了「AI+政务」的实践经验**。**三条最值得抄的**：① **组织方式**——为落实《香港第一个五年规划》及 2026 年《施政报告》，数字办重点推动「AI+政务」工作，**透过 AI 技术改革公共管理，深化数据资源开发利用，促进政府内部数据共享**；由**政务司副司长领导的「AI 效能提升组」至今已促成并落实首批涉及 13 个部门、合共 30 个效能提升项目**；② **供给方式**——**数字办会继续为部门提供共用 AI 资源和支援**，协助各部门安全有效地应用 AI，并正推展「智方便」AI 助手、**在政府内部试行 AI 智能体**（「统一供给、避免各自采购」是这条的关键）；③ **安全口径**（原样抄进验收清单）——署理数字政策专员张宜伟强调：**在推动 AI 应用的同时，须做好权限管理、资讯保安及人手监督，让技术在安全可控的前提下发挥效益**。**另一条立场值得记**：**善用 AI 和数据，除了协助各部门提升处理资讯及完成繁琐工作的效率，更重要的是从市民角度出发，让公共服务更易查找、更易理解和更方便使用**。**对本人**：你的验收铁律「AI 产出当提案不当事实、政策溯源必须人工核到原文、付款合同对外发布敏感回复一律留人工审批点」，与香港这条「权限管理 + 资讯保安 + 人手监督」完全同构——**三个候选工序（补贴慰问名单筛选、月报季报填报、政策条款合规性比对）今天先写出各自的人工审批点**</p><div class="nc-foot"><div class="src">紫荆网 · 香港数字政策办公室</div><div class="tags"><span class="tag">13个部门30个效能提升项目</span><span class="tag">权限管理资讯保安人手监督</span></div><a class="lnk" href="https://zijing.com.cn/web/article/1557394566878003200/web/content_1557394566878003200.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article>
+<article class="nc"><h3>山东 AI 下沉：宁津「数字政务向导」整合 1500 余项服务指南，日照「阳光小政」10 秒响应、准确率超 90%</h3><p class="sum">大众网（2026 年 10 月 6 日）。**这一篇给的是「一个县级政务 AI 问答怎么做到能用」的量化样本，比宏大规划更适合直接抄**。**宁津县**：今年 6 月推出的 AI 数字人**「数字政务向导」整合了山东政务服务网发布的 1500 余项服务指南**，**群众口语化提问即可获得实时响应**；**线下大厅智能屏支持语音交互、地图导航，线上嵌入微信公众号，老年群体也能轻松使用**；效果用窗口人员的一句话就是——**「以前高峰时要排四五十分钟，现在十分钟左右就能排到窗口」**。**日照市**：**7×24 小时 AI 智能客服「阳光小政」10 秒内响应群众咨询，智能答复准确率超 90%，线上咨询整体解答率达 97.8%，累计服务企业群众超 2.1 万次**。**医疗侧的同类打法也可参照**：**宁阳县 DUCG 智能辅助诊疗系统已覆盖全县 546 个医疗点位，诊断准确率达 98%，基层医生使用率从不足 30% 跃升至 85% 以上**——**这条说明「覆盖率」比「模型多强」更能决定成败**。**对照组（上限参照）**：青岛市今年**累计落地政务 AI 创新应用 102 个**，**政务服务领域上线 41 个智能应用、窗口落地 19 个「边聊边办」场景、表单平均预填率 69%、材料免提交比例 71%**，并建成 **27 个通用大模型应用**。**对本人**：**「整合 1500 余项服务指南」这一步是所有政务问答的地基——你的工会政策知识库（02_Areas/A3_工作，326 文件）要能问答，先把条目结构化成可检索的清单，再谈模型**；**老年友好（语音交互 + 微信公众号入口）这条同样适用于职工群体**</p><div class="nc-foot"><div class="src">大众网</div><div class="tags"><span class="tag">整合1500余项服务指南</span><span class="tag">日照10秒响应准确率超90%</span></div><a class="lnk" href="http://gzylhyzx.com/detail.html?newsId=55887557" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article></div></section>
+<section class="grp" style="--c:#EB5757;--bg:#F87171"><div class="grp-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg><h2>爽 EnjoyYourself</h2><span class="cnt">2 条</span></div><div class="grp-cards"><article class="nc"><h3>六安文庙非遗之旅主场：4 万余人次线下参与、25 万人次线上观看，发布「十五五」非遗融合新场景</h3><p class="sum">六安市文化和旅游局官网（2026 年 10 月 5 日活动，官网通报）。**这是寒露当天最应景的本地样本，也是你「爽」这一格的现实选项**。**规模**：10 月 5 日，**2026 年第四届大别山风景道上的非遗之旅主场活动**在**六安文庙·锦城里**圆满举办，主题「金秋游六安 风景道上品非遗」，集**非遗展演、好物市集、互动体验**于一体，**累计吸引线下参与市民游客 4 万余人次，抖音、视频号等多平台线上直播观看量突破 25 万人次**。**四大板块**：① **非遗展演**——国家级非遗**庐剧《花园扎枪》经典选段「春三月」**生动演绎北宋闺阁趣事，同为国家级非遗的**大别山民歌《姐儿门前一棵槐》**曲调质朴自然，音乐快板《非遗闪耀大别山》串联全市各级非遗资源；② **非遗好物市集**——**舒席、临淮泥塑、丝带绣**等手作精巧雅致，**手工挂面、蒿子粑粑、金寨芙蓉糕**等特色美食香飘街头，**徐集花生糖、侯氏吹糖人、手工麦芽糖**等甜蜜食摊暖意融融，还展出**露白珍珠、皖西羽毛球**等本土特色产品，并**联动市中医院开展公益义诊、中药茶饮品鉴**；③ **非遗主题踩街巡游**——舞龙舞狮腾跃街巷，有「空中芭蕾」美誉的**三流集肘阁**技艺奇绝，国风汉服秀配油纸伞、传统鱼灯流光溢彩，更有 NPC 互动穿梭其间；④ **趣味互动体验区**——围绕「可看、可玩、可体验、可传播」打造，**汉服妆造体验、诗词问答、打卡集章**（凭章赢取景区门票、文创周边）。**同时发布六安市「十五五」非遗好物暨非遗融合发展新场景，展现「非遗+旅游」「非遗+研学」「非遗+民宿」等活态利用创新成果，并发出「秋染大别山，康养来六安」2026 六安金秋文旅惠民体验季邀约**。**对本人**：今天 12—25℃、多云转晴，**出门按「上午 10 点前后 / 下午 3 点前后、每次 20—30 分钟」的节奏走**；**市集里的中药茶饮品鉴可以逛，但你的茶方今天已在杯里，别重复叠加</p><div class="nc-foot"><div class="src">六安市文化和旅游局</div><div class="tags"><span class="tag">4万余人次线下25万线上</span><span class="tag">十五五非遗融合新场景</span></div><a class="lnk" href="https://wlj.luan.gov.cn/zwzx/wlyw/5503518.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article>
+<article class="nc"><h3>「非遗+」焕新假日场景：票根经济打通「景区引流—住宿配套—市集消费」，六安做活假日文旅</h3><p class="sum">新华网安徽频道（2026 年 10 月 7 日）。**这一篇把六安这轮操作背后的机制讲透了，比活动通稿更有参考价值**。**整体判断**：国庆假期，**在天堂寨观赏飞天凤凰非遗夜演、在皖西博物馆参加沉浸式非遗研学、在文庙街观看一场三流集肘阁巡游**——六安以**「非遗+」为抓手，将非遗展演、市集消费、沉浸式体验串珠成链，推动传统文化从展馆走向街巷，成为假日文旅消费新亮点**。**三条线的具体形态**：① **皖西博物馆「国庆奇妙夜」**——**「1 台主题晚会 + 3 大主题雅集 + N 项夜游体验」**，**展厅延时开放至 21 时并增设夜间公益讲解**；馆内三大雅集各有风采——**「文脉寻月」文博研学**（手持寻宝手册解谜打卡）、**「桂韵茶香」茶韵雅集**（非遗茶艺师现场演绎茶礼）、**「皋城风物」博物市集**（传统手作、非遗文创、大别山农特产品）；② **天堂寨「化鱼成龙·凤舞呈祥」非遗夜游演艺**——巨型飞天凤凰凌空展翅，鱼灯巡游、非遗舞龙、丝弦锣鼓与全息光影交相辉映，**构建起「夜演、夜游、夜宴、夜宿」完整的夜间消费链条**；③ **万佛湖「一梦回三国，奇遇会周郎」奇妙游**——游客化身三国角色闯关解谜，湖畔雅乐与国潮活动交替登场，**带动景区文创、餐饮等二次消费显著提升**。**机制核心（这条最值得记）**：六安市文旅局相关负责人介绍，**文庙主场活动推出「票根经济」模式——非遗好物市集推出专属消费券，国庆假日期间游客凭六安市部分景区景点、酒店民宿消费凭证即可领取，这一模式打通了「景区引流—住宿配套—市集消费」的链路**。**对本人**：如果今天不出门，**票根经济的联动清单值得花 10 分钟查一遍**（哪些景区/酒店凭证可领券）；**在家则走「收心」线：10 分钟古琴 + 10 分钟临帖**，配合湖南省康复医院的建议——**多晒上午太阳、适当户外舒展肺气、情绪上来时做腹式呼吸**</p><div class="nc-foot"><div class="src">新华网安徽频道</div><div class="tags"><span class="tag">票根经济打通三段链路</span><span class="tag">夜演夜游夜宴夜宿</span></div><a class="lnk" href="http://ah.news.cn/20261007/0b08696b95b84457ba561730354731a0/c.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article></div></section>
+<section class="grp" style="--c:#F59E0B;--bg:#FBBF24"><div class="grp-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2.5 21 6.5 17 10.5"/><path d="M3 13V9.5A3.5 3.5 0 0 1 6.5 6H21"/><path d="M7 21.5 3 17.5 7 13.5"/><path d="M21 11v3.5a3.5 3.5 0 0 1-3.5 3.5H3"/></svg><h2>重复 Repeat</h2><span class="cnt">2 条</span></div><div class="grp-cards"><article class="nc"><h3>填鸭能帮你过一场考试，但记住东西靠的是这三条：必要困难、检索练习、脑内完整拼出</h3><p class="sum">《洛杉矶时报》（2026 年 10 月 6 日，记者 Stumm 为该报撰稿）（2026 年 10 月 6 日，引三位一线认知心理学家）。**这一篇的价值在于：三位学者本人出面否定了最常见的三个学习习惯**。**被点名否定的三条**：① **边读边记笔记 / 划重点**——UCLA 认知心理学荣休教授 **Robert Bjork**（Bjork 学习与遗忘实验室创始人）说，**划线与反复复习笔记让人短时间内保持专注，但研究表明它们对长期记忆没有显著影响**；他直言**「集中练习（mass practice）可能非常浪费时间」**；② **听音乐学习**——认知心理学家 **Pooja K. Agarwal**（《Smart Teaching Stronger Learning》作者）说，**嚼口香糖、闻精油、听音乐都不起作用，「它可能改善你的心情、让你保持清醒，但研究表明它实际上并不能改善学习」**；③ **扫一眼就想「哦这个我知道」**——《Make It Stick》作者、华盛顿大学 **Henry L. Roediger** 说，**检索练习用写下来、讲给同伴听或在脑中默述都有效，但「你不能只是扫一眼就想『哦，我知道那个』，你真的必须在脑子里把它拼出来」**。**正面处方**：**主动制造「必要困难（desirable difficulties）」——小小的心智挑战会强化神经元连接，让日后提取更容易**；**具体做法**（Agarwal）：**不要一边读一边记笔记，而是读几页 → 停下来 → 写下你记得什么 → 再继续读**；**元认知一分钟**：**每次复习前先花一分钟回想「我到目前为止学了什么」，有时间就写下来（brain dump），再给自己打分「0—100，我觉得我掌握了多少」**。**判断句**：Agarwal 的这句最该记住——**「我们总以为感觉最轻松的会记得最牢，事实恰恰相反」**。**对本人**：今晚那 15 分钟费曼复盘就按这个走——**合书、不翻笔记、完整口述**，卡壳处才是真正要补的地方</p><div class="nc-foot"><div class="src">洛杉矶时报 · AP</div><div class="tags"><span class="tag">必要困难与检索练习</span><span class="tag">听音乐不能改善学习</span></div><a class="lnk" href="https://www.latimes.com/world-nation/story/2026-10-06/how-to-study-better-exam-cramming-tips" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article>
+<article class="nc"><h3>别平均用力：做完 100 道题先做那 20 道卡住的，再按「初次—当天—2-3 天—1 周—2-3 周」的阶梯复盘</h3><p class="sum">Kori Science（2026 年）。**这一篇给的是「错题本之后该怎么做」的完整节奏表，可直接替换掉「只整理不回顾」的旧习惯**。**第一条原则：不要平均复习**。假设你完成 100 道练习，答对 80 道、卡住 20 道——**把 100 道用同样的注意力重刷一遍，几乎从不是时间的最优解**。做法是：**从那 20 道开始，然后判断为什么错**——是概念没理解？两个相似概念搞混？知道答案但提取失败？读错了题？还是计算失误？**五种错因对应五种不同补法，「粗心」不是答案**。**第二条原则：检索不是猜**。**正确的循环是「检索 → 反馈 → 更正 → 再检索」**；**反馈很重要，因为检索练习不等于反复猜测——错误的信息必须在被强化之前更正**。所以**先尽力回想，再翻书核对补漏，然后过一阵子再试一次**。**第三条：间隔阶梯（今天起照表执行）**：**Day1 初次学习 → 当天或 Day2 首次检索（不看笔记）→ 2—3 天后练题 → 约 1 周后聚焦弱项 → 2—3 周后综合检索 → 之后按需混合测试**；**难度高的提前复习，能轻松提取的就推后**。**第四条：换个问法**。别再问**「这一章我读了多少遍」**，要问**「我在不同的日子里成功提取了多少次」**——**看到十次不等于成功提取十次**。**第五条：连续再学习（successive relearning）**——今天能讲清楚不等于永久学会，**三天后再讲、一周后再讲、几周后再讲，每次成功的、被时间隔开的提取，都会强化你日后调用它的能力**。**对本人**：距事业单位笔试 **9 天**、距国考 **52 天**——这两个数字决定了**今晚错题重做的边际收益已高于再刷一套新卷**</p><div class="nc-foot"><div class="src">Kori Science</div><div class="tags"><span class="tag">先做那20道卡住的题</span><span class="tag">成功提取次数才是指标</span></div><a class="lnk" href="https://koriscience.com/memory-improvement-study-habits-en" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 原文</a></div></article></div></section>
+
+<h2 class="sec" id="sec-8">八版块精选</h2>
+</main>
+<div class="wrap"><div class="sc-strip"><article class="sc" style="--c:#0EA5E9"><div class="sc-badge">AI科技</div><h3>香港数字办「AI+政务」：13 个部门 30 个效能提升项目，统一供给 + 权限管理与人工监督</h3><p>600 名来自近 100 个部门的代表参与；推展「智方便」AI 助手并在政府内部试行 AI 智能体。</p><a href="https://zijing.com.cn/web/article/1557394566878003200/web/content_1557394566878003200.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 紫荆网 · 香港数字办</a></article>
+<article class="sc" style="--c:#4CC38A"><div class="sc-badge">健康</div><h3>尿酸「红黄绿」清单：蔬菜 500 克、鸡蛋 1—2 个、奶 300 毫升进绿灯，酒与甜饮料进红灯</h3><p>干黄豆干黑豆煮熟也别大量吃；肉类每天 50—75 克；焯水能去掉一部分嘌呤。</p><a href="https://www.toutiao.com/article/7693823902048338468/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 今日头条 · 健康报</a></article>
+<article class="sc" style="--c:#F2C94C"><div class="sc-badge">财经</div><h3>节后首个交易日：机构称「红十月」可期，科技主线或重新占优，行情「先修复、再分化」</h3><p>2016—2025 年上证节后 5 日上涨概率 60%；三季报是 10 月风格催化剂。</p><a href="https://www.163.com/dy/article/L8MM802O05568W0A.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 上海证券报</a></article>
+<article class="sc" style="--c:#A78BFA"><div class="sc-badge">备考</div><h3>明天 10/09 9:00 考研预报名开闸：管理类专业学位限市州教育考试院报考点，须学信网 APP 拍照</h3><p>预报名 10/9—12、正式 10/15—24，每日 9:00—22:00；审核确认 10/26—31。</p><a href="https://www.shaanxi.gov.cn/xw/sxyw/202610/t20261007_3700970.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 陕西省人民政府</a></article>
+<article class="sc" style="--c:#22D3EE"><div class="sc-badge">家庭</div><h3>亲子关系不是时间一半一半，而是「在场质量」与「退出仪式」：每天 10 分钟无学业陪伴</h3><p>下班路上 15 分钟情绪换挡；辅导只聚焦一个核心难点；冲突升级果断暂停 10 分钟。</p><a href="https://www.cnr.cn/jy/sy/sytjB/20261007/t20261007_527835447.shtml" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 央广网</a></article>
+<article class="sc" style="--c:#F59E0B"><div class="sc-badge">副业</div><h3>六安「非遗+」票根经济：凭景区酒店民宿凭证领市集消费券，打通引流—住宿—消费链路</h3><p>天堂寨夜演夜游夜宴夜宿、万佛湖三国奇妙游、皖西博物馆奇妙夜，三条线把流量变留量。</p><a href="http://ah.news.cn/20261007/0b08696b95b84457ba561730354731a0/c.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 新华网安徽频道</a></article>
+<article class="sc" style="--c:#00A3A3"><div class="sc-badge">认知</div><h3>三位认知心理学家同时否定：划重点、听音乐、扫一眼说「我知道」——都对长期记忆无效</h3><p>Bjork 的必要困难、Agarwal 的读几页就写下来、Roediger 的「必须在脑子里拼出来」。</p><a href="https://www.latimes.com/world-nation/story/2026-10-06/how-to-study-better-exam-cramming-tips" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 洛杉矶时报 · AP</a></article>
+<article class="sc" style="--c:#EB5757"><div class="sc-badge">雅趣</div><h3>六安文庙非遗之旅主场：庐剧《花园扎枪》、大别山民歌、三流集肘阁，4 万余人次到场</h3><p>发布「十五五」非遗融合新场景；「秋染大别山，康养来六安」金秋文旅惠民体验季同步启动。</p><a href="https://wlj.luan.gov.cn/zwzx/wlyw/5503518.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2A5 5 0 0 0 12.5 4.5l-1 1"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2A5 5 0 0 0 11.5 19.5l1-1"/></svg> 六安市文化和旅游局</a></article></div></div>
+<main class="wrap">
+
+<h2 class="sec" id="sec-kc">知识卡片</h2>
+<details class="kc" style="--c:#F2A65A"><summary><span class="kc-title">今日第一件事：14:29 正式交寒露 —— 上午按秋分收尾办，午后按寒露开局办</span><span class="kc-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="kc-body"><p class="kc-quote">日茶第 5 味切南杏仁位 + 枸杞回位；夜茶南杏仁摘除；干荷叶 3 g 不动。</p><ul><li>**为什么今天特殊**：**秋分自 09-23 08:04:56 起、至 10-08 14:28:59 止**，所以**今天上午那半天名义上还归秋分，14:29 之后才正式进入寒露**；**寒露 2026-10-08 14:29 交节，至 10-23 17:37 止**。寒露是二十四节气里**第一个带「寒」字的节气**——**白露是「炎热向凉爽」的过渡，寒露是「凉爽向寒冷」的过渡**。按民间「上午寒露冷飕飕、下午寒露热死牛」的说法，**14:29 属「下午寒露」，预示寒露后暖意还会拖一阵，真正的冷在后面——别因为午后 25℃ 就撤掉外套**</li><li>**主矛盾换了**：从今天起，**燥气取代湿气成为第一矛盾**。中国经济网引中国中医科学院西苑医院与广东省中医院两方口径一致：**寒露养生重在敛阳防寒、滋阴润燥**；**「燥」是贯穿秋季的主要气候特点**。你的基线是**湿热 + 火盛 + 常咳嗽**，燥邪一来最先受伤的就是肺——**干咳、咽干、声音哑**。**银耳 09-28 已吃完暂不采购，南杏仁 5 g 是库内唯一的润燥主力**（日上限 10 g），所以今天它从「轮换第 5 味」升为**当日常驻位**</li><li>**煮方为什么不动干荷叶 3 g**：判据是预报不是读数——**中国天气网安徽站 10/08 05:30 口径六安 25℃/12℃，未来一周 9 日晴、10—11 日多云、12 日才转阴，最低温逐日抬升**。清晨的高湿度读数属天亮前那一小时的日变化峰值段，**不能拿来证明「湿气回来了」**。**干荷叶现在是「守位」不是「主攻」**，真正的祛湿主力已经交给**陈皮 5 g（气行则湿化）**。口诀照旧：**追着单日噪声微调＝让煮方失去纵向可比性＝每天重新起步**</li><li>**两处变动都来自星期规则，方向正好相反**：**日茶第 5 味切到南杏仁位**（周四走「二/四/六」的 5 g，与固定四味同煮），**枸杞回位**（周三停用一天结束），所以日茶是完整五味——**老白茶 4 g + 枸杞 8 g + 陈皮 5 g + 干荷叶 3 g + 南杏仁 5 g**，方名「**明目醒脑久坐饮**」。**夜茶则必须摘掉南杏仁**——**同味跨方合并计算，日茶已占满 5 g，夜茶再加就顶到 10 g 上限**，降为四味短版「**莲楂陈甘饮**」：莲子 10 g（去心）+ 山楂 6 g + 陈皮 3 g + 甘草 1 g。**本周第二次演示同一条规则**：昨天「日茶让出、夜茶回收」，今天「日茶占用、夜茶避险」——**判断永远看全天合计，不是每一方各自不超**。**甘草 1 g 是 10/05 恢复计数后的第 4 天，吃到 10/11 要再停 2 天**</li></ul></div></details>
+<details class="kc" style="--c:#4CC38A"><summary><span class="kc-title">周四主食 v3.1 高纤饱腹：全周纤维最高的一天，赤小豆 25 g 是上限不是起点</span><span class="kc-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="kc-body"><p class="kc-quote">燕麦片 30 + 杂粮米 35 + 赤小豆 25 + 藜麦 10，352 kcal、蛋白 13.9 g、纤维 7.0 g。</p><ul><li>**今日配比**（《杂粮饭配方 v3.1》周四「高纤饱腹」）：**胖东来燕麦片 30 g + 七色杂粮米 35 g + 赤小豆 25 g + 三色藜麦 10 g，合计 100 g 生重、352 kcal、蛋白 13.9 g、纤维 7.0 g**——**纤维 7.0 g 是全周七天的最高值**（周三 6.7、周五 7.2 次高，周日最低 6.5）。**为什么周四排最高纤维**：今天是寒露第 1 天，**燥邪最先伤的就是肠道**——中国中医科学院西苑医院王清主任把**习惯性便秘列为深秋四大常见病之一**，处方正是**每天喝够 2000 毫升温水 + 多吃富含膳食纤维的食物**，主食与这条正好对上</li><li>**三条硬规矩**：① **赤小豆只排周一/四/五，每天 25 g 是安全上限**，**前一晚必须泡够 8—12 h、泡豆水早上倒掉**（嘌呤与导致胀气的寡糖都溶在那水里）；② **黑豆只排周二/周六，≤20 g/顿、每周 ≤2 天**，且**黑豆是五常味里嘌呤最高的一味**；③ **周三、周日是无豆日，给肾脏排尿酸的窗口期，别图方便把豆挪过去**。**今日头条转《健康报》的清单还有一条要记住**：**干黄豆、干黑豆嘌呤含量很高，煮熟后也不能大量食用**——所以 25 g 是天花板，不是起步量</li><li>**燕麦片必须后放**：压力锅 30 分钟 → 泄压开盖 → 拌入 → 盖盖焖 8—10 分钟（同煮会烂成糊）。**寒露饮食三原则今天全部生效**：**减辛**（减少辣椒、花椒、生姜等辛辣刺激及煎炸熏烤类食物，避免助燥伤肺）、**增酸**（适当食用橘子、石榴、葡萄等，有助于收敛肺气）、**滋阴养肾**（可适当食用莲子、栗子、红枣）。⚠️ **广东省中医院陈润副主任特别提醒**：**寒露饮食不能一味追求寒凉滋润，脾胃虚寒者最好把梨、苹果等水果蒸熟后食用**；**刚从冰箱拿出的冷饮瓜果最容易损伤脾胃阳气**</li><li>**降尿酸的硬口径（今天可以对表）**：**每日饮水量维持 2000 毫升以上，白开水、淡茶水为佳，均匀分配在一天中，避免一次性大量饮用**；**夜间睡前适量饮水有助于防止夜间血液浓缩导致尿酸升高**。**动物内脏、浓肉汤、火锅汤底、沙丁鱼、凤尾鱼、贝类坚决避免**；**含果糖的饮料和果汁会促进内源性尿酸生成**；**啤酒与白酒明确禁忌**（乙醇抑制尿酸排泄）。**减重速度红线**：**每月减轻 2—4 斤为宜**，快速减重产生酮体、同样竞争性抑制尿酸排泄。**另一组硬数据**：**体重减轻 10% 可使血尿酸降低约 10%**——你 93.46 kg，减到 84 kg 理论上就能带来这一档收益</li></ul></div></details>
+<details class="kc" style="--c:#2E9E6B"><summary><span class="kc-title">Day4 推·变式：今天练上肢推，但一个跳跃动作都不能有</span><span class="kc-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="kc-body"><p class="kc-quote">标准俯卧撑（可屈膝）4×12 / 下斜俯卧撑 3×8 / 篮球俯卧撑 3×8-12 / 侧平板 左右 2×30s。</p><ul><li>**今日动作**（《徒手健身训练计划 v1》第 4 天）：**标准俯卧撑（可屈膝）4×12** → **下斜俯卧撑 3×8** → **篮球俯卧撑 3×8-12** → 收尾**侧平板 左右各 2×30s**。**零器械替代方案（今日必执行）**：篮球属道具不算基础配备，**无球时把「篮球俯卧撑」整组替换为标准俯卧撑（可屈膝）3×10**；下斜位用**沙发扶手或稳固椅面**代替。**全程零器械、零跳跃**——93kg ≥85kg 的低冲击红线明确规定**禁深蹲跳、波比跳、标准引体、单手俯卧撑与一切跳跃类**</li><li>**寒露运动处方（今天新增的两条时段口径）**：**中国工程院院士张伯礼给的时段最具体——最好在上午 10 点前后、下午 3 点前后锻炼，锻炼时间 20 分钟到半个小时**；广东省中医院与中国经济网口径一致——**以周身微热、尚未出汗为宜，切忌大汗淋漓**，**中医认为「汗为心之液」，深秋大量出汗会导致阳气随津液外泄，降低抵抗力，反而容易感冒受凉**；**运动前充分热身**；**运动后及时擦干汗水、更换干爽衣物，不要站在风口吹风**。**八段锦三式**可选：**「调理脾胃须单举」「五劳七伤往后瞧」「两手攀足固肾腰」，每组 8 遍、循环两组**</li><li>**三条验收标准**：① **无痛原则**——所有动作在无痛关节活动范围内完成，**出现关节刺痛、挤压痛立即停止，只保留肌肉酸胀感**；② **匀速控制、离心慢放**（离心 2—3 秒、向心 2 秒），**禁止靠惯性摆动借力**；③ **强度取 12—15 RM，每组结束预留 2—3 次余力（RIR 2—3）**，不强行练到力竭。**组间休息 60 秒**，抗阻**每周 2—3 次、同一肌群间隔 ≥48 小时**。**30 天三阶段**：**第 1—10 天属「基础适应」**，全部跪姿/上斜/扶椅/静态，**只求动作标准 + 发力感，不求次数**——Day4 正处在这一段</li><li>**傍晚散步 25—30 分钟（今天有新的硬证据）**：央视新闻 2026-10-08 报道，**2026 年哈佛大学研究团队发表在《英国医学杂志·医学》(BMJ Medicine)、对 11 万人追踪 30 年的队列研究**显示，**散步在十几项运动里排到延寿第 1 位，规律散步降低 17% 全因死亡率**；更重要的是**「运动多样化」——在散步基础上每天再做 1—2 项其他运动，全因死亡风险可再降低 19%，且这一优势独立于总运动量之外**。**这正好给你的「Day4 推 + 傍晚散步」组合背书：力量与有氧的收益是叠加的，不是二选一**。**步数口径**：**60 岁及以上每天 7000—8000 步即可显著降低死亡风险，无需强求更高**</li></ul></div></details>
+<details class="kc" style="--c:#A78BFA"><summary><span class="kc-title">倒计时 9 天 + 明天开闸：职测 90 分钟 + 综应 120 分钟连考 210 分钟，预报名 10/09 9:00 启动</span><span class="kc-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="kc-body"><p class="kc-quote">最后 9 天把综应规范话术背到能默写；预报名备料今晚必须做完。</p><ul><li>**先记住考试的物理结构**：上午 **8:30—10:00 职测**（90 分钟、150 分），**10:00—12:00 综应**（120 分钟、150 分），**两科连考 210 分钟不中断**。很多人平时刷题是碎片式的——地铁上 20 道、午休半篇资料分析，**这种练法练的是单点正确率，练不出「连续三个半小时不垮」的耐力**。所以今晚的模考必须**中间不休息、不喝水打断**，且**标准 120 分钟的卷子给自己压到 100—105 分钟**，**做完后记录每 30 分钟的进度**（做了多少题、卡在哪类题型）——**在时间略微压缩的状态下，人会自然放弃极耗时的偏难题，整体分数往往不降反升**</li><li>**每套卷子留 10 分钟复盘（这条比多刷两套值钱）**：① **标出「犹豫再三」的题**（不只是错题）；② **用不同颜色圈出因读题不细心而错的题**；③ **写一句话「如果再出类似的题，我会改变哪一步思路」**——做完 8—10 套后你会发现自己在某几类题上有稳定的坏毛病（资料分析总跳步、逻辑判断不愿画草图、综合题开头总爱铺陈背景），**这些毛病不改，会一次次在正式考试中抢走分数**。**职测取舍**：**资料分析、言语理解、判断推理三块重点拿分**，**数量关系难题偏题直接放弃**。**综应高分关键**：**拒绝口语化、用官方规范话术、卷面整洁、分点作答**——**职测分差小，综应一题就能拉开十几分，是逆袭关键**</li><li>**今晚必须落实的两件小事**：① **10/17 当天按有雨准备**——现在就把**雨具、薄外套、备用袜子**放进考试包（未来一周 12 日转阴、13 日多云）；② **文具在桌上摆成型并拍照存档**：黑色碳素笔、2B 铅笔、橡皮，**报考 C 类还须自备无计算、无存储、无通信功能的普通直尺**。**入场须同时携带准考证原件 + 有效身份证原件**，**准考证打印窗口 10 月 13 日 9:00 至 10 月 17 日 9:00**</li><li>**并行线：明天 10/09 9:00 考研预报名开闸**。陕西省教育考试院与各省口径一致：**预报名 10/9—12、正式报名 10/15—24，每日 9:00—22:00**，预报名结果有效。**今晚必须做完**：升级**学信网 APP**（照片须在线拍摄上传，**白底、不戴口罩帽子围巾眼镜含美瞳与任何饰品、露出完整五官、头发不遮眉眼耳、日常便装、严禁修图**）；拍齐**身份证正反面、户口簿首页与本人页、毕业证书**；非户籍地往届生备**近三个月社保缴纳证明或居住证**。**两条今天才知道的硬规则**：① **报考管理类和法律硕士专业学位的考生，仅限选择市州教育考试院报考点报名**——**你报的正是 MPA（管理类），这条直接适用**；② **报名号生成后，招生单位、考试方式、报考点、专业、研究方向、考试科目等均不可修改**，要改只能取消后重新报名缴费，**若原报考点因人数上限关闭，须重选其他符合条件的报考点**</li></ul></div></details>
+<details class="kc" style="--c:#00A3A3"><summary><span class="kc-title">同味跨方合并计算：南杏仁一天之内先「回收」再「避险」，这条规则比任何单方都重要</span><span class="kc-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><div class="kc-body"><p class="kc-quote">10/07 日茶让出→夜茶回收 5 g；10/08 日茶占用→夜茶摘除。判断永远看全天合计。</p><ul><li>**规则本体**：《备考期昼夜茶方 v1》与《六安食材库》都把南杏仁定在**每日 10 g 上限**。但**「上限」是对全天说的，不是对每一方说的**——日茶与夜茶可能同时用到同一味，**必须跨方合并计算**。这三天正好把这条规则的两个方向各演一遍**：**10/07（周三）**：日茶走绿茶位、白天零占用南杏仁 → **夜茶回收 5 g，方名「莲楂杏陈甘饮」**，全天合计 5 g；**10/08（今天，周四）**：日茶走南杏仁位、白天占满 5 g → **夜茶摘除，方名降为「莲楂陈甘饮」四味短版**，全天合计仍是 5 g。**两天的结果完全一样（都是 5 g），走的却是两条相反的路**</li><li>**为什么容易搞错**：人天然按「方」思考——**「这一方里南杏仁只有 5 g，没超 10 g 啊」**。但上限是摄入量上限，不是配方上限。**同一条规则还适用于陈皮**：**日茶 5 g + 夜茶 3 g = 8 g**，合起来看才落在常用量 3—10 g 内；**单独看任何一方都「没问题」，合起来才是真实摄入**。所以**每次写方都要列一张「全天合计表」**，而不是各自写各自的</li><li>**今天南杏仁摘除后，夜茶的润燥位由谁接**：**银耳已吃完（09-28）、南杏仁让给了白天**，所以**润燥改走非茶路径**——① **泡脚 38—42℃、15—20 分钟**（中国中医科学院西苑医院王清主任口径）；② **卧室湿度维持 45%—60%**；③ **睡前 1 小时温水约 100 ml**（中国新闻网口径：**睡前 1 小时可少量喝水约 100 毫升，避免夜间口干，但别过量，以防起夜影响睡眠**）。**三条加起来抵得上那 5 g**。**同时记住**：**干荷叶是冬瓜皮断供期间唯一的祛湿主力（09-21 起）**，**南杏仁是银耳断供后唯一的润燥主力（09-28 起）**——**两味都是独苗，任何一天动它们都要先算全天合计</li><li>**今天顺手对表的三条其他纪律**：① **甘草 1 g 是 10/05 恢复计数后的第 4 天**，连服满 7 天须停 2 天 → **10/11 到期**；② **枸杞走每周 5 天 + 周三/周日停用**，昨天停用、今天回位，每桶 8 g（约 35—40 粒）分 5—6 杯倒出，**每杯 6—8 粒**落在红线内；③ **日茶 14:00 后不再续杯**（咖啡因半衰期约 5 小时，下午续会直接压掉 22:30 熄屏线）。**一句话立场**：**方子可以每天换，红线不能每天改；换的是轮换位，守的是全天合计**</li></ul></div></details>
+
+<footer>PetDeer 晨间融合晨报 · 2026-10-08 · 由 WorkBuddy 自动生成并发布</footer>
+</main>
+
+<button id="top" title="回到顶部"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
+
+<script>
+(function(){
+  var KEY='petdeer_todo_2026-10-08';
+  var KEY_N=KEY+'_n';
+  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return {}}}
+  function save(o){try{localStorage.setItem(KEY,JSON.stringify(o))}catch(e){}}
+  var st=load(),list=document.querySelectorAll('li.todo');
+  function paint(){
+    var n=0;
+    list.forEach(function(li){
+      var id=li.dataset.id;
+      if(st[id]){li.classList.add('done');n++}else{li.classList.remove('done')}
+    });
+    var dn=document.getElementById('done-n');if(dn)dn.textContent=n;
+  }
+  list.forEach(function(li){
+    var btn=li.querySelector('.chk');
+    btn.addEventListener('click',function(){
+      var id=li.dataset.id;
+      if(st[id]){delete st[id]}else{st[id]=1}
+      save(st);paint();
+    });
+  });
+  paint();
+  var rs=document.getElementById('reset');
+  if(rs)rs.addEventListener('click',function(){st={};save(st);paint()});
+
+  // countdown
+  var today=new Date();today.setHours(0,0,0,0);
+  var MS=86400000;
+  document.querySelectorAll('.cd-num[data-target]').forEach(function(el){
+    var t=new Date(el.dataset.target+'T00:00:00');
+    var d=Math.ceil((t-today)/MS);
+    el.textContent = d>=0 ? d : '已过';
+  });
+  var end=new Date(today);var wd=end.getDay();var add=(wd===0?0:7-wd);
+  end.setDate(end.getDate()+add);end.setHours(23,59,59,999);
+  var wk=document.getElementById('cd-week');
+  if(wk)wk.textContent=Math.max(0,Math.ceil((end-new Date())/MS));
+
+
+  /* ===== MPA 考研每日提醒 ===== */
+  var MPA_TIPS=[["分值结构", "管综 200 分是怎么拆的", "数学 75 分（问题求解 15 题 + 条件充分性判断 10 题，各 3 分）、逻辑 60 分（30 题 × 2 分）、写作 65 分（论证有效性分析 30 + 论说文 35）。三块里数学是唯一能靠刷题稳定拿分的，逻辑靠套路，写作靠练笔。", "教育部管理类联考考试大纲（199 管综）"], ["分值结构", "英语二 100 分是怎么拆的", "完形填空 20×0.5=10 分、阅读理解 A 20×2=40 分、新题型 B 5×2=10 分、英译汉 15 分、写作 25 分（小作文 10 + 大作文 15）。阅读 + 新题型合计 50 分，是唯一值得花大时间的板块。", "教育部管理类联考考试大纲（204 英语二）"], ["目标拆解", "200 分倒推：管综 135 + 英语二 65", "管综 135 = 数学 55（25 题对 19）+ 逻辑 42（30 题对 21）+ 写作 38（论效 22 + 论说文 20）；英语二 65 = 阅读A 30 + 新题型 8 + 写作 14 + 翻译 9 + 完形 4。注意：允许丢 100 分，不必追求全会。", "本站按你的目标分 200 拆解"], ["时间分配", "管综 3 小时怎么切", "数学 60—70 分钟、逻辑 50—60 分钟、写作 60—70 分钟，留 10 分钟涂卡 + 检查。最常见的翻车是数学死磕难题导致写作只剩 30 分钟——写作写不完，直接掉 20 分以上。", "历年考生经验（多机构复盘，非官方）"], ["高频失误", "头号杀手：写作不练笔", "管综两篇共 65 分，纯背模板上考场一般只能拿 25—30 分。从现在起每周写 1 篇论证有效性分析 + 1 篇论说文，写完对照范文改逻辑链，比多刷 200 道数学题划算。", "历年考生经验（多机构复盘，非官方）"], ["高频失误", "数学别死磕难题", "管综 25 道数学题里基础题约 17 道，拿下基础题就是 51 分；花 20 分钟抠 3 道难题最多多拿 9 分，还会挤掉写作时间。遇到 1 分钟没思路就跳。", "历年考生经验（多机构复盘，非官方）"], ["高频失误", "条件充分性判断是失分重灾区", "口诀：先判条件（1）单独、再判条件（2）单独、都推不出才联合。别凭直觉选 A/B，也别把「充分」当「必要」。这 10 题稳定拿 24 分是管综 135 的底线。", "历年考生经验（多机构复盘，非官方）"], ["英语策略", "英语二 65 分的主战场是阅读", "阅读 A 40 分拿 30 分，比完形 10 分全对性价比高 4 倍。做题顺序建议：阅读A → 新题型 → 写作 → 翻译 → 完形；完形放最后，时间不够全选同一选项也有 2.5—3 分。", "历年考生经验（多机构复盘，非官方）"], ["英语策略", "作文背模板不如备功能句", "小作文（书信/通知）准备开头、请求、致歉、结尾 4 类功能句；大作文准备「图表描述 + 原因分析 + 结论」三段骨架。考场拼的是能不能在 30 分钟内组装出一篇完整文章。", "历年考生经验（多机构复盘，非官方）"], ["流程避坑", "网上确认照片是最常见的翻车点", "要求：正面免冠、不化浓妆、不戴眼镜美瞳、露耳露眉、蓝/白底、JPG ≤10MB、宽高比 3:4，禁用过度修图的证件照。提前拍好存好，别等审核失败再补，会直接错过确认窗口。", "研招网网上确认通用要求（往年）"], ["流程避坑", "填完信息≠报名成功", "必须完成缴费才显示「报名成功」；缴费后报名信息不可修改，报考点选错将无法确认。报考点在职一般选户籍地或工作所在地，别跟着别人瞎选。", "研招网报名通用要求（往年）"], ["院校 · CULR", "中国劳动关系学院 MPA 复试考什么", "复试科目为「公共管理综合知识（面试）」，满分 100，考查四块：思想政治理论素养、专业英语听说能力、专业素养、综合能力。初试不考政治，但政治在复试里考，不合格不予录取。", "中国劳动关系学院 2026 年复试科目命题范围及参考书目"], ["院校 · CULR", "复试专业素养的 11 个命题点", "公共组织理论、政府职能和作用、政府间关系、公共政策的基础理论、公共部门绩效管理、社会组织管理、公共管理者的角色与能力、公共管理的价值、公共服务、公共危机管理、政府改革。面试按这 11 条准备即可。", "中国劳动关系学院 2026 年复试科目命题范围及参考书目"], ["院校 · CULR", "复试参考书目", "2026 年目录：《公共管理学》（第三版）蔡立辉、王乐夫，中国人民大学出版社；《公共政策学》杨宏山，中国人民大学出版社 2024 版。2025 年用的是《公共管理学》(第二版) + 《公共政策导论》(第五版) 谢明，两版都要备。", "中国劳动关系学院 2026 / 2025 复试科目参考书目"], ["院校 · CULR", "往年分数线与录取情况", "公共管理（125200）2026 年复试线 195 / 41 / 82（执行 A 类国家线）；2023 年为管综 88、外语 44、总分 175。报录比约 3.8:1，复录比约 1.5:1（差额复试）。目标 200 分对 2026 年线有 5 分余量，不算安全。", "中国劳动关系学院 2026 复试录取办法 / 2023 复试录取办法"], ["院校 · CULR", "复试形式与地点", "2026 年为网络远程复试 + 现场复试相结合，面试平台腾讯会议，线下地点闻道楼 3 层、4 层；一志愿面试 3/29 9:00—17:30，笔试及加试考生需提前一天到校。远程也要按线下标准准备着装与环境。", "中国劳动关系学院 2026 年复试录取办法"], ["策略提醒", "关于调剂的边界", "管理类 7 个专硕（MBA / EMBA / MPA / MPAcc / MEM / MTA / MLIS / MAud）之间可以互相调剂，但不得调入其他专业；调剂需同时满足调入调出两边的报考条件与国家线。一志愿没进复试才有调剂机会。", "教育部调剂政策（往年）"]];
+  var MPA_EXAM='2026-12-19';
+  function mpaDays(ds){var t=new Date();t.setHours(0,0,0,0);var d=new Date(ds+'T00:00:00');return Math.round((d-t)/86400000);}
+  (function(){
+    var nodes=[].slice.call(document.querySelectorAll('.mpa-node[data-date]'));
+    var soon=[];
+    nodes.forEach(function(n){
+      var d=mpaDays(n.dataset.date);
+      var b=n.querySelector('.mpa-nd b');
+      if(b)b.textContent = d>=0 ? d : (0-d);
+      var u=n.querySelector('.mpa-nd small');
+      if(u)u.textContent = d>=0 ? '天后' : '天前';
+      n.classList.toggle('past', d<0);
+      n.classList.toggle('soon', d>=0 && d<=7);
+      if(d>=0 && d<=7){
+        var t=n.querySelector('.mpa-nt').childNodes[0].nodeValue;
+        soon.push(t+'（'+(d===0?'就是今天':d+' 天后')+'）');
+      }
+    });
+    var al=document.getElementById('mpa-alert');
+    if(al){
+      if(soon.length){al.hidden=false;al.innerHTML='<span>⚠️</span><span>7 天内临近节点：'+soon.join('、')+'</span>';}
+      else{al.hidden=true;}
+    }
+    var chip=document.getElementById('mpa-chip');
+    if(chip){var de=mpaDays(MPA_EXAM);chip.textContent = de>=0 ? de : '已考完';}
+    var big=document.getElementById('mpa-d');
+    if(big){var d2=mpaDays(MPA_EXAM);big.textContent = d2>=0 ? d2 : 0;}
+
+    /* 每日 tip：按自然日轮转，同一天打开永远是同一条；可手动换 */
+    var idx=Math.floor(Date.now()/86400000)%MPA_TIPS.length;
+    function showTip(i){
+      idx=((i%MPA_TIPS.length)+MPA_TIPS.length)%MPA_TIPS.length;
+      var t=MPA_TIPS[idx];
+      document.getElementById('mpa-tipcat').textContent=t[0];
+      document.getElementById('mpa-tiptitle').textContent=t[1];
+      document.getElementById('mpa-tipbody').textContent=t[2];
+      document.getElementById('mpa-tipsrc').textContent='来源：'+t[3];
+    }
+    showTip(idx);
+    var nx=document.getElementById('mpa-next');
+    if(nx)nx.addEventListener('click',function(){showTip(idx+1)});
+  })();
+
+  // scroll spy
+  var secs=[].slice.call(document.querySelectorAll('h2.sec[id]'));
+  var links=[].slice.call(document.querySelectorAll('.nav-in a'));
+  function spy(){
+    var y=window.scrollY+110,cur=secs[0];
+    secs.forEach(function(s){if(s.offsetTop<=y)cur=s});
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur.id)});
+  }
+  window.addEventListener('scroll',spy,{passive:true});spy();
+
+  var top=document.getElementById('top');
+  window.addEventListener('scroll',function(){top.classList.toggle('show',window.scrollY>420)},{passive:true});
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
