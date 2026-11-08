@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-11-09 晨间融合 · PetDeer</title>
+<style>
+:root{--bg:#faf6f0;--card:#fffdf9;--ink:#3a332b;--sub:#8a8078;--acc:#e8842c;--acc2:#f0a94e;--line:#efe6da;--red:#d95040;--green:#4a9e6c;--blue:#4a7fb5;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;background:linear-gradient(160deg,#faf3e8 0%,#faf6f0 45%,#f6efe6 100%);color:var(--ink);line-height:1.65;}
+a{color:var(--blue);text-decoration:none;}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,251,244,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:6px;padding:10px 16px;overflow-x:auto;}
+nav .brand{font-weight:700;font-size:15px;color:var(--acc);margin-right:10px;white-space:nowrap;display:flex;align-items:center;gap:6px;}
+nav a.navlink{font-size:13px;color:var(--sub);padding:5px 12px;border-radius:16px;transition:.25s;white-space:nowrap;}
+nav a.navlink.on{background:var(--acc);color:#fff;}
+main{max-width:860px;margin:0 auto;padding:18px 14px 60px;}
+section{margin-top:34px;scroll-margin-top:64px;}
+h2.sec{font-size:19px;font-weight:700;margin-bottom:4px;}
+.secsub{font-size:12.5px;color:var(--sub);margin-bottom:14px;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 2px 10px rgba(190,150,90,.08);padding:16px 18px;margin-bottom:14px;}
+.card h4{font-size:14.5px;margin-bottom:8px;display:flex;align-items:center;gap:7px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:768px){.grid2{grid-template-columns:1fr;}}
+.hero{background:linear-gradient(135deg,#f2a65a 0%,#e8842c 60%,#d97228 100%);border-radius:20px;color:#fff;padding:26px 22px;box-shadow:0 6px 20px rgba(217,114,40,.25);}
+.hero .date{font-size:15px;opacity:.92;}
+.hero .big{font-size:34px;font-weight:800;letter-spacing:1px;margin:2px 0;}
+.hero .jieqi{display:inline-block;background:rgba(255,255,255,.22);border-radius:14px;padding:3px 12px;font-size:13px;margin:6px 0 10px;}
+.hero .poem{font-size:14.5px;font-style:italic;opacity:.95;}
+.cdwrap{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;}
+.cd{flex:0 0 auto;min-width:114px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;text-align:center;}
+.cd .lab{font-size:11.5px;color:var(--sub);}
+.cd .num{font-size:23px;font-weight:800;color:var(--acc);}
+.cd .num.hot{color:var(--red);}
+.cd .num.done{color:var(--green);font-size:15px;}
+.todo label{display:flex;align-items:flex-start;gap:9px;padding:7px 4px;border-bottom:1px dashed var(--line);font-size:13.5px;cursor:pointer;}
+.todo label:last-child{border-bottom:none;}
+.todo input{margin-top:4px;accent-color:var(--acc);width:15px;height:15px;flex:0 0 auto;}
+.todo .tag{display:inline-block;font-size:10.5px;color:#fff;background:var(--acc2);border-radius:8px;padding:0 7px;margin-right:5px;white-space:nowrap;flex:0 0 auto;}
+.todo .tag.must{background:var(--red);}
+.todo .tag.opt{background:#b9ae9f;}
+label.done span.t{color:#b3a99c;text-decoration:line-through;}
+.ngroup{margin-bottom:18px;}
+.ntitle{font-size:15px;font-weight:700;margin:0 0 8px 2px;}
+.ncard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc2);border-radius:14px;padding:13px 15px;margin-bottom:10px;box-shadow:0 1px 6px rgba(190,150,90,.07);}
+.ncard h4{font-size:14.5px;margin-bottom:5px;display:block;}
+.ncard p{font-size:12.8px;color:#5d554b;}
+.nmeta{font-size:11.5px;color:var(--sub);margin-top:6px;}
+.nmeta .ntag{display:inline-block;background:#f3e9dc;color:#a05f1c;border-radius:8px;padding:0 8px;margin-right:6px;}
+.c-sleep{border-left-color:#6b7fb3;}.c-eat{border-left-color:#4a9e6c;}.c-train{border-left-color:#d95040;}.c-study{border-left-color:#b3802c;}.c-work{border-left-color:#4a7fb5;}.c-mood{border-left-color:#9b6bb3;}.c-repeat{border-left-color:#3aa3a3;}
+.featwrap{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 10px;-webkit-overflow-scrolling:touch;}
+.fcard{flex:0 0 250px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 15px;box-shadow:0 1px 6px rgba(190,150,90,.07);}
+.fcard .fcat{font-size:11px;font-weight:700;color:#fff;background:var(--acc);display:inline-block;border-radius:9px;padding:1px 9px;margin-bottom:8px;}
+.fcard h4{font-size:13.5px;margin-bottom:5px;line-height:1.5;}
+.fcard p{font-size:12px;color:#5d554b;}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0;}
+summary{cursor:pointer;font-size:14.5px;font-weight:600;padding:13px 16px;list-style:none;display:flex;align-items:center;gap:8px;}
+summary::-webkit-details-marker{display:none;}
+summary .chev{margin-left:auto;transition:.25s;color:var(--acc);}
+details[open] .chev{transform:rotate(90deg);}
+.kbody{padding:10px 16px 14px;font-size:13px;color:#5d554b;border-top:1px dashed var(--line);}
+.kbody table{border-collapse:collapse;font-size:12px;margin-top:6px;width:100%;}
+.kbody td,.kbody th{border:1px solid var(--line);padding:4px 8px;text-align:left;}
+.nudge{background:linear-gradient(120deg,#fff3e0,#ffe3bd);border:1px solid #f2cf9e;border-radius:16px;padding:14px 18px;font-size:14px;}
+.nudge b{color:#b05e14;}
+.backtop{position:fixed;right:18px;bottom:24px;width:42px;height:42px;border-radius:50%;background:var(--acc);color:#fff;border:none;box-shadow:0 4px 14px rgba(217,114,40,.35);cursor:pointer;display:none;z-index:60;font-size:18px;}
+footer{text-align:center;color:var(--sub);font-size:12px;margin-top:36px;}
+.progress .bar{height:8px;background:#efe6da;border-radius:6px;overflow:hidden;margin:6px 0 12px;}
+.progress .fill{height:100%;background:linear-gradient(90deg,var(--acc2),var(--acc));border-radius:6px;}
+.progress .plabel{display:flex;justify-content:space-between;font-size:12.5px;}
+.teagrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:768px){.teagrid{grid-template-columns:1fr;}}
+.teacard h4{font-size:15px;color:#a05f1c;}
+.teacard .dose{font-size:13px;margin:7px 0;}
+.teacard .dose span{display:inline-block;background:#f6ead7;border-radius:8px;padding:1px 9px;margin:2px 4px 2px 0;font-size:12.5px;}
+.teacard .small{font-size:12px;color:var(--sub);}
+.decision{background:#fff4f0;border:1px solid #f0c4b4;border-radius:14px;padding:12px 16px;font-size:13.5px;margin-top:4px;}
+.decision b{color:#c0392b;}
+.wcard p{font-size:13px;}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <span class="brand"><svg width="16" height="16" viewBox="0 0 24 24" fill="#e8842c"><circle cx="7" cy="8" r="2.4"/><circle cx="12" cy="5" r="2.4"/><circle cx="17" cy="8" r="2.4"/><path d="M12 11c3.3 0 6 2.4 6 5.2 0 1.9-1.6 2.9-3.4 2.4L12 18l-2.6.6C7.6 19.1 6 18.1 6 16.2 6 13.4 8.7 11 12 11z"/></svg>11-09 晨间融合</span>
+  <a class="navlink on" href="#sec-morning">晨报</a>
+  <a class="navlink" href="#sec-news">七元素新闻</a>
+  <a class="navlink" href="#sec-feat">八版块精选</a>
+  <a class="navlink" href="#sec-know">知识卡片</a>
+</nav>
+<main>
+
+<!-- ============ ① 晨报区 ============ -->
+<section id="sec-morning">
+  <div class="hero">
+    <div class="date">2026 年 11 月 9 日 · 星期一</div>
+    <div class="big">立冬 · 第 3 天</div>
+    <div class="jieqi">阴 3—11 ℃ · 立冬后最冷清晨 · 冬三月「早卧晚起」</div>
+    <div class="poem">"一年好景君须记，最是橙黄橘绿时" —— 苏轼《赠刘景文》</div>
+  </div>
+  <div style="height:12px"></div>
+  <div class="cdwrap">
+    <div class="cd"><div class="lab">2027 国考笔试</div><div class="num hot">20 天</div><div class="lab">11-29 · 照报不备考</div></div>
+    <div class="cd"><div class="lab">MPA 联考</div><div class="num hot">40 天</div><div class="lab">12-19 · 管综 8:30 / 英语二 14:00</div></div>
+    <div class="cd"><div class="lab">带姜方案复核</div><div class="num">4 天</div><div class="lab">11-13 · 去留定稿</div></div>
+    <div class="cd"><div class="lab">小雪</div><div class="num">13 天</div><div class="lab">11-22 交节</div></div>
+    <div class="cd"><div class="lab">本周剩余</div><div class="num">6 天</div><div class="lab">工作日开局</div></div>
+    <div class="cd"><div class="lab">体重补称</div><div class="num hot">133 天</div><div class="lab">基线 93.46 kg 未更新</div></div>
+    <div class="cd"><div class="lab">省直事业编笔试</div><div class="num done">已考完</div><div class="lab">10-17 以考代训</div></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card wcard">
+      <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4a7fb5" stroke-width="2"><path d="M6 15a4 4 0 010-8 5.5 5.5 0 0110.6-1A4.5 4.5 0 0118 15z"/></svg>天气 · 六安</h4>
+      <p>阴 <b>3—11 ℃</b>｜湿度 62%｜AQI 优 16｜西北风 3 级｜降水 0%</p>
+      <p style="font-size:12.5px;color:var(--sub);margin-top:6px">不用带伞，但清晨 3 ℃ 是立冬以来最低段，温差 8 ℃：通勤戴围巾护颈。感冒指数「容易发生」。明日阴 5—15 ℃ 回升，昼夜温差拉到 10 ℃，穿分层别一次捂出汗。</p>
+    </div>
+    <div class="card nudge">
+      <b>今日 Nudge</b><br>阴冷 3 ℃ 起，出门先加衣护颈。日茶陈皮杏楂、夜茶带姜；赤小豆 25g 已泡就下锅。
+    </div>
+  </div>
+
+  <div class="card">
+    <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8842c" stroke-width="2"><path d="M4 8h12v6a5 5 0 01-5 5H9a5 5 0 01-5-5z"/><path d="M16 9h2a2 2 0 010 4h-2"/><path d="M6 4v1.5M10 4v1.5M14 4v1.5"/></svg>昼夜双轨茶方（650 ml 杯 · 茶包化）</h4>
+    <div class="teagrid">
+      <div class="teacard">
+        <h4>日茶「陈皮杏楂饮」</h4>
+        <p class="small">理气祛湿 · 润肺护咽 · 提神（3 味 + 早段小袋）</p>
+        <div class="dose"><span>陈皮 8g 压底</span><span>南杏仁 5g 掰碎</span><span>山楂片 5g</span><span>早段袋 老白茶 2g + 瓜片 3g</span></div>
+        <p class="small">≤95℃ 温杯 30s，注水敞口 30s 再盖，首泡 5min，续水 3min×2—3；不洗茶。早段小袋 16:00 抽出。枸杞仍停用 0g（周三复投）。</p>
+      </div>
+      <div class="teacard">
+        <h4>夜茶「楂杏陈皮姜」</h4>
+        <p class="small">消食安神 · 温中散寒（3 味 + 姜）</p>
+        <div class="dose"><span>山楂片 5g</span><span>陈皮 3g</span><span>南杏仁 5g</span><span>生姜 2 薄片置顶</span></div>
+        <p class="small">闷 6min、续 4min×1—2；<b>21:30 截止、23:00 后不饮水</b>；无咖啡因，不影响睡眠。</p>
+      </div>
+    </div>
+    <div class="decision" style="margin-top:12px">🔴 <b>干荷叶仍为 0 g</b>（消耗期冻结令未解）：祛湿改由 <b>陈皮 8 g + 主食赤小豆 25 g + 夜茶姜片</b> 三处承接。<b>带姜</b>今日第 19 天，11-13 复核去留，每晚自评燥热/咽痛即撤。</div>
+    <p class="small" style="color:var(--sub);margin-top:8px">塑料杯：先温杯再注水（≤95℃），杯盖勿久闷，注完敞口 30s 再盖防烫变形；当日茶 + 白水合计 2000—2500ml。</p>
+  </div>
+
+  <div class="card todo">
+    <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#4a9e6c" stroke-width="2"><path d="M4 12l5 5L20 6"/></svg>七要素清单（勾选自动保存）</h4>
+    <div id="todolist">
+      <label><input type="checkbox" data-k="t1"><span class="tag must">必做</span><span class="t">睡｜23:25 打卡、23:50 上床睡眠守护</span></label>
+      <label><input type="checkbox" data-k="t2"><span class="tag">重要</span><span class="t">睡｜21:30 夜茶截止、23:00 后不饮水</span></label>
+      <label><input type="checkbox" data-k="t3"><span class="tag must">必做</span><span class="t">吃｜主食 v3.1 周一「祛湿开局」：杂粮米 40 + 赤小豆 25 + 藜麦 20 + 燕麦片 15</span></label>
+      <label><input type="checkbox" data-k="t4"><span class="tag must">必做</span><span class="t">吃｜晨起装两袋茶包投 650ml 杯带走（日茶 3 味、枸杞停用），16:00 抽早段小袋</span></label>
+      <label><input type="checkbox" data-k="t5"><span class="tag">重要</span><span class="t">吃｜白水 2000—2500ml，干冷天别减量</span></label>
+      <label><input type="checkbox" data-k="t6"><span class="tag must">必做</span><span class="t">吃｜赤小豆 25g 已泡 12h：泡豆水倒掉再下锅</span></label>
+      <label><input type="checkbox" data-k="t7"><span class="tag must">必做</span><span class="t">练｜Day1 推·基础：跪姿俯卧撑 4×力竭-2、跪姿宽距 3×12、凳子臂屈伸 3×10、平板支撑 3×40s；热身 10—15min</span></label>
+      <label><input type="checkbox" data-k="t8"><span class="tag must">必做</span><span class="t">学｜MPA 晚间主攻：英语 2.5h + 管综 1.5h</span></label>
+      <label><input type="checkbox" data-k="t9"><span class="tag">重要</span><span class="t">学｜管综真题第二遍：按题型补弱，错题只写「错因 + 明日动作」两列</span></label>
+      <label><input type="checkbox" data-k="t10"><span class="tag must">必做</span><span class="t">干｜案点值班/周一事项处理（按排班）</span></label>
+      <label><input type="checkbox" data-k="t11"><span class="tag opt">可选</span><span class="t">干｜随手记明日晨报素材</span></label>
+      <label><input type="checkbox" data-k="t12"><span class="tag">重要</span><span class="t">爽｜3℃ 通勤：厚外套 + 围巾护颈；睡前泡脚 40—45℃ 到踝上</span></label>
+      <label><input type="checkbox" data-k="t13"><span class="tag">重要</span><span class="t">重复｜费曼复盘：口述今天所学一遍</span></label>
+      <label><input type="checkbox" data-k="t14"><span class="tag">重要</span><span class="t">重复｜管综/英语错题回顾 10min（先重做再看解析）</span></label>
+    </div>
+  </div>
+
+  <div class="card progress">
+    <h4><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#e8842c" stroke-width="2"><path d="M3 17l5-6 4 3 5-7 4 4"/></svg>项目进度</h4>
+    <div class="plabel"><span>MPA v2 · 60 学习日</span><span>推进中 · 目标 12-09 完工</span></div>
+    <div class="bar"><div class="fill" style="width:50%"></div></div>
+    <div class="plabel"><span>管综数学《考点精讲》基础篇</span><span>第 4 章方程与不等式</span></div>
+    <div class="bar"><div class="fill" style="width:38%"></div></div>
+    <div class="plabel"><span>体重管理（基线 93.46 kg）</span><span>🔴 133 天未称 · 尽快补称</span></div>
+    <div class="bar"><div class="fill" style="width:12%"></div></div>
+  </div>
+</section>
+
+<!-- ============ ② 七元素新闻区 ============ -->
+<section id="sec-news">
+  <h2 class="sec">七元素新闻 · 14 条</h2>
+  <div class="secsub">睡 · 吃 · 练 · 学 · 干 · 爽 · 重复，每要素 2 条｜优先近 3 天中文源，22 条链接已逐条核验</div>
+
+  <div class="ngroup"><div class="ntitle">😴 睡</div>
+    <div class="ncard c-sleep"><h4>立冬护脑别只盯血压：卒中风险与睡眠是"U 型"关系，7 小时最低</h4><p>湖南省第二人民医院睡眠障碍及神经症科主任医师陈金虹：每晚睡不足 6 小时会持续激活应激反应，血压升高、血黏度上升；睡到 9 小时以上同样抬高卒中风险。成年人稳定在 6.5—7.5 小时、以 7 小时为优，固定上床时间比"补觉"有用。</p><div class="nmeta"><span class="ntag">睡眠时长</span><span class="ntag">卒中风险</span>科普中国 · <a href="https://www.kepuchina.cn/article/articleinfo?ar_id=756024&business_type=100" target="_blank" rel="noopener">原文 ↗</a></div></div>
+    <div class="ncard c-sleep"><h4>立冬"潜阳"才睡得着：先辨寒热，22 点前就该准备入睡</h4><p>中医讲睡眠是"阳入于阴"：白天阳气行于外则醒，夜里潜藏于内才睡得着。立冬后该藏而藏不住，就成"白天睡不醒、晚上睡不着"。心烦多梦、咽干少津偏阴虚者不宜温补；建议亥时（21—23 点）上床、23 点前入睡，睡前一两小时远离屏幕。</p><div class="nmeta"><span class="ntag">立冬</span><span class="ntag">潜阳安神</span>金台资讯 · <a href="https://www.163.com/dy/article/LB05F3OF05346936.html" target="_blank" rel="noopener">原文 ↗</a></div></div>
+  </div>
+
+  <div class="ngroup"><div class="ntitle">🍚 吃</div>
+    <div class="ncard c-eat"><h4>立冬进补宜"温清并用"：沙参玉竹百合炖瘦肉，补而不燥</h4><p>北京中医医院副主任医师高飞：现代人营养充足又处暖气、空调的燥热环境，盲目大补容易"火上浇油"，出现口干咽痛、便秘失眠。北沙参养阴清肺、玉竹滋胃阴、百合并能清心安神，配瘦肉与两三片姜，汤清味甘，正合"温清并用、平补为先"。</p><div class="nmeta"><span class="ntag">立冬汤方</span><span class="ntag">清润平补</span>人民日报海外版 · <a href="https://paper.people.com.cn/rmrbhwb/pc/content/202611/06/content_30189769.html" target="_blank" rel="noopener">原文 ↗</a></div></div>
+    <div class="ncard c-eat"><h4>湿热体质进补＝火上浇油：立冬先"藏"再"补"，别急着上羊肉阿胶</h4><p>重庆市卫健委立冬食疗专题：温补药膳与膏方并非人人皆宜，湿热偏重、容易上火者不宜频繁饮用当归生姜羊肉汤；初冬燥湿夹杂，忌麻辣重口与燥热火锅。方向是平补温养、润燥生津，先健脾开路再谈补。</p><div class="nmeta"><span class="ntag">湿热体质</span><span class="ntag">进补禁忌</span>重庆市卫生健康委 · <a href="http://mp.weixin.qq.com/s?__biz=MzI5Njc5NzQyMg==&mid=2247592549&idx=1&sn=e9e1f36afec36608b898cbc628685293&chksm=ed1e6b46b2c2a23d6ad86b6f9fea6b3a15777c19eb4340eefa86e104303d6dae7556fa3c787a#rd" target="_blank" rel="noopener">原文 ↗</a></div></div>
+  </div>
+
+  <div class="ngroup"><div class="ntitle">🏋 练</div>
+    <div class="ncard c-train"><h4>"10 分钟 HIIT 等于跑步 1 小时"是假的：大体重该选低冲击超慢跑</h4><p>同样时间里，一支 10 分钟暴汗操实测约 120 大卡，慢跑一小时轻松四五百大卡，六倍时长补不回。大体重、怕伤膝的人选原地超慢跑、饭后快走最稳——对膝踝压力远小于跳绳开合跳；汗量不是减脂指标，减的是长期能量缺口加肌肉保留。</p><div class="nmeta"><span class="ntag">低冲击</span><span class="ntag">燃脂真相</span>什么值得买 · <a href="https://post.smzdm.com/p/a704r6z5" target="_blank" rel="noopener">原文 ↗</a></div></div>
+    <div class="ncard c-train"><h4>大基数减重卡住的三条真相：代谢适应、肌肉流失、隐性热量</h4><p>只做有氧不练力量，肌肉跟着脂肪一起掉，静息消耗越来越低；坚果、沙拉酱、果汁这类"看起来健康"的食物常把一天的运动量抹平。破局顺序：先优质蛋白、换粗粮主食、控烹调用油，再叠加低冲击有氧 + 自重抗阻，每周 2—3 次力量。</p><div class="nmeta"><span class="ntag">平台期</span><span class="ntag">大基数</span>复禾健康 · <a href="https://jianfei.fh21.com.cn/view/8989590.html" target="_blank" rel="noopener">原文 ↗</a></div></div>
+  </div>
+
+  <div class="ngroup"><div class="ntitle">📚 学</div>
+    <div class="ncard c-study"><h4>国考考前三周：别每天换练法，把套题、错题、作息排进一张表</h4><p>距 11-29 公共科目笔试约三周，最容易犯的错是每天换一种练法、始终没形成稳定节奏。固定三个单元：一套限时模块（保速度与取舍）、一次错题复盘（找具体失分动作）、一次短时回看（只处理两三个知识点）。复盘要写"错因 + 明日动作"，别抄解析。</p><div class="nmeta"><span class="ntag">国考冲刺</span><span class="ntag">训练结构</span>智蛙公考 · <a href="https://www.zhiwagk.com/news/538" target="_blank" rel="noopener">原文 ↗</a></div></div>
+    <div class="ncard c-study"><h4>2027 国考七年来首次降温：345 万人过审，平均 97 抢 1</h4><p>招录 3.57 万人比上年度少约 2400 人，过审人数比 2026 年的 371.8 万回落 26.8 万。降的不只是人数：首次要求电子社保卡实名实人认证，注册 423 万、报名 393.5 万、过审 345 万，"先占坑再补票"那一套行不通了；竞争比仍近 98:1，难度没实质下降。</p><div class="nmeta"><span class="ntag">国考</span><span class="ntag">竞争比</span>凤凰网 · <a href="https://news.ifeng.com/c/8xtBwLd1nkV" target="_blank" rel="noopener">原文 ↗</a></div></div>
+  </div>
+
+  <div class="ngroup"><div class="ntitle">💼 干</div>
+    <div class="ncard c-work"><h4>智能体的护栏开始前置：Anthropic 把策略钩子放到"动手之前"</h4><p>Claude 企业版的 prompt hooks 与 pre-tool-call hooks 正式可用，可在交互或工具调用发生<strong>前</strong>接入既有的数据防泄漏与安全策略；同时上线企业安全中心测试版。同期 Cursor 把云端 agent 做成"建站→建库→加登录→过安检→发布链接"的完整闭环，智能体从写代码走向交付。</p><div class="nmeta"><span class="ntag">智能体安全</span><span class="ntag">工具链</span>AI Native Engineering · <a href="https://ainativeengineering.net/article/14617ced-450f-43f5-bbb3-133d44f141c7" target="_blank" rel="noopener">原文 ↗</a></div></div>
+    <div class="ncard c-work"><h4>混元 Hy4 调用激增、推理集群紧急扩容十倍；阿里开源 Qwen3.8 全系</h4><p>腾讯在世界互联网大会展出 Hy4 preview，新增视觉理解与电脑操作（可读图表文档、操作图形界面与命令行），WorkBuddy、CodeBuddy 限时免费体验；阿里开源 Qwen3.8 旗舰 2.4 万亿参数、CodeArena 登顶；百度开放 ERNIE-5.5-Flash-Base 权重。</p><div class="nmeta"><span class="ntag">混元 Hy4</span><span class="ntag">开源模型</span>CSDN DevPress · <a href="https://devpress.csdn.net/aibjcy/6aefd6d040858c2d88193144.html" target="_blank" rel="noopener">原文 ↗</a></div></div>
+  </div>
+
+  <div class="ngroup"><div class="ntitle">🌿 爽</div>
+    <div class="ncard c-mood"><h4>初冬"静心养生"四件事：晒后背、搓腰、叩齿、按涌泉</h4><p>贵阳花溪区中医院治未病中心主任李秦稳：冬主"藏"，宜静不宜扰。情志上少焦虑少暴怒，闲暇多晒后背升发阳气；日常反复搓揉后腰至发热、叩齿吞津、踮脚、按揉足底涌泉穴，可固本养肾。起居早睡晚起、重点护住头颈腰背双脚。</p><div class="nmeta"><span class="ntag">情志</span><span class="ntag">冬季起居</span>花溪区人民政府 · <a href="https://www.huaxi.gov.cn/xwzx/hxyw/202611/t20261108_91084015.html" target="_blank" rel="noopener">原文 ↗</a></div></div>
+    <div class="ncard c-mood"><h4>大别山民歌邀请赛落幕：14 个节目、305 件文创、600 名观众</h4><p>11-07 六安市文化馆红剧场，鄂豫皖三省五市同台：六安《遍野绿秧爱坏人》《牛歌唱出幸福来》重现乡土烟火，舒城《想儿的模样》塑大别山母亲形象；同步颁出六安文旅三创大赛 30 件获奖作品，《獬豸 IP 设计》拿下一等奖。现场非遗集市有竹编与绿茶制作技艺。</p><div class="nmeta"><span class="ntag">民歌</span><span class="ntag">非遗</span>搜狐·六安发布 · <a href="https://m.sohu.com/a/1098553465_121924583" target="_blank" rel="noopener">原文 ↗</a></div></div>
+  </div>
+
+  <div class="ngroup"><div class="ntitle">🔁 重复</div>
+    <div class="ncard c-repeat"><h4>背了就忘不是记性差：五次回顾节点，前密后疏</h4><p>遗忘在学完那刻就开始、头几小时最快。可操作节奏：当天睡前合书回忆并标记卡壳处（10—15 min）→ 次日晨起先回忆再核对 → 第 3 天默写框架 → 第 7 天完整回忆 → 第 15 天串进大框架。每次"先回忆、再核对、只补卡壳处"，不必重背全文。</p><div class="nmeta"><span class="ntag">间隔重复</span><span class="ntag">回顾节奏</span>新东方考研网 · <a href="https://kaoyan.xdf.cn/202611/15480130.html" target="_blank" rel="noopener">原文 ↗</a></div></div>
+    <div class="ncard c-repeat"><h4>背过了 ≠ 想得起来：存储还在，是提取卡住了</h4><p>记忆分编码、存储、提取三步，考场"一个字想不起来"多是提取失败而非没记住。破解靠两件事：留线索（关键词、口诀、图），以及多自测——合上书主动回忆比反复重读更能加固"取件通道"，懂了再背远胜死记硬背。</p><div class="nmeta"><span class="ntag">提取练习</span><span class="ntag">记忆线索</span>上海市科协 · <a href="https://www.sastcloud.cn/news/info/2118380393886511105" target="_blank" rel="noopener">原文 ↗</a></div></div>
+  </div>
+</section>
+
+<!-- ============ ③ 八版块精选区 ============ -->
+<section id="sec-feat">
+  <h2 class="sec">八版块精选 · 8 条</h2>
+  <div class="secsub">AI科技 / 健康 / 财经 / 备考 / 家庭 / 副业 / 认知 / 雅趣（左右滑动）</div>
+  <div class="featwrap">
+    <div class="fcard"><span class="fcat">AI科技</span><h4>个人智能体集体上岗：关掉电脑，它还在干活</h4><p>Claude Duet 每天清晨推简报、发现欠款直接起草催款邮件；Meta Muse、微软 Copilot、OpenAI dots、腾讯 Buddy One 同期跟进。"主动找人"成标配：任务自己拆步骤、完成后回来汇报，云端常驻是前提。</p><div class="nmeta"><a href="https://www.163.com/dy/article/LB6Q07HS0514BE2Q.html" target="_blank" rel="noopener">中国新闻周刊 · 原文 ↗</a></div></div>
+    <div class="fcard"><span class="fcat">健康</span><h4>立冬护三关：颈项、腰腹、脚踝；泡脚 40℃ 到微热即止</h4><p>保暖重点不在"穿得厚"，而在护住寒邪最易突破的关口，足部尤关键——离心脏最远、受寒可直中脾胃。睡前 40℃ 温水泡脚配按揉涌泉，引火归元；高血压、冠心病者时间不宜过长。</p><div class="nmeta"><a href="https://www.cntcm.com.cn/content/202611/06/c506432.html" target="_blank" rel="noopener">中国中医药网 · 原文 ↗</a></div></div>
+    <div class="fcard"><span class="fcat">财经</span><h4>A 股抗住美股"黑色星期四"：沪指 3649.18 跌 1.10%</h4><p>隔夜道指跌 3.44%、纳指重挫 5.52%，A 股低开后弱势震荡：创业板指跌 3.96%，成交 1.66 万亿缩量逾 4600 亿；银行、电力、农业逆势走强。多家机构定性为情绪传导而非基本面反转。</p><div class="nmeta"><a href="https://www.jingjiribao.cn/static/detail.jsp?id=696048" target="_blank" rel="noopener">经济日报 · 原文 ↗</a></div></div>
+    <div class="fcard"><span class="fcat">备考</span><h4>考前 30 天模板：7 天补短板 + 7 天套卷 + 14 天模拟 + 2 天保温</h4><p>上午行测限时、下午申论套题（大作文完整写）、晚上复盘错题积素材。资料分析性价比最高，图推每天 10 道，数量只攻 3—4 类擅长题型、难题果断放；作息与考试同步。</p><div class="nmeta"><a href="https://m.sohu.com/a/1097123659_123047433" target="_blank" rel="noopener">搜狐·上岸鸭 · 原文 ↗</a></div></div>
+    <div class="fcard"><span class="fcat">家庭</span><h4>"你这说话让我很难受，我们换个方式好吗"——不是指责，是教对方怎么爱你</h4><p>深圳龙华家庭心理课：判断关系是否健康，看吵完还能不能坐下吃饭；吵架不可避免，但要让孩子看到你们和好了。每周固定一次"家庭时间"，不谈学习工作，轮流说开心与不开心。</p><div class="nmeta"><a href="https://ilonghua.sznews.com/content/2026-11/03/content_32206781.htm" target="_blank" rel="noopener">龙华网 · 原文 ↗</a></div></div>
+    <div class="fcard"><span class="fcat">副业 ⛔</span><h4>只登记：两个亿元新能源项目签约落地叶集化工园区</h4><p>11-03 年产 10 万吨碳酸丙烯酯及催化剂项目、叶集新能源材料周转项目现场签约，投资方为通源环境联合安徽大学团队的源州绿碳平台；区里实行"一项目一专班"。冻结令期间仅登记不展开。</p><div class="nmeta"><a href="https://gxj.luan.gov.cn/zwzx/xqdt/5507718.html" target="_blank" rel="noopener">六安市工信局 · 原文 ↗</a></div></div>
+    <div class="fcard"><span class="fcat">认知</span><h4>孤独感并不等于认知全面下滑：6 年追踪只在一项能力上看到关联</h4><p>318 名 70—90 岁老人、最多 6 年、每年 14 天手机密集测评：排除抑郁后，基线孤独感并不能预测工作记忆与加工速度的衰退，唯一显著的是联想记忆零错误率下降。真正推动孤独上升的是抑郁。</p><div class="nmeta"><a href="https://www.163.com/dy/article/LAPQOVG605149U3U.html" target="_blank" rel="noopener">全球医生组织 · 原文 ↗</a></div></div>
+    <div class="fcard"><span class="fcat">雅趣</span><h4>安徽国际文旅节非遗季开锣：11—12 月五场，最近一场在绩溪</h4><p>"匠心安徽"非遗展演季：11-06 绩溪十项非遗巡游（瞻淇鱼灯、普宁英歌、横山老腰鼓）；11-11—13 蚌埠"当景区邂逅非遗"；11-13—15 宣城长三角非遗特展，设"宣纸上的非遗""舌尖上的非遗"五大板块。</p><div class="nmeta"><a href="https://m.sohu.com/a/1098041613_120133855" target="_blank" rel="noopener">搜狐城市-安徽 · 原文 ↗</a></div></div>
+  </div>
+</section>
+
+<!-- ============ ④ 知识卡片区 ============ -->
+<section id="sec-know">
+  <h2 class="sec">知识卡片 · 5 张</h2>
+  <div class="secsub">点卡片展开</div>
+  <details><summary>① 3 ℃ 清晨的四道关 <span class="chev">›</span></summary><div class="kbody">今天清晨 3 ℃、白天 11 ℃，温差 8 ℃，是立冬以来最冷的一段。<b>第一关起身</b>：醒后躺半分钟、坐半分钟、站稳再走，别猛起。<b>第二关颈项</b>：围巾挡风，冷风直吹后颈最易咽痛咳嗽。<b>第三关水</b>：天冷不爱喝水，血黏度反而升，全天 2000—2500 ml 分摊到每个整点。<b>第四关时间</b>：不在清晨低温段锻炼，改傍晚室内，微热即止不大汗。心脏舒张功能减退＝红线，四关照做不打折。</div></details>
+  <details><summary>② 荷叶缺位，祛湿靠谁顶上 <span class="chev">›</span></summary><div class="kbody">干荷叶自 11-02 起执行消耗期冻结令（0 g、不补货），原「荷叶 6 g + 陈皮 6 g」的祛湿主力必须换人——今天的祛湿由三处共同承接：<b>陈皮 8 g</b>（日茶，理气化湿、占挥发油位）、<b>赤小豆 25 g</b>（周一主食「祛湿开局」，仅周一/四/五排、泡 12 h 后倒掉豆水）、<b>生姜 2 片</b>（夜茶，温中散寒，带姜第 19 天、11-13 复核）。若哪天咽干加重，先减姜不减陈皮；若腹胀便溏，赤小豆当日停、换藜麦补位。</div></details>
+  <details><summary>③ 20 天与 40 天：两场考试的时间账 <span class="chev">›</span></summary><div class="kbody">国考 11-29（20 天）＝照报不备考，只做两件事：按公告时间打印准考证、确认考点路线，不做专项投入。MPA 12-19（40 天）＝唯一火力方向，40 天 × 每晚 4 h ≈ 160 h，仍按 v2「60 个单日≥4h」推进，目标总分 200（管综 135 + 英语 65）。<b>排期原则</b>：国考不占 MPA 的晚间主攻时段；若某天只能学 1 h，优先英语单词 + 管综错题，别开新章。</div></details>
+  <details><summary>④ 为什么"想起来"比"看一遍"有用 <span class="chev">›</span></summary><div class="kbody">记忆分三步：<b>编码</b>（理解着录进去）、<b>存储</b>（存住）、<b>提取</b>（调得出来）。考场想不起来，多半不是没存住，而是提不出来——给记忆留"把手"：关键词、口诀、一张图。加固提取通道只有一个笨办法：合上书主动回忆，卡壳的两秒正是大脑在修路。<table><tr><th>节点</th><th>动作</th><th>用时</th></tr><tr><td>当天睡前</td><td>合书回忆，标记卡壳处</td><td>10—15 min</td></tr><tr><td>次日晨起</td><td>先回忆再核对，只看标记处</td><td>10—15 min</td></tr><tr><td>第 3 天</td><td>默写框架或口头复述</td><td>10 min</td></tr><tr><td>第 7 天</td><td>完整回忆一遍</td><td>10 min</td></tr><tr><td>第 15 天</td><td>串进大框架、连前后章</td><td>15 min</td></tr></table></div></details>
+  <details><summary>⑤ 今日茶包形态速查 <span class="chev">›</span></summary><div class="kbody"><table><tr><th>条目</th><th>形态与用量</th></tr><tr><td>陈皮</td><td>掰 1cm² 小瓣压袋底 · 不洗茶 · 全天 11g（日 8 + 夜 3）</td></tr><tr><td>南杏仁</td><td>稍掰碎 · 全天 10g 顶格（日 5 + 夜 5）</td></tr><tr><td>山楂片</td><td>干片直接入袋（日 5 + 夜 5）</td></tr><tr><td>枸杞</td><td>⛔ 停用 0g（周一停、周三复投）</td></tr><tr><td>早段小袋</td><td>老白茶 2g + 六安瓜片 3g · 16:00 抽出</td></tr><tr><td>生姜</td><td>薄切 2 片置顶 · 11-13 复核（今日第 19 天）</td></tr><tr><td>⛔ 禁入</td><td>薏米/黑米/银耳/干冬瓜皮/马齿苋（无库存）；荷叶/甘草/小柑胎（归零）；赤小豆黑豆走主食不入袋</td></tr></table></div></details>
+</section>
+
+<footer>PetDeer 晨间融合 · 2026-11-09 生成 · 零外部依赖<br>在线同步：terrence0902.github.io/petdeer-news</footer>
+</main>
+<button class="backtop" id="backtop" title="回到顶部" aria-label="回到顶部">↑</button>
+<script>
+(function(){
+  var KEY='petdeer_todo_2026-11-09';
+  var boxes=document.querySelectorAll('#todolist input[type=checkbox]');
+  var saved={};try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  boxes.forEach(function(b){
+    if(saved[b.dataset.k]){b.checked=true;b.closest('label').classList.add('done');}
+    b.addEventListener('change',function(){
+      var s={};boxes.forEach(function(x){if(x.checked)s[x.dataset.k]=1});
+      try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){}
+      b.closest('label').classList.toggle('done',b.checked);
+    });
+  });
+  var links=document.querySelectorAll('nav .navlink');
+  var secs=document.querySelectorAll('section');
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){
+      links.forEach(function(l){l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id)});
+    }});
+  },{rootMargin:'-30% 0px -60% 0px'});
+  secs.forEach(function(s){io.observe(s)});
+  var bt=document.getElementById('backtop');
+  window.addEventListener('scroll',function(){bt.style.display=window.scrollY>400?'block':'none'});
+  bt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
