@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-11-20 晨间融合 · PetDeer 晨报</title>
+<style>
+:root{--bg:#faf6f0;--card:#ffffff;--ink:#3a3226;--sub:#8a7f6f;--acc:#e8842c;--acc2:#f0a94e;--line:#f0e6d8;--ok:#3d9a5f;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",sans-serif;line-height:1.6;}
+a{color:var(--acc);text-decoration:none;}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 60px;}
+nav{position:sticky;top:0;z-index:50;background:rgba(250,246,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:860px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;-webkit-overflow-scrolling:touch;}
+.nav-in::-webkit-scrollbar{display:none;}
+.nav-in a{flex-shrink:0;font-size:13px;font-weight:600;color:var(--sub);padding:6px 12px;border-radius:999px;transition:.2s;}
+.nav-in a.on{background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;}
+.hero{background:linear-gradient(135deg,#f7b955,#e8842c 60%,#d96a1e);border-radius:24px;color:#fff;padding:32px 24px;margin:20px 0 24px;box-shadow:0 12px 30px rgba(232,132,44,.25);}
+.hero .d1{font-size:34px;font-weight:800;letter-spacing:1px;}
+.hero .d2{font-size:15px;opacity:.92;margin-top:4px;}
+.hero .poem{margin-top:14px;padding:10px 14px;background:rgba(255,255,255,.18);border-radius:12px;font-size:14px;font-style:italic;}
+.cds{display:flex;gap:10px;overflow-x:auto;margin:-6px 0 20px;padding:2px;-webkit-overflow-scrolling:touch;}
+.cds::-webkit-scrollbar{display:none;}
+.cd{flex-shrink:0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 16px;text-align:center;min-width:104px;box-shadow:0 2px 8px rgba(90,70,40,.06);}
+.cd .n{font-size:22px;font-weight:800;color:var(--acc);}
+.cd .t{font-size:11px;color:var(--sub);}
+h2.sec{font-size:20px;font-weight:800;margin:34px 0 4px;display:flex;align-items:center;gap:8px;}
+h2.sec svg{width:20px;height:20px;}
+.sec-sub{font-size:13px;color:var(--sub);margin-bottom:14px;}
+.card{background:var(--card);border-radius:16px;padding:18px;margin-bottom:12px;box-shadow:0 3px 12px rgba(90,70,40,.07);border:1px solid var(--line);}
+.card h3{font-size:16px;margin-bottom:6px;}
+.card p{font-size:13.5px;color:#5c5240;}
+.meta{font-size:12px;color:var(--sub);margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+.tag{background:#f6ead8;color:#b06a1a;border-radius:999px;padding:2px 9px;font-size:11px;font-weight:600;}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;}
+.wi{background:#fff8ee;border-radius:12px;padding:10px 8px;text-align:center;}
+.wi .v{font-weight:800;font-size:15px;}
+.wi .k{font-size:11px;color:var(--sub);}
+.tea2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:768px){.tea2{grid-template-columns:1fr;}}
+.tea{border-radius:16px;padding:16px;border:1px solid var(--line);}
+.tea.day{background:linear-gradient(160deg,#fff3df,#ffe7c4);}
+.tea.night{background:linear-gradient(160deg,#eceaf6,#dfe2f2);}
+.tea h3{font-size:15px;}
+.tea ul{list-style:none;margin-top:8px;}
+.tea li{font-size:13px;padding:3px 0;color:#5c5240;}
+.tea li::before{content:"•";color:var(--acc);font-weight:800;margin-right:6px;}
+.tea .tip{margin-top:8px;font-size:12px;color:var(--sub);border-top:1px dashed rgba(0,0,0,.12);padding-top:8px;}
+.todo{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);}
+.todo:last-child{border-bottom:none;}
+.todo input{margin-top:5px;accent-color:var(--acc);width:17px;height:17px;flex-shrink:0;}
+.todo.done .txt{text-decoration:line-through;color:var(--sub);}
+.pri{font-size:10.5px;font-weight:700;border-radius:6px;padding:1px 7px;margin-right:6px;flex-shrink:0;}
+.p-b{background:#fde2e2;color:#c0392b;}
+.p-i{background:#fdf1d7;color:#b07a13;}
+.p-o{background:#e3f0e5;color:#3d9a5f;}
+.todo .txt{font-size:13.5px;}
+.todo .tm{font-size:11px;color:var(--sub);}
+.eg{border-left:4px solid var(--acc);border-radius:16px;background:var(--card);padding:16px 18px;margin-bottom:14px;box-shadow:0 3px 12px rgba(90,70,40,.07);}
+.eg h3{font-size:15px;color:var(--acc);margin-bottom:8px;}
+.item{padding:10px 0;border-top:1px dashed var(--line);}
+.item:first-of-type{border-top:none;}
+.item .t{font-weight:700;font-size:14.5px;}
+.item .s{font-size:13px;color:#5c5240;margin-top:3px;}
+.picks{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 12px;-webkit-overflow-scrolling:touch;}
+.picks::-webkit-scrollbar{display:none;}
+.pick{flex-shrink:0;width:230px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 3px 12px rgba(90,70,40,.07);}
+.pick .pk{font-size:11px;font-weight:800;color:#fff;background:linear-gradient(135deg,var(--acc),var(--acc2));display:inline-block;border-radius:999px;padding:2px 10px;margin-bottom:8px;}
+.pick .pt{font-size:13.5px;font-weight:700;}
+.pick .ps{font-size:12px;color:var(--sub);margin-top:5px;}
+.kc{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden;box-shadow:0 2px 8px rgba(90,70,40,.06);}
+.kc summary{cursor:pointer;padding:14px 16px;font-weight:700;font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+.kc summary::-webkit-details-marker{display:none;}
+.kc summary::after{content:"+";font-size:20px;color:var(--acc);font-weight:400;}
+.kc[open] summary::after{content:"−";}
+.kc .kb{padding:0 16px 14px;font-size:13px;color:#5c5240;}
+#top-btn{position:fixed;right:16px;bottom:22px;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 6px 16px rgba(232,132,44,.4);display:none;z-index:60;}
+footer{text-align:center;font-size:12px;color:var(--sub);margin-top:40px;}
+.nudge{background:linear-gradient(135deg,#4a3f2e,#6b5a3e);color:#fff;border-radius:16px;padding:16px 18px;font-size:14px;margin-top:14px;box-shadow:0 6px 18px rgba(74,63,46,.3);}
+.nudge b{color:#ffd591;}
+</style>
+</head>
+<body>
+<nav><div class="nav-in" id="nav">
+<a href="#h-morning" class="on">晨报</a><a href="#h-news">七元素新闻</a><a href="#h-picks">精选</a><a href="#h-know">知识卡</a>
+</div></nav>
+<div class="wrap">
+
+<!-- ① 晨报区 -->
+<section id="h-morning">
+<div class="hero">
+  <div class="d1">11 月 20 日 · 星期五</div>
+  <div class="d2">立冬 · 第 14 天 ｜ 农历十月十三 ｜ 小雪还有 2 天</div>
+  <div class="poem">「荷尽已无擎雨盖，菊残犹有傲霜枝。」—— 苏轼《赠刘景文》</div>
+</div>
+
+<div class="cds">
+  <div class="cd"><div class="n">3 天</div><div class="t">准考证开打 11-23</div></div>
+  <div class="cd"><div class="n">9 天</div><div class="t">国考 11-29</div></div>
+  <div class="cd"><div class="n">29 天</div><div class="t">MPA 联考 12-19</div></div>
+  <div class="cd"><div class="n">2 天</div><div class="t">本周剩余</div></div>
+  <div class="cd"><div class="n">2 天</div><div class="t">小雪 11-22</div></div>
+</div>
+
+<div class="card">
+  <h3>今日天气 · 六安</h3>
+  <div class="wgrid" style="margin-top:10px;">
+    <div class="wi"><div class="v">2—15℃</div><div class="k">晴</div></div>
+    <div class="wi"><div class="v">西北转西南 3 级</div><div class="k">风力</div></div>
+    <div class="wi"><div class="v">34 · 优</div><div class="k">空气质量</div></div>
+    <div class="wi"><div class="v">0%</div><div class="k">降水·不带伞</div></div>
+    <div class="wi"><div class="v">06:46</div><div class="k">日出</div></div>
+    <div class="wi"><div class="v">17:14</div><div class="k">日落</div></div>
+  </div>
+  <p style="margin-top:10px;">清晨 2℃ 全周最冷，加厚外套 + 围巾护颈；白天回暖至 15℃，明日周六晴 5—18℃。</p>
+</div>
+
+<div class="tea2">
+  <div class="tea day">
+    <h3>☀ 日茶 · 荷叶陈皮瓜片茶</h3>
+    <div class="meta"><span class="tag">07:30—19:00</span><span class="tag">理气祛湿提神</span></div>
+    <ul>
+      <li>六安瓜片 3 g（一三五底茶 · 不洗茶）</li>
+      <li>干荷叶 3 g（连服第 5 天 · 收官日）</li>
+      <li>陈皮 5 g</li>
+      <li>山楂片 3 g</li>
+      <li>枸杞 8 粒</li>
+    </ul>
+    <div class="tip">袋序：陈皮→荷叶→瓜片→山楂→枸杞撒面；直冲闷 3–5 min，续水 4–5 次；16:00 后只续清水。明起停荷叶 2 天，陈皮 5→6 g。</div>
+  </div>
+  <div class="tea night">
+    <h3>🌙 夜茶 · 藤茶麦冬饮</h3>
+    <div class="meta"><span class="tag">19:15—21:30</span><span class="tag">消食安神 · 零咖啡因</span></div>
+    <ul>
+      <li>藤茶 3 g（先洗茶 5s）</li>
+      <li>麦冬 3 g（刀背拍裂）</li>
+      <li>罗汉果 1/8（连壳敲碎）</li>
+    </ul>
+    <div class="tip">闷 5–8 min，续水 2–3 次；21:30 前饮完、22:00 后不喝，不影响睡眠。</div>
+  </div>
+</div>
+<p style="font-size:12px;color:var(--sub);margin-top:6px;">杯注：水温降至 60℃ 以下再拧盖；杯盖勿久闷；杯身雾化发白即换，防烫防变形。</p>
+
+<div class="card" style="margin-top:14px;">
+  <h3>今日主食 · 杂粮饭 v3.1（周五 · 均等利水）</h3>
+  <p>杂粮米 25 + 赤小豆 25 + 藜麦 25 + 燕麦片 25（每顿 100 g 生重，一锅三顿）。赤小豆昨晚忘泡则热水急泡 1 h 或藜麦补 10 g；燕麦片泄压后拌入焖 8–10 min。<b>今晚 21:00 泡黑豆 20 g</b> 供周六（泡足 12 h 冷藏）。</p>
+</div>
+
+<div class="card">
+  <h3>七要素 Todo</h3>
+  <div id="todolist">
+    <label class="todo"><input type="checkbox" data-k="t1"><span><span class="pri p-b">必做</span><span class="txt">23:00 停手机，23:30 前入睡</span><br><span class="tm">23:00</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t2"><span><span class="pri p-i">重要</span><span class="txt">午休 ≤30 min，趴枕勿着凉</span><br><span class="tm">12:40 · 25 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t3"><span><span class="pri p-b">必做</span><span class="txt">杂粮饭一锅三顿；盒饭挑清蒸白灼，避开油炸辛辣</span><br><span class="tm">全天</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t4"><span><span class="pri p-b">必做</span><span class="txt">日茶袋装杯直冲带走；16:00 后只续清水</span><br><span class="tm">07:30 · 5 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t5"><span><span class="pri p-b">必做</span><span class="txt">补称体重（欠账 145 天，晨起空腹或回程后）</span><br><span class="tm">全天 · 2 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t6"><span><span class="pri p-i">重要</span><span class="txt">Day5 拉+核心：背包划船 5×12 + 俯身地板划船 4×20 + 反向超人 3×15 + 跪姿地板滑动 3×8（零器械无跳跃，室内）</span><br><span class="tm">23:40 · 18 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t7"><span><span class="pri p-b">必做</span><span class="txt">英语二：刘晓艳长难句 1 课 + 真题精读 1 篇</span><br><span class="tm">20:00-21:30 · 90 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t8"><span><span class="pri p-b">必做</span><span class="txt">管综：MBA 大师数学推进 + 错题回炉</span><br><span class="tm">21:30-23:00 · 90 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t9"><span><span class="pri p-i">重要</span><span class="txt">国考准考证 11-23 0:00 开打（3 天后），挂提醒；打印后核对姓名/考点/座位/科目四项</span><br><span class="tm">碎片 · 5 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t10"><span><span class="pri p-b">必做</span><span class="txt">案点工作 8:00 节奏推进，23:30 准时收工</span><br><span class="tm">8:00-23:30</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t11"><span><span class="pri p-o">可选</span><span class="txt">午休刷 5 min Gemini 4 Neon / Anthropic IPO 动态</span><br><span class="tm">12:30 · 5 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t12"><span><span class="pri p-o">可选</span><span class="txt">回程听播客替代刷短视频</span><br><span class="tm">23:30 · 20 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t13"><span><span class="pri p-b">必做</span><span class="txt">费曼复盘：昨日错题讲一遍（录音 3 min）</span><br><span class="tm">19:30 · 10 min</span></span></label>
+    <label class="todo"><input type="checkbox" data-k="t14"><span><span class="pri p-b">必做</span><span class="txt">23:25 打卡（任务表 + 学习进度表）</span><br><span class="tm">23:25 · 5 min</span></span></label>
+  </div>
+</div>
+
+<div class="card" style="background:#fff8ee;">
+  <h3>项目进度</h3>
+  <p>📕 管综数学《考点精讲》第 4 章在推（1–3 章完，35%）｜📖 英语二刘晓艳全家桶进行中｜⚖️ 补称体重待办：欠账 145 天（95→65kg 战役，93.46 记录）｜🎫 国考准考证 3 天后开打（11-23 0:00，gwy.cpta.com.cn）</p>
+</div>
+
+<div class="nudge"><b>今日 Nudge：</b>立冬第 14 天，晴冷 2℃，荷叶连服收官——茶袋多闷 2 分钟再出门，围巾护颈，今晚回屋补称一次体重。</div>
+</section>
+
+<!-- ② 七元素新闻区 -->
+<section id="h-news">
+<h2 class="sec"><svg viewBox="0 0 24 24" fill="none" stroke="#e8842c" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 4v5"/></svg>七元素新闻 · 14 条</h2>
+<div class="sec-sub">每要素 2 条 · 近 3 天中文权威源 · 链接已全部核验 200</div>
+
+<div class="eg" style="border-left-color:#8e7cc3;"><h3>🛌 睡 · 睡眠健康</h3>
+<div class="item"><div class="t">为什么有人睡得少却很精神？科学家发现关键睡眠基因</div><div class="s">SIK3 基因突变研究揭示嗜睡机制：基因「开不开、开多大」的表达调控才是关键，环境与生活方式同样会拨动这些开关。规律作息仍是普通人最稳的解。</div><div class="meta"><span class="tag">#睡眠科学</span><a href="https://news.qq.com/rain/a/20261118A0492300">腾讯新闻(科普中国) ↗</a></div></div>
+<div class="item"><div class="t">「黄金睡眠时长」出炉：7.1 小时左右衰弱风险最低</div><div class="s">《npj Aging》1.8 万人 9 年随访：睡眠与衰弱风险呈 U 型，7—8 小时为佳；睡超 9 小时心脏病风险增 34%，睡不足 6 小时死亡风险高 50%。</div><div class="meta"><span class="tag">#睡眠时长</span><a href="https://www.hnntv.cn/info/article/578/578963.html">海南网络广播电视台 ↗</a></div></div>
+</div>
+
+<div class="eg" style="border-left-color:#6aa84f;"><h3>🍚 吃 · 饮食营养</h3>
+<div class="item"><div class="t">吃对碳水的人，炎症水平更低还不易胖</div><div class="s">全谷物替代部分主食 6 周即降全身炎症；断碳水减的是水不是脂肪，燕麦、荞麦、杂豆才是减脂碳水的正确打开方式——正好对应你的杂粮饭 v3.1。</div><div class="meta"><span class="tag">#营养</span><a href="https://jiankang.cctv.com/2026/11/18/ARTIFfYyBuH8oZb2qXmfiVew261117.shtml">央视网健康 ↗</a></div></div>
+<div class="item"><div class="t">「尿酸友好型饮料」找到：常喝咖啡者痛风风险降 46%</div><div class="s">26 万人荟萃研究：咖啡是四类饮品中唯一显示痛风保护性的；酒精升 81%、含糖饮料升 37%。尿酸 506 人群可参考，但别靠饮料防痛风，白水仍是第一位。</div><div class="meta"><span class="tag">#尿酸</span><a href="https://jiankang.cctv.com/2026/11/18/ARTIQI21RrVrHwg1L2rzdXTo261117.shtml">央视网健康 ↗</a></div></div>
+</div>
+
+<div class="eg" style="border-left-color:#e06666;"><h3>🏃 练 · 运动竞技</h3>
+<div class="item"><div class="t">国足让二追二 2-2 巴林；U19 国足时隔八年再夺熊猫杯</div><div class="s">国足年度收官 1 胜 1 平，张玉宁点球扳平；U19 熊猫杯 2-1 力克韩国，苗润东 5 分钟破门造点，「告别恐韩」从青少年层面建立信心。</div><div class="meta"><span class="tag">#足球</span><a href="http://mp.weixin.qq.com/s?__biz=MzkyODQ5NTM4NQ==&mid=2247500058&idx=1&sn=19dfb9cbe2e1c6201cf3576a71d12846&chksm=c3957be714fe4837c7864e6fbbd91d65eea4ab4dcc1aa0282be456bd54e70d763d0aa27abb4f#rd">体育公众号 ↗</a></div></div>
+<div class="item"><div class="t">今日看点：足协杯半决赛国安 vs 海港；U17 国足世界杯首秀</div><div class="s">19:30 足协杯半决赛国安主场争与云南玉昆会师决赛；22:00 U17 国足世界杯 H 组首战对阵西班牙劲旅，CCTV5 系直播。</div><div class="meta"><span class="tag">#赛事</span><a href="https://k.sina.com.cn/article_1685707867_6479dc5b00101fxj0.html?subch=cba">新浪体育 ↗</a></div></div>
+</div>
+
+<div class="eg" style="border-left-color:#4d8fce;"><h3>📚 学 · 学习考试</h3>
+<div class="item"><div class="t">2027 国考准考证 11-23 0:00—11-29 15:00 打印</div><div class="s">凭准考证+身份证入场，建议开考前 50 分钟到；开考 15 分钟后禁止入场、全程不得提前交卷；手机等电子产品一律存考点入口指定区域。</div><div class="meta"><span class="tag">#国考</span><a href="https://ea.hainan.gov.cn/ywdt/gwyks/202611/t20261119_4182117.html">海南省考试局(公告) ↗</a></div></div>
+<div class="item"><div class="t">准考证打印窗口与考试安排须知</div><div class="s">公共科目 11-29 行测（9:00—11:00）/申论（14:00—17:00）；打印黑白即可、A4 不缩放，资格复审面试还要用，多备 3—4 份电子版双备份。</div><div class="meta"><span class="tag">#备考</span><a href="https://www.offcn.com/gjgwy/2026/1118/129708.html">中公教育 ↗</a></div></div>
+</div>
+
+<div class="eg" style="border-left-color:#e8842c;"><h3>💼 干 · 经济时政</h3>
+<div class="item"><div class="t">央行三季度货政报告：下阶段货币政策发力点明确</div><div class="s">适度宽松基调延续：隔夜逆回购成日常操作、PSL 再降 25bp，加力实施支持资本市场两项工具，债市非银大额赎回互换便利首次入报告专栏。</div><div class="meta"><span class="tag">#货币政策</span><a href="http://paper.ce.cn/pc/content/202611/19/content_342135.html">经济日报 ↗</a></div></div>
+<div class="item"><div class="t">宽基 ETF 集中放量，科创 50、沪深 300 单日成交齐破百亿</div><div class="s">市场缩量震荡至 1.4 万亿地量，资金在防御与成长间腾挪；机构称估值分位低、向下风险收敛，政策窗口在 11 月下旬至 12 月上旬。</div><div class="meta"><span class="tag">#市场</span><a href="https://finance.sina.cn/2026-11-19/detail-inizhrrx6126556.d.html">新浪财经 ↗</a></div></div>
+</div>
+
+<div class="eg" style="border-left-color:#f0a94e;"><h3>🚀 爽 · 科技 AI</h3>
+<div class="item"><div class="t">Anthropic 登陆纳斯达克：1.5 万亿美元估值成「原生大模型第一股」</div><div class="s">IPO 定价 83 美元高于区间上限，为全球 AI 企业立估值锚点；同期谷歌 Gemini 4 Neon、豆包工作 DAU 800 万等商业化数据集中兑现，行业进入「算账期」。</div><div class="meta"><span class="tag">#大模型</span><a href="https://news.qq.com/rain/a/20261119A0G4KG00">腾讯新闻(前沿快讯) ↗</a></div></div>
+<div class="item"><div class="t">睦灵科技落地杭州余杭，切入物理世界基础模型</div><div class="s">达摩院前 Rynn 系列负责人创办 MolinX；英伟达 GR00T 2、Gemini Robotics 2.5 已在奔驰产线做到 96% 成功率，物理 AI 从实验室走向量产线。</div><div class="meta"><span class="tag">#具身智能</span><a href="https://www.jjckb.cn/20261119/725cd76f4c19462996d0cebd08c7c86e/c.html">经济参考网 ↗</a></div></div>
+</div>
+
+<div class="eg" style="border-left-color:#76a5af;"><h3>🔁 重复 · 认知方法</h3>
+<div class="item"><div class="t">提取练习才是知识扎根的关键</div><div class="s">北师大学业规划研究：听课是输入、输入≠学会；合上书回想/复述/闭卷写要点远胜反复阅读，低风险微型提取可常态化嵌入日常——费曼复盘的科学依据。</div><div class="meta"><span class="tag">#学习方法</span><a href="https://xygh.bnu.edu.cn/yjcg/lwfb/6597b5ba0a3d4b9e9394fb41df21ba79.htm">北师大学业规划研究中心 ↗</a></div></div>
+<div class="item"><div class="t">别让 AI 替你记住答案</div><div class="s">脑科学视角：学习=编码、睡眠=巩固；主动回忆与间隔练习胜过反复重读。AI 应做引导者而非答案贩子——用完关掉，自己再推一遍才算学会。</div><div class="meta"><span class="tag">#认知</span><a href="http://mp.weixin.qq.com/s?__biz=MzUyODQ4MDYwOQ==&mid=2247506762&idx=1&sn=66f45f81e3745c3595f2392d4d5aa38f&chksm=fbb22b1a331cba83393797ee7e53badd42a26d3dd2c0b0adfceda96ca76937d1096dc2928d9f#rd">高校讲座实录 ↗</a></div></div>
+</div>
+</section>
+
+<!-- ③ 八版块精选区 -->
+<section id="h-picks">
+<h2 class="sec"><svg viewBox="0 0 24 24" fill="none" stroke="#e8842c" stroke-width="2"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17l-6.1 3.6 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>八版块精选 · 8 条</h2>
+<div class="sec-sub">横滑卡片 · 左右滑动查看</div>
+<div class="picks">
+  <div class="pick"><span class="pk">AI科技</span><div class="pt">Gemini 4 Neon 发布 · 微软 Ignite 七连发</div><div class="ps">模型竞争从「比参数」转向「比每任务成本」；MAI Code 2 称以 40% 成本达旗舰 98% 性能。</div><div class="meta"><a href="http://mp.weixin.qq.com/s?__biz=MzkyODkzMDYyMA==&mid=2247483688&idx=1&sn=053acdf078d36372e5bd784f44f36d5d&chksm=c3477af482c714a0df5e35899c3ddff9b40754dbcf8d1f9290fead8161948d3578e62b7cf7c7#rd">原文 ↗</a></div></div>
+  <div class="pick"><span class="pk">健康</span><div class="pt">北欧饮食或有助于延年益寿</div><div class="ps">6.4 万人模拟研究：严格北欧饮食 24 年死亡风险低 2.7 个百分点，燕麦黑麦浆果是主角。</div><div class="meta"><a href="http://fashion.ce.cn/yw/202611/t20261119_3298839.shtml">原文 ↗</a></div></div>
+  <div class="pick"><span class="pk">财经</span><div class="pt">A股再掀回购增持潮</div><div class="ps">年内近 1300 家公司回购超 1500 亿元，估值低位 + 政策稳市，机构称向下风险收敛。</div><div class="meta"><a href="https://wap.cj.sina.cn/pc/7x24/5221052">原文 ↗</a></div></div>
+  <div class="pick"><span class="pk">备考</span><div class="pt">准考证打印后先核对四项</div><div class="ps">姓名/考点地址/考场座位/科目时间逐一对照，有误立即联系招录机关，别自行涂改。</div><div class="meta"><a href="https://www.eol.cn/kaoshi/gwy/gjgwy/202611/t20261118_2795766.shtml">原文 ↗</a></div></div>
+  <div class="pick"><span class="pk">家庭</span><div class="pt">新华视点：聚力惠民生 服务暖人心</div><div class="ps">陪诊服务国标实施、社区生境花园、托幼一体化——民生小事正被逐项接住。</div><div class="meta"><a href="https://www.news.cn/politics/20261119/78a281ddd5864ad582d578b752fdef30/c.html">原文 ↗</a></div></div>
+  <div class="pick"><span class="pk">副业</span><div class="pt">雄安年轻人把「一人公司」玩出新生态</div><div class="ps">OPC 超 400 家落户：注册记账全免费、工位年租 5000 元，「一人+AI 工具」撑起一家公司。</div><div class="meta"><a href="https://df.youth.cn/dfzl/202611/t20261119_16974772.htm">原文 ↗</a></div></div>
+  <div class="pick"><span class="pk">认知</span><div class="pt">为什么大量刷题反而刷不出成绩</div><div class="ps">刷题过度＝「过拟合」；记忆质量取决于加工深度而非重复次数，中高考已在反套路。</div><div class="meta"><a href="http://mp.weixin.qq.com/s?__biz=MjM5NjAwODI2OQ==&mid=2653912807&idx=2&sn=548838cef97a5592ebb3d39c34544001&chksm=bcde136813a61006fa400e5449688f460e45a9e922e1bbd45a86a27744807b46415a64403145#rd">原文 ↗</a></div></div>
+  <div class="pick"><span class="pk">雅趣</span><div class="pt">山东博物馆「明清书画异趣与匠心」今日开展</div><div class="ps">左笔书、指画、鼻烟壶内画三类奇技并置，王铎傅山扬州八怪同台（免费，呼应书法线）。</div><div class="meta"><a href="https://news.iqilu.com/shandong/kejiaoshehui/20261118/5962664.shtml">原文 ↗</a></div></div>
+</div>
+</section>
+
+<!-- ④ 知识卡片区 -->
+<section id="h-know">
+<h2 class="sec"><svg viewBox="0 0 24 24" fill="none" stroke="#e8842c" stroke-width="2"><path d="M4 19V5a2 2 0 012-2h13v18H6a2 2 0 01-2-2zm0 0a2 2 0 012-2h13"/></svg>知识卡片 · 5 张</h2>
+<div class="sec-sub">点击展开</div>
+<details class="kc"><summary>黄金睡眠 7.1h 的 U 型曲线</summary><div class="kb">短于 7h 与长于 9h 都升衰弱/死亡风险；6.4—7.8h 区间器官衰老最慢。办案期做不到 7h 时，守住「规律 + 午休 ≤30min」比硬凑时长更重要——今晚 23:30 前入睡就是底线动作。</div></details>
+<details class="kc"><summary>咖啡与尿酸：保护信号怎么用</summary><div class="kb">咖啡因+绿原酸抑制黄嘌呤氧化酶、扩张肾血管促排泄，观察性降痛风风险约 46%。但你的 16:00 后断咖啡因红线不变；咖啡不能替代每日 2000–2500ml 白水与控嘌呤饮食，酒精与含糖饮料才是真正要躲的。</div></details>
+<details class="kc"><summary>国考入场新规与准考证要点</summary><div class="kb">开考 15 分钟后禁入（原 30 分钟）；准考证 11-23 0:00 起打印（gwy.cpta.com.cn），A4 不缩放、黑白有效、多备 3—4 份；入场凭证=准考证+身份证，手机等电子产品一律存考点入口；11-29 上午行测、下午申论。</div></details>
+<details class="kc"><summary>提取练习 vs 反复阅读</summary><div class="kb">反复阅读只产生「熟悉错觉」；每次主动提取（合书回想、复述、闭卷写要点）都在加固神经通路。落地法：每学完一节合书复述 3 分钟——正好就是你的每日费曼复盘，考前三周尤其该用它过错题。</div></details>
+<details class="kc"><summary>OPC 一人公司模式</summary><div class="kb">「一人 + 多智能体 + 数字工具」把研发运营全流程压到极轻量；雄安注册记账全免费、工位 5000 元/年，超 400 家落户。副业冻结期内只记录不展开——待解冻候选方向：AI 工具型轻服务。</div></details>
+</section>
+
+<footer>PetDeer 晨间融合 · 2026-11-20 · 连续第 40 天 ｜ 体质基线：湿热火盛 · 尿酸 506 ｜ 红线食材：0 出现</footer>
+</div>
+
+<button id="top-btn" title="回到顶部">↑</button>
+<script>
+(function(){
+  var KEY='petdeer_todo_2026-11-20';
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
+  var boxes=document.querySelectorAll('#todolist input[type=checkbox]');
+  boxes.forEach(function(b){
+    var lab=b.closest('.todo');
+    if(saved[b.dataset.k]){b.checked=true;lab.classList.add('done');}
+    b.addEventListener('change',function(){
+      lab.classList.toggle('done',b.checked);
+      saved[b.dataset.k]=b.checked;
+      try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){}
+    });
+  });
+  var btn=document.getElementById('top-btn');
+  btn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'});};
+  window.addEventListener('scroll',function(){btn.style.display=window.scrollY>500?'block':'none';});
+  var links=document.querySelectorAll('#nav a');
+  var secs=['h-morning','h-news','h-picks','h-know'].map(function(id){return document.getElementById(id);});
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+120,cur=0;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur);});
+  });
+})();
+</script>
+</body>
+</html>
