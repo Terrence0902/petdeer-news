@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>2026-11-27 晨间融合 · PetDeer</title>
+<style>
+:root{
+  --bg:#fdf7ee; --bg2:#fff3e0; --card:#fffdf9; --ink:#3b2f24; --ink2:#7a6a58;
+  --line:#f0e2cd; --accent:#e8890c; --accent2:#f5b544; --soft:#fff0d8;
+  --radius:22px; --shadow:0 10px 30px rgba(180,120,40,.10), 0 2px 8px rgba(180,120,40,.05);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 40%,var(--bg) 100%);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  line-height:1.65;font-size:16px;padding-bottom:80px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(253,247,238,.86);backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--line)}
+.nav-in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:10px 16px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.brand{font-weight:700;font-size:15px;color:var(--accent);white-space:nowrap;margin-right:6px;letter-spacing:.3px}
+.nav a{font-size:14px;color:var(--ink2);text-decoration:none;padding:7px 12px;border-radius:999px;white-space:nowrap;transition:.2s}
+.nav a.active{background:linear-gradient(135deg,#f5b544,#e8890c);color:#fff;box-shadow:0 4px 12px rgba(232,137,12,.28)}
+/* hero */
+.hero{margin:20px 0 8px;padding:26px 22px 22px;border-radius:28px;
+  background:linear-gradient(135deg,#fff6e4 0%,#ffe6bd 55%,#ffd79a 100%);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-50px;top:-60px;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.85),rgba(255,255,255,0) 70%)}
+.hero-top{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.pill{font-size:12px;padding:4px 11px;border-radius:999px;background:rgba(232,137,12,.14);color:#a45c04;font-weight:600;letter-spacing:.3px}
+.pill.soft{background:rgba(255,255,255,.7);color:var(--ink2)}
+.hero h1{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.hero .d{font-size:32px;letter-spacing:-.5px;font-weight:800}
+.hero .w{font-size:17px;color:#96652a;font-weight:600}
+.poem{margin-top:10px;font-size:15px;color:#8a5a1d;font-family:"Songti SC","Kaiti SC",serif}
+.hero-sub{margin-top:8px;font-size:13px;color:#96703a}
+/* chips */
+.strip{display:flex;gap:10px;overflow-x:auto;padding:6px 2px 14px;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 14px;box-shadow:0 3px 10px rgba(180,120,40,.05)}
+.chip-k{display:block;font-size:12px;color:var(--ink2)}
+.chip-v{display:block;font-size:14px;font-weight:600;margin-top:2px}
+.chip.hot{background:linear-gradient(135deg,#fff1dc,#ffe0b8);border-color:#f3c98a}
+.chip.hot .chip-v{color:#c4600a}
+.chip.done{opacity:.65}
+/* grid */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.card h2{font-size:17px;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.card h2:before{content:"";width:4px;height:16px;border-radius:2px;background:linear-gradient(180deg,var(--accent2),var(--accent))}
+.wrow{display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:5px 0;border-bottom:1px dashed #f5e8d5}
+.wrow:last-child{border-bottom:0}
+.wrow span{color:var(--ink2)}
+.tip{margin-top:10px;font-size:13px;color:#8a5a1d;background:var(--soft);border-radius:12px;padding:10px 12px}
+/* tea */
+.tea h3{font-size:16px}
+.tea-head{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+.tea-ico{font-size:18px;line-height:1.2}
+.tea-head p{font-size:12px;color:var(--ink2);margin-top:2px}
+.tea-list{list-style:none;font-size:13.5px}
+.tea-list li{display:grid;grid-template-columns:76px 52px 1fr;gap:8px;padding:5px 0;border-bottom:1px dashed #f5e8d5;align-items:baseline}
+.tea-list li:last-child{border-bottom:0}
+.tm{font-weight:600}.tg{color:#c4600a;font-weight:700}.td{color:var(--ink2);font-size:12.5px}
+.tea-note{font-size:12.5px;color:var(--ink2);margin-top:8px;background:#fdf3e3;border-radius:12px;padding:10px 12px}
+.tea.day{border-top:3px solid #f0b24a}
+.tea.night{border-top:3px solid #a48bc7}
+.tea-stack{display:flex;flex-direction:column;gap:16px}
+/* todo */
+.todo-list{list-style:none}
+.todo label{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed #f5e8d5;cursor:pointer}
+.todo:last-child label{border-bottom:0}
+.todo input{display:none}
+.tdot{flex:0 0 20px;height:20px;border-radius:7px;border:1.8px solid #e3cba6;margin-top:2px;position:relative;transition:.15s;background:#fff}
+.todo input:checked + .tdot{background:linear-gradient(135deg,#f5b544,#e8890c);border-color:#e8890c}
+.todo input:checked + .tdot:after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:2px solid #fff;border-top:0;border-left:0;transform:rotate(42deg)}
+.tbody{display:block;font-size:14px;line-height:1.5}
+.tno{display:inline-block;min-width:20px;color:#c9b08c;font-size:12px;font-weight:700}
+.tel{display:inline-block;font-size:11px;font-weight:700;color:#a45c04;background:var(--soft);border-radius:6px;padding:1px 6px;margin-right:6px}
+.tact{display:inline}
+.tmeta{display:block;font-size:11.5px;color:var(--ink2);margin-top:3px;padding-left:26px}
+.todo input:checked ~ .tbody .tact{text-decoration:line-through;color:#b6a48e}
+.todo.opt .tel{background:#f1eee9;color:#8b8175}
+/* projects + nudge */
+.prow{display:grid;grid-template-columns:92px 1fr auto;gap:8px;font-size:13.5px;padding:8px 0;border-bottom:1px dashed #f5e8d5;align-items:baseline}
+.prow:last-child{border-bottom:0}
+.prow b{font-size:13px}.prow span{color:var(--ink2);font-size:12.5px}.prow em{font-style:normal;font-size:12px;color:#c4600a;font-weight:700}
+.nudge{background:linear-gradient(135deg,#fff4e0,#ffe3b8);border:1px solid #f3cf9a;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.nudge h2{font-size:15px;color:#a45c04;margin-bottom:8px;letter-spacing:1px}
+.nudge p{font-size:17px;font-weight:600;line-height:1.7}
+/* section title */
+.sec{margin:34px 0 16px;display:flex;align-items:baseline;gap:12px}
+.sec h2{font-size:21px;letter-spacing:-.2px}
+.sec span{font-size:13px;color:var(--ink2)}
+/* news */
+.ngroup{margin-bottom:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 6px;box-shadow:var(--shadow)}
+.nghead{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.ngico{width:30px;height:30px;display:grid;place-items:center;border-radius:10px;background:color-mix(in srgb,var(--c) 16%,#fff);color:var(--c)}
+.ngico svg{width:18px;height:18px}
+.nghead h3{font-size:15.5px;color:var(--ink)}
+.nghead .line{flex:1;height:1px;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 35%,#fff),transparent)}
+.ngrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding-bottom:10px}
+.nc{display:block;text-decoration:none;color:inherit;background:#fffaf2;border:1px solid #f6e9d6;border-left:3px solid var(--c);
+  border-radius:14px;padding:13px 14px;transition:.18s}
+.nc:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(180,120,40,.10)}
+.nc h4{font-size:14.5px;line-height:1.5;margin-bottom:6px}
+.nc p{font-size:12.8px;color:var(--ink2);line-height:1.7}
+.nfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:9px;font-size:11.5px;color:#a2937f}
+.tags{display:flex;gap:4px;flex-wrap:wrap}
+.tag{background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c);border-radius:999px;padding:1px 8px}
+/* picks */
+.hscroll{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 18px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.hscroll::-webkit-scrollbar{display:none}
+.sc{flex:0 0 300px;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:20px;
+  padding:16px;text-decoration:none;color:inherit;box-shadow:var(--shadow)}
+.ssec{display:inline-block;font-size:11.5px;font-weight:700;color:#a45c04;background:var(--soft);border-radius:999px;padding:2px 9px}
+.sc h4{font-size:15px;margin:9px 0 7px;line-height:1.45}
+.sc p{font-size:12.8px;color:var(--ink2);line-height:1.7}
+.ssrc{display:block;margin-top:9px;font-size:11.5px;color:#a2937f}
+/* knowledge */
+.kc{background:var(--card);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;box-shadow:0 4px 14px rgba(180,120,40,.05);overflow:hidden}
+.kc summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;padding:14px 16px;font-size:14.5px;font-weight:600}
+.kc summary::-webkit-details-marker{display:none}
+.knum{font-size:12px;color:#c9b08c;font-weight:700}
+.kplus{margin-left:auto;color:var(--accent);font-size:18px;transition:.2s}
+.kc[open] .kplus{transform:rotate(45deg)}
+.kbody{padding:0 16px 16px;font-size:13.2px;color:var(--ink2);line-height:1.8}
+/* footer */
+.foot{margin:30px 0 10px;text-align:center;font-size:12px;color:#a2937f;line-height:1.9}
+#top{position:fixed;right:16px;bottom:18px;width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:linear-gradient(135deg,#f5b544,#e8890c);color:#fff;box-shadow:0 8px 20px rgba(232,137,12,.35);
+  display:grid;place-items:center;opacity:0;pointer-events:none;transition:.25s;z-index:60}
+#top.show{opacity:1;pointer-events:auto}
+#top svg{width:20px;height:20px}
+@media(max-width:768px){
+  .grid2,.ngrid{grid-template-columns:1fr}
+  .hero .d{font-size:26px}
+  .hero{padding:22px 18px 18px;border-radius:22px}
+  body{font-size:15px}
+  .sec h2{font-size:19px}
+  .sc{flex:0 0 82vw}
+}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <span class="brand">PetDeer 晨间融合</span>
+  <a href="#morning" class="active">晨报</a>
+  <a href="#news">七元素新闻</a>
+  <a href="#picks">八版块精选</a>
+  <a href="#cards">知识卡片</a>
+</div></nav>
+
+<div class="wrap">
+<header class="hero" id="morning">
+  <div class="hero-top"><span class="pill">小雪 · 第 6 天</span><span class="pill soft">连续第 47 天</span></div>
+  <h1><span class="d">2026-11-27</span><span class="w">星期五</span></h1>
+  <p class="poem">「花雪随风不厌看，更多还肯失林峦。」—— 唐 · 徐铉《和萧郎中小雪日作》</p>
+  <p class="hero-sub">六安 · 多云转晴 3—19 ℃ · AQI 66 良</p>
+</header>
+<div class="strip"><div class="chip done"><span class="chip-k">事业编笔试</span><span class="chip-v">✅ 已考完（10-17）</span></div><div class="chip hot"><span class="chip-k">国考笔试</span><span class="chip-v"><b>2 天</b>（11-29，上午行测 / 下午申论）</span></div><div class="chip hot"><span class="chip-k">MPA 联考</span><span class="chip-v"><b>22 天</b>（12-19，上午管综 / 下午英语二）</span></div><div class="chip normal"><span class="chip-k">大雪节气</span><span class="chip-v">10 天（12-07）</span></div><div class="chip normal"><span class="chip-k">本周剩余</span><span class="chip-v">2 天 · 周五</span></div></div>
+
+<section class="grid2">
+  <div class="card">
+    <h2>天气 · 六安</h2>
+    <div class="wrow"><span>天气</span><b>多云转晴</b></div><div class="wrow"><span>气温</span><b>3 — 19 ℃（温差 16 ℃）</b></div><div class="wrow"><span>空气质量</span><b>AQI 66 · 良</b></div><div class="wrow"><span>湿度 / 降水</span><b>约 60% / 0%</b></div><div class="wrow"><span>风力</span><b>西北风 3—4 级转 <3 级</b></div><div class="wrow"><span>日出 / 日落</span><b>06:52 / 17:12</b></div>
+    <p class="tip">不带伞。清晨 3 ℃、午后 19 ℃，西北风 3—4 级：早晚按 3 ℃ 穿，护住颈后与脚踝；午后晒背找背风处。气压偏低，户外别做剧烈运动。明日 28 日晨最低 1 ℃，冬衣别收。</p>
+  </div>
+  <div class="nudge">
+    <h2>今日 NUDGE</h2>
+    <p>荷叶第 5 天收官，明起停 2 天。今天 3—19 ℃ 大风，国考只剩 2 天：早睡，只回错题。</p>
+  </div>
+</section>
+
+<section class="card" style="margin-bottom:16px">
+  <h2>昼夜双轨茶方 · 650 ml 塑料杯</h2>
+  <div class="tea-stack">
+    <article class="card tea day">
+      <div class="tea-head"><span class="tea-ico">☀</span><div><h3>瓜片荷叶陈皮饮</h3><p>07:30—19:00 · 提神理气祛湿 · 荷叶连服第 5 天收官</p></div></div>
+      <ul class="tea-list"><li><span class="tm">六安瓜片</span><span class="tg">3 g</span><span class="td">一三五底茶 · 嫩叶不洗茶</span></li><li><span class="tm">干荷叶</span><span class="tg">3 g</span><span class="td">连 5 停 2 第 5 天 · 窗口 11-23—11-27</span></li><li><span class="tm">陈皮</span><span class="tg">5 g</span><span class="td">掰约 1 cm² 小瓣</span></li><li><span class="tm">山楂片</span><span class="tg">3 g</span><span class="td">干片直接入袋</span></li><li><span class="tm">枸杞</span><span class="tg">8 粒</span><span class="td">整粒撒面</span></li></ul>
+      <p class="tea-note">装袋顺序：陈皮压底 → 荷叶 → 瓜片 → 山楂 → 枸杞撒面（陈皮最硬，贴底受水）。先温杯 10 s 再投袋；沸水直冲 650 ml 至八分满、留缝防顶盖，闷 5—8 min 首饮。瓜片是嫩叶，首泡 5 min 就够，之后每次续水多闷 1 min；续水 4—5 次，当日总量 1300—1600 ml。16:00 后只续清水、17:00 起少抿。五味全是干品/薄片/碎粒，耐开水、无需久煮。</p>
+    </article>
+    <article class="card tea night">
+      <div class="tea-head"><span class="tea-ico">🌙</span><div><h3>藤茶麦冬罗汉果饮</h3><p>19:15—21:30 · 消食安神 · 零咖啡因</p></div></div>
+      <ul class="tea-list"><li><span class="tm">藤茶</span><span class="tg">3 g</span><span class="td">洗茶 5 s</span></li><li><span class="tm">麦冬</span><span class="tg">3 g</span><span class="td">刀背拍裂出味（不拍需焖 10 min）</span></li><li><span class="tm">罗汉果</span><span class="tg">1/8 颗</span><span class="td">连壳敲碎，禁整颗</span></li></ul>
+      <p class="tea-note">藤茶垫底，注 100 ml 摇 5 s 洗茶倒掉（勿满杯注水后再倒）；再沸水直冲 650 ml，闷 5—8 min。续水 2—3 次，总量 600—800 ml；21:30 前饮完、22:00 后不喝水。三味零咖啡因，不影响入睡。麦冬属块根，必须拍裂后才可杯泡。</p>
+    </article>
+  </div>
+  <p class="tip">塑料杯：水温降到 60 ℃ 以下再拧盖；杯盖勿久闷，每 5 min 松盖放气；杯身雾化发白或有异味立即换新。</p>
+</section>
+
+<section class="grid2">
+  <div class="card">
+    <h2>七要素 Todo · 14 条</h2>
+    <ul class="todo-list" id="todoList"><li class="todo must"><label><input type="checkbox" data-i="1"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">1</span><span class="tel">睡</span><span class="tact">23:00 停手机，23:30 前入睡（冬藏早卧，明日晨 1 ℃ 更要睡足）</span>
+        <span class="tmeta">必做 · 23:00</span></span></label></li><li class="todo imp"><label><input type="checkbox" data-i="2"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">2</span><span class="tel">睡</span><span class="tact">午休 ≤30 min，趴枕勿着凉</span>
+        <span class="tmeta">重要 · 12:40 · 25 min · 25 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="3"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">3</span><span class="tel">吃</span><span class="tact">杂粮饭一锅三顿（周五均等利水：杂粮米 25＋赤小豆 25＋藜麦 25＋燕麦片 25，赤小豆昨晚已泡）；今晚 21:00 泡黑豆 20 g 供周六</span>
+        <span class="tmeta">必做 · 全天</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="4"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">4</span><span class="tel">吃</span><span class="tact">晨袋装杯直冲带走；16:00 后只续清水</span>
+        <span class="tmeta">必做 · 07:30 · 5 min · 5 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="5"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">5</span><span class="tel">吃</span><span class="tact">补称体重（欠账 152 天）</span>
+        <span class="tmeta">必做 · 晨起 · 2 min · 2 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="6"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">6</span><span class="tel">练</span><span class="tact">Day5 拉＋核心：背包划船 5×12 ＋ 俯身地板划船 4×20 ＋ 反向超人 3×15，收尾跪姿地板滑动 3×8（登山跑换掉，守低冲击）</span>
+        <span class="tmeta">必做 · 收工后 · 20 min · 20 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="7"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">7</span><span class="tel">学</span><span class="tact">英语二：刘晓艳长难句 1 课 ＋ 真题精读 1 篇</span>
+        <span class="tmeta">必做 · 20:00-21:30 · 90 min · 90 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="8"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">8</span><span class="tel">学</span><span class="tact">管综：MBA 大师数学第 4 章推进 ＋ 昨日错题回炉</span>
+        <span class="tmeta">必做 · 21:30-23:00 · 90 min · 90 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="9"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">9</span><span class="tel">学</span><span class="tact">国考只剩 2 天：两证装袋、考点路线复核、只看错题不做新题</span>
+        <span class="tmeta">必做 · 上午 · 10 min · 10 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="10"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">10</span><span class="tel">干</span><span class="tact">案点事务按 8:00 节奏推进，先清昨日尾事再开新</span>
+        <span class="tmeta">必做 · 8:00-23:30</span></span></label></li><li class="todo opt"><label><input type="checkbox" data-i="11"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">11</span><span class="tel">爽</span><span class="tact">午后 19 ℃：楼下背风处晒背 10 min，解久坐气滞</span>
+        <span class="tmeta">可选 · 12:30 · 10 min · 10 min</span></span></label></li><li class="todo opt"><label><input type="checkbox" data-i="12"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">12</span><span class="tel">爽</span><span class="tact">收工路上听播客替代刷短视频</span>
+        <span class="tmeta">可选 · 23:30 · 20 min · 20 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="13"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">13</span><span class="tel">重复</span><span class="tact">费曼复盘：把昨日 3 道错题讲一遍（录音 3 min），讲「改写」不重看</span>
+        <span class="tmeta">必做 · 19:30 · 10 min · 10 min</span></span></label></li><li class="todo must"><label><input type="checkbox" data-i="14"><span class="tdot"></span>
+        <span class="tbody"><span class="tno">14</span><span class="tel">重复</span><span class="tact">23:25 打卡（任务表 ＋ 学习进度表）</span>
+        <span class="tmeta">必做 · 23:25 · 5 min · 5 min</span></span></label></li></ul>
+  </div>
+  <div class="card">
+    <h2>项目进度</h2>
+    <div class="prow"><b>MPA 联考</b><span>管综第 4 章推进中；英语二长难句＋真题精读并行</span><em>22 天</em></div><div class="prow"><b>国考</b><span>进入收尾，只回错题、不碰新卷</span><em>2 天</em></div><div class="prow"><b>减重</b><span>基线 93.46 kg，已 152 天未称重</span><em>🔴 补称</em></div><div class="prow"><b>党校研究生</b><span>2026 秋学期在读，期末 2027-01</span><em>—</em></div>
+    <p class="tip">倒计时：国考 2 天（11-29）｜MPA 22 天（12-19）｜大雪 10 天（12-07）。英语二 2.5h ＋ 管综 1.5h 的晚间配比不变。</p>
+  </div>
+</section>
+
+<div class="sec" id="news"><h2>七元素新闻</h2><span>14 条 · 2 条／要素</span></div>
+<div class="ngroup" style="--c:#7c83d8">
+        <div class="nghead"><span class="ngico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.8 6.8 0 0 0 9.8 9.8z"/></svg></span><h3>睡 · 睡眠健康</h3><span class="line"></span></div>
+        <div class="ngrid"><a class="nc" href="https://finance.sina.com.cn/wm/2026-11-21/doc-inizpkea1816336.shtml" target="_blank" rel="noopener" style="--c:#7c83d8">
+          <h4>双脚一暖就睡得沉：穿袜子入睡快 7.5 分钟、多睡 32 分钟</h4><p>一项睡眠观察研究显示，穿袜子睡觉可使平均入睡时间缩短约 7.5 分钟、总睡眠时间增加约 32 分钟，夜间醒来次数降到原来的约 1/7.5，睡眠效率提高约 7.6%。机制在「两个温度」：入睡需要核心体温下降、手脚末端温度升高，脚冷会拖慢散热。手脚冰凉、睡眠浅的人最适合；但脚汗多、实热体质、下肢水肿者不宜。降温天可先泡脚 40 ℃、不超过 20 分钟。</p>
+          <div class="nfoot"><span class="src">新浪财经（海南广播电视总台）</span><span class="tags"><span class="tag">睡眠科学</span><span class="tag">降温</span></span></div></a><a class="nc" href="https://www.thepaper.cn/newsDetail_forward_34555412" target="_blank" rel="noopener" style="--c:#7c83d8">
+          <h4>压力大睡得碎：脑内 GABA 神经元同时管住 REM 与焦虑</h4><p>湖北医药学院团队 11 月 23 日在《Communications Biology》发表研究：外侧导水管周围灰质（LPAG）GABA 能神经元促进快速眼动睡眠的启动与维持，谷氨酸能神经元则驱动觉醒，二者形成相互抑制的微环路。在慢性束缚应激小鼠中，激活 GABA 能神经元可同时改善 REM 不足与焦虑样行为——这解释了「抗焦虑药解决了紧张、睡眠仍碎」的临床难题，也为压力性失眠提供同一靶点。</p>
+          <div class="nfoot"><span class="src">澎湃新闻</span><span class="tags"><span class="tag">神经科学</span><span class="tag">压力</span></span></div></a></div></div><div class="ngroup" style="--c:#e0a33a">
+        <div class="nghead"><span class="ngico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v7a3 3 0 0 0 6 0V3M7 3v18M17 3c-1.7 1.6-2.5 3.8-2.5 6.5S15.3 14 17 15v6"/></svg></span><h3>吃 · 饮食营养</h3><span class="line"></span></div>
+        <div class="ngrid"><a class="nc" href="http://paper.cfsn.cn/content/2026-11/26/content_197771.htm" target="_blank" rel="noopener" style="--c:#e0a33a">
+          <h4>食药物质目录怎么管：卫健委明确「先评估、后纳入、动态调整」</h4><p>国家卫健委答复人大代表建议时表示，将协同市场监管总局完善食药物质与保健食品管理：继续执行「先评估、后纳入、上市监测、动态调整」的目录模式，推进特征性成分指标与安全限量研究，开展中医食养声称的循证与量效关系研究，并建立食养声称用语词库。对新纳入目录的物质，由提出建议的省级卫健部门列入食品安全风险监测。</p>
+          <div class="nfoot"><span class="src">中国食品安全报</span><span class="tags"><span class="tag">食药物质</span><span class="tag">监管</span></span></div></a><a class="nc" href="https://news.qq.com/rain/a/20261126A0CKVZ00" target="_blank" rel="noopener" style="--c:#e0a33a">
+          <h4>丙烯酰胺新国标发布：2027 年 8 月起给高温加工「踩刹车」</h4><p>国家卫健委、市场监管总局发布《食品安全国家标准 食品中丙烯酰胺污染控制规范》，2027 年 8 月 18 日实施。规范要求薯片、薯条从原料挑选把关，油炸控制温度与时间；面包、饼干避免过度烘焙。丙烯酰胺是富含淀粉食物高温加工的副产物，温度越高、时间越长生成越多。日常风险总体可控，家里做饭记住一句：别炸焦、别烤糊，颜色适中就起锅。</p>
+          <div class="nfoot"><span class="src">腾讯新闻（北京市市场监管局）</span><span class="tags"><span class="tag">食品安全</span><span class="tag">新国标</span></span></div></a></div></div><div class="ngroup" style="--c:#6aa86a">
+        <div class="nghead"><span class="ngico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6M20 9v6M7 6v12M17 6v12M7 12h10"/></svg></span><h3>练 · 运动健身</h3><span class="line"></span></div>
+        <div class="ngrid"><a class="nc" href="https://www.sport.gov.cn/n20001280/n20001265/n20066978/c30191996/content.html" target="_blank" rel="noopener" style="--c:#6aa86a">
+          <h4>咳嗽老不好，冬天练力量比猛跑步更合适</h4><p>中国中医科学院西苑医院主任医师崔云建议：冬季锻炼分散进行、少坐多动，户外等太阳升起、气温回升后再去，选上午 9 点至下午 3 点；严寒或空气差改室内。每坐一小时起身活动 3—5 分钟，可原地踏步、扩胸伸展。力量练习选坐下站起、扶墙提踵，从少量开始、自然呼吸不憋气。慢性呼吸病患者须在病情稳定时练，避冷空气刺激；咳嗽加重、胸闷气短应暂停就医。</p>
+          <div class="nfoot"><span class="src">国家体育总局（中国体育报）</span><span class="tags"><span class="tag">冬季锻炼</span><span class="tag">呼吸健康</span></span></div></a><a class="nc" href="https://www.kepuchina.cn/article/articleinfo?ar_id=760741&business_type=100" target="_blank" rel="noopener" style="--c:#6aa86a">
+          <h4>步数第一还是爬楼就喘：心肺、力量、柔韧是三块拼图</h4><p>科普中国援引国内 7 省 2222 名 20—79 岁成人的加速度计研究：样本日均久坐约 7.8 小时。走路多不等于体能好——心肺耐力、肌肉力量、柔韧性要分开练。可落地模板：每坐 45—60 分钟起身几分钟；每周 5 天累计 30 分钟中等强度快走；每周至少 2 天力量练习（椅子坐站、墙壁俯卧撑、弹力带划船），同一肌群间隔一天。</p>
+          <div class="nfoot"><span class="src">科普中国</span><span class="tags"><span class="tag">久坐</span><span class="tag">体能</span></span></div></a></div></div><div class="ngroup" style="--c:#5f8fc4">
+        <div class="nghead"><span class="ngico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M7 9.5V15c0 1.7 2.2 3 5 3s5-1.3 5-3V9.5"/><path d="M21 7v6"/></svg></span><h3>学 · 学习考试</h3><span class="line"></span></div>
+        <div class="ngrid"><a class="nc" href="https://rsj.fy.gov.cn/Content/show/1350355.html" target="_blank" rel="noopener" style="--c:#5f8fc4">
+          <h4>国考本周日开考：新增入场扫码验证，行测「卷卡合一」</h4><p>2027 国考公共科目 11 月 29 日 9:00—11:00 行测、14:00—17:00 申论；28 日下午为专业科目。准考证打印至 11 月 29 日 15:00。多地考区提示：本次新增入场扫码验证，需备可联网手机、提前到场；考点提前 60 分钟开放，开考 15 分钟后禁入，全程封闭不得提前交卷。行测答题卡印在试卷封底内页，须沿裁切线自行撕下，卷卡必须对应。只允许带一张准考证，严禁书写。</p>
+          <div class="nfoot"><span class="src">阜阳市人力资源和社会保障局</span><span class="tags"><span class="tag">国考</span><span class="tag">考前提示</span></span></div></a><a class="nc" href="https://www.jxxinwendao.com/materials/comprehensive/1474/" target="_blank" rel="noopener" style="--c:#5f8fc4">
+          <h4>管综 180 分钟怎么分：55 道选择＋两篇作文的控时红线</h4><p>199 管综满分 200、180 分钟：数学 25 题 75 分建议 55—60 分钟，单题超 2.5 分钟无思路立即标记跳过；逻辑 30 题 60 分建议 50—55 分钟，3 分钟未找到突破口先放；论证有效性分析 30 分约 25 分钟，论说文 35 分 30—35 分钟；留 5—10 分钟回查。推荐顺序「数学→逻辑→小作文→大作文」，做完一科立刻涂卡，别把两篇作文堆到最后。</p>
+          <div class="nfoot"><span class="src">新文道考研</span><span class="tags"><span class="tag">管综</span><span class="tag">考场策略</span></span></div></a></div></div><div class="ngroup" style="--c:#8b8a86">
+        <div class="nghead"><span class="ngico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><h3>干 · 经济时政</h3><span class="line"></span></div>
+        <div class="ngrid"><a class="nc" href="https://news.qq.com/rain/a/20261126A090M200" target="_blank" rel="noopener" style="--c:#8b8a86">
+          <h4>央行 5715 亿隔夜逆回购全额满足需求，服务贸易「十五五」规划印发</h4><p>11 月 26 日央行以固定利率、数量招标开展 5715 亿元隔夜逆回购，利率 1.25%，全额满足一级交易商需求。同日商务部等八部门印发《服务贸易发展「十五五」规划》，提出培育具有国际竞争力的领军服务企业、支持中小服务贸易企业创新；工信部等三部门印发《新一代通信网建设实施方案》，明确到 2030 年建成覆盖完善、性能领先的新一代通信网，加快低轨卫星互联网建设。</p>
+          <div class="nfoot"><span class="src">腾讯新闻（每日经济新闻）</span><span class="tags"><span class="tag">货币政策</span><span class="tag">产业规划</span></span></div></a><a class="nc" href="https://finance.ce.cn/stock/gsgdbd/202611/t20261126_3308289.shtml" target="_blank" rel="noopener" style="--c:#8b8a86">
+          <h4>A 股尾盘回暖：沪指微涨 0.01%，元件、贵金属领涨</h4><p>11 月 26 日三大指数高开、午后下探后回升。收盘上证指数报 3476.88 点涨 0.01%，成交 6133 亿元；深证成指报 10084.04 点跌 0.02%，成交 7040 亿元；创业板指报 2189.82 点涨 0.29%。板块上贵金属、元件、煤炭开采涨幅居前，机场航运、生物制品、医疗器械跌幅居前。两市成交 1.32 万亿元，较前一日缩量约 660 亿元。</p>
+          <div class="nfoot"><span class="src">中国经济网</span><span class="tags"><span class="tag">A股</span><span class="tag">收盘</span></span></div></a></div></div><div class="ngroup" style="--c:#d987a8">
+        <div class="nghead"><span class="ngico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5c.9 1.3 2.1 2 3.5 2s2.6-.7 3.5-2"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></span><h3>爽 · 心情与节气</h3><span class="line"></span></div>
+        <div class="ngrid"><a class="nc" href="https://ysxw.cctv.cn/article.html?toc_style_id=feeds_default&item_id=12074268775642852727&channelId=1215" target="_blank" rel="noopener" style="--c:#d987a8">
+          <h4>小雪养生就一个字：藏——藏阳、藏暖、藏汗、藏神</h4><p>央视新闻援引西苑医院主任医师李秋艳：小雪养生的关键是藏好三样——阳气、肾精、神志。具体做法：多晒太阳补阳气；头、背、腰腹、手脚重点保暖；运动到微微发热即可，大汗会「气随津脱」，反而耗阳；早睡晚起，等太阳出来再起床；保持情绪平和。同时要防「内火」：暖气燥热叠加辛辣厚味，易生口疮、消化不良，进补别一味大鱼大肉，温水小口频饮。</p>
+          <div class="nfoot"><span class="src">央视新闻</span><span class="tags"><span class="tag">节气养生</span><span class="tag">冬藏</span></span></div></a><a class="nc" href="https://www.rmzxw.com.cn/c/2026-11-21/4012663.shtml" target="_blank" rel="noopener" style="--c:#d987a8">
+          <h4>应寒反暖易「寒包火」：中医提醒今年小雪别一味温补</h4><p>中国中医科学院广安门医院王立军提示：今年小雪冷暖起伏大、整体偏暖，养生应避寒就温、温润并施，不宜大温大补。甘肃省第二人民医院毛维武指出，阳气应藏不藏易郁而化热，一受寒就成「外寒束表、里热郁闭」的寒包火。建议搓热手掌捂大椎穴、按揉迎香穴；轻症初期可用紫苏叶、蒲公英沸水冲泡代茶饮（本人口径不加调和药）。心血管人群忌贪凉露肤、少食生冷甜腻。</p>
+          <div class="nfoot"><span class="src">人民政协网</span><span class="tags"><span class="tag">中医</span><span class="tag">寒包火</span></span></div></a></div></div><div class="ngroup" style="--c:#a07bc0">
+        <div class="nghead"><span class="ngico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3l3 3-3 3"/><path d="M20 6H8a4 4 0 0 0-4 4v1"/><path d="M7 21l-3-3 3-3"/><path d="M4 18h12a4 4 0 0 0 4-4v-1"/></svg></span><h3>重复 · 认知方法</h3><span class="line"></span></div>
+        <div class="ngrid"><a class="nc" href="https://news.qq.com/rain/a/20261124A08B4400" target="_blank" rel="noopener" style="--c:#a07bc0">
+          <h4>记忆在睡着时被「存档」：海马一类神经元只在深睡时开工</h4><p>腾讯新闻「追问 weekly」综述：研究者标记出海马中表达 M2 型乙酰胆碱受体的 Chrm2 阳性中间神经元，它们在非快速眼动睡眠和安静清醒时活跃，清醒时被较高乙酰胆碱抑制。小鼠学习后抑制背侧 CA3 的这类细胞会损害空间记忆，抑制腹侧同类细胞则损害社会记忆；且只有「学习后的非快眼动睡眠」中抑制才致损。这类细胞通过双向调节尖波涟漪影响记忆巩固，人类海马单核转录组中也找到相似细胞群。</p>
+          <div class="nfoot"><span class="src">腾讯新闻</span><span class="tags"><span class="tag">记忆机制</span><span class="tag">睡眠</span></span></div></a><a class="nc" href="https://www.thepaper.cn/newsDetail_forward_34539815" target="_blank" rel="noopener" style="--c:#a07bc0">
+          <h4>CaMKII：突触里的「分子记忆」，一次刺激能记住很久</h4><p>澎湃「脑声常谈」科普：钙-钙调蛋白依赖性蛋白激酶Ⅱ（CaMKII）是兴奋性突触中含量最高的蛋白，海马中约占总量 1%—2%，突触后致密区约 10%。它被激活后会发生自磷酸化，即使初始刺激消失仍能维持活性，因此被称为「分子记忆」。它调控受体转运、细胞骨架与蛋白翻译，是长时程增强（LTP）的核心证据，也参与长时程抑制；功能受损与智力障碍、癫痫相关。</p>
+          <div class="nfoot"><span class="src">澎湃新闻</span><span class="tags"><span class="tag">突触可塑性</span><span class="tag">LTP</span></span></div></a></div></div>
+
+<div class="sec" id="picks"><h2>八版块精选</h2><span>8 条 · 横滑查看</span></div>
+<div class="hscroll"><a class="sc" href="https://m.gmw.cn/2026-11/26/content_1304589614.htm" target="_blank" rel="noopener">
+      <span class="ssec">AI科技</span><h4>Token 进了购物车：AI 从工具变成商品</h4><p>今年双 11，十余款大模型 Token 包低至 0.01 元，天猫上线 Token 充值中心，阿里云、智谱、DeepSeek 等陆续入驻；开卖首日 Token 品类成交环比增 450%，京东「Token」搜索量环比涨超 7 倍。消费从「囤消耗品」转向「买能替自己干活的东西」，AI 硬件同步升温。</p><span class="ssrc">光明网（半月谈）</span></a><a class="sc" href="https://news.qq.com/rain/a/20261126A0GKT400" target="_blank" rel="noopener">
+      <span class="ssec">健康</span><h4>流感升至中流行水平，H1N1 占阳性样本 65%</h4><p>中疾控 11 月 26 日通报 11-16 至 11-22 哨点监测：全国流感活动整体处于中流行水平，南北方阳性率均上升；阳性样本中 A(H1N1)pdm09 占 65.0%、A(H3N2) 9.7%、B(Victoria) 25.3%，5—14 岁组最高。提示及时接种疫苗、咳嗽掩口鼻、人群密集处戴口罩。</p><span class="ssrc">腾讯新闻（央视）</span></a><a class="sc" href="https://m.cnfin.com/yw-lb//zixun/20261126/4500641_1.html" target="_blank" rel="noopener">
+      <span class="ssec">财经</span><h4>机构怎么看：存量资金为主，先看宽基能否企稳</h4><p>11 月 26 日 A 股缩量震荡，沪指微涨 0.01%、创业板指涨 0.29%，成交 1.32 万亿。中信证券认为当下「短窗冰点、长窗温和」，红利相对友好；国金证券判断整体仍处调整阶段，建议先观察主要宽基企稳，再看上涨是否扩散；国泰海通看好煤炭供需改善下的价格中枢抬升。</p><span class="ssrc">新华财经</span></a><a class="sc" href="https://kaoyan.xdf.cn/202611/15512124.html" target="_blank" rel="noopener">
+      <span class="ssec">备考</span><h4>考研两天四场：上午 8:30、下午 14:00 开考</h4><p>2027 考研初试 12 月 19—20 日：19 日上午管综（8:30—11:30）、下午英语二（14:00—17:00）；20 日为业务课。管理类考生只有 19 日一天。建议现在就把上午 8:30—11:30 设为固定高强度时段，下午 14:00—17:00 做整套卷，让身体先适应考试节律；下午是 14:00 不是 14:30。</p><span class="ssrc">新东方考研网</span></a><a class="sc" href="https://www.cqrb.cn/PCruiping/2026-11-26/2831288_pc.html" target="_blank" rel="noopener">
+      <span class="ssec">家庭</span><h4>董奇：别让「拼时长」挤掉孩子的睡眠与运动</h4><p>北京师范大学董奇教授接受《重庆日报》专访指出，家长常见误区是「看见孩子坐桌前就安心」，忽视效率与疲劳规律：长期熬夜刷题效率大幅下降，而睡眠充足、积极锻炼、适度放松的孩子往往事半功倍。小学阶段的注意力、情绪、抗压「小问题」若及时识别干预多可纠正，否则会逐年形成负积累。家长是孩子心理健康的第一道防线。</p><span class="ssrc">重庆日报</span></a><a class="sc" href="https://www.clssn.com/2026/11/26/9980864.html" target="_blank" rel="noopener">
+      <span class="ssec">副业</span><h4>零工市场不只撮合：从找活延伸到培训、维权、创业</h4><p>《实施就业优先战略「十五五」规划》提出强化零工岗位信息对接、权益保障与技能培训。各地把零工市场从「撮合一次」做成「陪伴全程」：山西娄烦县为缺技能者免费培训花馍制作，学成后居家制作售卖；河北保定建成 22 家综合性零工市场、510 个服务站点，统一建设标准。（信息参考，不构成就业建议）</p><span class="ssrc">中国劳动保障新闻网</span></a><a class="sc" href="https://www.thepaper.cn/newsDetail_forward_34532041" target="_blank" rel="noopener">
+      <span class="ssec">认知</span><h4>21.9 万人追踪：这一代老人记性确实比父辈好</h4><p>一项覆盖 21.9 万人的追踪研究提示，晚出生的一代人不仅记忆测验起点更高，下滑也更慢，且改善集中在「衰退最快的那批人」身上；脑成像显示海马体萎缩更慢，与临床认知损害发生率下降相互印证。研究者估算，起点与坡度两项优势合计，足以解释每十年约 13% 的痴呆发病率下降。结论落在预防：要覆盖一生，从童年开始。</p><span class="ssrc">澎湃新闻</span></a><a class="sc" href="https://www.ldnews.cn/qingchunloudi/wenhualoudi/202611/759493.shtml" target="_blank" rel="noopener">
+      <span class="ssec">雅趣</span><h4>中国美术馆「正大气象」萧华书法展，90 余幅真草行隶</h4><p>11 月 26 日至 12 月 5 日，萧华书法展在中国美术馆一层 2 号展厅展出，28 日上午 9:30 开幕。90 余幅作品从蝇头小楷到丈二巨制，真草行隶毕陈；魏碑唐楷端凝，行草萧散。萧华早年入首师大、后入北大首届书法研究生班，主张「文化书法」、回归经典。逢周一闭馆，免费预约入馆。</p><span class="ssrc">娄底新闻网</span></a></div>
+
+<div class="sec" id="cards"><h2>知识卡片</h2><span>5 张 · 点开看细节</span></div>
+<details class="kc"><summary><span class="knum">01</span><span>荷叶第 5 天收官：明天起停 2 天</span><span class="kplus">+</span></summary><div class="kbody"><p>本轮连服窗口 11-23—11-27 共 5 天，今天是最后一天。11-28、11-29 停荷叶，陈皮 5→6 g 顶祛湿位。连 5 停 2 不是省料，是防久服伤脾、口干——你本就火盛常咳，连服 6 g 更容易上火。停用日空腹别喝浓茶，饭后温饮。</p></div></details><details class="kc"><summary><span class="knum">02</span><span>国考最后 2 天，只做三件事</span><span class="kplus">+</span></summary><div class="kbody"><p>① 两证装袋：一张准考证（禁书写、禁涂改）＋有效期内身份证原件；② 路线复核：按准考证考点算出门时间，提前 60 分钟到，新增入场扫码验证，手机要能联网；③ 错题回看：只看错题不做新卷。行测卷卡合一，答题卡在试卷封底内页，沿裁切线撕下别撕破。开考 15 分钟禁入，全程不得提前交卷。</p></div></details><details class="kc"><summary><span class="knum">03</span><span>3—19 ℃ 加大风，怎么穿不出错</span><span class="kplus">+</span></summary><div class="kbody"><p>洋葱式三层：内层排汗、中层保暖、外层防风。清晨 3 ℃ 出门按冬天穿，午后 19 ℃ 只脱外层、不脱内层；颈后、腰腹、脚踝三处别露。明日 28 日晨最低 1 ℃，是本轮冷空气谷底，今晚就把厚外套备在门口。</p></div></details><details class="kc"><summary><span class="knum">04</span><span>周五均等利水 ＋ 泡豆日历</span><span class="kplus">+</span></summary><div class="kbody"><p>赤小豆 ≤25 g 只排周一/四/五，黑豆 ≤20 g 只排周二/六，周三/周日无豆，给肾与嘌呤代谢留缓冲。今天四味各 25 g；今晚 21:00 泡黑豆 20 g 供周六。泡足 12 h 冷藏，下锅前倒掉泡豆水再冲两遍，可去掉部分嘌呤与豆腥。</p></div></details><details class="kc"><summary><span class="knum">05</span><span>塑料杯直冲三条</span><span class="kplus">+</span></summary><div class="kbody"><p>① 水温降到 60 ℃ 以下再拧盖，防变形爆盖；② 杯盖勿久闷，每 5 min 松盖放气；③ 杯身雾化发白、有塑料味立即换新。650 ml 注到八分满留缝，是这套茶包化方案能成立的前提。</p></div></details>
+
+<div class="foot">
+  PetDeer 晨间融合 · 连续第 47 天 ｜ 生成：Buddy<br>
+  禁入红线：薏米（含炒薏米）、黑米、干冬瓜皮、马齿苋——无库存不入方 ｜ 甘草 0 g
+</div>
+</div>
+
+<button id="top" aria-label="回到顶部"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+(function(){
+  var KEY = "petdeer_todo_2026-11-27";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e){ saved = {}; }
+  document.querySelectorAll("#todoList input[type=checkbox]").forEach(function(cb){
+    var i = cb.getAttribute("data-i");
+    if (saved[i]) cb.checked = true;
+    cb.addEventListener("change", function(){
+      saved[i] = cb.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch(e){}
+    });
+  });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  function spy(){
+    var y = window.scrollY + 120, idx = 0;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= y) idx = i; });
+    links.forEach(function(a, i){ a.classList.toggle("active", i === idx); });
+  }
+  window.addEventListener("scroll", spy, {passive:true}); spy();
+
+  var top = document.getElementById("top");
+  window.addEventListener("scroll", function(){
+    top.classList.toggle("show", window.scrollY > 600);
+  }, {passive:true});
+  top.addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
+})();
+</script>
+</body>
+</html>
